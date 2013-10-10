@@ -181,30 +181,11 @@ function MM_swapImage() { //v3.0
 
 <div id="header">
 <div id="header2">
-<div id="regist"> <a href="{{URL::route( 'registro' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('registro','','img/buttons/registro_over.jpg',1)"><img src="img/buttons/registro_up.jpg" alt="registro" width="80" height="22" id="registro" border="0" style="display:block"/></a></div><!--regist-->
-<div id="regist"><a href="{{URL::route( 'home' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ingresar','','img/buttons/ingresar_over.jpg',1)"><img src="img/buttons/ingresar_up.jpg" width="80" height="22" id="ingresar" border="0" style="display:block"/></a></div><!--regist-->
+<div id="regist"> <a href="{{URL::route( 'index' )}}"><img src="img/cerrar_sesion.png" alt="registro" width="104" height="23" id="registro" border="0" style="display:block"/></a></div><!--regist-->
+<div class="user_session"></div>
+<div class="user_last_login"></div>
 
 <div id="logo"><a href="{{URL::route( 'index' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','img/logo.jpg',0)"><img src="img/logo.jpg" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
 
-<div id="menu"><!-- The strange spacing herein prevents an IE6 whitespace bug. -->
-      <ul id="barra">
-       <li><a href="{{URL::route( 'transamovil' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('que es TM','','img/buttons/over_01.jpg',1)"><img src="img/buttons/up_01.jpg" width="175" height="55" id="que es TM" border="0" style="display:block"/></a></li><!--  TM -->
-       
-        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('PARATI','','img/buttons/over_02.jpg',1)"><img src="img/buttons/up_02.jpg" width="175" height="55" id="PARATI" border="0" style="display:block"/></a>
-       <ul>
-               <li><a href="{{URL::route( 'comofunciona' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('funciona','','img/buttons/submenu_over_01.jpg','PARATI','','img/buttons/over_02.jpg',1)"><img src="img/buttons/submenu_up_01.jpg" width="175" height="25" id="funciona" border="0" style="display:block"/></a></li>
-               <li><a href="{{URL::route( 'parativentajas' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ptventajas','','img/buttons/submenu_over_02.jpg','PARATI','','img/buttons/over_02.jpg',1)"><img src="img/buttons/submenu_up_02.jpg" width="175" height="25" id="ptventajas" border="0" style="display:block"/></a></li>
-         </ul>  </li> <!-- PARA TI -->
-
-      
-        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('empresa','','img/buttons/over_03.jpg',1)"><img src="img/buttons/up_03.jpg" width="175" height="55" id="empresa" border="0" style="display:block"/></a>
-       <ul>
-               <li><a href="{{URL::route( 'nuestrassoluciones' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('soluciones','','img/buttons/submenu_over_03.jpg','empresa','','img/buttons/over_03.jpg',1)"><img src="img/buttons/submenu_up_03.jpg" width="175" height="25" id="soluciones" border="0" style="display:block"/></a></li>
-               <li><a href="{{URL::route( 'empresaventajas' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('pteventajas','','img/buttons/submenu_over_04.jpg','empresa','','img/buttons/over_03.jpg',1)"><img src="img/buttons/submenu_up_04.jpg" width="175" height="25" id="pteventajas" border="0" style="display:block"/></a></li>
-               <li><a href="{{URL::route( 'solucionesadaptables' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('solucionesa','','img/buttons/submenu_over_05.jpg','empresa','','img/buttons/over_03.jpg',1)"><img src="img/buttons/submenu_up_05.jpg" width="175" height="25" id="solucionesa" border="0" style="display:block"/></a></li>
-        </ul>  </li><!-- PARA TU EMPRESA -->
-         
-        <li><a href="{{URL::route( 'hagamosnegocio' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('negocio','','img/buttons/over_04.jpg',1)"><img src="img/buttons/up_04.jpg" width="175" height="55" id="negocio" border="0" style="display:block"/></a></li><!-- hagamosbegocio -->
-      </ul></div><!--menu-->
 </div><!--header2-->
 </div><!--header-->
