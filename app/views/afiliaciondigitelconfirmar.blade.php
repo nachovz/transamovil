@@ -10,10 +10,12 @@
 	<div class="afiliacion_3"></div>
 	<div class="afiliacion_4"></div>
 	<div class="buttons_3">
-		<a href="{{URL::route( 'home2' )}}"><img src="img/confirmar.png" class="img_space"></a>
+		<a href="modales/modal_afiliacion.html" class="clsVentanaIFrame2"><img src="img/confirmar.png" class="img_space"></a>
 		<a href="{{URL::route( 'afiliaciondigitel' )}}"><img src="img/modificar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
+	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/ventanas-modales.js"></script>
 </div><!--container_home-->
 </div><!--container3-->
 </div><!--container_reg-->
