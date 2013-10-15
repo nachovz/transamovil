@@ -2,6 +2,8 @@
 
 class Servicio extends Eloquent
 {
+	protected $table = "servicios";
+
 	public function archivos()
 	{
 		return $this->belongsToMany('Archivo')->withPivot('label');
