@@ -28,6 +28,7 @@
 	</div>
 	<div id="text_reg">*campos obligatorios</div>
 	<div id="bot_siguiente"><a href="{{URL::route( 'registro2' )}}"><img src="img/siguiente.png"></a>&nbsp;&nbsp;<a href="{{URL::route( 'index' )}}"><img src="img/cancelar.png"></a></div>
+
 </div><!--container_reg2-->
 <div id="container_reg3">
 </div><!--container_reg3-->

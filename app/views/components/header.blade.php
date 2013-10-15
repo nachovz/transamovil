@@ -174,6 +174,7 @@ function MM_swapImage() { //v3.0
    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 }
 </script>
+<link rel="stylesheet" type="text/css" href="css/ventanas-modales.css">
 </head>
 
 <body onload="MM_preloadImages('img/creatium_over.png')">

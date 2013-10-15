@@ -15,9 +15,11 @@
 	</div>
 	<div class="terms" style="margin: 75px auto -20px auto;"></div>	
 	<div class="buttons_1">
-		<a href="{{URL::route( 'home2' )}}"><img src="img/continuar.png" class="img_space"></a>
+		<a href="modales/modal_transaccion_exitosa.html" class="clsVentanaIFrame3"><img src="img/continuar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
+	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/ventanas-modales.js"></script>
 </div><!--container_home-->
 </div><!--container3-->
 </div><!--container_reg-->

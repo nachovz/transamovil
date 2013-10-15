@@ -30,7 +30,11 @@
 		{{Form::label( 'tlf_oficina', 'TELÉFONO OFICINA: *') . Form::text( 'tlf_oficina' )}}
 	</div>
 	<div id="text_reg">*campos obligatorios</div>
-	<div id="bot_siguiente_2"><a href="{{URL::route( 'registro' )}}"><img src="img/anterior.png"></a>&nbsp;&nbsp;<a href="{{URL::route( 'registro3' )}}"><img src="img/siguiente.png"></a>&nbsp;&nbsp;<a href="{{URL::route( 'index' )}}"><img src="img/cancelar.png"></a></div>
+	<div id="bot_siguiente_2"><a href="{{URL::route( 'registro' )}}"><img src="img/anterior.png"></a>&nbsp;&nbsp;<a href="modales/modal_registro.html" class="clsVentanaIFrame"><img src="img/siguiente.png"></a>&nbsp;&nbsp;<a href="{{URL::route( 'index' )}}"><img src="img/cancelar.png"></a></div>
+
+	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/ventanas-modales.js"></script>
+
 </div><!--container_reg2-->
 <div id="container_reg3">
 </div><!--container_reg3-->
