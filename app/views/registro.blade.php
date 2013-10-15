@@ -5,7 +5,7 @@
 <div id="container_reg2">
 	<div id="img_reg"></div>
 	<div id="paso_1"></div>
-	{{Form::open( array( 'method' => 'post' ) )}}
+	{{Form::open(array('route' => 'registro2', 'method' => 'post'))}}
 	<div id="form_reg">
 		{{Form::label( 'usuario', 'USUARIO: *') . Form::text( 'usuario' )}}
 		{{Form::label( 'password', 'CONTRASEÑA: *') . Form::password( 'password' )}}
@@ -27,7 +27,7 @@
 		{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *' ) . Form::email( 'mail' )}}
 	</div>
 	<div id="text_reg">*campos obligatorios</div>
-	<div id="bot_siguiente"><a href="{{URL::route( 'registro2' )}}"><img src="img/siguiente.png"></a>&nbsp;&nbsp;<a href="{{URL::route( 'index' )}}"><img src="img/cancelar.png"></a></div>
+	<div id="bot_siguiente">{{Form::submit('', array('id' => 'boton_registrar2')) . Form::close()}}&nbsp;&nbsp;<a href="{{URL::route( 'index' )}}"><img src="img/cancelar.png"></a></div>
 
 </div><!--container_reg2-->
 <div id="container_reg3">
