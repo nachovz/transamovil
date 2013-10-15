@@ -21,9 +21,9 @@ class CreateTransaccionesTable extends Migration {
         $table->decimal('saldo', 8, 2);
         $table->string('descripcion', 255);
         $table->timestamp('created_at');
-        $table->foreign('usuario_id')->references('id')->on('usuarios');
-        $table->foreign('afiliacion_id')->references('id')->on('afiliaciones');
-        $table->foreign('servicio_id')->references('id')->on('servicios');
+        $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
+        $table->foreign('afiliacion_id')->references('id')->on('afiliaciones')->onDelete('cascade')->onUpdate('cascade');
+        $table->foreign('servicio_id')->references('id')->on('servicios')->onDelete('cascade')->onUpdate('cascade');
       });
     }
 

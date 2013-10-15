@@ -18,7 +18,7 @@ class CreateMedioDePagoTarjetaTable extends Migration {
       	$table->string('nombre_impreso', 255);
       	$table->enum('tipo', array('VISA', 'MASTER', 'AMEX'));
       	$table->primary('medio_id');
-      	$table->foreign('medio_id')->references('id')->on('medios_de_pago');
+      	$table->foreign('medio_id')->references('id')->on('medios_de_pago')->onDelete('cascade')->onUpdate('cascade');
       });
     }
 

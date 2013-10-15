@@ -20,8 +20,8 @@ class CreateAfiliacionesTable extends Migration {
         $table->string('alias', 100);
         $table->timestamps();
         $table->softDeletes();
-        $table->foreign('servicio_id')->references('id')->on('servicios');
-        $table->foreign('usuario_id')->references('id')->on('usuarios');
+        $table->foreign('servicio_id')->references('id')->on('servicios')->onDelete('cascade')->onUpdate('cascade');
+        $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
       });
     }
 

@@ -17,8 +17,8 @@ class CreateArchivoUsuarioTable extends Migration {
       	$table->integer('usuario_id')->unsigned();
       	$table->string('label', 100);
       	$table->primary(array('archivo_id', 'usuario_id'));
-      	$table->foreign('archivo_id')->references('id')->on('archivos');
-        $table->foreign('usuario_id')->references('id')->on('usuarios');
+      	$table->foreign('archivo_id')->references('id')->on('archivos')->onDelete('cascade')->onUpdate('cascade');
+        $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
       });
     }
 

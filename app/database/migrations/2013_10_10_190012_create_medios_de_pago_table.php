@@ -23,8 +23,8 @@ class CreateMediosDePagoTable extends Migration {
         $table->boolean('medio_principal');
         $table->enum('status', array('Activo', 'Inactivo'));
         $table->timestamps();
-        $table->foreign('banco_id')->references('id')->on('bancos');
-        $table->foreign('usuario_id')->references('id')->on('usuarios');
+        $table->foreign('banco_id')->references('id')->on('bancos')->onDelete('cascade')->onUpdate('cascade');
+        $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
       });
     }
 

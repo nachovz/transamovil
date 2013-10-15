@@ -28,17 +28,15 @@ class CreateUsuariosTable extends Migration {
         $table->decimal('ingreso_mensual', 8, 2);
         $table->enum('estado_civil', array('Soltero', 'Casado', 'Viudo', 'Divorciado'));
         $table->integer('banco_default_id')->unsigned();
-        $table->integer('medio_de_pago_default_id')->unsigned();
         $table->enum('tipo_documento', array('Pasaporte', 'Cédula'));
         $table->string('nro_documento', 30);
         $table->string('pregunta_seguridad', 255);
         $table->string('respuesta_seguridad', 255);
         $table->timestamps();
         $table->softDeletes();
-        $table->foreign('banco_default_id')->references('id')->on('bancos');
-        $table->foreign('campo_laboral_id')->references('id')->on('campos_laborales');
-        $table->foreign('profesion_id')->references('id')->on('profesiones');
-        $table->foreign('medio_de_pago_default_id')->references('id')->on('medios_de_pago');
+        $table->foreign('banco_default_id')->references('id')->on('bancos')->onDelete('cascade')->onUpdate('cascade');
+        $table->foreign('campo_laboral_id')->references('id')->on('campos_laborales')->onDelete('cascade')->onUpdate('cascade');
+        $table->foreign('profesion_id')->references('id')->on('profesiones')->onDelete('cascade')->onUpdate('cascade');
       });
     }
 

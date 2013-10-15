@@ -18,7 +18,7 @@ class CreateUsuarioTelefonosTable extends Migration {
         $table->string('numero', 20);
         $table->timestamps();
         $table->primary(array('usuario_id', 'tipo', 'numero'));
-        $table->foreign('usuario_id')->references('id')->on('usuarios');
+        $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
       });
     }
 

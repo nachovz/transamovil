@@ -17,8 +17,8 @@ class CreateArchivoServicioTable extends Migration {
         $table->integer('servicio_id')->unsigned();
         $table->string('label', 100);
         $table->primary(array('archivo_id', 'servicio_id'));
-        $table->foreign('archivo_id')->references('id')->on('archivos');
-        $table->foreign('servicio_id')->references('id')->on('servicios');
+        $table->foreign('archivo_id')->references('id')->on('archivos')->onDelete('cascade')->onUpdate('cascade');
+        $table->foreign('servicio_id')->references('id')->on('servicios')->onDelete('cascade')->onUpdate('cascade');
       });
     }
 
