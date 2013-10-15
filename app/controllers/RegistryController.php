@@ -26,18 +26,22 @@ class RegistryController extends BaseController {
 		$validator = Validator::make( Input::all(), $rules );
 
 		//Si el formulario valida
-		if( ! $validator->fails() )
+		if( ! $validator->fails() || Session::has('progreso') )
 		{
-			//Guardar datos en sesión
-			$form_registro 												= array();			
-			$form_registro['usuario']							= Input::get('usuario');
-			$form_registro['password']						= Input::get('password');
-			$form_registro['pregunta_seguridad']	= Input::get('pregunta_seguridad');
-			$form_registro['respuesta_seguridad']	= Input::get('respuesta_seguridad');
-			$form_registro['prefijo_celular']			= Input::get('prefijo_celular');
-			$form_registro['celular']							= Input::get('celular');
-			$form_registro['mail']								= Input::get('mail');
-			Session::put( 'form_registro', $form_array );
+			if( ! Session::has('progreso') )
+			{
+				//Guardar datos en sesión
+				$form_registro 												= array();			
+				$form_registro['usuario']							= Input::get('usuario');
+				$form_registro['password']						= Input::get('password');
+				$form_registro['pregunta_seguridad']	= Input::get('pregunta_seguridad');
+				$form_registro['respuesta_seguridad']	= Input::get('respuesta_seguridad');
+				$form_registro['prefijo_celular']			= Input::get('prefijo_celular');
+				$form_registro['celular']							= Input::get('celular');
+				$form_registro['mail']								= Input::get('mail');
+				Session::put( 'form_registro', $form_registro );
+				Session::put( 'progreso', 'registro2' );
+			}		
 
 			//Cargar vista	
 			$header = View::make( 'components.header' , array( 'title' => "TransaMóvil" ));
@@ -53,9 +57,36 @@ class RegistryController extends BaseController {
 
 	public function registro3()
 	{
-		$header = View::make( 'components.header' , array( 'title' => "TransaMóvil" ));
-		$footer = View::make( 'components.footer' );
-		return View::make( 'registro3' , array( 'header' => $header , 'footer' => $footer ));
+		//Armar reglas de validación
+		$rules = array();
+		
+		//Crear el validador
+		$validator = Validator::make( Input::all(), $rules );
+
+		//Si el formulario valida
+		if( ! $validator->fails() || Session::has('progreso') )
+		{
+			if( ! Session::has('progreso') )
+			{
+				//Guardar datos en sesión
+
+				Session::put( 'form_registro', $form_array );
+				Session::put( 'progreso', 'registro2' );
+			}
+
+
+			//Cargar la vista
+			$header = View::make( 'components.header' , array( 'title' => "TransaMóvil" ));
+			$footer = View::make( 'components.footer' );
+			return View::make( 'registro3' , array( 'header' => $header , 'footer' => $footer ));
+		}
+		else
+		{
+			//Redireccionar a la  sección anterior, con datos de error e input
+			return Redirect::route('registro')->withInput()->withErrors($validator);	
+		}
+
+
 	}
 
 	public function registro_final()
