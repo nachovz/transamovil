@@ -13,12 +13,10 @@ class CreateAccesosTable extends Migration {
 	{
       Schema::create('accesos', function($table)
       {
-        $table->integer('usuario_id')->unsigned();
+        $table->increments('id');
         $table->integer('computadora_id')->unsigned();
         $table->string('ip_address', 45);
         $table->timestamps();
-        $table->primary(array('usuario_id', 'computadora_id'));
-        $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
         $table->foreign('computadora_id')->references('id')->on('computadoras')->onDelete('cascade')->onUpdate('cascade');
       });
     }
