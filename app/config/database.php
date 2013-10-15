@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'pgsql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,10 +65,10 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     => 'localhost',
+			'host'     => 'dbtransa',
 			'database' => 'creatium',
-			'username' => 'postgres',
-			'password' => '12345',
+			'username' => 'creatium',
+			'password' => 'Creatium2013',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
