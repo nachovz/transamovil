@@ -2,19 +2,19 @@
 
 class Servicio extends Eloquent
 {
-	public function archivo_servicio()
-    {
-    	return $this->belongsTo('Archivo_servicio');
-    }
+	public function archivos()
+	{
+		return $this->belongsToMany('Archivo')->withPivot('label');
+	}
 
-    public function afiliacion()
-    {
-    	return $this->belongsTo('Afiliacion');
-    }
+	public function afiliaciones()
+	{
+		return $this->hasMany('Afiliacion');
+	}
 
-    public function transaccion()
-    {
-    	return $this->belongsTo('Transaccion');
-    }
+	public function transacciones()
+	{
+		return $this->hasMany('Transaccion');
+	}
    
 }

@@ -4,19 +4,19 @@ class Afiliacion extends Eloquent
 {
 	protected $table = 'afiliaciones';	
 
-	public function usuarios()
+	public function usuario()
     {
-        return $this->hasMany('User');
+        return $this->belongsTo('User');
     }
 
-    public function servicios()
+    public function servicio()
     {
-        return $this->hasMany('Servicio');
+        return $this->belongsTo('Servicio');
     }
 
-    public function transaccion()
+    public function transacciones()
     {
-    	return $this->belongsTo('Transaccion');
+    	return $this->hasMany('Transaccion');
     }
     
 }

@@ -4,9 +4,9 @@ class Profesion extends Eloquent
 {
 	protected $table = 'profesiones';	
 
-	public function usuario()
-    {
-        return $this->belongsTo('User');
-    }
+	public function usuarios()
+	{
+		return $this->hasMany('User');
+	}
     
 }

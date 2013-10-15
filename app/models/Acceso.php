@@ -2,14 +2,9 @@
 
 class Acceso extends Eloquent
 {
-	public function usuarios()
+    public function computadora()
     {
-        return $this->hasMany('User');
-    }
-
-    public function computadoras()
-    {
-        return $this->hasMany('Computadora');
+      return $this->belongsTo('Computadora');
     }
 
 }

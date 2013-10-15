@@ -2,9 +2,13 @@
 
 class Computadora extends Eloquent
 {
-	public function acceso()
-    {
-    	return $this->belongsTo('Acceso');
-    }
-   
+	public function usuario()
+	{
+		return $this->belongsTo('User');
+	}
+
+	public function accesos()
+	{
+		return $this->hasMany('Acceso');
+	}   
 }

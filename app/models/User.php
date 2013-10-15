@@ -50,48 +50,42 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	public function telefonos()
-    {
-        return $this->hasMany('Usuario_telefono');
-    }
+	{
+		return $this->hasMany('Usuario_telefono');
+	}
 
-    public function mediosdepago()
-    {
-        return $this->hasMany('Medios_de_pago');
-    }
+	public function medios_de_pago()
+	{
+		return $this->hasMany('Medios_de_pago');
+	}
 
-    public function accesos()
-    {
-        return $this->hasMany('Acceso');
-    }
+	public function archivos()
+	{
+		return $this->belongsToMany('Archivo')->withPivot('label');
+	}
 
-    public function archivos()
-    {
-        return $this->hasMany('Archivo_usuario');
-    }
+	public function afiliaciones()
+	{
+		return $this->hasMany('Afiliacion');
+	}
 
-    public function afiliaciones()
-    {
-        return $this->hasMany('Afiliacion');
-    }
+	public function transacciones()
+	{
+		return $this->hasMany('Transaccion');
+	}
 
-    public function transacciones()
-    {
-        return $this->hasMany('Transaccion');
-    }
+	public function banco()
+	{
+		return $this->belongsTo('Banco');
+	}
 
-    public function banco()
-    {
-        return $this->belongsTo('Banco');
-    }
+	public function campo_laboral()
+	{
+		return $this->belongsTo('Campo_laboral');
+	}
 
-    public function campo_laboral()
-    {
-        return $this->belongsTo('Campo_laboral');
-    }
-
-    public function profesion()
-    {
-        return $this->belongsTo('Profesion');
-    }
-    
+	public function profesion()
+	{
+		return $this->belongsTo('Profesion');
+	}    
 }

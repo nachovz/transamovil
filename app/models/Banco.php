@@ -2,13 +2,13 @@
 
 class Banco extends Eloquent
 {
-	public function usuario()
-    {
-        return $this->belongsTo('User');
-    }
+	public function usuarios_default()
+  {
+    return $this->hasMany('User');
+  }
 
-    public function medio_de_pago()
-    {
-        return $this->belongsTo('Medio_de_pago');
-    }
+  public function medios_de_pago()
+  {
+    return $this->hasMany('Medio_de_pago');
+  }
 }
