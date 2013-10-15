@@ -187,7 +187,7 @@ function MM_swapImage() { //v3.0
   <div id="farm">
     {{Form::open(array('route' => 'login', 'method' => 'post')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico') )}}&nbsp;&nbsp;{{Form::password( 'password', array('placeholder'=>'Password') )}}
   </div> 
-  {{Form::submit('', array('id' => 'boton_registrar')) . Form::token() . Form::close()}}
+  {{Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
 </div>
 
 <!--<div id="regist"><a href="{{URL::route( 'home' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ingresar','','img/buttons/ingresar_over.jpg',1)"><img src="img/buttons/ingresar_up.jpg" width="80" height="22" id="ingresar" border="0" style="display:block"/></a></div>regist-->
