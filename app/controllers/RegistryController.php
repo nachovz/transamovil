@@ -23,4 +23,9 @@ class RegistryController extends BaseController {
 		return View::make( 'registro3' , array( 'header' => $header , 'footer' => $footer ));
 	}
 
+	public function registro_final()
+	{
+		
+	}
+
 }

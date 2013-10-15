@@ -31,6 +31,7 @@ Route::get( '/transamovil' , array( 'uses' => 'FrontController@transamovil' , 'a
 Route::get( '/registro', array( 'uses' => 'RegistryController@registro' , 'as' => 'registro' ));
 Route::get( '/registro2', array( 'uses' => 'RegistryController@registro2' , 'as' => 'registro2' ));
 Route::get( '/registro3', array( 'uses' => 'RegistryController@registro3' , 'as' => 'registro3' ));
+Route::post( '/registro_final', array( 'uses' => 'RegistryController@registro_final', 'as' => 'registro_final' ) );
 
 //Rutas del Panel de Usuario.
 
