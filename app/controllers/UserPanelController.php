@@ -2,6 +2,37 @@
 
 class UserPanelController extends BaseController {
 
+	public function login()
+	{
+		//Crear reglas de validacion de formulario. Mail/Clave requerido
+		$validator = Validator::make(Input::all(), array('email' => 'required','password' => 'required'));
+
+		//Si el formulario valida
+		if(!$validator->fails())
+		{
+
+			//Autenticar al usuario según el campo email
+			$auth = array('email' => Input::get('email'), 'password' => Input::get('password'));
+
+			//Si logramos autenticar correctamente
+			if( Auth::attempt( $auth ) )
+			{
+				//Redireccionar al perfil del usuario
+				return Redirect::route('home2', Auth::user()->id );
+			}
+			else
+			{
+				//Redireccionar al home
+				return Redirect::to('/')->withInput();
+			}
+		}
+		else
+		{
+			//Redireccionar hacia el home, incluyendo mensajes de error de validador
+			return Redirect::to('/')->withInput();
+		}
+	}
+
 	public function home()
 	{
 		$header = View::make( 'components.header_registro' , array( 'title' => "TransaMóvil" ));

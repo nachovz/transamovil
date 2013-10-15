@@ -35,6 +35,7 @@ Route::post( '/registro_final', array( 'uses' => 'RegistryController@registro_fi
 
 //Rutas del Panel de Usuario.
 
+Route::post( '/login', array( 'uses' => 'UserPanelController@login' , 'as' => 'login' ));
 Route::get( '/home', array( 'uses' => 'UserPanelController@home' , 'as' => 'home' ));
 Route::get( '/home2', array( 'uses' => 'UserPanelController@home2' , 'as' => 'home2' ));
 Route::get( '/misservicios', array( 'uses' => 'UserPanelController@misservicios' , 'as' => 'misservicios' ));

@@ -183,7 +183,14 @@ function MM_swapImage() { //v3.0
 <div id="header">
 <div id="header2">
 <div id="regist"> <a href="{{URL::route( 'registro' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('registro','','img/buttons/registro_over.jpg',1)"><img src="img/buttons/registro_up.jpg" alt="registro" width="80" height="22" id="registro" border="0" style="display:block"/></a></div><!--regist-->
-<div id="regist"><a href="{{URL::route( 'home' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ingresar','','img/buttons/ingresar_over.jpg',1)"><img src="img/buttons/ingresar_up.jpg" width="80" height="22" id="ingresar" border="0" style="display:block"/></a></div><!--regist-->
+<div id="registt">
+  <div id="farm">
+    {{Form::open(array('route' => 'login', 'method' => 'post')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico') )}}&nbsp;&nbsp;{{Form::password( 'password', array('placeholder'=>'Password') )}}
+  </div> 
+  {{Form::submit('', array('id' => 'boton_registrar')) . Form::token() . Form::close()}}
+</div>
+
+<!--<div id="regist"><a href="{{URL::route( 'home' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ingresar','','img/buttons/ingresar_over.jpg',1)"><img src="img/buttons/ingresar_up.jpg" width="80" height="22" id="ingresar" border="0" style="display:block"/></a></div>regist-->
 
 <div id="logo"><a href="{{URL::route( 'index' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','img/logo.jpg',0)"><img src="img/logo.jpg" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
 
