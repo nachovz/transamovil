@@ -16,7 +16,7 @@ class CreateServiciosTable extends Migration {
         $table->increments('id');
         $table->string('nombre', 175);
         $table->string('clase_servicio', 125);
-		$table->timestamps();
+				$table->timestamps();
       });
     }
 

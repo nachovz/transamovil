@@ -13,14 +13,13 @@ class CreateAfiliacionesTable extends Migration {
 	{
       Schema::create('afiliaciones', function($table)
       {
-        $table->integer('id');
-        $table->integer('usuario_id');
-        $table->integer('servicio_id');
+        $table->increments('id');
+        $table->integer('usuario_id')->unsigned();
+        $table->integer('servicio_id')->unsigned();
         $table->string('numero', 100);
         $table->string('alias', 100);
         $table->timestamps();
         $table->softDeletes();
-        $table->primary('id');
         $table->foreign('servicio_id')->references('id')->on('servicios');
         $table->foreign('usuario_id')->references('id')->on('usuarios');
       });

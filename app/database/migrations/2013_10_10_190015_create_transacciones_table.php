@@ -14,10 +14,10 @@ class CreateTransaccionesTable extends Migration {
       Schema::create('transacciones', function($table)
       {
         $table->increments('id');
-        $table->integer('usuario_id');
-        $table->integer('afiliacion_id');
-        $table->integer('servicio_id');
-        $table->string('numero_factura', 255);
+        $table->integer('usuario_id')->unsigned();
+        $table->integer('afiliacion_id')->unsigned();
+        $table->integer('servicio_id')->unsigned();
+        $table->string('numero_factura', 255)->nullable();
         $table->decimal('saldo', 8, 2);
         $table->string('descripcion', 255);
         $table->timestamp('created_at');

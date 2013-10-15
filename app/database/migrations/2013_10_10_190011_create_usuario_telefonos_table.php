@@ -13,10 +13,10 @@ class CreateUsuarioTelefonosTable extends Migration {
 	{
       Schema::create('usuario_telefonos', function($table)
       {
-        $table->integer('usuario_id');
+        $table->integer('usuario_id')->unsigned();
         $table->enum('tipo', array('Casa', 'Oficina', 'Celular'));
         $table->string('numero', 20);
-        $table->timestamps();    
+        $table->timestamps();
         $table->primary(array('usuario_id', 'tipo', 'numero'));
         $table->foreign('usuario_id')->references('id')->on('usuarios');
       });

@@ -13,8 +13,8 @@ class CreateAccesosTable extends Migration {
 	{
       Schema::create('accesos', function($table)
       {
-        $table->integer('usuario_id');
-        $table->integer('computadora_id');
+        $table->integer('usuario_id')->unsigned();
+        $table->integer('computadora_id')->unsigned();
         $table->string('ip_address', 45);
         $table->timestamps();
         $table->primary(array('usuario_id', 'computadora_id'));

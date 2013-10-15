@@ -22,13 +22,13 @@ class CreateUsuariosTable extends Migration {
         $table->date('fecha_nacimiento');
         $table->string('transapin', 15);
         $table->enum('sexo', array('m', 'f'));
-        $table->integer('profesion_id');
-        $table->integer('campo_laboral_id');
+        $table->integer('profesion_id')->unsigned();
+        $table->integer('campo_laboral_id')->unsigned();
         $table->enum('nivel_educativo', array('Primaria', 'Secundaria', 'TSU', 'Universitario'));
         $table->decimal('ingreso_mensual', 8, 2);
         $table->enum('estado_civil', array('Soltero', 'Casado', 'Viudo', 'Divorciado'));
-        $table->integer('banco_default_id');
-        $table->integer('medio_de_pago_default_id');
+        $table->integer('banco_default_id')->unsigned();
+        $table->integer('medio_de_pago_default_id')->unsigned();
         $table->enum('tipo_documento', array('Pasaporte', 'Cédula'));
         $table->string('nro_documento', 30);
         $table->string('pregunta_seguridad', 255);
@@ -38,6 +38,7 @@ class CreateUsuariosTable extends Migration {
         $table->foreign('banco_default_id')->references('id')->on('bancos');
         $table->foreign('campo_laboral_id')->references('id')->on('campos_laborales');
         $table->foreign('profesion_id')->references('id')->on('profesiones');
+        $table->foreign('medio_de_pago_default_id')->references('id')->on('medios_de_pago');
       });
     }
 

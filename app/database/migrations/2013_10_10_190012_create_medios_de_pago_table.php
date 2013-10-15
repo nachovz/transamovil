@@ -14,8 +14,8 @@ class CreateMediosDePagoTable extends Migration {
       Schema::create('medios_de_pago', function($table)
       {
       	$table->increments('id');
-        $table->integer('usuario_id');
-        $table->integer('banco_id');
+        $table->integer('usuario_id')->unsigned();
+        $table->integer('banco_id')->unsigned();
         $table->string('numero', 50);
         $table->string('alias', 100);
         $table->enum('tipo', array('Tarjeta de Crédito', 'Cuenta'));

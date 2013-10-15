@@ -13,7 +13,7 @@ class CreateMedioDePagoTarjetaTable extends Migration {
 	{
       Schema::create('medio_de_pago_tarjeta', function($table)
       {
-      	$table->integer('medio_id');
+      	$table->integer('medio_id')->unsigned();
       	$table->string('fecha_vencimiento', 255);
       	$table->string('nombre_impreso', 255);
       	$table->enum('tipo', array('VISA', 'MASTER', 'AMEX'));

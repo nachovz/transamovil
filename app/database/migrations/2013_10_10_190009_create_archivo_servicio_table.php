@@ -13,8 +13,8 @@ class CreateArchivoServicioTable extends Migration {
 	{
       Schema::create('archivo_servicio', function($table)
       {
-      	$table->integer('archivo_id');
-        $table->integer('servicio_id');
+      	$table->integer('archivo_id')->unsigned();
+        $table->integer('servicio_id')->unsigned();
         $table->string('label', 100);
         $table->primary(array('archivo_id', 'servicio_id'));
         $table->foreign('archivo_id')->references('id')->on('archivos');
