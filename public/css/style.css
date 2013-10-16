@@ -13,7 +13,10 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #regist {width:8opx; height:22px; float:right; margin-left:5px;margin-top: 6px; margin-bottom: -5px;}
 #registt {display: inline-block; float: right;margin-top: 5px; margin-bottom: -5px;}
 #boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;position: absolute;top: 7px;left: 1255px;}
-#boton_registrar2 {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+#boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+#boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+#boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+#boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #farm {position: relative !important; left: -87px !important;}
 #logo {width:170px; height:75px; float:left; margin-top:10px;}
 #menu {width:700px; height:55px; float:left; margin-top:20px; margin-left:74px;}
@@ -43,6 +46,93 @@ width: 140px; font-size:13px;}
 
 .user_session {background-image: url(../img/temporal/10.png);width:280px;height: 14px;float: right;}
 .user_last_login {background-image: url(../img/temporal/11.png);width:184px;height: 13px;margin-top: 100px;float: right;position: relative;right: -390px;}
+
+/* Estilo de Labels */
+
+#labels_registro{
+	font-family: 'Open Sans',sans-serif;
+	font-weight: 700;
+	color: #333;
+	font-size: 11px;
+}
+
+#labels_registro_2{
+	font-family: 'Open Sans',sans-serif;
+	color: #808080;
+	font-size: 11px;
+	position: relative;
+	top: -9px;
+}
+
+#labels_registro_3 {
+	font-family: 'Open Sans',sans-serif;
+	font-weight: 700;
+	color: #333;
+	font-size: 11px;
+	width: 240px;
+}
+
+#labels_registro_4 {
+	font-family: 'Open Sans',sans-serif;
+	color: #808080;
+	font-size: 11px;
+	position: relative;
+	top: -13px;
+}
+
+#auxiliar {
+	margin-top: 17px;
+}
+
+#campo_registro {
+	width: 202px;
+	height: 14px;
+}
+
+#campo_registro2 {
+	width: 206px;
+	height: 20px;
+}
+
+#campo_registro3 {
+	width: 84px;
+	height: 14px;
+}
+
+#campo_registro4 {
+	width: 176px;
+	height: 14px;
+}
+
+#labels_registro5{
+	font-family: 'Open Sans',sans-serif;
+	font-weight: 700;
+	color: #008995;
+	font-size: 9px;
+}
+
+#aux {
+	font-family: 'Open Sans',sans-serif;
+	font-weight: 700;
+	color: #008995;
+	font-size: 9px;
+}
+
+#aux3 {
+	position: relative;
+	top: 34px;
+}
+
+#aux4 {
+	position: relative;
+	top: 43px;
+}
+
+#aux5 {
+	position: relative;
+	top: 25px;
+}
+
 
 /* These styles create the dropdown menus. */
 #barra {
@@ -187,9 +277,31 @@ label {
 	background-color: #333333;
 }
 
-#container_reg2 {
+#contenedor_registro_1 {
 	background-color: #f1f1f1;
-	height: 700px;
+	height: 621px;
+	width: 554px;
+	border-radius: 5px;
+	position: relative;
+	top: 40px;
+	overflow:hidden;
+	float: left;
+}
+
+#contenedor_registro_2 {
+	background-color: #f1f1f1;
+	height: 621px;
+	width: 554px;
+	border-radius: 5px;
+	position: relative;
+	top: 40px;
+	overflow:hidden;
+	float: left;
+}
+
+#contenedor_registro_3 {
+	background-color: #f1f1f1;
+	height: 621px;
 	width: 554px;
 	border-radius: 5px;
 	position: relative;
@@ -200,8 +312,8 @@ label {
 
 #container_reg3 {
 	background-color: #4d4d4d;
-	height: 700px;
-	width: 370px;
+	height: 621px;
+	width: 334px;
 	border-radius: 5px;
 	position: relative;
 	margin-left: 20px;
@@ -241,29 +353,36 @@ label {
 #form_reg {
 	margin-left: 10px;
 	float: left;
+	margin-top: -8px;
 }
 
 #form_reg2 {
 	float: left;
 	margin-left: 45px;
 	height: 350px;
+	margin-top: -8px;
 }
 
 input {
 	width: 155px;
 }
 
-
-
 #radio {
 	position:relative;
 	left: -70px;
-	top: 10px;
+	top: -16px;
+}
+
+#radio4 {
+	position: relative;
+	left: -60px;
+	top: 11px;
 }
 
 #check {
 	position: absolute;
 	left: -60px;
+	line-height: 23px;
 }
 
 #text_reg {
@@ -271,30 +390,69 @@ input {
 	clear: both;
 	top: 550px;
 	margin-left: 10px;
+	font-family: 'Open Sans',sans-serif;
+	font-weight: 700;
+	color: #008995;
+	font-size: 9px;
 }
 
 #bot_siguiente {
 	clear: both;
 	position: absolute;
-	top: 600px;
-	left: 350px;
+	top: 573px;
+	left: 384px;
 }
 
 #bot_siguiente_2 {
 	clear: both;
 	position: absolute;
-	top: 600px;
-	left: 280px;
+	top: 573px;
+	left: 312px;
 }
 
 .radio_check {
 	font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
+	color: #333;
 	font-size: 11px;
 	display: inline;
 	position: relative;
 	right: 60px;
 	bottom: 3px;
+}
+
+.radio_check2 {
+	font-family: 'Open Sans', sans-serif;
+	color: #333;
+	font-size: 11px;
+	display: inline;
+	position: relative;
+	right: 70px;
+	top: -2px;
+	bottom: 3px;
+}
+
+.radio_check3 {
+	font-family: 'Open Sans', sans-serif;
+	color: #333;
+	font-size: 11px;
+	display: inline;
+	position: relative;
+	right: 70px;
+	top: -2px;
+	bottom: 3px;
+	margin-top: 2px;
+}
+
+#radio2 {
+	position: relative;
+	left: -76px;
+	top: 2px;
+}
+
+#radio3 {
+	position: relative;
+	top: -17px;
+	left: 12px;
 }
 
 /* Panel de Usuario */
