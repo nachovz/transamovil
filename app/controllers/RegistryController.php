@@ -20,6 +20,14 @@ class RegistryController extends BaseController {
 		$user->banco_default_id		= 1;
 		$user->campo_laboral_id		= 1;
 		$user->profesion_id				= 1;
+		$user->nivel_educativo		= 'Universitario';
+		$user->ingreso_mensual		= 30000;
+		$user->estado_civil				= 'Soltero';
+		$user->banco_default_id		= 1;
+		$user->tipo_documento			= 'Cédula';
+		$user->nro_documento			= '14395206';
+		$user->pregunta_seguridad	= Input::get('pregunta_seguridad');
+		$user->respuesta_seguridad= 'Ola k ase?';		
 
 		$user->save();
 
