@@ -88,6 +88,4 @@ class UserPanelController extends BaseController {
 		$footer = View::make( 'components.footer' );
 		return View::make( 'digitelrecargaconfirmar' , array( 'header' => $header , 'footer' => $footer ));
 	}
-
 }
-

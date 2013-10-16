@@ -14,7 +14,8 @@ $(function(){
 			$('#divOverlay').fadeOut(500,function(){
 				//eliminamos el overlay del DOM
 				$(this).remove();
-				window.location.replace("http://localhost/transa/public/registro3");
+				$('#boton_auxiliar_siguiente[value="2"]').toggle();
+				$('.clsVentanaIFrame').toggle();
 			});
 		});
 	});

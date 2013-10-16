@@ -29,8 +29,6 @@ Route::get( '/transamovil' , array( 'uses' => 'FrontController@transamovil' , 'a
 //Rutas para el Registro.
 
 Route::get( '/registro', array( 'uses' => 'RegistryController@registro' , 'as' => 'registro' ));
-Route::any( '/registro2', array( 'uses' => 'RegistryController@registro2' , 'as' => 'registro2' ));
-Route::any( '/registro3', array( 'uses' => 'RegistryController@registro3' , 'as' => 'registro3' ));
 Route::any( '/registro_final', array( 'uses' => 'RegistryController@registro_final', 'as' => 'registro_final' ) );
 
 //Rutas del Panel de Usuario.
@@ -41,6 +39,8 @@ Route::get( '/home2', array( 'uses' => 'UserPanelController@home2' , 'as' => 'ho
 Route::get( '/misservicios', array( 'uses' => 'UserPanelController@misservicios' , 'as' => 'misservicios' ));
 Route::get( '/misservicios2', array( 'uses' => 'UserPanelController@misservicios2' , 'as' => 'misservicios2' ));
 Route::get( '/afiliaciondigitel', array( 'uses' => 'UserPanelController@afiliaciondigitel' , 'as' => 'afiliaciondigitel' ));
-Route::get( '/afiliaciondigitelconfirmar', array( 'uses' => 'UserPanelController@afiliaciondigitelconfirmar' , 'as' => 'afiliaciondigitelconfirmar' ));
+Route::post( '/afiliaciondigitelconfirmar', array( 'uses' => 'UserPanelController@afiliaciondigitelconfirmar' , 'as' => 'afiliaciondigitelconfirmar' ));
 Route::get( '/digitelrecarga', array( 'uses' => 'UserPanelController@digitelrecarga' , 'as' => 'digitelrecarga' ));
 Route::get( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@digitelrecargaconfirmar' , 'as' => 'digitelrecargaconfirmar' ));
+
+//Rutas modales

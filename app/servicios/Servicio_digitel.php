@@ -8,8 +8,7 @@ class Servicio_digitel extends Servicio
 	public function pagar( $numero, $modo_pago, $monto )
 	{
 		$recarga_url = $this->url . '?telefono=' . $numero . '&paymentMode=' . $modo_pago . '&monto=' . $monto . '&password=' . $this->password;
-		echo '<pre>';
-		var_dump( file_get_contents( $recarga_url ) );
-		echo '</pre>';
+		
+		return file_get_contents( $recarga_url );		
 	}
 }
