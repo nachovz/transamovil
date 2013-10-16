@@ -63,7 +63,7 @@
 	<div class="afiliacion_2">
 		{{Form::open( array( 'method' => 'post', 'route' => 'afiliaciondigitelconfirmar' ) )}}
 		{{Form::select('servicio', array('0' => 'DIGITEL PRE-PAGO', '1' => '', '2' => ''), null, array('id' => 'campo_registro6'))}}<br>
-		{{Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426'), null, array('id' => 'campo_registro5'))}}
+		{{Form::select('prefijo_celular', array('0412' => '0412'), null, array('id' => 'campo_registro5'))}}
 		{{Form::text( 'numero', null, array('id' => 'campo_registro3') )}}<br> 
 		{{Form::text( 'alias', null, array('id' => 'campo_registro7') )}}
 	</div>
