@@ -16,7 +16,7 @@ class RegistryController extends BaseController {
 		$user->email							= Input::get('mail');
 		$user->nombre 						= Input::get('nombre');
 		$user->apellido 					= Input::get('apellido');
-		$user->password 					= Hash::make( Input::get('password') );
+		$user->password 					= Hash::make( '12345' );
 		$user->banco_default_id		= 1;
 		$user->campo_laboral_id		= 1;
 		$user->profesion_id				= 1;

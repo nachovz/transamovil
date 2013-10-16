@@ -36,7 +36,6 @@
 						<td>-</td>
 					</tr>
 				@endif
-				
 			</TBODY>
 			{{Form::close()}}
 		</table>
