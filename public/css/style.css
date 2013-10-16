@@ -439,8 +439,11 @@ input {
 
 #check {
 	position: absolute;
-	left: -60px;
 	line-height: 23px;
+}
+
+#check input {
+	width: 13px;
 }
 
 #text_reg {
@@ -495,23 +498,35 @@ input {
 	font-size: 11px;
 	display: inline;
 	position: relative;
-	right: 70px;
 	top: -2px;
 	bottom: 3px;
 	margin-top: 2px;
 }
 
+.radio_check4 {
+	font-family: 'Open Sans', sans-serif;
+	color: #333;
+	font-size: 11px;
+	display: inline;
+}
+
 #radio2 {
-	position: relative;
-	left: -76px;
-	top: 2px;
+	display: inline-block;
+}
+
+#radio2 input {
+	width: 13px;
 }
 
 #radio3 {
-	position: relative;
-	top: -17px;
-	left: 12px;
+	display: inline-block;
 }
+
+#radio3 input {
+	width: 13px;
+}
+
+
 
 /* Panel de Usuario */
 

@@ -46,10 +46,10 @@
 				{{Form::label( 'nacimiento', 'FECHA DE NACIMIENTO: *', array('id' => 'labels_registro')) . Form::text( 'nacimiento', null, array('placeholder'=>'DD/MM/AAAA','id' => 'campo_registro') )}}
 				{{Form::label( 'sexo', 'SEXO:', array('id' => 'labels_registro'))}}
 				<div id="radio2">
-				{{Form::radio('sexo', 'masculino')}}<span class="radio_check2">Masculino</span>
+					{{Form::radio('sexo', 'masculino')}}<span class="radio_check4">Masculino</span>
 				</div>
 				<div id="radio3">
-				{{Form::radio('sexo', 'femenino')}}<span class="radio_check2">Femenino</span>
+				{{Form::radio('sexo', 'femenino')}}<span class="radio_check4">Femenino</span>
 				</div>
 				</div>
 				<br><br><br><br><br>
