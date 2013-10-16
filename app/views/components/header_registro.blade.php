@@ -188,7 +188,7 @@ function MM_swapImage() { //v3.0
 
 <div id="regist">{{Form::open(array('route' => 'login', 'method' => 'post')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico', 'id' => 'fix') )}}&nbsp;&nbsp;{{Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}</div>
 
-<div id="logo2"><a href="{{URL::route( 'index' )}}"><img src="img/logo_transparente.png" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
+<div id="logo"><a href="{{URL::route( 'index' )}}"><img src="img/logo_transparente.png" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
 
 
 </div><!--header2-->

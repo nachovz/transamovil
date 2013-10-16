@@ -546,9 +546,9 @@ input {
 
 
 #container_alertas {
-	background-color: #fff;
-	height: 250px;
-	width: 370px;
+	background-image: url(../img/alertas.png); 
+	height: 247px;
+	width: 328px;
 	border-radius: 5px;
 	position: relative;
 	margin-left: 20px;
@@ -558,13 +558,13 @@ input {
 }
 
 #container_noticias {
-	background-color: #fff;
-	height: 180px;
-	width: 370px;
+	background-image: url(../img/noticias.png); 
+	height: 183px;
+	width: 328px;
 	border-radius: 5px;
 	position: relative;
 	margin-left: 20px;
-	top: 60px;
+	top: 64px;
 	overflow:hidden;
 	float: left;
 }
@@ -573,21 +573,22 @@ input {
 	background-image: url(../img/banner_recarga2.png);
 	background-size: 100%;
 	height: 125px;
-	width: 370px;
+	width: 329px;
 	border-radius: 5px;
 	position: relative;
 	margin-left: 20px;
 	top: 75px;
 	overflow:hidden;
 	float: left;
+	display: none;
 }
 #title1 {
 	position: absolute;
-	top: -25px;
+	top: -20px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	color: #fff;
-	font-size: 12pt;
+	font-size: 11px;
 }
 
 #title2 {
@@ -595,8 +596,8 @@ input {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	color: #fff;
-	font-size: 12pt;
-	margin-top: 5px;
+	font-size: 11px;
+	margin-top: 10px;
 }
 
 #title3 {
@@ -604,18 +605,18 @@ input {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	color: #fff;
-	font-size: 12pt;
-	margin-top: 5px;
+	font-size: 11px;
+	margin-top: 10px;
 }
 
 #motto {
 	position: relative;
 	top: 25px;
 	left: 5px;
-	font-family: 'Verdana', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
-	color: rgb(51, 51, 51);
-	font-size: 20pt;
+	color: #4D4D4D;
+	font-size: 29pt;
 }
 
 .img_space {
@@ -650,6 +651,10 @@ input {
 	top: -20px;
 }
 
+div.ui:hover {
+	opacity: 0.8;
+}
+
 .ui {
 	background-image: url(../img/afiliar_servicio.png);
 	margin-top: 10px;
@@ -657,7 +662,7 @@ input {
 	height: 127px;
 	display: inline-block;
 	border-radius: 5px;
-	box-shadow: 2px 2px 5px;
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
 }
 
 .ui.iu {
@@ -734,7 +739,7 @@ input {
 	height: 127px;
 	display: inline-block;
 	border-radius: 5px;
-	box-shadow: 2px 2px 5px;
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
 }
 
 .ai.ia {
