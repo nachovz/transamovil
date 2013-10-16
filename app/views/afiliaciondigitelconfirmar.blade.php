@@ -5,10 +5,41 @@
 <div id="container_home3">
 	<div id="mis_servicios_2"></div>
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
-	<div class="servicio_texto_4">VERIFICA LOS DATOS Y HAS CLICK EN EL BOTÓN CORRESPONDIENTE</div>
+	<div class="servicio_texto_1">VERIFICA LOS DATOS Y HAS CLICK EN EL BOTÓN CORRESPONDIENTE</div>
 	<div class="logo_digitel"></div>
-	<div class="afiliacion_3"></div>
-	<div class="afiliacion_4"></div>
+	<div class="afiliacion_3">
+		<table id="tabla_3">
+			<tr>
+				<td>SERVICIO:</td>
+			</tr>
+			<tr>
+				<td style="background-color:rgb(0,137,150);">NÚMERO DIGITEL<span id="ffs">(Móvil,Fijo o BAM):</span></td>
+			</tr>
+			</tr>
+				<td>ALIAS:</td>
+			</tr>
+			<tr>
+				<td style="background-color:rgb(0,137,150);">INGRESE CONTRASEÑA:</td>
+			</tr>
+		</table>		
+	</div>
+	<div class="afiliacion_9">
+		<table id="tabla_4">
+			<tr>
+				<td>DIGITEL PRE-PAGO:</td>
+			</tr>
+			<tr>
+				<td style="background-color:rgb(255,255,255);">0412-3454545</td>
+			</tr>
+			</tr>
+				<td>Mamá:</td>
+			</tr>
+		</table>
+	</div>
+	<div id="clave_pwd">
+		{{Form::open(array('method' => 'post')) . Form::password( 'password_check', array('id' => 'campo_registro') )}}
+	</div>
+	
 	<div class="buttons_3">
 		<a href="modales/modal_afiliacion.html" class="clsVentanaIFrame2"><img src="img/confirmar.png" class="img_space"></a>
 		<a href="{{URL::route( 'afiliaciondigitel' )}}"><img src="img/modificar.png" class="img_space"></a>

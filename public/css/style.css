@@ -17,6 +17,7 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+#boton_continuar {background-image:url(../img/continuar.png);width: 154px;height: 47px;border: 0;position: relative;top: -1px;}
 #farm {position: relative !important; left: -87px !important;}
 #logo {width:170px; height:75px; float:left; margin-top:10px;}
 #menu {width:700px; height:55px; float:left; margin-top:20px; margin-left:74px;}
@@ -102,6 +103,22 @@ width: 140px; font-size:13px;}
 #campo_registro4 {
 	width: 176px;
 	height: 14px;
+}
+
+#campo_registro5 {
+	margin-left: 0px;
+}
+
+#campo_registro6 {
+	width: 206px;
+	height: 20px;
+	margin-bottom: 5px;
+}
+
+#campo_registro7 {
+	width: 202px;
+	height: 14px;
+	margin-top: 5px;
 }
 
 #labels_registro5{
@@ -468,8 +485,8 @@ input {
 
 #container_home3 {
 	background-color: #FFF;
-	height: 700px;
-	width: 945px;
+	height: 621px;
+	width: 905px;
 	border-radius: 5px;
 	position: relative;
 	top: 20px;
@@ -603,8 +620,8 @@ input {
 .servicio_texto_1 {
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
-	color: #000;
-	font-size: 12pt;
+	color: #333;
+	font-size: 14px;
 	margin: 35px auto 0 auto;
 	width: 750px;
 }
@@ -630,9 +647,9 @@ input {
 .servicio_texto_4 {
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
-	color: #000;
-	font-size: 12pt;
-	margin: 35px auto 0 auto;
+	color: #333;
+	font-size: 14px;
+	margin: 58px auto 0 auto;
 	width: 750px;
 }
 
@@ -673,15 +690,102 @@ input {
 	margin-right: 10px;
 }
 
+td input {
+	width: 13px;
+}
+
+table#tabla1 {
+	border-collapse: collapse;
+	font-family: 'Open Sans', sans-serif;
+	font-size:12px;
+	color: #333;
+	width: 441px;
+}
+
+table#tabla1 th {
+	background-color: #008995;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size:12px;
+	color: #FFF;
+	padding: 5px;
+}
+
+table#tabla1 td {
+	padding: 5px;
+	text-align: center;
+}
+
+table#tabla1 tr:nth-child(even) {
+	background-color: #E5E5E5;
+}
+
+table#tabla_2 {
+	border-collapse: collapse;
+	width: 217px;
+	text-align: right;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size:12px;
+	color: #FFF;
+}
+
+table#tabla_2 td {
+	padding: 5px;
+	background-color: rgb(0,122,134);
+}
+
+table#tabla_3 {
+	border-collapse: collapse;
+	width: 217px;
+	text-align: right;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size:12px;
+	color: #FFF;
+}
+
+table#tabla_3 td {
+	padding: 5px;
+	background-color: rgb(0,122,134);
+}
+
+table#tabla_4 {
+	border-collapse: collapse;
+	width: 206px;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size:12px;
+	color: #333;
+}
+
+table#tabla_4 td {
+	padding: 5px;
+	background-color: rgb(228,228,228);
+}
+
+#clave_pwd {
+	display: inline-block;
+	position: absolute;
+	top: 196px;
+	right: 180px;
+}
+
+#ffs {
+	font-family: 'Open Sans', sans-serif;
+	font-size:12px;
+	color: #FFF;
+}
+
 .num_afiliados {
-	background-image: url(../img/temporal/1.png);
-	width: 442px;
-	height: 95px;
-	margin: 20px auto 0 auto;
+	width: 441px;
+	height: 108px;
+	margin: 15px auto;
 }
 
 .buttons_1 {
-	margin: 40px auto 0 auto;
+	margin: 33px auto 0 auto;
 	width: 322px;
 	height: 52px;
 }
@@ -691,35 +795,32 @@ input {
 	width: 127px;
 	height: 110px;
 	position: relative;
-	top: 30px;
+	top: 21px;
 	left: 160px;
 	border-radius: 5px;
-	box-shadow: 2px 2px 5px;
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
 	float: left;
 }
 
 .afiliacion_1 {
-	background-image: url(../img/temporal/2.png);
 	width: 216px;
 	height: 70px;
-	position: relative;
-	top: 30px;
-	left: 300px;
+	position: absolute;
+	top: 396px;
+	left: 297px;
 }
 
 .afiliacion_2 {
 	position: relative;
 	display: inline-block;
-	top: -40px;
+	top: 25px;
 	left: 390px;
 }
 
 .afiliacion_3 {
-	background-image: url(../img/temporal/3.png);
 	width: 216px;
-	height: 89px;
-	position: relative;
-	top: 30px;
+	position: absolute;
+	top: 111px;
 	left: 300px;
 }
 
@@ -764,6 +865,13 @@ input {
 	left: 516px;
 }
 
+.afiliacion_9 {
+	display: inline-block;
+	position: absolute;
+	top: 111px;
+	right: 182px;
+}
+
 .buttons_2 {
 	margin: 40px auto 0 auto;
 	width: 322px;
@@ -771,7 +879,7 @@ input {
 }
 
 .buttons_3 {
-	margin: 60px auto 0 auto;
+	margin: 210px auto 0 auto;
 	width: 490px;
 	height: 52px;
 }
@@ -779,6 +887,12 @@ input {
 .buttons_4 {
 	position: relative;
 	width: 490px;
+	height: 52px;
+}
+
+.buttons_5 {
+	margin: 82px auto 0 auto;
+	width: 322px;
 	height: 52px;
 }
 
