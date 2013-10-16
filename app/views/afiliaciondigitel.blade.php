@@ -19,7 +19,7 @@
 			</THEAD>
 			<TBODY>
 				<tr>
-					<td>{{Form::radio('1', '1', array('id' => 'culito'))}}</td>
+					<td>{{Form::radio('1', '1')}}</td>
 					<td>Digitel</td>
 					<td>0412-2861187</td>
 					<td>No Definido</td>
