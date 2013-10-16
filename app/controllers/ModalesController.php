@@ -19,4 +19,9 @@ class ModalesController extends BaseController
 
 		return View::make('modales.modal_afiliacion')->with( 'numero', $numero );
 	}
+
+	public function registro( $email, $nombre )
+	{
+		return View::make('modales.modal_registro')->with( 'nombre', $nombre )->with('email', $email );
+	}
 }

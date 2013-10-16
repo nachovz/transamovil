@@ -42,9 +42,11 @@ $(function(){
 	$('.clsVentanaIFrame').on('click',function(eEvento){
 		//prevenir el comportamiento normal del enlace
 		eEvento.preventDefault();
-		
+
+		var href = 'modal/registro/' + $('#campo_registro[name="mail"]').val() + '/' + $('#campo_registro[name="usuario"]').val();
+
 		//obtenemos la pagina que queremos cargar en la ventana y el titulo
-		var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
+		var strPagina=href, strTitulo=$(this).attr('rel');
 		
 		//creamos la nueva ventana para mostrar el contenido y la capa para el titulo
 		var $objVentana=$('<div class="clsVentana">');
@@ -118,9 +120,10 @@ $(function(){
 	});
 
 	$('.clsVentanaIFrame3').on('click',function(eEvento){
+
 		//prevenir el comportamiento normal del enlace
 		eEvento.preventDefault();
-		
+
 		//obtenemos la pagina que queremos cargar en la ventana y el titulo
 		var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
 		

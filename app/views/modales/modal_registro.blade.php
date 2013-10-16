@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/ventanas-modales.css">
+		<link rel="stylesheet" type="text/css" href="{{asset('css/ventanas-modales.css')}}">
 	</head>
 	<body>
 		<div class="modal_titulo_1_wrapper">
@@ -10,12 +10,12 @@
 		</div>
 		<div class="modal_texto_1_wrapper">
 			<span class="modal_texto_1">SE ENVIARON LOS DATOS DE CONFIRMACIÓN CORRECTAMENTE A:<br>
-			<span class="modal_texto_1_bold">AREYES@CONECTIUM.COM</span></span>
+			<span class="modal_texto_1_bold">{{$email}}</span></span>
 		</div>
 		<div class="modal_datos_1_wrapper">
 			<div class="modal_datos_1a">
 				<span class="modal_datos_1">
-					TU USUARIO ES: <span class="modal_datos_1_bold">AREYES20</span><br>
+					TU USUARIO ES: <span class="modal_datos_1_bold">{{$nombre}}</span><br>
 					Y TU TRANSA-PIN: <span class="modal_datos_1_bold">#582396</span>
 				</span>
 			</div>

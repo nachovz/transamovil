@@ -42,7 +42,8 @@ Route::get( '/misservicios2', array( 'uses' => 'UserPanelController@misservicios
 Route::get( '/afiliaciondigitel', array( 'uses' => 'UserPanelController@afiliaciondigitel' , 'as' => 'afiliaciondigitel', 'before' => 'auth' ));
 Route::post( '/afiliaciondigitelconfirmar', array( 'uses' => 'UserPanelController@afiliaciondigitelconfirmar' , 'as' => 'afiliaciondigitelconfirmar', 'before' => 'auth' ));
 Route::get( '/digitelrecarga', array( 'uses' => 'UserPanelController@digitelrecarga' , 'as' => 'digitelrecarga', 'before' => 'auth' ));
-Route::get( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@digitelrecargaconfirmar' , 'as' => 'digitelrecargaconfirmar', 'before' => 'auth' ));
+Route::post( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@digitelrecargaconfirmar' , 'as' => 'digitelrecargaconfirmar', 'before' => 'auth' ));
 
 //Rutas modales
 Route::get( '/modal/afiliaciondigitelconfirmar/{numero}/{alias}', array( 'uses' => 'ModalesController@afiliaciondigitelconfirmar', 'as' => 'modal_afiliacion_confirmar', 'before' => 'auth' ) );
+Route::get( '/modal/registro/{email}/{nombre}', array( 'uses' => 'ModalesController@registro', 'as' => 'modal_registro' ) );
