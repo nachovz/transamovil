@@ -24,6 +24,9 @@
 			</tr>
 				<td>MÉTODO DE PAGO:</td>
 			</tr>
+			<tr>
+				<td style="background-color:rgb(0,137,150);">CÓDIGO DE LA PROMOCION:</td>
+			</tr>
 		</table>		
 	</div>
 	<div id="aux_recarga">
@@ -31,10 +34,11 @@
 		{{Form::select('servicio', array('0' => 'DIGITEL PRE-PAGO', '1' => 'DIGITEL POST-PAGO'), null, array('id' => 'campo_registro2'))}}<br>
 		{{Form::select('numero_digitel', array('0412' => '0412')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}}<br>
 		{{Form::select('numero_afiliado', array('0' => '0412-3454545 - Mamá'), null, array('id' => 'campo_registro2'))}}<br> 
-		{{Form::text( 'monto', null, array('id' => 'campo_registro8') )}}<br>
-		{{Form::select('metodo_pago', array('1' => 'Pago por Promocion', '0' => 'Nueva Tarjeta de Crédito'), null, array('id' => 'campo_registro2'))}}
+		{{Form::text( 'monto', null, array('id' => 'campo_registro_a8') )}}<br>
+		{{Form::select('metodo_pago', array('1' => 'Pago por Promocion', '0' => 'Nueva Tarjeta de Crédito'), null, array('id' => 'campo_registro2'))}}<br>
+		{{Form::text( 'codigo', null, array('id' => 'campo_registro8') )}}<br>
 	</div>
-	<div class="afiliacion_3" style="top:255px">
+	<!--<div class="afiliacion_3" style="top:255px">
 		<table id="tabla_5">
 			<tr>
 				<td>TIPO DE TARJETA DE CREDITO:</td>
@@ -77,12 +81,12 @@
 	</div>			
 	<div id="num_cedula">
 		V-22.035.112
-	</div>
+	</div>-->
 	<div id="notif">
 		"Introduzca el monto deseado desde Bs. 20 hasta<br>500 en múltiplos de 10, Ej : 20, 30, 40, …490, 500”
 	</div>
-	<div class="terms"></div>
-	<div class="buttons_6">
+	<!--<div class="terms"></div>-->
+	<div class="buttons_6" style="top: 211px;">
 		{{Form::submit('', array('id' => 'boton_continuar')) . Form::close()}}&nbsp;&nbsp;&nbsp;<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
 </div><!--container_home_4-->

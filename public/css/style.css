@@ -88,6 +88,13 @@ width: 140px; font-size:13px;}
 	margin-top: 17px;
 }
 
+#campo_registro_a8 {
+	width: 66px;
+	height: 14px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
 #campo_registro {
 	width: 202px;
 	height: 14px;
@@ -1087,7 +1094,7 @@ table#tabla_6 td {
 	color: #808080;
 	display: inline-block;
 	position: absolute;
-	top: 182px;
-	right: 77px;
-	line-height: 10px;
+	top: 186px;
+	right: 73px;
+	line-height: 8px;
 }
