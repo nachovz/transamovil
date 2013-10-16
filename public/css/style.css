@@ -14,7 +14,7 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #regist {width:8opx; height:22px; float:right; margin-left:5px;}
 #registt {display: inline-block; float: right;margin-top: 5px; margin-bottom: -5px;}
 #boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;margin-left: 5px;}
-#boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+#boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px}
 #boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}

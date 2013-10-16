@@ -69,7 +69,7 @@
 			<div id="bot_siguiente_2">
 				{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2'))}}&nbsp;&nbsp;
 				{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'value' => '2', 'style' => 'display:none;'))}}
-				<a href="modales/modal_registro.html" class="clsVentanaIFrame"><img src="img/siguiente.png"></a>&nbsp;&nbsp;
+				<a href="modales/modal_registro.html" class="clsVentanaIFrame"><img src="img/siguiente.png"></a>&nbsp;
 				{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 			</div>			
 		</div><!--contenedor_registro_2-->
@@ -108,7 +108,7 @@
 			<div id="text_reg">*campos obligatorios</div>
 			<div id="bot_siguiente_2">
 				{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '3'))}}&nbsp;&nbsp;
-				{{Form::submit('', array('id' => 'boton_auxiliar_finalizar'))}}&nbsp;&nbsp;
+				{{Form::submit('', array('id' => 'boton_auxiliar_finalizar'))}}&nbsp;
 				{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 			</div>
 		</div><!--contenedor_registro_3-->		
