@@ -22,6 +22,7 @@ class RegistryController extends BaseController {
 		$user->profesion_id				= 1;
 		$user->fecha_nacimiento		= date('Y-m-d');
 		$user->transapin					= '123456';
+		$user->sexo								= 'm';
 		$user->nivel_educativo		= 'Universitario';
 		$user->ingreso_mensual		= 30000;
 		$user->estado_civil				= 'Soltero';
