@@ -78,6 +78,9 @@
 	<div id="num_cedula">
 		V-22.035.112
 	</div>
+	<div id="notif">
+		"Introduzca el monto deseado desde Bs. 20 hasta<br>500 en múltiplos de 10, Ej : 20, 30, 40, …490, 500”
+	</div>
 	<div class="terms"></div>
 	<div class="buttons_6">
 		{{Form::submit('', array('id' => 'boton_continuar')) . Form::close()}}&nbsp;&nbsp;&nbsp;<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>

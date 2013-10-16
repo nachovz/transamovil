@@ -322,7 +322,7 @@ label {
 #container3 {
 	height:721px; 
 	width:945px; 
-	margin-left: 247px;
+	margin: 0 auto;
 	background-color: #333333;
 }
 
@@ -1059,4 +1059,15 @@ table#tabla_6 td {
 	position: absolute;
 	top: 397px;
 	left: 518px;
+}
+
+#notif{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10px;
+	color: #808080;
+	display: inline-block;
+	position: absolute;
+	top: 182px;
+	right: 77px;
+	line-height: 10px;
 }
