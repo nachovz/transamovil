@@ -10,9 +10,9 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 
 #header {height:115px; width:100%; background-color: #EBEBEB; position:fixed; z-index: 10000000;}
 #header2 {height:115px; width:945px; margin:auto; }
-#regist {width:8opx; height:22px; float:right; margin-left:5px;margin-top: 6px; margin-bottom: -5px;}
+#regist {width:8opx; height:22px; float:right; margin-left:5px;}
 #registt {display: inline-block; float: right;margin-top: 5px; margin-bottom: -5px;}
-#boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;position: absolute;top: 7px;left: 1255px;}
+#boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;margin-left: 5px;}
 #boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
@@ -21,6 +21,7 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #farm {position: relative !important; left: -87px !important;}
 #logo {width:170px; height:75px; float:left; margin-top:10px;}
 #menu {width:700px; height:55px; float:left; margin-top:20px; margin-left:74px;}
+#regist input#fix {position: relative; top: -4px;}
 
 #body {height:500px; width:945px; margin:auto; float:left;}
 
