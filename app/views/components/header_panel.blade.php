@@ -188,7 +188,7 @@ function MM_swapImage() { //v3.0
 <div class="user_session">Bienvenido(a) {{Auth::user()->nombre . ' ' . Auth::user()->apellido}}</div>
 <div class="user_last_login"></div>
 
-<div id="logo"><a href="{{URL::route( 'index' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','img/logo.jpg',0)"><img src="img/logo.jpg" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
+<div id="logo"><a href="{{URL::route( 'home' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','img/logo.jpg',0)"><img src="img/logo.jpg" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
 
 </div><!--header2-->
 </div><!--header-->
