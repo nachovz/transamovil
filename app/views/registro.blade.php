@@ -72,7 +72,7 @@
 				<a href="modales/modal_registro.html" class="clsVentanaIFrame"><img src="img/siguiente.png"></a>&nbsp;&nbsp;
 				{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 			</div>			
-		</div><!--container_reg2-->
+		</div><!--contenedor_registro_2-->
 
 		<div id="contenedor_registro_3" class="inactive">
 			<div id="img_reg"></div>
@@ -111,8 +111,10 @@
 				{{Form::submit('', array('id' => 'boton_auxiliar_finalizar'))}}&nbsp;&nbsp;
 				{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 			</div>
-		</div><!--container_reg3-->		
+		</div><!--contenedor_registro_3-->		
 		{{Form::close()}}
+		<div id="container_reg3">
+		</div>
 	</div><!--container3-->
 </div><!--container_reg-->
 
