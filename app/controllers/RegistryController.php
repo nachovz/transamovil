@@ -4,7 +4,7 @@ class RegistryController extends BaseController {
 
 	public function registro()
 	{
-		$header = View::make( 'components.header' , array( 'title' => "TransaMóvil" ));
+		$header = View::make( 'components.header_registro' , array( 'title' => "TransaMóvil" ));
 		$footer = View::make( 'components.footer' );
 		return View::make( 'registro' , array( 'header' => $header , 'footer' => $footer ));
 	}

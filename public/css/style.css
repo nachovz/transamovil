@@ -9,6 +9,7 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 
 
 #header {height:115px; width:100%; background-color: #EBEBEB; position:fixed; z-index: 10000000;}
+#header_reg {height:115px; width:100%; background-color: #FFF; position:fixed; z-index: 10000000;}
 #header2 {height:115px; width:945px; margin:auto; }
 #regist {width:8opx; height:22px; float:right; margin-left:5px;}
 #registt {display: inline-block; float: right;margin-top: 5px; margin-bottom: -5px;}
@@ -20,6 +21,7 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #boton_continuar {background-image:url(../img/continuar.png);width: 154px;height: 47px;border: 0;position: relative;top: -1px;}
 #farm {position: relative !important; left: -87px !important;}
 #logo {width:170px; height:75px; float:left; margin-top:10px;}
+#logo2 {width:170px; height:75px; float:left; margin-top:10px; margin-left: 22px;}
 #menu {width:700px; height:55px; float:left; margin-top:20px; margin-left:74px;}
 #regist input#fix {position: relative; top: -4px;}
 
@@ -320,7 +322,7 @@ label {
 #container3 {
 	height:815px; 
 	width:945px; 
-	margin:auto;
+	margin-left: 247px;
 	background-color: #333333;
 }
 
@@ -416,8 +418,12 @@ input {
 
 #radio {
 	position:relative;
-	left: -70px;
+	left: 5px;
 	top: -16px;
+}
+
+#radio input{
+	width: 13px;
 }
 
 #radio4 {
