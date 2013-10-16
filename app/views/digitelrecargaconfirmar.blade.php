@@ -95,12 +95,12 @@
 	<div id="num_tdc_2" style="display:none;">
 		{{Form::text( 'numero_tarjeta', null, array('id' => 'campo_registro_10') )}}
 	</div>
-	<div id="check2">
+	<div id="check2" style="display:none;">
 		{{Form::checkbox('name', 'value', true)}}<span class="radio_check">Establecer como predeterminada</span>&nbsp;&nbsp;&nbsp;
 		{{Form::checkbox('name', 'value')}}<span class="radio_check">Afiliar</span>
 	</div>
-	<div class="terms"></div>	
-	<div class="buttons_6">
+	<div class="terms" style="display:none;"></div>	
+	<div class="buttons_6" style="top: 165px;">
 		<a href="http://digitel.transamovil.com/recargar.jsp?telefono=04121000750&paymentMode=EF&monto=50&password=transa" class="clsVentanaIFrame3"><img src="img/continuar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
