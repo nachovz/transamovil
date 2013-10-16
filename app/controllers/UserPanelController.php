@@ -43,7 +43,7 @@ class UserPanelController extends BaseController {
 	{
 		$header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
 		$footer = View::make( 'components.footer' );
-		return View::make( 'home' , array( 'header' => $header , 'footer' => $footer ));
+		return View::make( 'home2' , array( 'header' => $header , 'footer' => $footer ));
 	}
 
 	public function home2() //Si ya afilió el servicio de Digitel

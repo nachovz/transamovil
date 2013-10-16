@@ -33,7 +33,7 @@
 	<span id="title3">CONFIGURACIÓN</span>
 	<div class="config">
 		<img src="img/mis_cuentas.png" class="img_space">
-		<a href="{{URL::route( 'misservicios2' )}}"><img src="img/mis_servicios.png" class="img_space"></a>
+		<a href="{{URL::route( 'misservicios' )}}"><img src="img/mis_servicios.png" class="img_space"></a>
 		<img src="img/administracion.png">
 	</div>
 </div><!--container_home2-->
