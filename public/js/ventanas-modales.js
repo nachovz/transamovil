@@ -34,7 +34,7 @@ $(function(){
 			$('#divOverlay').fadeOut(500,function(){
 				//eliminamos el overlay del DOM
 				$(this).remove();
-				window.location.replace("http://localhost/transa/public/home2");
+				window.location.replace("home2");
 			});
 		});
 	});
