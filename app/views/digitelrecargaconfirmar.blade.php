@@ -101,7 +101,7 @@
 	</div>
 	<div class="terms"></div>	
 	<div class="buttons_6">
-		<a href="modales/modal_transaccion_exitosa.html" class="clsVentanaIFrame3"><img src="img/continuar.png" class="img_space"></a>
+		<a href="http://digitel.transamovil.com/recargar.jsp?telefono=04121000750&paymentMode=EF&monto=50&password=transa" class="clsVentanaIFrame3"><img src="img/continuar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
 	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>

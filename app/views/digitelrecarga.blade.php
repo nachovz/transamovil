@@ -27,7 +27,7 @@
 		</table>		
 	</div>
 	<div id="aux_recarga">
-		{{Form::open(array('method' => 'post'))}}
+		{{Form::open(array('method' => 'post', 'route' => 'digitelrecargaconfirmar'))}}
 		{{Form::select('servicio', array('0' => 'DIGITEL PRE-PAGO', '1' => 'DIGITEL POST-PAGO'), null, array('id' => 'campo_registro2'))}}<br>
 		{{Form::select('numero_digitel', array('0412' => '0412')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}}<br>
 		{{Form::select('numero_afiliado', array('0' => '0412-3454545 - Mamá'), null, array('id' => 'campo_registro2'))}}<br> 
