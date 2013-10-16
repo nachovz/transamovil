@@ -25,7 +25,7 @@
 				<td>MÉTODO DE PAGO:</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(0,137,150);">CÓDIGO DE LA PROMOCION:</td>
+				<td style="background-color:rgb(0,137,150);">CÓDIGO PROMOCIONAL:</td>
 			</tr>
 		</table>		
 	</div>

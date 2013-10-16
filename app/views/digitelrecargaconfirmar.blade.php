@@ -35,11 +35,11 @@
 				<td>20,00</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(255,255,255);">Nueva tarjeta de Crédito</td>
+				<td style="background-color:rgb(255,255,255);">Código Promocional</td>
 			</tr>
 		</table>
 	</div>
-	<div class="afiliacion_3" style="top:234px">
+	<div class="afiliacion_3" style="top:234px; display:none;">
 		<table id="tabla_5">
 			<tr>
 				<td>TIPO DE TARJETA DE CREDITO:</td>
@@ -67,7 +67,7 @@
 			</tr>
 		</table>		
 	</div>
-	<div class="afiliacion_9" style="top: 234px;">
+	<div class="afiliacion_9" style="top: 234px; display:none;">
 		<table id="tabla_6">
 			<tr>
 				<td>DIGITEL PRE-PAGO</td>
@@ -92,7 +92,7 @@
 			</tr>
 		</table>
 	</div>
-	<div id="num_tdc_2">
+	<div id="num_tdc_2" style="display:none;">
 		{{Form::text( 'numero_tarjeta', null, array('id' => 'campo_registro_10') )}}
 	</div>
 	<div id="check2">
