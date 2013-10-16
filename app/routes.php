@@ -45,3 +45,4 @@ Route::get( '/digitelrecarga', array( 'uses' => 'UserPanelController@digitelreca
 Route::get( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@digitelrecargaconfirmar' , 'as' => 'digitelrecargaconfirmar', 'before' => 'auth' ));
 
 //Rutas modales
+Route::get( '/modal/afiliaciondigitelconfirmar/{numero}/{alias}', array( 'uses' => 'ModalesController@afiliaciondigitelconfirmar', 'as' => 'modal_afiliacion_confirmar', 'before' => 'auth' ) );

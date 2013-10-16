@@ -18,25 +18,27 @@
 				</tr>
 			</THEAD>
 			<TBODY>
-				<tr>
-					<td>{{Form::radio('1', '1', array('id' => 'culito'))}}</td>
-					<td>Digitel</td>
-					<td>0412-2861187</td>
-					<td>No Definido</td>
-				</tr>
-				<tr>
-					<td>{{Form::radio('2', '2')}}</td>
-					<td>Digitel</td>
-					<td>0412-3434545</td>
-					<td>Mamá</td>
-				</tr>
-				<tr>
-					<td>{{Form::radio('3', '3')}}</td>
-					<td>Digitel</td>
-					<td>0412-9876937</td>
-					<td>Ale1</td>
-				</tr>
+				<?php $afiliaciones = Auth::user()->afiliaciones()->get()->all();?>
+				@if( ! empty( $afiliaciones ) )
+					@foreach( $afiliaciones as $af )
+					<tr>
+						<td>{{Form::radio('1', '1', array('id' => 'culito'))}}</td>
+						<td>Digitel</td>
+						<td>{{$af->numero}}</td>
+						<td>{{$af->alias}}</td>
+					</tr>
+					@endforeach
+				@else 
+					<tr>
+						<td>{{Form::radio('1', '1', array('id' => 'culito'))}}</td>
+						<td>No posee número afiliados</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+				@endif
+				
 			</TBODY>
+			{{Form::close()}}
 		</table>
 
 	</div>
@@ -60,10 +62,11 @@
 		</table>
 	</div>
 	<div class="afiliacion_2">
-		{{Form::open( array( 'method' => 'post' ) )}}
+		{{Form::open( array( 'method' => 'post', 'route' => 'afiliaciondigitelconfirmar' ) )}}
 		{{Form::select('servicio', array('0' => 'DIGITEL PRE-PAGO', '1' => '', '2' => ''), null, array('id' => 'campo_registro6'))}}<br>
-		{{Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426'), null, array('id' => 'campo_registro5')) . Form::text( '', null, array('id' => 'campo_registro3') )}}<br> 
-		{{Form::text( '', null, array('id' => 'campo_registro7') )}}
+		{{Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426'), null, array('id' => 'campo_registro5'))}}
+		{{Form::text( 'numero', null, array('id' => 'campo_registro3') )}}<br> 
+		{{Form::text( 'alias', null, array('id' => 'campo_registro7') )}}
 	</div>
 	<div class="buttons_5">
 		{{Form::submit('', array('id' => 'boton_continuar')) . Form::close()}}&nbsp;&nbsp;<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>

@@ -6,7 +6,7 @@ class Afiliacion extends Eloquent
 
 	public function usuario()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('User', 'usuario_id');
     }
 
     public function servicio()

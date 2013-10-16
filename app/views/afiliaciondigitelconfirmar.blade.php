@@ -29,10 +29,10 @@
 				<td>DIGITEL PRE-PAGO:</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(255,255,255);">0412-3454545</td>
+				<td style="background-color:rgb(255,255,255);">0412-{{Input::get('numero')}}</td>
 			</tr>
 			</tr>
-				<td>Mamá:</td>
+				<td>{{Input::get('alias')}}</td>
 			</tr>
 		</table>
 	</div>
@@ -41,7 +41,7 @@
 	</div>
 	
 	<div class="buttons_3">
-		<a href="modales/modal_afiliacion.html" class="clsVentanaIFrame2"><img src="img/confirmar.png" class="img_space"></a>
+		<a href="{{URL::route( 'modal_afiliacion_confirmar', array( Input::get('numero'), Input::get('alias') ) )}}" class="clsVentanaIFrame2"><img src="img/confirmar.png" class="img_space"></a>
 		<a href="{{URL::route( 'afiliaciondigitel' )}}"><img src="img/modificar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
