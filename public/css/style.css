@@ -428,9 +428,14 @@ input {
 
 #radio4 {
 	position: relative;
-	left: -60px;
+	left: 10px;
 	top: 11px;
 }
+
+#radio4 input{
+	width: 13px;
+}
+
 
 #check {
 	position: absolute;
