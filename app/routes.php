@@ -34,13 +34,14 @@ Route::any( '/registro_final', array( 'uses' => 'RegistryController@registro_fin
 //Rutas del Panel de Usuario.
 
 Route::post( '/login', array( 'uses' => 'UserPanelController@login' , 'as' => 'login' ));
-Route::get( '/home', array( 'uses' => 'UserPanelController@home' , 'as' => 'home' ));
-Route::get( '/home2', array( 'uses' => 'UserPanelController@home2' , 'as' => 'home2' ));
-Route::get( '/misservicios', array( 'uses' => 'UserPanelController@misservicios' , 'as' => 'misservicios' ));
-Route::get( '/misservicios2', array( 'uses' => 'UserPanelController@misservicios2' , 'as' => 'misservicios2' ));
-Route::get( '/afiliaciondigitel', array( 'uses' => 'UserPanelController@afiliaciondigitel' , 'as' => 'afiliaciondigitel' ));
-Route::post( '/afiliaciondigitelconfirmar', array( 'uses' => 'UserPanelController@afiliaciondigitelconfirmar' , 'as' => 'afiliaciondigitelconfirmar' ));
-Route::get( '/digitelrecarga', array( 'uses' => 'UserPanelController@digitelrecarga' , 'as' => 'digitelrecarga' ));
-Route::get( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@digitelrecargaconfirmar' , 'as' => 'digitelrecargaconfirmar' ));
+Route::get( '/logout', array( 'uses' => 'UserPanelController@logout' , 'as' => 'logout' ));
+Route::get( '/home', array( 'uses' => 'UserPanelController@home' , 'as' => 'home', 'before' => 'auth' ));
+Route::get( '/home2', array( 'uses' => 'UserPanelController@home2' , 'as' => 'home2', 'before' => 'auth' ));
+Route::get( '/misservicios', array( 'uses' => 'UserPanelController@misservicios' , 'as' => 'misservicios', 'before' => 'auth' ));
+Route::get( '/misservicios2', array( 'uses' => 'UserPanelController@misservicios2' , 'as' => 'misservicios2', 'before' => 'auth' ));
+Route::get( '/afiliaciondigitel', array( 'uses' => 'UserPanelController@afiliaciondigitel' , 'as' => 'afiliaciondigitel', 'before' => 'auth' ));
+Route::post( '/afiliaciondigitelconfirmar', array( 'uses' => 'UserPanelController@afiliaciondigitelconfirmar' , 'as' => 'afiliaciondigitelconfirmar', 'before' => 'auth' ));
+Route::get( '/digitelrecarga', array( 'uses' => 'UserPanelController@digitelrecarga' , 'as' => 'digitelrecarga', 'before' => 'auth' ));
+Route::get( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@digitelrecargaconfirmar' , 'as' => 'digitelrecargaconfirmar', 'before' => 'auth' ));
 
 //Rutas modales

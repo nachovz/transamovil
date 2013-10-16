@@ -11,12 +11,15 @@ class RegistryController extends BaseController {
 
 	public function registro_final()
 	{
-		$user 							= new User();
-		$user->username			= Input::get('usuario');
-		$user->email				= Input::get('mail');
-		$user->nombre 			= Input::get('nombre');
-		$user->apellido 		= Input::get('apellido');
-		$user->password 		= Hass::make( Input::get('password') );
+		$user 										= new User();
+		$user->username						= Input::get('usuario');
+		$user->email							= Input::get('mail');
+		$user->nombre 						= Input::get('nombre');
+		$user->apellido 					= Input::get('apellido');
+		$user->password 					= Hash::make( Input::get('password') );
+		$user->banco_default_id		= 1;
+		$user->campo_laboral_id		= 1;
+		$user->profesion_id				= 1;
 
 		$user->save();
 

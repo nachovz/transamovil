@@ -8,7 +8,7 @@ class UserPanelController extends BaseController {
 		$validator = Validator::make(Input::all(), array('email' => 'required','password' => 'required'));
 
 		//Si el formulario valida
-		if(!$validator->fails())
+		if(! $validator->fails())
 		{
 
 			//Autenticar al usuario según el campo email
@@ -18,7 +18,7 @@ class UserPanelController extends BaseController {
 			if( Auth::attempt( $auth ) )
 			{
 				//Redireccionar al perfil del usuario
-				return Redirect::route('home2', Auth::user()->id );
+				return Redirect::route('home' );
 			}
 			else
 			{
@@ -31,6 +31,12 @@ class UserPanelController extends BaseController {
 			//Redireccionar hacia el home, incluyendo mensajes de error de validador
 			return Redirect::to('/')->withInput();
 		}
+	}
+
+	public function logout()
+	{
+		Auth::logout();
+		return Redirect::route('index');
 	}
 
 	public function home()

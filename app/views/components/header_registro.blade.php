@@ -175,6 +175,7 @@ function MM_swapImage() { //v3.0
 }
 </script>
 <link rel="stylesheet" type="text/css" href="css/ventanas-modales.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/registro-wizard.css')}}" />
 </head>
 
 <body onload="MM_preloadImages('img/creatium_over.png')">
@@ -182,8 +183,9 @@ function MM_swapImage() { //v3.0
 
 <div id="header">
 <div id="header2">
-<div id="regist"> <a href="{{URL::route( 'index' )}}"><img src="img/cerrar_sesion.png" alt="registro" width="104" height="23" id="registro" border="0" style="display:block"/></a></div><!--regist-->
-<div class="user_session"></div>
+<div id="regist"> <a href="{{URL::route( 'logout' )}}"><img src="img/cerrar_sesion.png" alt="registro" width="104" height="23" id="registro" border="0" style="display:block"/></a></div><!--regist-->
+
+<div class="user_session">Bienvenido(a) {{Auth::user()->nombre . ' ' . Auth::user()->apellido}}</div>
 <div class="user_last_login"></div>
 
 <div id="logo"><a href="{{URL::route( 'index' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','img/logo.jpg',0)"><img src="img/logo.jpg" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->

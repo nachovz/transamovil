@@ -175,6 +175,7 @@ function MM_swapImage() { //v3.0
 }
 </script>
 <link rel="stylesheet" type="text/css" href="css/ventanas-modales.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/registro-wizard.css')}}" />
 </head>
 
 <body onload="MM_preloadImages('img/creatium_over.png')">
