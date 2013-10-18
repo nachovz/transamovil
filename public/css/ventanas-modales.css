@@ -32,7 +32,9 @@
 	height: 318px;
 	border: solid 1px #ccc;
 	position: fixed;
-	top: 35%;
+	/*top: 55%;
+	right: 40%;*/
+	top: 38%;
 	right: 40%;
 	border-radius: 10px;
 	box-shadow: 0 0 15px #999;
@@ -53,9 +55,10 @@
 		}
 
 .modal_titulo_1_wrapper {
-	width: 145px;
+	width: 200px;
 	height: 20px;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .modal_titulo_1 {
@@ -66,7 +69,7 @@
 }
 
 .modal_texto_1_wrapper {
-	width: 370px;
+	width: 380px;
 	height: 40px;
 	margin: 10px auto -10px auto;
 	text-align: center;
@@ -171,9 +174,10 @@
 		}
 
 .modal_afiliacion_titulo_wrapper {
-	width: 145px;
+	width: 180px;
 	height: 20px;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .modal_afiliacion_titulo {

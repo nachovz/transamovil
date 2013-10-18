@@ -11,13 +11,13 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #header {height:115px; width:100%; background-color: #EBEBEB; position:fixed; z-index: 10000000;}
 #header_reg {height:115px; width:100%; background-color: #FFF; position:fixed; z-index: 10000000;}
 #header2 {height:115px; width:945px; margin:auto; }
-#regist {width:8opx; height:22px; float:right; margin-left:5px;}
+#regist {width:8opx; height:22px; float:right; margin-left: 5px;}
 #registt {display: inline-block; float: right;margin-top: 5px; margin-bottom: -5px;}
 #boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;margin-left: 5px;}
 #boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px}
 #boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
-#boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+#boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;border: 0;position: relative;top: -2px;}
 #boton_continuar {background-image:url(../img/continuar.png);width: 154px;height: 47px;border: 0;position: relative;top: -1px;}
 #farm {position: relative !important; left: -87px !important;}
 #logo {width:170px; height:75px; float:left; margin-top:10px;}
@@ -49,7 +49,7 @@ width: 140px; font-size:13px;}
 #bottom {height:80px; width:100%; background-color: #CCC;position:relative; top:115px;}
 
 .user_session {background-image: url(../img/temporal/10.png);width:280px;height: 14px;float: right;}
-.user_last_login {background-image: url(../img/temporal/11.png);width:184px;height: 13px;margin-top: 100px;float: right;position: relative;right: -390px;}
+.user_last_login {display:none; background-image: url(../img/temporal/11.png);width:184px;height: 13px;margin-top: 100px;float: right;position: relative;right: -390px;}
 
 /* Estilo de Labels */
 
@@ -469,6 +469,7 @@ input {
 	position: absolute;
 	top: 573px;
 	left: 384px;
+	overflow: hidden;
 }
 
 #bot_siguiente_2 {
