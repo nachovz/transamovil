@@ -47,3 +47,4 @@ Route::post( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@d
 //Rutas modales
 Route::get( '/modal/afiliaciondigitelconfirmar/{numero}/{alias}', array( 'uses' => 'ModalesController@afiliaciondigitelconfirmar', 'as' => 'modal_afiliacion_confirmar', 'before' => 'auth' ) );
 Route::get( '/modal/registro/{email}/{nombre}', array( 'uses' => 'ModalesController@registro', 'as' => 'modal_registro' ) );
+Route::get( '/modal/recargadigitelconfirmar/{monto}', array( 'uses' => 'ModalesController@recargadigitelconfirmar', 'as' => 'modal_recarga_confirmar', 'before' => 'auth' ) );

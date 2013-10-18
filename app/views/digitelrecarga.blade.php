@@ -33,7 +33,7 @@
 		{{Form::open(array('method' => 'post', 'route' => 'digitelrecargaconfirmar'))}}
 		{{Form::select('servicio', array('0' => 'DIGITEL PRE-PAGO', '1' => 'DIGITEL POST-PAGO'), null, array('id' => 'campo_registro2'))}}<br>
 		{{Form::select('numero_digitel', array('0412' => '0412')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}}<br>
-		{{Form::select('numero_afiliado', array('0' => '0412-3454545 - Mamá'), null, array('id' => 'campo_registro2'))}}<br> 
+		{{Form::select('numero_afiliado', Afiliacion::lists('numero'), array('id' => 'campo_registro2'))}}<br> 
 		{{Form::text( 'monto', null, array('id' => 'campo_registro_a8') )}}<br>
 		{{Form::select('metodo_pago', array('1' => 'Pago por Promocion', '0' => 'Nueva Tarjeta de Crédito'), null, array('id' => 'campo_registro2'))}}<br>
 		{{Form::text( 'codigo', null, array('id' => 'campo_registro8') )}}<br>

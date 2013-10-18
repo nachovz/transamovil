@@ -21,6 +21,9 @@
 			<tr>
 				<td style="background-color:rgb(0,137,150);">MÉTODO DE PAGO:</td>
 			</tr>
+			</tr>
+				<td>CODIGO PROMOCIONAL:</td>
+			</tr>
 		</table>		
 	</div>
 	<div class="afiliacion_9" style="top: 114px;">
@@ -29,13 +32,16 @@
 				<td>DIGITEL PRE-PAGO</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(255,255,255);">0412-3454545 - Mamá</td>
+				<td style="background-color:rgb(255,255,255);">Numero Afiliado</td>
 			</tr>
 			</tr>
-				<td>20,00</td>
+				<td>{{Input::get('monto')}}</td>
 			</tr>
 			<tr>
 				<td style="background-color:rgb(255,255,255);">Código Promocional</td>
+			</tr>
+			</tr>
+				<td>{{Input::get('codigo')}}</td>
 			</tr>
 		</table>
 	</div>
@@ -101,7 +107,7 @@
 	</div>
 	<div class="terms" style="display:none;"></div>	
 	<div class="buttons_6" style="top: 165px;">
-		<a href="http://digitel.transamovil.com/recargar.jsp?telefono=04121000750&paymentMode=EF&monto=50&password=transa" class="clsVentanaIFrame3"><img src="img/continuar.png" class="img_space"></a>
+		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto') ) )}}" class="clsVentanaIFrame3"><img src="img/continuar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
 	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
