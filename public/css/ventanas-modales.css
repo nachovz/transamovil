@@ -148,32 +148,201 @@
 
 /* Modal afiliación Digitel */
 
+@media only screen and (max-width: 1920px) {
+
 .clsVentana2{
-	width: 460px;
-	height: 168px;
-	border: solid 1px #ccc;
-	position: fixed;
-	/*top: 30%;
-	right: 40%;*/
-	top: 32%;
-	right: 34%;
-	border-radius: 10px;
-	box-shadow: 0 0 15px #999;
-	background: #fff;
-	z-index: 99999;
-	display: none;
+width: 460px;
+height: 168px;
+border: solid 1px #ccc;
+position: absolute;
+top: 26%;
+left: 37%;
+border-radius: 10px;
+box-shadow: 0 0 15px #999;
+background: #fff;
+z-index: 99999;
+display: none;
 }
 	.clsVentanaContenido2{
-		height: 168px;
-		border-radius: 0 0 3px 3px;
+	height: 168px;
+	border-radius: 0 0 3px 3px;
 	}
 		.clsVentanaContenido2 iframe{
-			width: 458px;
-			height: 164px;
-			border-radius: 10px;
-			border: 0.1px solid #FFF;
-			overflow: hidden;
+		width: 458px;
+		height: 164px;
+		border-radius: 10px;
+		border: 0.1px solid #FFF;
+		overflow: hidden;
 		}
+}
+
+@media only screen and (max-width: 1680px) {
+
+.clsVentana2{
+width: 460px;
+height: 168px;
+border: solid 1px #ccc;
+position: absolute;
+top: 26%;
+left: 35%;
+border-radius: 10px;
+box-shadow: 0 0 15px #999;
+background: #fff;
+z-index: 99999;
+display: none;
+}
+	.clsVentanaContenido2{
+	height: 168px;
+	border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido2 iframe{
+		width: 458px;
+		height: 164px;
+		border-radius: 10px;
+		border: 0.1px solid #FFF;
+		overflow: hidden;
+		}
+}
+
+@media only screen and (max-width: 1600px) {
+
+.clsVentana2{
+width: 460px;
+height: 168px;
+border: solid 1px #ccc;
+position: absolute;
+top: 31%;
+left: 34%;
+border-radius: 10px;
+box-shadow: 0 0 15px #999;
+background: #fff;
+z-index: 99999;
+display: none;
+}
+	.clsVentanaContenido2{
+	height: 168px;
+	border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido2 iframe{
+		width: 458px;
+		height: 164px;
+		border-radius: 10px;
+		border: 0.1px solid #FFF;
+		overflow: hidden;
+		}
+}
+
+@media only screen and (max-width: 1360px) {
+
+.clsVentana2{
+width: 460px;
+height: 168px;
+border: solid 1px #ccc;
+position: absolute;
+top: 36%;
+left: 31%;
+border-radius: 10px;
+box-shadow: 0 0 15px #999;
+background: #fff;
+z-index: 99999;
+display: none;
+}
+	.clsVentanaContenido2{
+	height: 168px;
+	border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido2 iframe{
+		width: 458px;
+		height: 164px;
+		border-radius: 10px;
+		border: 0.1px solid #FFF;
+		overflow: hidden;
+		}
+}
+
+@media only screen and (max-width: 1280px) {
+
+.clsVentana2{
+width: 460px;
+height: 168px;
+border: solid 1px #ccc;
+position: absolute;
+top: 34%;
+left: 30%;
+border-radius: 10px;
+box-shadow: 0 0 15px #999;
+background: #fff;
+z-index: 99999;
+display: none;
+}
+	.clsVentanaContenido2{
+	height: 168px;
+	border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido2 iframe{
+		width: 458px;
+		height: 164px;
+		border-radius: 10px;
+		border: 0.1px solid #FFF;
+		overflow: hidden;
+		}
+}
+
+@media only screen and (max-width: 1280px) {
+
+.clsVentana2{
+width: 460px;
+height: 168px;
+border: solid 1px #ccc;
+position: absolute;
+top: 27%;
+left: 30%;
+border-radius: 10px;
+box-shadow: 0 0 15px #999;
+background: #fff;
+z-index: 99999;
+display: none;
+}
+	.clsVentanaContenido2{
+	height: 168px;
+	border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido2 iframe{
+		width: 458px;
+		height: 164px;
+		border-radius: 10px;
+		border: 0.1px solid #FFF;
+		overflow: hidden;
+		}
+}
+
+@media only screen and (max-width: 1024px) {
+
+.clsVentana2{
+width: 460px;
+height: 168px;
+border: solid 1px #ccc;
+position: absolute;
+top: 37%;
+left: 25%;
+border-radius: 10px;
+box-shadow: 0 0 15px #999;
+background: #fff;
+z-index: 99999;
+display: none;
+}
+	.clsVentanaContenido2{
+	height: 168px;
+	border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido2 iframe{
+		width: 458px;
+		height: 164px;
+		border-radius: 10px;
+		border: 0.1px solid #FFF;
+		overflow: hidden;
+		}
+}
 
 .modal_afiliacion_titulo_wrapper {
 	width: 180px;

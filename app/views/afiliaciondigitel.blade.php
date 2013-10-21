@@ -5,7 +5,7 @@
 <div id="container_home3">
 	<div id="mis_servicios"></div>
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
-	<div class="servicio_texto_1">NÚMEROS AFILIADOS AL SERVICIO</div>
+	<div class="servicio_texto_1" style="width: 228px;">NÚMEROS AFILIADOS AL SERVICIO</div>
 	<div class="num_afiliados">
 		<table id="tabla1">
 			{{Form::open(array('method' => 'post'))}}
@@ -22,7 +22,7 @@
 				@if( ! empty( $afiliaciones ) )
 					@foreach( $afiliaciones as $af )
 					<tr>
-						<td>{{Form::radio('1', '1', array('id' => 'culito'))}}</td>
+						<td>{{Form::radio('1', '1')}}</td>
 						<td>Digitel</td>
 						<td>{{$af->numero}}</td>
 						<td>{{$af->alias}}</td>
@@ -30,7 +30,7 @@
 					@endforeach
 				@else 
 					<tr>
-						<td>{{Form::radio('1', '1', array('id' => 'culito'))}}</td>
+						<td>{{Form::radio('1', '1')}}</td>
 						<td>No posee número afiliados</td>
 						<td>-</td>
 						<td>-</td>
@@ -62,10 +62,10 @@
 	</div>
 	<div class="afiliacion_2">
 		{{Form::open( array( 'method' => 'post', 'route' => 'afiliaciondigitelconfirmar' ) )}}
-		{{Form::select('servicio', array('0' => 'DIGITEL PRE-PAGO', '1' => '', '2' => ''), null, array('id' => 'campo_registro6'))}}<br>
-		{{Form::select('prefijo_celular', array('0412' => '0412'), null, array('id' => 'campo_registro5'))}}
-		{{Form::text( 'numero', null, array('id' => 'campo_registro3') )}}<br> 
-		{{Form::text( 'alias', null, array('id' => 'campo_registro7') )}}
+		{{Form::select('servicio', array('0' => 'DIGITEL PRE-PAGO'), null, array('id' => 'campo_registro6'))}}<br>
+		{{Form::select('prefijo', array('0412' => '0412', '0212' => '0212', '0234' => '0234', '0235' => '0235', '0237' => '0237', '0238' => '0238', '0239' => '0239', '0240' => '0240', '0241' => '0241', '0242' => '0242', '0243' => '0243', '0244' => '0244', '0245' => '0245', '0246' => '0246', '0247' => '0247', '0248' => '0248', '0249' => '0249', '0251' => '0251', '0252' => '0252', '0253' => '0253', '0254' => '0254', '0255' => '0255', '0256' => '0256', '0257' => '0257', '0258' => '0258', '0259' => '0259', '0261' => '0261', '0262' => '0262', '0263' => '0263', '0264' => '0264', '0265' => '0265', '0266' => '0266', '0267' => '0267', '0268' => '0268', '0269' => '0269', '0271' => '0271', '0272' => '0272', '0273' => '0273', '0274' => '0274', '0275' => '0275', '0276' => '0276', '0277' => '0277', '0278' => '0278', '0279' => '0279', '0281' => '0281', '0282' => '0282', '0283' => '0283', '0284' => '0284', '0285' => '0285', '0286' => '0286', '0287' => '0287', '0288' => '0288', '0289' => '0289', '0291' => '0291', '0292' => '0292', '0293' => '0293', '0294' => '0294', '0295' => '0295'), array('id' => 'campo_registro5'))}}
+		{{Form::text( 'numero', null, array('id' => 'campo_registro3', 'required', 'x-moz-errormessage' => 'Introduzca un número', 'title' => 'Introduzca un número') )}}<br> 
+		{{Form::text( 'alias', null, array('id' => 'campo_registro7', 'required', 'x-moz-errormessage' => 'Introduzca un alias', 'title' => 'Introduzca un alias') )}}
 	</div>
 	<div class="buttons_5">
 		{{Form::submit('', array('id' => 'boton_continuar')) . Form::close()}}&nbsp;&nbsp;<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>

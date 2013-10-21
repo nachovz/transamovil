@@ -801,7 +801,7 @@ table#tabla1 tr:nth-child(even) {
 
 table#tabla_2 {
 	border-collapse: collapse;
-	width: 217px;
+	width: 235px;
 	text-align: right;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
@@ -812,6 +812,7 @@ table#tabla_2 {
 table#tabla_2 td {
 	padding: 5px;
 	background-color: rgb(0,122,134);
+	padding-right: 10px;
 }
 
 table#tabla_3 {
@@ -892,6 +893,8 @@ table#tabla_6 td {
 	width: 441px;
 	height: 108px;
 	margin: 15px auto;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .buttons_1 {
@@ -913,8 +916,8 @@ table#tabla_6 td {
 }
 
 .afiliacion_1 {
-	width: 216px;
-	height: 70px;
+	width: 235px;
+	height: 81px;
 	position: absolute;
 	top: 396px;
 	left: 297px;
@@ -924,7 +927,7 @@ table#tabla_6 td {
 	position: relative;
 	display: inline-block;
 	top: 25px;
-	left: 390px;
+	left: 405px;
 }
 
 .afiliacion_3 {

@@ -2,22 +2,22 @@
 
 class ModalesController extends BaseController
 {
-	public function afiliaciondigitelconfirmar( $numero, $alias )
+	public function afiliaciondigitelconfirmar( $numero, $alias, $prefijo )
 	{
 		$user 			= Auth::user();
-		$afiliacion = Afiliacion::where( 'usuario_id', '=', $user->id )->where( 'servicio_id', '=', 1 )->where( 'numero', '=', '0412' . $numero )->get()->first();
+		$afiliacion = Afiliacion::where( 'usuario_id', '=', $user->id )->where( 'servicio_id', '=', 1 )->where( 'numero', '=', $prefijo . $numero )->get()->first();
 
 
 		if( ! $afiliacion )
 		{
-			$afiliacion 							= new Afiliacion();
-			$afiliacion->servicio_id	= 1;
-			$afiliacion->numero 			= '0412' . $numero;
+			$afiliacion 					= new Afiliacion();
+			$afiliacion->servicio_id		= 1;
+			$afiliacion->numero 			= $prefijo . $numero;
 			$afiliacion->alias				= $alias;
 			$user->afiliaciones()->save( $afiliacion );
 		}
 
-		return View::make('modales.modal_afiliacion')->with( 'numero', $numero );
+		return View::make('modales.modal_afiliacion')->with( 'numero', $numero )->with('alias', $alias)->with('prefijo', $prefijo);
 	}
 
 	public function registro( $email, $nombre )

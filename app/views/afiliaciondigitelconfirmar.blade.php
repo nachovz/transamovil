@@ -18,9 +18,6 @@
 			</tr>
 				<td>ALIAS:</td>
 			</tr>
-			<tr>
-				<td style="background-color:rgb(0,137,150);">INGRESE CONTRASEÑA:</td>
-			</tr>
 		</table>		
 	</div>
 	<div class="afiliacion_9">
@@ -29,19 +26,19 @@
 				<td>DIGITEL PRE-PAGO:</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(255,255,255);">0412-{{Input::get('numero')}}</td>
+				<td style="background-color:rgb(255,255,255);">{{Input::get('prefijo')}}-{{Input::get('numero')}}</td>
 			</tr>
 			</tr>
 				<td>{{Input::get('alias')}}</td>
 			</tr>
 		</table>
 	</div>
-	<div id="clave_pwd">
+	<!--<div id="clave_pwd">
 		{{Form::open(array('method' => 'post')) . Form::password( 'password_check', array('id' => 'campo_registro') )}}
-	</div>
+	</div>-->
 	
 	<div class="buttons_3">
-		<a href="{{URL::route( 'modal_afiliacion_confirmar', array( Input::get('numero'), Input::get('alias') ) )}}" class="clsVentanaIFrame2"><img src="img/confirmar.png" class="img_space"></a>
+		<a href="{{URL::route( 'modal_afiliacion_confirmar', array( Input::get('numero'), Input::get('alias'), Input::get('prefijo') ) )}}" class="clsVentanaIFrame2"><img src="img/confirmar.png" class="img_space"></a>
 		<a href="{{URL::route( 'afiliaciondigitel' )}}"><img src="img/modificar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
