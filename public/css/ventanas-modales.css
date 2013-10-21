@@ -288,34 +288,6 @@ display: none;
 		}
 }
 
-@media only screen and (max-width: 1280px) {
-
-.clsVentana2{
-width: 460px;
-height: 168px;
-border: solid 1px #ccc;
-position: absolute;
-top: 27%;
-left: 30%;
-border-radius: 10px;
-box-shadow: 0 0 15px #999;
-background: #fff;
-z-index: 99999;
-display: none;
-}
-	.clsVentanaContenido2{
-	height: 168px;
-	border-radius: 0 0 3px 3px;
-	}
-		.clsVentanaContenido2 iframe{
-		width: 458px;
-		height: 164px;
-		border-radius: 10px;
-		border: 0.1px solid #FFF;
-		overflow: hidden;
-		}
-}
-
 @media only screen and (max-width: 1024px) {
 
 .clsVentana2{
@@ -376,17 +348,15 @@ display: none;
 	left: 90px;
 }
 
-/* Modal afiliación Digitel */
+/* Modal Recarga Digitel */
+
+@media only screen and (max-width: 1920px) {
 
 .clsVentana3{
 	width: 460px;
 	height: 245px;
 	border: solid 1px #ccc;
-	position: fixed;
-	/*top: 30%;
-	right: 40%;
-	top: 30%;
-	right: 35%;*/
+	position: absolute;
 	top: 25%;
 	right: 39%;
 	border-radius: 10px;
@@ -406,6 +376,147 @@ display: none;
 			border: 0.1px solid #FFF;
 			overflow: hidden;
 		}
+}
+
+@media only screen and (max-width: 1680px) {
+
+.clsVentana3{
+	width: 460px;
+	height: 245px;
+	border: solid 1px #ccc;
+	position: absolute;
+	top: 25%;
+	right: 37%;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #999;
+	background: #fff;
+	z-index: 99999;
+	display: none;
+}
+	.clsVentanaContenido3{
+		height: 245px;
+		border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido3 iframe{
+			width: 458px;
+			height: 241px;
+			border-radius: 10px;
+			border: 0.1px solid #FFF;
+			overflow: hidden;
+		}
+}
+
+@media only screen and (max-width: 1600px) {
+
+.clsVentana3{
+	width: 460px;
+	height: 245px;
+	border: solid 1px #ccc;
+	position: absolute;
+	top: 30%;
+	right: 37%;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #999;
+	background: #fff;
+	z-index: 99999;
+	display: none;
+}
+	.clsVentanaContenido3{
+		height: 245px;
+		border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido3 iframe{
+			width: 458px;
+			height: 241px;
+			border-radius: 10px;
+			border: 0.1px solid #FFF;
+			overflow: hidden;
+		}
+}
+
+@media only screen and (max-width: 1360px) {
+
+.clsVentana3{
+	width: 460px;
+	height: 245px;
+	border: solid 1px #ccc;
+	position: absolute;
+	top: 36%;
+	right: 34%;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #999;
+	background: #fff;
+	z-index: 99999;
+	display: none;
+}
+	.clsVentanaContenido3{
+		height: 245px;
+		border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido3 iframe{
+			width: 458px;
+			height: 241px;
+			border-radius: 10px;
+			border: 0.1px solid #FFF;
+			overflow: hidden;
+		}
+}
+
+@media only screen and (max-width: 1280px) {
+
+.clsVentana3{
+	width: 460px;
+	height: 245px;
+	border: solid 1px #ccc;
+	position: absolute;
+	top: 35%;
+	right: 33%;;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #999;
+	background: #fff;
+	z-index: 99999;
+	display: none;
+}
+	.clsVentanaContenido3{
+		height: 245px;
+		border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido3 iframe{
+			width: 458px;
+			height: 241px;
+			border-radius: 10px;
+			border: 0.1px solid #FFF;
+			overflow: hidden;
+		}
+}
+
+@media only screen and (max-width: 1024px) {
+
+.clsVentana3{
+	width: 460px;
+	height: 245px;
+	border: solid 1px #ccc;
+	position: absolute;
+	top: 35%;
+	right: 29%;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #999;
+	background: #fff;
+	z-index: 99999;
+	display: none;
+}
+	.clsVentanaContenido3{
+		height: 245px;
+		border-radius: 0 0 3px 3px;
+	}
+		.clsVentanaContenido3 iframe{
+			width: 458px;
+			height: 241px;
+			border-radius: 10px;
+			border: 0.1px solid #FFF;
+			overflow: hidden;
+		}
+}
 
 .modal_transaccion_exitosa_titulo_wrapper {
 	width: 164px;

@@ -5,7 +5,7 @@
 <div id="container_home4">
 	<div id="mis_servicios_3"></div>
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
-	<div class="servicio_texto_1">POR FAVOR INGRESA LOS DATOS</div>
+	<div class="servicio_texto_1">VERIFICA LOS DATOS Y HAS CLICK EN EL BOTÓN CORRESPONDIENTE</div>
 	<div class="logo_digitel" style="top:26px"></div>
 	<div class="afiliacion_3" style="top:114px">
 		<table id="tabla_5">
@@ -106,9 +106,10 @@
 		{{Form::checkbox('name', 'value')}}<span class="radio_check">Afiliar</span>
 	</div>
 	<div class="terms" style="display:none;"></div>	
-	<div class="buttons_6" style="top: 165px;">
-		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago') ) )}}" class="clsVentanaIFrame3"><img src="img/continuar.png" class="img_space"></a>
-		<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
+	<div class="buttons_6" style="top: 165px; width:494px">
+		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago') ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a>
+		<a href="{{URL::route( 'digitelrecarga' )}}"><img src="img/modificar.png" class="img_space"></a>
+		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
 	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/ventanas-modales.js"></script>
