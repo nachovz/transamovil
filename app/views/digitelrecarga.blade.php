@@ -1,15 +1,19 @@
 {{$header}}
+<?php 
+	$user 		= Auth::user();
+	$numerillo 	= Afiliacion::where( 'usuario_id', '=', $user->id )->get()->all(); 
+?>
 
 <div id="container_reg">
 <div id="container3">
 <div id="container_home4">
-	<div id="mis_servicios_2"></div>
+	<div id="mis_servicios_3"></div>
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
 	<div class="servicio_texto_1">POR FAVOR INGRESA LOS DATOS</div>
 	<div class="logo_digitel" style="top:26px"></div>
 	<div class="afiliacion_3" style="top:114px">
 		<table id="tabla_5">
-			<tr>
+			<tr>	
 				<td>SERVICIO:</td>
 			</tr>
 			<tr>
@@ -19,7 +23,7 @@
 				<td>NÚMEROS AFILIADOS:</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(0,137,150);">MONTO:</td>
+				<td style="background-color:rgb(0,137,150);">MONTO BsF.</td>
 			</tr>
 			</tr>
 				<td>MÉTODO DE PAGO:</td>
@@ -31,12 +35,16 @@
 	</div>
 	<div id="aux_recarga">
 		{{Form::open(array('method' => 'post', 'route' => 'digitelrecargaconfirmar'))}}
-		{{Form::select('servicio', array('0' => 'DIGITEL PRE-PAGO', '1' => 'DIGITEL POST-PAGO'), null, array('id' => 'campo_registro2'))}}<br>
+		{{Form::select('servicio', array('DIGITEL PRE-PAGO' => 'DIGITEL PRE-PAGO'), null, array('id' => 'campo_registro2'))}}<br>
 		{{Form::select('numero_digitel', array('0412' => '0412')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}}<br>
-		{{Form::select('numero_afiliado', Afiliacion::lists('numero'), array('id' => 'campo_registro2'))}}<br> 
-		{{Form::text( 'monto', null, array('id' => 'campo_registro_a8') )}}<br>
-		{{Form::select('metodo_pago', array('1' => 'Pago por Promocion', '0' => 'Nueva Tarjeta de Crédito'), null, array('id' => 'campo_registro2'))}}<br>
-		{{Form::text( 'codigo', null, array('id' => 'campo_registro8') )}}<br>
+		<select id="campo_registro2" name="numero_afiliado">
+			@foreach ($numerillo as $numerillo)
+			<option>{{$numerillo->numero}}</option>
+			@endforeach
+		</select><br>
+		{{Form::text( 'monto', null, array('id' => 'campo_registro_a8', 'required', 'x-moz-errormessage' => 'Introduzca un monto', 'title' => 'Introduzca un monto') )}}<br>
+		{{Form::select('metodo_pago', array('Código Promocional' => 'Código Promocional', 'Cuenta de Banco' => 'Cuenta de Banco', 'Tarjeta de Crédito' => 'Tarjeta de Crédito'), null, array('id' => 'campo_registro2'))}}<br>
+		{{Form::text( 'codigo', null, array('id' => 'campo_registro8', 'required', 'x-moz-errormessage' => 'Introduzca el código', 'title' => 'Introduzca el código') )}}<br>
 	</div>
 	<!--<div class="afiliacion_3" style="top:255px">
 		<table id="tabla_5">

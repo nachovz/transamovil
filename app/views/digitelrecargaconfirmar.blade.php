@@ -3,10 +3,10 @@
 <div id="container_reg">
 <div id="container3">
 <div id="container_home4">
-	<div id="mis_servicios_2"></div>
+	<div id="mis_servicios_3"></div>
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
 	<div class="servicio_texto_1">POR FAVOR INGRESA LOS DATOS</div>
-	<div class="logo_digitel" style="top:16px"></div>
+	<div class="logo_digitel" style="top:26px"></div>
 	<div class="afiliacion_3" style="top:114px">
 		<table id="tabla_5">
 			<tr>
@@ -16,7 +16,7 @@
 				<td style="background-color:rgb(0,137,150);">NÚMERO:</td>
 			</tr>
 			</tr>
-				<td>MONTO:</td>
+				<td>MONTO BsF.</td>
 			</tr>
 			<tr>
 				<td style="background-color:rgb(0,137,150);">MÉTODO DE PAGO:</td>
@@ -29,16 +29,16 @@
 	<div class="afiliacion_9" style="top: 114px;">
 		<table id="tabla_6">
 			<tr>
-				<td>DIGITEL PRE-PAGO</td>
+				<td>{{Input::get('servicio')}}</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(255,255,255);">Numero Afiliado</td>
+				<td style="background-color:rgb(255,255,255);">{{Input::get('numero_afiliado')}}</td>
 			</tr>
 			</tr>
 				<td>{{Input::get('monto')}}</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(255,255,255);">Código Promocional</td>
+				<td style="background-color:rgb(255,255,255);">{{Input::get('metodo_pago')}}</td>
 			</tr>
 			</tr>
 				<td>{{Input::get('codigo')}}</td>
@@ -107,7 +107,7 @@
 	</div>
 	<div class="terms" style="display:none;"></div>	
 	<div class="buttons_6" style="top: 165px;">
-		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto') ) )}}" class="clsVentanaIFrame3"><img src="img/continuar.png" class="img_space"></a>
+		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago') ) )}}" class="clsVentanaIFrame3"><img src="img/continuar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
 	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>

@@ -384,9 +384,11 @@ display: none;
 	border: solid 1px #ccc;
 	position: fixed;
 	/*top: 30%;
-	right: 40%;*/
+	right: 40%;
 	top: 30%;
-	right: 35%;
+	right: 35%;*/
+	top: 25%;
+	right: 39%;
 	border-radius: 10px;
 	box-shadow: 0 0 15px #999;
 	background: #fff;

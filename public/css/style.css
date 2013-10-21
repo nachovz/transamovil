@@ -157,7 +157,7 @@ width: 140px; font-size:13px;}
 	display: inline-block;
 	position: absolute;
 	top: 119px;
-	right: 182px;
+	right: 162px;
 }
 
 #aux_recarga2 {
@@ -668,6 +668,15 @@ input {
 	left: 10px;
 }
 
+#mis_servicios_3 {
+	background-image: url(../img/mis_servicios_4.png);
+	width: 285px;
+	height: 35px;
+	position: relative;
+	top: 10px;
+	left: 10px;
+}
+
 #volver_home {
 	float: right;
 	position: relative;
@@ -847,7 +856,7 @@ table#tabla_4 td {
 
 table#tabla_5 {
 	border-collapse: collapse;
-	width: 217px;
+	width: 235px;
 	text-align: right;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
@@ -858,6 +867,7 @@ table#tabla_5 {
 table#tabla_5 td {
 	padding: 3px;
 	background-color: rgb(0,122,134);
+	padding-right: 10px;
 }
 
 table#tabla_6 {
@@ -931,7 +941,7 @@ table#tabla_6 td {
 }
 
 .afiliacion_3 {
-	width: 216px;
+	width: 235px;
 	position: absolute;
 	top: 111px;
 	left: 300px;
@@ -982,7 +992,7 @@ table#tabla_6 td {
 	display: inline-block;
 	position: absolute;
 	top: 111px;
-	right: 182px;
+	right: 164px;
 }
 
 .buttons_2 {
@@ -1098,7 +1108,7 @@ table#tabla_6 td {
 	color: #808080;
 	display: inline-block;
 	position: absolute;
-	top: 186px;
-	right: 73px;
+	top: 190px;
+	right: 56px;
 	line-height: 8px;
 }

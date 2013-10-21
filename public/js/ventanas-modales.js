@@ -1,5 +1,43 @@
 $(function(){
 	//evento que se produce al hacer clic en el boton cerrar de la ventana
+	$('.Afiliar_Otro').live('click',function(eEvento){
+		//prevenimos el comportamiento normal del enlace
+		eEvento.preventDefault();
+		//buscamos la ventana padre (del boton "cerrar")
+		var $objVentana=$($(this).parents().get(1));
+		
+		//cerramos la ventana suavemente
+		$objVentana.fadeOut(300,function(){
+			//eliminamos la ventana del DOM
+			$(this).remove();
+			//ocultamos el overlay suavemente
+			$('#divOverlay').fadeOut(500,function(){
+				//eliminamos el overlay del DOM
+				$(this).remove();
+				window.location.replace("afiliaciondigitel");
+			});
+		});
+	});
+
+	$('.Realizar_Recarga').live('click',function(eEvento){
+		//prevenimos el comportamiento normal del enlace
+		eEvento.preventDefault();
+		//buscamos la ventana padre (del boton "cerrar")
+		var $objVentana=$($(this).parents().get(1));
+		
+		//cerramos la ventana suavemente
+		$objVentana.fadeOut(300,function(){
+			//eliminamos la ventana del DOM
+			$(this).remove();
+			//ocultamos el overlay suavemente
+			$('#divOverlay').fadeOut(500,function(){
+				//eliminamos el overlay del DOM
+				$(this).remove();
+				window.location.replace("digitelrecarga");
+			});
+		});
+	});
+
 	$('.clsVentanaCerrar').live('click',function(eEvento){
 		//prevenimos el comportamiento normal del enlace
 		eEvento.preventDefault();
@@ -97,7 +135,7 @@ $(function(){
 		$objVentanaContenido.append('<iframe src="'+strPagina+'">');
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		$objVentanaContenido.append('<div class="modal_afiliacion_botones"><a href="http://localhost/transa/public/afiliaciondigitel"><img src="img/afiliar_otro.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="clsVentanaCerrar2"><img src="img/aceptar.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost/transa/public/digitelrecarga"><img src="img/realizar_recarga.png"></a></div>');
+		$objVentanaContenido.append('<div class="modal_afiliacion_botones"><a href="" class="Afiliar_Otro"><img src="img/afiliar_otro.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="clsVentanaCerrar2"><img src="img/aceptar.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="Realizar_Recarga"><img src="img/realizar_recarga.png"></a></div>');
 		
 		//agregamos la capa de contenido a la ventana
 		$objVentana.append($objVentanaContenido);
@@ -137,7 +175,7 @@ $(function(){
 		$objVentanaContenido.append('<iframe src="'+strPagina+'">');
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		$objVentanaContenido.append('<div class="modal_transaccion_botones"><a href="" class="clsVentanaCerrar2"><img src="img/aceptar_ovalo.png"></a>&nbsp;&nbsp;<a href="#"><img src="img/imprimir.png"></a>&nbsp;&nbsp;<a href="http://localhost/transa/public/digitelrecarga"><img src="img/realizar_otra_recarga.png"></a></div>');
+		$objVentanaContenido.append('<div class="modal_transaccion_botones"><a href="" class="clsVentanaCerrar2"><img src="img/aceptar_ovalo.png"></a>&nbsp;&nbsp;<a href="javascript:window.print()"><img src="img/imprimir.png"></a>&nbsp;&nbsp;<a href="" class="Realizar_Recarga"><img src="img/realizar_otra_recarga.png"></a></div>');
 		
 		//agregamos la capa de contenido a la ventana
 		$objVentana.append($objVentanaContenido);

@@ -20,7 +20,7 @@
 			</tr>
 		</table>		
 	</div>
-	<div class="afiliacion_9">
+	<div class="afiliacion_9" style="right:181px">
 		<table id="tabla_4">
 			<tr>
 				<td>DIGITEL PRE-PAGO:</td>
