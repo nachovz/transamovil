@@ -20,6 +20,7 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 
 @-moz-document url-prefix() { 
+
 	#boton_auxiliar_anterior, x:-moz-any-link, x:default {
 		top: -8px;
 	}
@@ -71,6 +72,50 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 	top: -354px !important;
 	}
 }
+
+@media screen and (min-width:0\0) {  
+    #campo_registro3
+    {
+      width:147px !important;
+    }
+
+    a img {
+    border: 0;
+	}
+
+	#boton_auxiliar_anterior {
+		top: 0;
+	}
+
+	#boton_auxiliar_cancelar {
+		top: 0;
+	}
+
+	#boton_auxiliar_finalizar {
+		top: -5px !important;
+		height: 18px;
+	}
+
+	#boton_continuar {
+		top: -20px !important;
+	}
+
+	#campo_registro333 {
+		width: 143px !important;
+	}
+
+	#notif {
+		top: 183px !important;
+	}
+
+	#aux_recarga {
+		right: 163px !important;
+	}
+
+	#clave_pwd {
+		top: 228px !important;
+	}
+}  
 
 #boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;border: 0;position: relative;top: -2px;}
 #boton_continuar {background-image:url(../img/continuar.png);width: 154px;height: 47px;border: 0;position: relative;top: -1px;}
