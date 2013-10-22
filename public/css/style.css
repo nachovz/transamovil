@@ -3,10 +3,8 @@
 
 body {margin:0; padding:0;}
 
-#container {height:815px; width:100%; margin:auto; background-color: #008C99; position:relative; top:115px;
-background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
+#container {height:815px; width:100%; margin:auto; background-color: #008C99; position:relative; top:115px;background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #container2 {height:815px; width:945px; margin:auto;background-color: #EBEBEB;}
-
 #header {height:115px; width:100%; background-color: #EBEBEB; position:fixed; z-index: 10000000;}
 #header_reg {height:115px; width:100%; background-color: #FFF; position:fixed; z-index: 10000000;}
 #header2 {height:115px; width:945px; margin:auto; }
@@ -14,7 +12,6 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #registt {display: inline-block; float: right;margin-top: 5px; margin-bottom: -5px;}
 #boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;margin-left: 5px;}
 #boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px}
-#boton_auxiliar_siguiente_2 {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px}
 #boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #boton_auxiliar_cancelar_2 {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 #boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
@@ -37,10 +34,6 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 		top: -8px;
 	}
 
-	#boton_auxiliar_siguiente_2 {
-		top: -8px;
-	}
-
 	#boton_auxiliar_finalizar {
 		top: -4px !important;
 	}
@@ -55,6 +48,10 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 
 	#clave_pwd {
 		right: 162px !important;
+	}
+
+	#boton_auxiliar_siguiente.fixx {
+		top: -8px;
 	}
 }
 
@@ -132,30 +129,23 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #logo2 {width:170px; height:75px; float:left; margin-top:10px; margin-left: 22px;}
 #menu {width:700px; height:55px; float:left; margin-top:20px; margin-left:74px;}
 #regist input#fix {position: relative; top: -4px;}
-
 #body {height:500px; width:945px; margin:auto; float:left;}
-
 #foto {height:380px; width:945px; margin:auto; float:left;z-index:2;}
 #fotoregistro {height:280px; width:865px; margin:auto; float:left;z-index:3; background-image: url(../img/banner_registro.jpg); background-repeat: no-repeat;
 padding-top:100px; padding-left:80px;}
-
 #submenuhome {height:95px; width:945px; margin:auto; float:left;}
 #submenuhome a{ text-decoration:none;}
-#submenuhome  #item{height:95px;  float:left; font-family: 'Open Sans', sans-serif; color:#4D4D4D; padding-left: 15px;
-width: 140px; font-size:13px;} 
+#submenuhome  #item{height:95px;  float:left; font-family: 'Open Sans', sans-serif; color:#4D4D4D; padding-left: 15px;width: 140px; font-size:13px;} 
 #submenuhome  #item .linea{ width:1px; height:70px; float:left; margin-top:15px; background:#4D4D4D; }
 #submenuhome   h1{ margin-top:5px; margin-left:5px; margin-bottom:0px; font-size:24px;} 
 #submenuhome  #item .texto:hover{background:#008C99; color:#FFF; width:98%; height:40px; margin-left: 5px;}
 #submenuhome  #item .activo{ background:#008C99; color:#FFF; width:98%; height:40px; margin-left: 5px;}
 #submenuhome  #item .texto{ padding-left:5px;}
-
 #thumbs {height:256px; width:450px; float:left; margin-left:15px;}
-
 #contenido {height:370px; width:790px; margin:auto; float:left; padding:20px;text-align: justify;}
 #registro {margin-right: 40px;}
 #foot {height:60px; width:945px; margin:auto; padding-top:10px; text-align: center; line-height:1.5;}
 #bottom {height:80px; width:100%; background-color: #CCC;position:relative; top:115px;}
-
 .user_session {background-image: url(../img/temporal/10.png);width:500px;height: 14px;float: right;}
 .user_last_login {display:none; background-image: url(../img/temporal/11.png);width:184px;height: 13px;margin-top: 100px;float: right;position: relative;right: -390px;}
 
