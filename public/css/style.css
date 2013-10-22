@@ -52,19 +52,19 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
     
     #campo_registro3 {
-		width: 143px;
+		width: 143px !important;
 	}
 
 	#campo_registro33 {
-		width: 160px;
+		width: 160px !important;
 	}
 
 	#campo_registro333 {
-		width: 139px;
+		width: 139px !important;
 	}
 
 	#aux_recarga {
-		right: 164px;
+		right: 164px !important;
 	}
 
 	#noticiatitulo {
