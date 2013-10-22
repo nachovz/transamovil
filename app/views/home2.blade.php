@@ -36,6 +36,8 @@
 		<a href="{{URL::route( 'misservicios' )}}"><img src="img/mis_servicios.png" class="img_space"></a>
 		<img src="img/administracion.png">
 	</div>
+	<div id="alertatitulo"></div>
+	<div id="noticiatitulo"></div>
 </div><!--container_home2-->
 <div id="container_alertas"></div><!--container_alertas-->
 <div id="container_noticias"></div><!--container_noticias-->

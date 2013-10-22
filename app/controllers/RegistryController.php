@@ -11,26 +11,26 @@ class RegistryController extends BaseController {
 
 	public function registro_final()
 	{
-		$user 										= new User();
+		$user 								= new User();
 		$user->username						= Input::get('usuario');
-		$user->email							= Input::get('mail');
+		$user->email						= Input::get('mail');
 		$user->nombre 						= Input::get('nombre');
 		$user->apellido 					= Input::get('apellido');
 		$user->password 					= Hash::make( '12345' );
-		$user->banco_default_id		= 1;
-		$user->campo_laboral_id		= 1;
-		$user->profesion_id				= 1;
-		$user->fecha_nacimiento		= date('Y-m-d');
+		$user->banco_default_id				= 1;
+		$user->campo_laboral_id				= 1;
+		$user->profesion_id					= 1;
+		$user->fecha_nacimiento				= date('Y-m-d');
 		$user->transapin					= '123456';
-		$user->sexo								= 'm';
-		$user->nivel_educativo		= 'Universitario';
-		$user->ingreso_mensual		= 30000;
-		$user->estado_civil				= 'Soltero';
-		$user->banco_default_id		= 1;
-		$user->tipo_documento			= 'Cédula';
-		$user->nro_documento			= '14395206';
-		$user->pregunta_seguridad	= Input::get('pregunta_seguridad');
-		$user->respuesta_seguridad= 'Ola k ase?';		
+		$user->sexo							= 'm';
+		$user->nivel_educativo				= 'Universitario';
+		$user->ingreso_mensual				= 30000;
+		$user->estado_civil					= 'Soltero';
+		$user->banco_default_id				= 1;
+		$user->tipo_documento				= 'Cédula';
+		$user->nro_documento				= '14395206';
+		$user->pregunta_seguridad			= Input::get('pregunta_seguridad');
+		$user->respuesta_seguridad			= 'Ola k ase?';		
 
 		$user->save();
 

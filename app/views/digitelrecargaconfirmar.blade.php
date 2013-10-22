@@ -24,6 +24,9 @@
 			</tr>
 				<td>CODIGO PROMOCIONAL:</td>
 			</tr>
+			<tr>
+				<td style="background-color:rgb(0,137,150);">INTRODUZCA CONTRASEÑA:</td>
+			</tr>
 		</table>		
 	</div>
 	<div class="afiliacion_9" style="top: 114px;">
@@ -106,10 +109,13 @@
 		{{Form::checkbox('name', 'value')}}<span class="radio_check">Afiliar</span>
 	</div>
 	<div class="terms" style="display:none;"></div>	
-	<div class="buttons_6" style="top: 165px; width:494px">
+	<div class="buttons_6" style="top: 190px; width:494px">
 		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago') ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a>
 		<a href="{{URL::route( 'digitelrecarga' )}}"><img src="img/modificar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
+	</div>
+	<div id="clave_pwd">
+		{{Form::open(array('method' => 'post')) . Form::password( 'password_check', array('id' => 'campo_registro') )}}
 	</div>
 	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/ventanas-modales.js"></script>

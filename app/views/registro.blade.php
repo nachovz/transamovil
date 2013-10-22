@@ -7,7 +7,8 @@
 			<div id="img_reg"></div>
 			<div id="paso_1"></div>			
 			<div id="form_reg">
-				{{Form::label( 'usuario', 'USUARIO: *', array('id' => 'labels_registro')) . Form::text( 'usuario', null, array('id' => 'campo_registro') )}}
+				{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registro') )}}
+				{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail_check', null, array('id' => 'campo_registro') )}}
 				{{Form::label( 'password', 'CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password', array('id' => 'campo_registro') )}}
 				{{Form::label( 'password_check', 'CONFIRMAR CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password_check', array('id' => 'campo_registro') )}}
 				<p id="labels_registro_2">(Debe estar compuesta por números y letras)</p>
@@ -25,12 +26,12 @@
 				</div>
 				<div id="auxiliar">
 				{{Form::label( 'celular', 'TELÉFONO CELULAR: *', array('id' => 'labels_registro')) . Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}} 
-				{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registro') )}}
+				{{Form::label( 'mail', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registro') )}}
 				</div>
 			</div>
-			<div id="text_reg">*campos obligatorios</div>
+			
 			<div id="bot_siguiente">
-				{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'value' => '1'))}}&nbsp;&nbsp;{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
+				{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'value' => '1'))}}&nbsp;&nbsp;{{Form::button('', array('id' => 'boton_auxiliar_cancelar_2'))}}
 			</div>
 
 		</div><!--contenedor_registro_1-->
@@ -39,7 +40,7 @@
 			<div id="img_reg"></div>
 			<div id="paso_2"></div>			
 			<div id="form_reg">
-				{{Form::label( 'ced_pas', 'CÉDULA/PASAPORTE: *', array('id' => 'labels_registro')) . Form::select('prefijo_ced_pas', array('V' => 'V-', 'E' => 'E-', 'J' => 'J-', 'P' => 'P-')) . Form::text( 'ced_pas', null, array('id' => 'campo_registro3') )}}
+				{{Form::label( 'ced_pas', 'CÉDULA/PASAPORTE: *', array('id' => 'labels_registro')) . Form::select('prefijo_ced_pas', array('V' => 'V-', 'E' => 'E-', 'J' => 'J-', 'P' => 'P-')) . Form::text( 'ced_pas', null, array('id' => 'campo_registro33') )}}
 				<div id="aux3">
 				{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'campo_registro') )}}
 				{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'campo_registro') )}}
@@ -65,7 +66,7 @@
 				{{Form::label( 'tlf_habitacion', 'TELÉFONO HABITACIÓN: *', array('id' => 'labels_registro')) . Form::text( 'tlf_habitacion', null, array('id' => 'campo_registro') )}}
 				{{Form::label( 'tlf_oficina', 'TELÉFONO OFICINA: *', array('id' => 'labels_registro')) . Form::text( 'tlf_oficina', null, array('id' => 'campo_registro') )}}
 			</div>
-			<div id="text_reg">*campos obligatorios</div>
+			
 			<div id="bot_siguiente_2">
 				{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2'))}}&nbsp;&nbsp;
 				{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'value' => '2', 'style' => 'display:none;'))}}

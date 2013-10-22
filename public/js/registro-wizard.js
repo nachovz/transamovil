@@ -2,9 +2,15 @@ $(document).ready(function(){
 
 	$('#boton_auxiliar_siguiente').live( 'click', wizard_next);
 	$('#boton_auxiliar_anterior').live( 'click', wizard_prev);
+	$('#boton_auxiliar_cancelar').live( 'click', wizard_cancel);
 	$('#cierre-modal-confirmacion-registro').live( 'click', register_modal_close)
 
 });
+
+function wizard_cancel( e )
+{
+	window.location.replace("home");
+}
 
 function wizard_next( e )
 {

@@ -38,9 +38,10 @@
 		{{Form::select('servicio', array('DIGITEL PRE-PAGO' => 'DIGITEL PRE-PAGO'), null, array('id' => 'campo_registro2'))}}<br>
 		{{Form::select('numero_digitel', array('0412' => '0412')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}}<br>
 		<select id="campo_registro2" name="numero_afiliado">
-			@foreach ($numerillo as $numerillo)
-			<option>{{$numerillo->numero}}</option>
-			@endforeach
+			<option>SELECCIONE</option>
+				@foreach ($numerillo as $numerillo)
+				<option>{{$numerillo->numero}}</option>
+				@endforeach
 		</select><br>
 		{{Form::text( 'monto', null, array('id' => 'campo_registro_a8', 'required', 'x-moz-errormessage' => 'Introduzca un monto', 'title' => 'Introduzca un monto') )}}<br>
 		{{Form::select('metodo_pago', array('Código Promocional' => 'Código Promocional', 'Cuenta de Banco' => 'Cuenta de Banco', 'Tarjeta de Crédito' => 'Tarjeta de Crédito'), null, array('id' => 'campo_registro2'))}}<br>

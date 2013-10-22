@@ -15,7 +15,7 @@
 		<div class="modal_datos_1_wrapper">
 			<div class="modal_datos_1a">
 				<span class="modal_datos_1">
-					TU USUARIO ES: <span class="modal_datos_1_bold">{{$nombre}}</span><br>
+					TU USUARIO ES: <span class="modal_datos_1_bold">{{$email}}</span><br>
 					Y TU TRANSA-PIN: <span class="modal_datos_1_bold">#582396</span>
 				</span>
 			</div>
