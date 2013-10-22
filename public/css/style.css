@@ -21,31 +21,39 @@ background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 
 @-moz-document url-prefix() { 
 
-	#boton_auxiliar_anterior, x:-moz-any-link, x:default {
+	#campo_registro3 {
+    	width: 147px !important;
+	}
+
+	#campo_registro333 {
+    	width: 143px !important;
+	}
+
+	#boton_auxiliar_anterior {
 		top: -8px;
 	}
 
-	#boton_auxiliar_cancelar, x:-moz-any-link, x:default {
+	#boton_auxiliar_cancelar {
 		top: -8px;
 	}
 
-	#boton_auxiliar_siguiente_2, x:-moz-any-link, x:default {
+	#boton_auxiliar_siguiente_2 {
 		top: -8px;
 	}
 
-	#boton_auxiliar_finalizar, x:-moz-any-link, x:default {
+	#boton_auxiliar_finalizar {
 		top: -4px !important;
 	}
 
-	#boton_continuar, x:-moz-any-link, x:default {
+	#boton_continuar {
 		top: -16px !important;
 	}
 
-	#notif, x:-moz-any-link, x:default {
+	#notift {
 		top: 183px !important;
 	}
 
-	#clave_pwd, x:-moz-any-link, x:default {
+	#clave_pwd {
 		right: 162px !important;
 	}
 }
