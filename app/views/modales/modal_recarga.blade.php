@@ -73,8 +73,18 @@
 		<div class="modal_transaccion_exitosa_texto1_wrapper">
 			<span class="transaccion_exitosa_texto_1">Para mayor información llame al 121 desde su Digitel o 0412 9121121</span>
 		</div>
+		
+		<?php	$afiliacion = Auth::user()->afiliaciones()->where('numero', '=', '0412' . $numero_afiliado)->get()->first();?>
+		@if( $afiliacion == null )
 		<div class="modal_transaccion_exitosa_check">
 			<input type="checkbox"><span class="transaccion_exitosa_texto_1 check">Desea guardar en su lista de números afiliados:</span>
+			{{Form::open( array( 'url' => '/modal/afiliacionDigitelCrear', 'method' => 'post' ) )}}
+			<span class="transaccion_exitosa_texto_1">{{Form::label('alias', 'Alias: ') . Form::text('alias')}}</span>
+			{{Form::hidden('numero', '0412' . $numero_afiliado)}}
+			{{Form::submit()}}
+			{{Form::close()}}
 		</div>
+		@endif
+	
 	</body>
 </html>

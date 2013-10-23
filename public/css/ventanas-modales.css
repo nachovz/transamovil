@@ -546,7 +546,7 @@ display: none;
 
 .clsVentana3{
 	width: 460px;
-	height: 245px;
+	height: 269px;
 	border: solid 1px #ccc;
 	position: absolute;
 	top: 30%;
@@ -563,7 +563,7 @@ display: none;
 	}
 		.clsVentanaContenido3 iframe{
 			width: 458px;
-			height: 241px;
+			height: 269px;
 			border-radius: 10px;
 			border: 0.1px solid #FFF;
 			overflow: hidden;
@@ -574,7 +574,7 @@ display: none;
 
 .clsVentana3{
 	width: 460px;
-	height: 245px;
+	height: 269px;
 	border: solid 1px #ccc;
 	position: absolute;
 	top: 36%;
@@ -586,7 +586,7 @@ display: none;
 	display: none;
 }
 	.clsVentanaContenido3{
-		height: 245px;
+		height: 269px;
 		border-radius: 0 0 3px 3px;
 	}
 		.clsVentanaContenido3 iframe{
@@ -602,7 +602,7 @@ display: none;
 
 .clsVentana3{
 	width: 460px;
-	height: 245px;
+	height: 269px;
 	border: solid 1px #ccc;
 	position: absolute;
 	top: 35%;
@@ -619,7 +619,7 @@ display: none;
 	}
 		.clsVentanaContenido3 iframe{
 			width: 458px;
-			height: 241px;
+			height: 269px;
 			border-radius: 10px;
 			border: 0.1px solid #FFF;
 			overflow: hidden;

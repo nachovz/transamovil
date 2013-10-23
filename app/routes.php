@@ -50,3 +50,4 @@ Route::get( '/modal/registro/{email}/{nombre}', array( 'uses' => 'ModalesControl
 Route::get( '/modal/recargadigitelconfirmar/{monto}/{numero_afiliado}/{metodo_pago}', array( 'uses' => 'ModalesController@recargadigitelconfirmar', 'as' => 'modal_recarga_confirmar', 'before' => 'auth' ) );
 Route::get( '/modal/afiliacionDigitelModificacion/{afiliacion_id}', array( 'uses' => 'ModalesController@afiliacionDigitelModificacion'));
 Route::post( '/modal/afiliacionDigitelModificar', array( 'uses' => 'ModalesController@afiliacionDgitelModificar'));
+Route::post( '/modal/afiliacionDigitelCrear', array('uses' => 'ModalesController@afiliacionDigitelCrear') );
