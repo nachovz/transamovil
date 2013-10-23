@@ -102,7 +102,7 @@ $(document).ready(function(){
 		</select><br>
 		{{Form::text( 'monto', null, array('class' => 'monnto', 'id' => 'campo_registro_a8', 'required', 'x-moz-errormessage' => 'Introduzca un monto', 'title' => 'Introduzca un monto') )}}<br>
 		{{Form::select('metodo_pago', array('Cuenta de Banco' => 'Cuenta de Banco', 'Tarjeta de Crédito' => 'Tarjeta de Crédito', 'Código Promocional' => 'Código Promocional'), null, array('id' => 'campo_registro2', 'class' => 'selectmetodopago'))}}<br>
-		{{Form::text( 'codigo', null, array('class' => 'culo2', 'id' => 'campo_registro8', 'required', 'x-moz-errormessage' => 'Introduzca el código', 'title' => 'Introduzca el código', 'style' => 'display:none;') )}}<br>
+		{{Form::text( 'codigo', null, array('pattern' => '((1234[1-9]))', 'class' => 'culo2', 'id' => 'campo_registro8', 'required', 'x-moz-errormessage' => 'Introduzca un código correcto', 'title' => 'Introduzca un código correcto', 'style' => 'display:none;') )}}<br>
 	</div>
 	<!--<div class="afiliacion_3" style="top:255px">
 		<table id="tabla_5">
