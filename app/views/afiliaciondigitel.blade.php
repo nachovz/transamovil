@@ -13,8 +13,9 @@ $(document).ready(function() {
             e.target.setCustomValidity("");
         };
     }
-})
+});
 </script>
+<script src="{{asset('js/modal-modificar-afiliacion.js')}}"></script>
 <div id="container_reg">
 <div id="container3">
 <div id="container_home3">
@@ -37,7 +38,7 @@ $(document).ready(function() {
 				@if( ! empty( $afiliaciones ) )
 					@foreach( $afiliaciones as $af )
 					<tr>
-						<td>{{Form::radio('1', '1')}}</td>
+						<td>{{Form::radio('afiliacion_id', $af->id)}}</td>
 						<td>Digitel</td>
 						<td>{{$af->numero}}</td>
 						<td>{{$af->alias}}</td>
@@ -57,7 +58,7 @@ $(document).ready(function() {
 
 	</div>
 	<div class="buttons_1">
-		<img src="img/modificar.png" class="img_space">
+		<img src="img/modificar.png" class="img_space clsVentanaModificarAfiliacion">
 		<img src="img/eliminar.png">
 	</div>
 	<div class="servicio_texto_4">INGRESA LOS DATOS PARA AFILIAR NUEVOS NÚMEROS AL SERVICIO:</div>

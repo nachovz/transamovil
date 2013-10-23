@@ -10,10 +10,10 @@ class ModalesController extends BaseController
 
 		if( ! $afiliacion )
 		{
-			$afiliacion 					= new Afiliacion();
+			$afiliacion 								= new Afiliacion();
 			$afiliacion->servicio_id		= 1;
-			$afiliacion->numero 			= $prefijo . $numero;
-			$afiliacion->alias				= $alias;
+			$afiliacion->numero 				= $prefijo . $numero;
+			$afiliacion->alias					= $alias;
 			
 			$user->afiliaciones()->save( $afiliacion );
 		}
@@ -32,5 +32,27 @@ class ModalesController extends BaseController
 		//$respuesta = json_decode( $respuesta );
 
 		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago );
+	}
+
+	public function afiliacionDigitelModificacion( $afiliacion_id )
+	{
+		return View::make('modales.afiliacion_modificar_numero')->with('afiliacion', Afiliacion::find($afiliacion_id));
+	}
+
+	public function afiliacionDgitelModificar()
+	{
+		$afiliacion 					= Afiliacion::find(Input::get('afiliacion_id'));
+		$afiliacion->numero		= Input::get('numero');
+		$afiliacion->alias		= Input::get('alias');
+
+		try
+		{
+			$afiliacion->save();
+		}
+		catch( Exception $e )
+		{
+
+		}
+		return View::make('modales.afiliacion_modificar_numero_confirmar');
 	}
 }
