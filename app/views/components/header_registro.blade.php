@@ -186,7 +186,12 @@ function MM_swapImage() { //v3.0
 <div id="regist"> <a href="{{URL::route( 'registro' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('registro','','img/buttons/registro_over.jpg',1)"><img src="img/buttons/registro_up.jpg" alt="registro" width="80" height="22" id="registro" border="0" style="display:block"/></a></div><!--regist-->
 
 
-<div id="regist">{{Form::open(array('route' => 'login', 'method' => 'post')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico', 'id' => 'fix') )}}&nbsp;&nbsp;{{Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}</div>
+<div id="regist">
+{{Form::open(array('route' => 'login', 'method' => 'post'))}}
+
+{{Form::label( 'email', 'EMAIL: ', array('id' => 'labelheaderemail')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su correo', 'title' => 'Introduzca su correo') )}}
+
+&nbsp;&nbsp;{{Form::label( 'password', 'Contraseña: ', array('id' => 'labelheaderemail')) . Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su clave', 'title' => 'Introduzca su clave') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}</div>
 
 <div id="logo"><a href="{{URL::route( 'index' )}}"><img src="img/logo_transparente.png" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
 

@@ -173,6 +173,21 @@ function MM_swapImage() { //v3.0
   var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 }
+
+$(document).ready(function() {
+    var elements = document.getElementsByTagName("INPUT");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Error");
+            }
+        };
+        elements[i].oninput = function(e) {
+            e.target.setCustomValidity("");
+        };
+    }
+})
 </script>
 <link rel="stylesheet" type="text/css" href="css/ventanas-modales.css">
 <link rel="stylesheet" type="text/css" href="{{asset('css/registro-wizard.css')}}" />
@@ -193,7 +208,28 @@ function MM_swapImage() { //v3.0
   {{Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
 </div>-->
 
-<div id="regist">{{Form::open(array('route' => 'login', 'method' => 'post')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico', 'id' => 'fix') )}}&nbsp;&nbsp;{{Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}</div>
+<div id="regist">{{Form::open(array('route' => 'login', 'method' => 'post'))}}
+
+@if( isset( $message ) && ! empty( $message ) )
+    <legend>{{$message}}</legend>
+    <?php unset( $message );?>
+@endif
+
+@if( $errors->has( 'email' ) )
+      @foreach( $errors->get( 'email' ) as $error )
+        <label for="email" class="error">{{$error}}</label>
+      @endforeach
+@endif
+
+{{Form::label( 'email', 'EMAIL: ', array('id' => 'labelheaderemail')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su correo', 'title' => 'Introduzca su correo') )}}
+
+@if( $errors->has( 'password' ) )
+      @foreach( $errors->get( 'password' ) as $error )
+      <label for="password" class="error">{{$error}}</label>
+      @endforeach
+@endif
+
+&nbsp;&nbsp;{{Form::label( 'password', 'Contraseña: ', array('id' => 'labelheaderemail')) . Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su clave', 'title' => 'Introduzca su clave') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}</div>
 
 <div id="logo"><a href="{{URL::route( 'index' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','img/logo.jpg',0)"><img src="img/logo.jpg" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
 

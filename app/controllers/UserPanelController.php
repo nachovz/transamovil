@@ -6,7 +6,7 @@ class UserPanelController extends BaseController {
 	{
 		//Crear reglas de validacion de formulario. Mail/Clave requerido
 		$validator = Validator::make(Input::all(), array('email' => 'required','password' => 'required'));
-
+		
 		//Si el formulario valida
 		if(! $validator->fails())
 		{
@@ -22,14 +22,15 @@ class UserPanelController extends BaseController {
 			}
 			else
 			{
+				Session::flash( 'message', 'El nombre de usuario y la contraseña no coinciden, por favor intenta de nuevo.' );
 				//Redireccionar al home
-				return Redirect::to('/')->withInput();
+				return Redirect::to('/')->withErrors($validator)->withInput();
 			}
 		}
 		else
 		{
 			//Redireccionar hacia el home, incluyendo mensajes de error de validador
-			return Redirect::to('/')->withInput();
+			return Redirect::to('/')->withErrors($validator)->withInput();
 		}
 	}
 

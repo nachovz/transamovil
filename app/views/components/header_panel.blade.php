@@ -18,6 +18,7 @@
 <!--FONT-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
 <!--FONT-->
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <!--FONT-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
@@ -185,10 +186,11 @@ function MM_swapImage() { //v3.0
 <div id="header2">
 <div id="regist"> <a href="{{URL::route( 'logout' )}}"><img src="img/cerrar_sesion.png" alt="registro" width="104" height="23" id="registro" border="0" style="display:block"/></a></div><!--regist-->
 
-<div class="user_session">Bienvenido(a) {{Auth::user()->nombre . ' ' . Auth::user()->apellido}} <span>Transa-PIN: 582396<span></div>
-<div class="user_last_login"></div>
+<div class="user_session">Bienvenido(a) {{Auth::user()->nombre . ' ' . Auth::user()->apellido}}<br><span>Transa-PIN: 582396<span></div>
+
 
 <div id="logo"><a href="{{URL::route( 'home' )}}"><img src="img/logo_transparente.png" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
+<div class="user_last_login">Último Acceso: <span style="font-weight:bold;">{{date('d/m/Y',strtotime( 'now' ))}}<span></div>
 
 </div><!--header2-->
 </div><!--header-->

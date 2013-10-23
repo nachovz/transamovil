@@ -1,8 +1,62 @@
 {{$header}}
 <?php 
 	$user 		= Auth::user();
-	$numerillo 	= Afiliacion::where( 'usuario_id', '=', $user->id )->get()->all(); 
+	$numerillo 	= Afiliacion::where( 'usuario_id', '=', $user->id )->get()->all();
 ?>
+
+<script>
+$(document).ready(function(){	
+	$('.selectmetodopago').on('change',function(){
+	     var selection = $(this).val();
+	    switch(selection){
+	    	case "Código Promocional":
+	    		$(".culo1").show()
+	    		$(".culo2").show()
+	    		$(".monnto").val("20")
+	    		$(".monnto").attr('readonly', 'readonly')
+	   			break;
+	    	default:
+	 	 	  	$(".culo1").hide()
+	 		  	$(".culo2").hide()
+	    }
+	});
+
+	$('.nuevocelular').on('input',function(){
+        if( !isNaN($(this).val()) ){
+        $(".numafiliado").attr("disabled", "disabled")
+        }
+        
+        if( $(this).val().length == 0 ){
+        $(".numafiliado").removeAttr("disabled")
+        }
+    });
+
+    $('.numafiliado').on('change',function(){
+        if( $(this).val()==="SELECCIONE"){
+        $('.nuevocelular').removeAttr("disabled")
+        $('.pref_dig').removeAttr("disabled")
+        }
+        else{
+        $('.nuevocelular').attr("disabled", "disabled")
+        $('.pref_dig').attr("disabled", "disabled")
+        }
+    });
+
+    var elements = document.getElementsByTagName("INPUT");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Error");
+            }
+        };
+        elements[i].oninput = function(e) {
+            e.target.setCustomValidity("");
+        };
+    }
+
+});
+</script>
 
 <div id="container_reg">
 <div id="container3">
@@ -11,13 +65,13 @@
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
 	<div class="servicio_texto_1">POR FAVOR INGRESA LOS DATOS</div>
 	<div class="logo_digitel" style="top:26px"></div>
-	<div class="afiliacion_3" style="top:114px">
+	<div class="afiliacion_3" style="top:114px;">
 		<table id="tabla_5">
 			<tr>	
 				<td>SERVICIO:</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(0,137,150);">NÚMERO DIGITEL<span id="ffs">(Móvil,Fijo o BAM):</span></td>
+				<td style="background-color:rgb(0,137,150);">NÚMERO DIGITEL<span id="ffs"> (Móvil, Fijo o BAM):</span></td>
 			</tr>
 			</tr>
 				<td>NÚMEROS AFILIADOS:</td>
@@ -28,24 +82,27 @@
 			</tr>
 				<td>MÉTODO DE PAGO:</td>
 			</tr>
-			<tr>
-				<td style="background-color:rgb(0,137,150);">CÓDIGO PROMOCIONAL:</td>
-			</tr>
 		</table>		
-	</div>
+	
+	<table id="tabla_7" style="margin-top:20px;">
+		<tr class ="culo1" style="display:none;">
+			<td style="background-color:rgb(0,137,150);">CÓDIGO PROMOCIONAL:</td>
+		</tr>
+	</table>
+	</div> 
 	<div id="aux_recarga">
 		{{Form::open(array('method' => 'post', 'route' => 'digitelrecargaconfirmar'))}}
 		{{Form::select('servicio', array('DIGITEL PRE-PAGO' => 'DIGITEL PRE-PAGO'), null, array('id' => 'campo_registro2'))}}<br>
-		{{Form::select('numero_digitel', array('0412' => '0412')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}}<br>
-		<select id="campo_registro2" name="numero_afiliado">
+		{{Form::select('numero_digitel', array('0412' => '0412', '0212' => '0212', '0234' => '0234', '0235' => '0235', '0237' => '0237', '0238' => '0238', '0239' => '0239', '0240' => '0240', '0241' => '0241', '0242' => '0242', '0243' => '0243', '0244' => '0244', '0245' => '0245', '0246' => '0246', '0247' => '0247', '0248' => '0248', '0249' => '0249', '0251' => '0251', '0252' => '0252', '0253' => '0253', '0254' => '0254', '0255' => '0255', '0256' => '0256', '0257' => '0257', '0258' => '0258', '0259' => '0259', '0261' => '0261', '0262' => '0262', '0263' => '0263', '0264' => '0264', '0265' => '0265', '0266' => '0266', '0267' => '0267', '0268' => '0268', '0269' => '0269', '0271' => '0271', '0272' => '0272', '0273' => '0273', '0274' => '0274', '0275' => '0275', '0276' => '0276', '0277' => '0277', '0278' => '0278', '0279' => '0279', '0281' => '0281', '0282' => '0282', '0283' => '0283', '0284' => '0284', '0285' => '0285', '0286' => '0286', '0287' => '0287', '0288' => '0288', '0289' => '0289', '0291' => '0291', '0292' => '0292', '0293' => '0293', '0294' => '0294', '0295' => '0295'), null, array('class' => 'pref_dig', 'id' => 'campo_registro5')) . Form::text( 'numero_afiliado', null, array('class' => 'nuevocelular', 'id' => 'campo_registro3aa') )}}<br>
+		<select id="campo_registro2" name="numero_afiliado" class="numafiliado">
 			<option>SELECCIONE</option>
 				@foreach ($numerillo as $numerillo)
-				<option>{{$numerillo->numero}}</option>
+				<option>{{$numerillo->numero}} - {{$numerillo->alias}}</option>
 				@endforeach
 		</select><br>
-		{{Form::text( 'monto', null, array('id' => 'campo_registro_a8', 'required', 'x-moz-errormessage' => 'Introduzca un monto', 'title' => 'Introduzca un monto') )}}<br>
-		{{Form::select('metodo_pago', array('Código Promocional' => 'Código Promocional', 'Cuenta de Banco' => 'Cuenta de Banco', 'Tarjeta de Crédito' => 'Tarjeta de Crédito'), null, array('id' => 'campo_registro2'))}}<br>
-		{{Form::text( 'codigo', null, array('id' => 'campo_registro8', 'required', 'x-moz-errormessage' => 'Introduzca el código', 'title' => 'Introduzca el código') )}}<br>
+		{{Form::text( 'monto', null, array('class' => 'monnto', 'id' => 'campo_registro_a8', 'required', 'x-moz-errormessage' => 'Introduzca un monto', 'title' => 'Introduzca un monto') )}}<br>
+		{{Form::select('metodo_pago', array('Cuenta de Banco' => 'Cuenta de Banco', 'Tarjeta de Crédito' => 'Tarjeta de Crédito', 'Código Promocional' => 'Código Promocional'), null, array('id' => 'campo_registro2', 'class' => 'selectmetodopago'))}}<br>
+		{{Form::text( 'codigo', null, array('class' => 'culo2', 'id' => 'campo_registro8', 'required', 'x-moz-errormessage' => 'Introduzca el código', 'title' => 'Introduzca el código', 'style' => 'display:none;') )}}<br>
 	</div>
 	<!--<div class="afiliacion_3" style="top:255px">
 		<table id="tabla_5">

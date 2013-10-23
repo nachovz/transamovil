@@ -6,7 +6,10 @@ class FrontController extends BaseController {
 	{
 		$header = View::make( 'components.header' , array( 'title' => "TransaMóvil" ));
 		$footer = View::make( 'components.footer' );
-		return View::make( 'index' , array( 'header' => $header , 'footer' => $footer ));
+		$view_data 	= array();
+		$view_data['message'] =  Session::get('message');
+
+		return View::make( 'index' , array( 'header' => $header , 'footer' => $footer, 'view_data' => $view_data ));
 	}
 
 	public function comofunciona()
