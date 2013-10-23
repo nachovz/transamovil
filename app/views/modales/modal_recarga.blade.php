@@ -10,7 +10,7 @@
 		</div>
 		<div class="modal_transaccion_exitosa_datos_wrapper">
 			<div class="modal_transaccion_exitosa_datos">
-				<table>
+				<table style="width: 339px;">
 					<tr>
 						<td>
 							<span class="modal_transaccion_exitosa_contenido">MONTO RECARGADO:</span>
