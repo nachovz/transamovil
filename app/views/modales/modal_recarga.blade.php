@@ -81,7 +81,7 @@
 			{{Form::open( array( 'url' => '/modal/afiliacionDigitelCrear', 'method' => 'post' ) )}}
 			<span class="transaccion_exitosa_texto_1">{{Form::label('alias', 'Alias: ') . Form::text('alias')}}</span>
 			{{Form::hidden('numero', '0412' . $numero_afiliado)}}
-			{{Form::submit()}}
+			{{Form::submit('', array('style' => 'background-image:url("../../../../img/afiliar.png");width: 62px;height: 18px;border: 0;'))}}
 			{{Form::close()}}
 		</div>
 		@endif
