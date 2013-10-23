@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>{{$title}}</title>
-
+<script src="js/css_browser_selector.js" type="text/javascript"></script>
 <link rel="icon" href="img/favicon.ico">
 <link rel="shortcut icon" href="img/favicon.ico">
 <link rel="apple-touch-icon" href="img/favicon.ico">

@@ -1347,3 +1347,143 @@ table#tabla_7 td {
 	top: -352px;
 	right: -582px;
 }
+
+.mac.gecko #auxiliar {
+    margin-top: 69px !important;
+}
+
+.mac.gecko #campo_registro3 {
+    width: 137px !important;
+}
+
+.mac.gecko #campo_registro33 {
+	width: 155px !important;
+}
+
+.mac.gecko #campo_registro3aa {
+    width: 135px !important;
+}
+
+.mac.gecko #boton_auxiliar_finalizar {
+    top: -4px !important;
+    height: 18px;
+}
+
+.mac.gecko #boton_continuar {
+    top: -18px !important;
+}
+
+.mac.gecko #aux_recarga {
+    top: 116px !important;
+    right: 161px !important;
+}
+
+.mac.gecko #notif {
+    top: 186px !important;
+    right: 60px !important;
+}
+
+.mac.gecko #campo_registro8 {
+    margin-top: 0;
+}
+
+.mac.chrome #campo_registro3 {
+	width: 139px !important;
+}
+
+.mac.chrome #campo_registro33 {
+    width: 155px !important;
+}
+
+.mac.chrome #boton_auxiliar_anterior {
+	top: -3px !important;
+}
+
+.mac.chrome	#boton_auxiliar_cancelar {
+	top: -3px !important;
+}
+
+.mac.chrome #boton_auxiliar_siguiente {
+	top: -2px;
+}
+
+.mac.chrome #campo_registro333 {
+	width: 136px !important;
+}
+
+.mac.chrome #boton_continuar {
+	top: -3px;
+}
+
+.mac.chrome #campo_registro3aa {
+	width: 139px !important;
+}
+
+.mac.chrome #aux_recarga {
+	right: 163px !important;
+	top: 120px !important;
+}
+
+.mac.chrome #notif {
+	top: 183px;
+	right: 51px;
+}
+
+.mac.chrome #campo_registro8 {
+	top: 25px;
+}
+
+.mac.chrome #clave_pwd {
+	right: 162px;
+}
+
+.mac.safari #campo_registro3 {
+	width: 139px !important;
+}
+
+.mac.safari #campo_registro33 {
+    width: 155px !important;
+}
+
+.mac.safari #boton_auxiliar_anterior {
+	top: -4px !important;
+}
+
+.mac.safari #boton_auxiliar_cancelar {
+	top: -4px !important;
+}
+
+.mac.safari #boton_auxiliar_siguiente {
+	top: -3px !important;
+}
+
+.mac.safari #boton_auxiliar_finalizar {
+    top: -4px !important;
+    height: 18px;
+}
+
+.mac.safari #boton_continuar {
+	top: -35px;
+}
+
+.mac.safari #campo_registro3aa {
+	width: 139px !important;
+}
+
+.mac.safari #aux_recarga {
+	right: 163px !important;
+	top: 120px !important;
+}
+
+.mac.safari #notif {
+	top: 183px;
+	right: 51px;
+}
+
+.mac.safari #campo_registro8 {
+	top: 25px;
+}
+
+.mac.safari #clave_pwd {
+	right: 162px;
+}
