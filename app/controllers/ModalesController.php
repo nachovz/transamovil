@@ -44,7 +44,7 @@ class ModalesController extends BaseController
 	public function afiliacionDgitelModificar()
 	{
 		$afiliacion 					= Afiliacion::find(Input::get('afiliacion_id'));
-		$afiliacion->numero		= Input::get('numero');
+		$afiliacion->numero		= Input::get('prefijo') . Input::get('numero');
 		$afiliacion->alias		= Input::get('alias');
 
 		try
