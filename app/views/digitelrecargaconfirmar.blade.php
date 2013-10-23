@@ -35,7 +35,13 @@
 				<td>{{Input::get('servicio')}}</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(255,255,255);">{{Input::get('numero_afiliado')}}</td>
+				<td style="background-color:rgb(255,255,255);"> 			
+					@if (Input::get('numero_digitel'))
+						{{Input::get('numero_digitel')}}-{{Input::get('numero_afiliado')}}
+					@else
+						{{Input::get('numero_afiliado')}}
+					@endif
+				</td>
 			</tr>
 			</tr>
 				<td>{{Input::get('monto')}}</td>
