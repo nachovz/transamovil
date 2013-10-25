@@ -30,10 +30,10 @@ class ModalesController extends BaseController
 
 	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago )
 	{
-		//$respuesta = file_get_contents('http://digitel.transamovil.com/recargar.jsp?telefono=04121000750&paymentMode=EF&monto=50&password=transa');
-		//$respuesta = json_decode( $respuesta );
+		$test = file_get_contents('http://digitel.transamovil.com/recargar.jsp?telefono=04121000750&paymentMode=EF&monto=50&password=transa');
+		$respuesta = json_decode( $test ); 
 
-		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago );
+		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago )->with('respuesta', $respuesta);
 	}
 
 	public function afiliacionDigitelModificacion( $afiliacion_id )
