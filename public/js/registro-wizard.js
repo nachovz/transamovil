@@ -18,8 +18,18 @@ function wizard_next( e )
 
 	if( boton.val() == 1 )
 	{
-		$('#contenedor_registro_1').removeClass('active').addClass('inactive');
-		$('#contenedor_registro_2').removeClass('inactive').addClass('active');
+		//Validando que el campo email alterno sea válido
+		var email_alterno = document.getElementById('campo_registro_mail_alterno');
+		if( email_alterno.checkValidity() )
+		{
+			$('#contenedor_registro_1').removeClass('active').addClass('inactive');
+			$('#contenedor_registro_2').removeClass('inactive').addClass('active');			
+		}
+		else
+		{
+			//Acá se sustituye el alert por cualquier acción que se quiera hacer para la validación
+			alert('El email alterno es obligatorio');
+		}
 	}
 	else if( boton.val() == 2 )
 	{

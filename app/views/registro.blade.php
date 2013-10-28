@@ -2,7 +2,7 @@
 
 <div id="container_reg">
 	<div id="container3">
-		{{Form::open(array('route' => 'registro_final', 'method' => 'post'))}}
+		{{Form::open(array('route' => 'registro_final', 'method' => 'post', 'id' => 'registro-form'))}}
 		<div id="contenedor_registro_1" class="active">
 			<div id="img_reg"></div>
 			<div id="paso_1"></div>			
@@ -26,7 +26,7 @@
 				</div>
 				<div id="auxiliar">
 				{{Form::label( 'celular', 'TELÉFONO CELULAR: *', array('id' => 'labels_registro')) . Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}} 
-				{{Form::label( 'mail', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registro') )}}
+				{{Form::label( 'mail', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registro_mail_alterno', 'required') )}}
 				</div>
 			</div>
 			
