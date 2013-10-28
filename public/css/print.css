@@ -5,7 +5,6 @@
 .clsVentana3{
 	width: 460px;
 	height: 245px;
-	border: solid 1px #ccc;
 	position: relative;
 	top: -500px;
 	left: 25%;
@@ -26,4 +25,3 @@
 			border: 0.1px solid #FFF;
 			overflow: hidden;
 		}
-

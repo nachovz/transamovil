@@ -9,6 +9,20 @@
 	<head>
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="{{asset('css/ventanas-modales.css')}}">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script>
+		$(document).ready(function(){	
+			$('.checkie').click(function(){
+			    if (this.checked) {
+			        $('.modal_transaccion_exitosa_check').show()
+			    }
+			    else
+			    {
+			    	$('.modal_transaccion_exitosa_check').hide()
+			    }
+			})
+		});
+		</script>
 	</head>
 	<body>
 		@if ($meta['wrapper_data']['0'] == 'HTTP/1.1 200 OK')
@@ -85,8 +99,8 @@
 				
 				<?php	$afiliacion = Auth::user()->afiliaciones()->where('numero', '=', '0412' . $numero_afiliado)->get()->first();?>
 				@if( $afiliacion == null )
-				<div class="modal_transaccion_exitosa_check">
-					<input type="checkbox"><span class="transaccion_exitosa_texto_1 check">Desea guardar en su lista de números afiliados:</span>
+				<div style="width: 264px;height: 21px;margin: 0 auto;"><input type="checkbox" class="checkie"><span class="transaccion_exitosa_texto_1 check">Desea guardar en su lista de números afiliados:</span></div>
+				<div class="modal_transaccion_exitosa_check" style="display:none">
 					{{Form::open( array( 'url' => '/modal/afiliacionDigitelCrear', 'method' => 'post' ) )}}
 					<span class="transaccion_exitosa_texto_1">{{Form::label('alias', 'Alias: ') . Form::text('alias')}}</span>
 					{{Form::hidden('numero', '0412' . $numero_afiliado)}}
