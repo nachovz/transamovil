@@ -9,6 +9,7 @@
 	<head>
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="{{asset('css/ventanas-modales.css')}}">
+		<link rel="stylesheet" href="{{asset('css/print.css')}}" type="text/css" media="print" />
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script>
 		$(document).ready(function(){	
@@ -99,7 +100,7 @@
 				
 				<?php	$afiliacion = Auth::user()->afiliaciones()->where('numero', '=', '0412' . $numero_afiliado)->get()->first();?>
 				@if( $afiliacion == null )
-				<div style="width: 264px;height: 21px;margin: 0 auto;"><input type="checkbox" class="checkie"><span class="transaccion_exitosa_texto_1 check">Desea guardar en su lista de números afiliados:</span></div>
+				<div style="width: 264px;height: 21px;margin: 0 auto;" id="jiji"><input type="checkbox" class="checkie"><span class="transaccion_exitosa_texto_1 check">Desea guardar en su lista de números afiliados:</span></div>
 				<div class="modal_transaccion_exitosa_check" style="display:none">
 					{{Form::open( array( 'url' => '/modal/afiliacionDigitelCrear', 'method' => 'post' ) )}}
 					<span class="transaccion_exitosa_texto_1">{{Form::label('alias', 'Alias: ') . Form::text('alias')}}</span>
@@ -110,7 +111,7 @@
 				@endif
 
 			@elseif ($respuesta->{'codigo'} == '05')
-				<div class="modal_transaccion_exitosa_titulo_wrapper">
+				<div class="modal_transaccion_exitosa_titulo_wrapper noprint">
 					<span class="modal_transaccion_exitosa_titulo">RECARGA FALLIDA (NÚMERO DE TELÉFONO INVÁLIDO).</span>
 				</div>
 			@elseif ($respuesta->{'codigo'} == '07')

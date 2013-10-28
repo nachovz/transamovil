@@ -1,4 +1,4 @@
-#registt, #regist, .user_session, .user_last_login, #container_home4, #bottom, .modal_transaccion_botones {
+#registt, #regist, .user_session, .user_last_login, #container_home4, #bottom, .modal_transaccion_botones, #jiji {
 	display: none;
 }
 
@@ -8,7 +8,6 @@
 	position: relative;
 	top: -500px;
 	left: 25%;
-	border-radius: 10px;
 	box-shadow: 0 0 15px #999;
 	background: #fff;
 	z-index: 99999;
@@ -22,6 +21,10 @@
 			width: 458px;
 			height: 241px;
 			border-radius: 10px;
-			border: 0.1px solid #FFF;
+			border: none;
 			overflow: hidden;
 		}
+
+.modal_transaccion_exitosa_datos_wrapper {
+	border: 1px solid #ccc;
+}
