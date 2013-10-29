@@ -106,6 +106,12 @@ $(function(){
 			return false;			
 		}
 
+		if( ! $('#registro-terminos-check').prop('checked') )
+		{
+			alert('Debes aceptar los términos y condiciones');
+			return false;
+		}
+
 		var href = 'modal/registro/' + $('#campo_registroa[name="mail"]').val() + '/' + $('#campo_registro[name="usuario"]').val();
 
 		//obtenemos la pagina que queremos cargar en la ventana y el titulo

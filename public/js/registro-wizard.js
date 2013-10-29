@@ -65,6 +65,12 @@ function wizard_next( e )
 			return false;			
 		}
 
+		if( ! $('#registro-terminos-check').prop('checked') )
+		{
+			alert('Debes aceptar los términos y condiciones');
+			return false;
+		}
+
 
 		$('#contenedor_registro_2').removeClass('active').addClass('inactive');
 		$('#contenedor_registro_3').removeClass('inactive').addClass('active');

@@ -59,7 +59,7 @@
 				</div>
 				<br><br><br><br><br>
 				<div id="check">{{Form::checkbox('name', 'value', true)}}<span class="radio_check3">Deseo recibir correo informativos de TransaMóvil</span><br>
-				{{Form::checkbox('name', 'value')}}<span class="radio_check3">Acepto los <u>Términos y Condiciones</u> de TransaMóvil</span></div>
+				{{Form::checkbox('name', 'value', null, array('id' => 'registro-terminos-check'))}}<span class="radio_check3">Acepto los <u>Términos y Condiciones</u> de TransaMóvil</span></div>
 			</div>
 			<div id="form_reg2">
 				{{Form::label( 'pais', 'PAÍS: *', array('id' => 'labels_registro')) . Form::text( 'pais', 'VENEZUELA', $attributes = array('readonly', 'id' => 'campo_registro'))}}
