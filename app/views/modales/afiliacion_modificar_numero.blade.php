@@ -124,7 +124,7 @@
 			</div>
 			<br>
 			<div id="roxas2">
-			{{Form::text('alias', $afiliacion->alias)}}
+			{{Form::text('alias', $afiliacion->alias, array('maxlength' => 10))}}
 			</div>
 			<br>
 			{{Form::hidden('afiliacion_id', $afiliacion->id)}}

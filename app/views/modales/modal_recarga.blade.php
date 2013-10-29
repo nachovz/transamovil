@@ -103,7 +103,7 @@
 				<div style="width: 264px;height: 21px;margin: 0 auto;" id="jiji"><input type="checkbox" class="checkie"><span class="transaccion_exitosa_texto_1 check">Desea guardar en su lista de números afiliados:</span></div>
 				<div class="modal_transaccion_exitosa_check" style="display:none">
 					{{Form::open( array( 'url' => '/modal/afiliacionDigitelCrear', 'method' => 'post' ) )}}
-					<span class="transaccion_exitosa_texto_1">{{Form::label('alias', 'Alias: ') . Form::text('alias')}}</span>
+					<span class="transaccion_exitosa_texto_1">{{Form::label('alias', 'Alias: ') . Form::text('alias', null, array('maxlength' => 10))}}</span>
 					{{Form::hidden('numero', '0412' . $numero_afiliado)}}
 					{{Form::submit('', array('style' => 'background-image:url("../../../../img/afiliar.png");width: 62px;height: 18px;border: 0;'))}}
 					{{Form::close()}}
