@@ -43,7 +43,7 @@
 			
 			<table id="tabla_2" style="position: relative;left: -29px;font-weight:bold">
 			<tr>
-				<td style="background-color:rgb(0,137,150);">NÚMERO DIGITEL<span id="ffs">(Móvil, Fijo o BAM):</span></td>
+				<td style="background-color:rgb(0,137,150);">NÚMERO DIGITEL <span id="ffs">(Móvil, Fijo o BAM):</span></td>
 			</tr>
 			</tr>
 				<td>ALIAS:</td>
