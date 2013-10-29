@@ -110,10 +110,10 @@
 				</div>
 				</div>
 			</div>
-			<div id="bot_siguiente_2">
-				{{Form::button('', array('class' => 'ant', 'id' => 'boton_auxiliar_anterior', 'value' => '3', 'style' => 'margin-right:12px;'))}}
+			<div id="bot_siguiente_22">
+				<!--{{Form::button('', array('class' => 'ant', 'id' => 'boton_auxiliar_anterior', 'value' => '3', 'style' => 'margin-right:12px;'))}}-->
 				{{Form::submit('', array('id' => 'boton_auxiliar_finalizar', 'style' => 'margin-right:12px;'))}}
-				{{Form::button('', array('class' => 'canc', 'id' => 'boton_auxiliar_cancelar'))}}
+				{{Form::button('', array('class' => 'canc', 'id' => 'boton_auxiliar_cerrar', ))}}
 			</div>
 		</div><!--contenedor_registro_3-->		
 		{{Form::close()}}
