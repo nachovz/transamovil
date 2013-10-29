@@ -36,9 +36,10 @@ $(document).ready(function() {
 			<TBODY>
 				<?php $afiliaciones = Auth::user()->afiliaciones()->get()->all();?>
 				@if( ! empty( $afiliaciones ) )
+					<?php $i = 0;?>
 					@foreach( $afiliaciones as $af )
 					<tr>
-						<td>{{Form::radio('afiliacion_id', $af->id)}}</td>
+						<td>{{Form::radio('afiliacion_id', $af->id, ($i++ == 0)? true:false )}}</td>
 						<td>Digitel</td>
 						<td>{{$af->numero}}</td>
 						<td>{{$af->alias}}</td>
