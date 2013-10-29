@@ -18,21 +18,54 @@ function wizard_next( e )
 
 	if( boton.val() == 1 )
 	{
-		//Validando que el campo email alterno sea válido
-		var email_email = document.getElementById('campo_registroa');
-		if( email_email.checkValidity() )
+		//Validando que el campo email sea válido
+		var email = $('#campo_registroa');
+
+		if( ! email[0].checkValidity() || email.val() == '')
 		{
-			$('#contenedor_registro_1').removeClass('active').addClass('inactive');
-			$('#contenedor_registro_2').removeClass('inactive').addClass('active');			
+			alert('Por favor ingresa un correo válido');
+			return false;
 		}
-		else
+
+		//Verificando que el correo alterno sea válido
+		var email_alterno = $('.registro_email_alterno');
+		if( ! email_alterno[0].checkValidity() || email_alterno.val() == '')
 		{
-			//Acá se sustituye el alert por cualquier acción que se quiera hacer para la validación
-			alert('El email es obligatorio');
+			alert('Por favor ingresa un correo alterno válido');
+			return false;
 		}
+
+		$('#contenedor_registro_1').removeClass('active').addClass('inactive');
+		$('#contenedor_registro_2').removeClass('inactive').addClass('active');		
 	}
 	else if( boton.val() == 2 )
 	{
+		//Verificando que la cédula sea válida
+		var cedula = $('.registro_ced_pas');
+
+		if( cedula.val() == '' )
+		{
+			alert('Por favor ingresa tu cédula');
+			return false;
+		}
+
+		var nombre = $('.registro_nombre');
+
+		if( nombre.val() == '')
+		{
+			alert('Por favor ingresa tu nombre');
+			return false;			
+		}
+
+		var apellido = $('.registro_apellido');
+
+		if( apellido.val() == '')
+		{
+			alert('Por favor ingresa tu apellido');
+			return false;			
+		}
+
+
 		$('#contenedor_registro_2').removeClass('active').addClass('inactive');
 		$('#contenedor_registro_3').removeClass('inactive').addClass('active');
 	}

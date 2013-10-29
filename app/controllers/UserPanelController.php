@@ -79,6 +79,11 @@ class UserPanelController extends BaseController {
 	{
 		$header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
 		$footer = View::make( 'components.footer_registro' );
+
+		Session::flash('prefijo', Input::get('prefijo'));
+		Session::flash('numero', Input::get('numero'));
+		Session::flash('alias', Input::get('alias'));
+
 		return View::make( 'afiliaciondigitelconfirmar' , array( 'header' => $header , 'footer' => $footer ));
 	}
 
@@ -90,7 +95,14 @@ class UserPanelController extends BaseController {
 	}
 
 	public function digitelrecargaconfirmar()
-	{
+	{		
+		if( Input::has('numero_digitel') )
+		{
+			Session::flash('numero_digitel', Input::get('numero_digitel'));	
+		}
+		Session::flash('numero_afiliado', Input::get('numero_afiliado'));
+		Session::flash('monto', Input::get('monto'));
+
 		$header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
 		$footer = View::make( 'components.footer_registro' );
 		return View::make( 'digitelrecargaconfirmar' , array( 'header' => $header , 'footer' => $footer ));
