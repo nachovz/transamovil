@@ -51,3 +51,4 @@ Route::get( '/modal/recargadigitelconfirmar/{monto}/{numero_afiliado}/{metodo_pa
 Route::get( '/modal/afiliacionDigitelModificacion/{afiliacion_id}', array( 'uses' => 'ModalesController@afiliacionDigitelModificacion'));
 Route::post( '/modal/afiliacionDigitelModificar', array( 'uses' => 'ModalesController@afiliacionDgitelModificar'));
 Route::post( '/modal/afiliacionDigitelCrear', array('uses' => 'ModalesController@afiliacionDigitelCrear') );
+Route::get( '/modal/afiliacionDigitelEliminar/{afiliacion_id}', array('uses' => 'ModalesController@afiliacionDigitelEliminar') );

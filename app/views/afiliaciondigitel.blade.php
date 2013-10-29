@@ -59,7 +59,7 @@ $(document).ready(function() {
 	</div>
 	<div class="buttons_1">
 		<img src="img/modificar.png" class="img_space clsVentanaModificarAfiliacion">
-		<img src="img/eliminar.png">
+		<img src="img/eliminar.png" class="clsVentanaEliminarAfiliacion">
 	</div>
 	<div class="servicio_texto_4">INGRESA LOS DATOS PARA AFILIAR NUEVOS NÚMEROS AL SERVICIO:</div>
 	<div class="logo_digitel"></div>

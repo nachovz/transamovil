@@ -74,4 +74,12 @@ class ModalesController extends BaseController
 		}
 		return View::make('modales.modal_afiliacion')->with('prefijo', '0412')->with('numero', str_replace('0412', '', Input::get('numero')));
 	}
+
+	public function afiliacionDigitelEliminar($afiliacion_id)
+	{
+		$afiliacion = Afiliacion::find($afiliacion_id);
+		$output = View::make('modales.modal_afiliacion_eliminar')->with('afiliacion', $afiliacion);
+		$afiliacion->delete();
+		return $output;
+	}
 }
