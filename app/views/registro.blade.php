@@ -32,7 +32,7 @@
 			
 			<div id="bot_siguiente">
 				{{Form::button('', array('class' => 'sig', 'id' => 'boton_auxiliar_siguiente', 'value' => '1', 'style' => 'margin-right:12px;'))}}
-				{{Form::button('', array('id' => 'boton_auxiliar_cancelar_2'))}}
+				{{Form::button('', array('class' => 'canc2', 'id' => 'boton_auxiliar_cancelar_2'))}}
 			</div>
 
 		</div><!--contenedor_registro_1-->

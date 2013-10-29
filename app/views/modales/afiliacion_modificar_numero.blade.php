@@ -32,7 +32,7 @@
 			</span>
 			<br>
 			{{Form::hidden('afiliacion_id', $afiliacion->id)}}
-			{{Form::submit('Modificar') . Form::close()}}
+			{{Form::submit('Modificar', array('style' => 'margin-top: 12px;margin-left: 2px;')) . Form::close()}}
 		</div>
 	</body>
 </html>
