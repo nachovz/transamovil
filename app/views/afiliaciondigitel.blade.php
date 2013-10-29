@@ -21,6 +21,7 @@ $(document).ready(function() {
 <div id="container_home3">
 	<div id="mis_servicios"></div>
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
+<div style="position:absolute;top: 323px;left: 232px;">
 	<div class="servicio_texto_1" style="width: 228px;">NÚMEROS AFILIADOS AL SERVICIO</div>
 	<div class="num_afiliados">
 		<table id="tabla1">
@@ -62,6 +63,8 @@ $(document).ready(function() {
 		<img src="img/modificar.png" class="img_space clsVentanaModificarAfiliacion">
 		<img src="img/eliminar.png" class="clsVentanaEliminarAfiliacion">
 	</div>
+</div>
+<div style="position:relative">
 	<div class="servicio_texto_4">INGRESA LOS DATOS PARA AFILIAR NUEVOS NÚMEROS AL SERVICIO:</div>
 	<div class="logo_digitel"></div>
 	<div class="afiliacion_1">
@@ -70,7 +73,7 @@ $(document).ready(function() {
 				<td>SERVICIO:</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(0,137,150);">NÚMERO DIGITEL<span id="ffs">(Móvil,Fijo o BAM):</span></td>
+				<td style="background-color:rgb(0,137,150);">NÚMERO DIGITEL <span id="ffs">(Móvil, Fijo o BAM):</span></td>
 			</tr>
 			</tr>
 				<td>ALIAS:</td>
@@ -87,6 +90,7 @@ $(document).ready(function() {
 	<div class="buttons_5">
 		{{Form::submit('', array('id' => 'boton_continuar', 'class' => 'img_space')) . Form::close()}}&nbsp;<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
+</div>
 </div><!--container_home-->
 </div><!--container3-->
 </div><!--container_reg-->
