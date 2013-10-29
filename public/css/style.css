@@ -18,9 +18,13 @@ body {margin:0; padding:0;}
 
 @-moz-document url-prefix() {
 
-	#boton_auxiliar_siguiente, #boton_auxiliar_cancelar_2 {
-	    top: -6px;
+	#boton_auxiliar_siguiente {
+	    top: -6px !important;
 	} 
+
+	.canc2 {
+		top: -6px !important;
+	}
 
 	#campo_registro3 {
     	width: 145px !important;
@@ -79,7 +83,7 @@ body {margin:0; padding:0;}
 	}
 
 	#boton_auxiliar_siguiente.fixx {
-		top: -8px;
+		top: -8px !important;
 	}
 }
 
