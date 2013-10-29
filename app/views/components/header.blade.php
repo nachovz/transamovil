@@ -232,6 +232,7 @@ $(document).ready(function() {
 &nbsp;&nbsp;{{Form::label( 'password', 'Contraseña: ', array('id' => 'labelheaderemail')) . Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su clave', 'title' => 'Introduzca su clave') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
 
 <div id="forgot_pwd"><a href="{{URL::route( 'index' )}}">Olvidé mi contraseña</a></div>
+<div id="forgot_mail"><a href="{{URL::route( 'index' )}}">Olvidé mi correo</a></div>
 </div>
 
 <div id="logo"><a href="{{URL::route( 'index' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','img/logo.jpg',0)"><img src="img/logo.jpg" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->

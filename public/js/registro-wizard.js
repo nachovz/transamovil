@@ -3,6 +3,8 @@ $(document).ready(function(){
 	$('#boton_auxiliar_siguiente').live( 'click', wizard_next);
 	$('#boton_auxiliar_anterior').live( 'click', wizard_prev);
 	$('#boton_auxiliar_cancelar').live( 'click', wizard_cancel);
+	$('#boton_auxiliar_cancelar_2').live( 'click', wizard_cancel);
+	$('#boton_auxiliar_cerrar').live( 'click', wizard_cancel);
 	$('#cierre-modal-confirmacion-registro').live( 'click', register_modal_close)
 
 });
@@ -70,7 +72,6 @@ function wizard_next( e )
 			alert('Debes aceptar los términos y condiciones');
 			return false;
 		}
-
 
 		$('#contenedor_registro_2').removeClass('active').addClass('inactive');
 		$('#contenedor_registro_3').removeClass('inactive').addClass('active');
