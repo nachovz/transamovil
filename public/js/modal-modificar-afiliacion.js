@@ -14,7 +14,7 @@ function mostrar_modal_modificar_afiliacion(e)
 		e.preventDefault();
 
 		//obtenemos la pagina que queremos cargar en la ventana y el titulo
-		var strPagina = "modal/afiliacionDigitelModificacion/" + $('input[name="afiliacion_id"]').val()
+		var strPagina = "modal/afiliacionDigitelModificacion/" + $('input[name="afiliacion_id"]:checked').val()
 		var strTitulo = "Titulo";
 		
 		//creamos la nueva ventana para mostrar el contenido y la capa para el titulo
