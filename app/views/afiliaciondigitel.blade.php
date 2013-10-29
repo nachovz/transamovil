@@ -69,7 +69,7 @@ $(document).ready(function() {
 				<td>SERVICIO:</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(0,137,150);">NÚMERO DIGITEL<span id="ffs">(Móvil,Fijo o BAM):</span></td>
+				<td style="background-color:rgb(0,137,150);">NÚMERO DIGITEL <span id="ffs">(Móvil, Fijo o BAM):</span></td>
 			</tr>
 			</tr>
 				<td>ALIAS:</td>
