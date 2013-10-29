@@ -60,7 +60,7 @@
 			</div>
 			<br>
 			{{Form::hidden('afiliacion_id', $afiliacion->id)}}
-			{{Form::submit('Modificar', array('style' => 'margin-top: 110px;margin-left: 100px;')) . Form::close()}}
+			{{Form::submit('Modificar', array('style' => 'margin-top: 114px;margin-left: 249px;')) . Form::close()}}
 		</div>
 	</body>
 </html>
