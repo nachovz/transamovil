@@ -29,6 +29,15 @@ function wizard_next( e )
 			return false;
 		}
 
+		//Validando que la verificación de correo coincida con el correo
+		var email_check = $('.registro_email_check');
+
+		if(email_check.val() != email.val())
+		{
+			alert('La confirmación de correo no coincide');
+			return false;	
+		}
+
 		//Verificando que el correo alterno sea válido
 		var email_alterno = $('.registro_email_alterno');
 		if( ! email_alterno[0].checkValidity() || email_alterno.val() == '')
