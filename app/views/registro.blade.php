@@ -7,8 +7,8 @@
 			<div id="img_reg"></div>
 			<div id="paso_1"></div>			
 			<div id="form_reg">
-				{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registro') )}}
-				{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail_check', null, array('id' => 'campo_registro') )}}
+				{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required') )}}
+				{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail_check', null, array('id' => 'campo_registro', 'required') )}}
 				{{Form::label( 'password', 'CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password', array('id' => 'campo_registro') )}}
 				{{Form::label( 'password_check', 'CONFIRMAR CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password_check', array('id' => 'campo_registro') )}}
 				<p id="labels_registro_2">(Debe estar compuesta por números y letras)</p>
@@ -26,7 +26,7 @@
 				</div>
 				<div id="auxiliar">
 				{{Form::label( 'celular', 'TELÉFONO CELULAR: *', array('id' => 'labels_registro')) . Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}} 
-				{{Form::label( 'mail', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registro_mail_alterno', 'required') )}}
+				{{Form::label( 'maila', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'maila', null, array('id' => 'campo_registro') )}}
 				</div>
 			</div>
 			
@@ -52,6 +52,9 @@
 				<div id="radio3">
 				{{Form::radio('sexo', 'femenino')}}<span class="radio_check4">Femenino</span>
 				</div>
+				<br><br>
+				<div id="imgcaptcha"></div>
+				{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, array('readonly', 'id' => 'campo_registro_captcha'))}}
 				</div>
 				<br><br><br><br><br>
 				<div id="check">{{Form::checkbox('name', 'value', true)}}<span class="radio_check3">Deseo recibir correo informativos de TransaMóvil</span><br>
@@ -106,7 +109,6 @@
 				</div>
 				</div>
 			</div>
-			<div id="text_reg">*campos obligatorios</div>
 			<div id="bot_siguiente_2">
 				{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '3'))}}&nbsp;&nbsp;
 				{{Form::submit('', array('id' => 'boton_auxiliar_finalizar'))}}&nbsp;
@@ -114,8 +116,6 @@
 			</div>
 		</div><!--contenedor_registro_3-->		
 		{{Form::close()}}
-		<div id="container_reg3">
-		</div>
 	</div><!--container3-->
 </div><!--container_reg-->
 

@@ -213,7 +213,7 @@ padding-top:100px; padding-left:80px;}
 #registro {margin-right: 40px;}
 #foot {height:60px; width:945px; margin:auto; padding-top:10px; text-align: center; line-height:1.5;}
 #bottom {height:80px; width:100%; background-color: #CCC;position:relative; top:115px;}
-.user_session {background-image: url(../img/temporal/10.png);width:500px;height: 14px;float: right;}
+.user_session {background-image: url(../img/temporal/10.png);width:500px;height: 14px;float: right;margin-top: 2px;}
 .user_last_login {width:250px;height: 13px;float: right;position: relative; top: 79px; left: 107px;font-family: 'Open Sans',sans-serif; font-size: 12px; text-align: right;}
 
 /* Estilo de Labels */
@@ -275,6 +275,16 @@ padding-top:100px; padding-left:80px;}
 }
 
 #campo_registro {
+	width: 202px;
+	height: 14px;
+}
+
+#campo_registroa {
+	width: 202px;
+	height: 14px;
+}
+
+#campo_registrob {
 	width: 202px;
 	height: 14px;
 }
@@ -377,6 +387,19 @@ padding-top:100px; padding-left:80px;}
 #aux3 {
 	position: relative;
 	top: 34px;
+}
+
+#imgcaptcha {
+	width: 138px;
+	height: 31px;
+	background-image: url(../img/captcha.png);
+}
+
+#campo_registro_captcha {
+	width: 56px;
+	position: absolute;
+	top: 202px;
+	left: 143px;
 }
 
 #aux4 {
@@ -541,7 +564,8 @@ label {
 	position: relative;
 	top: 40px;
 	overflow:hidden;
-	float: left;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #contenedor_registro_2 {
@@ -552,7 +576,8 @@ label {
 	position: relative;
 	top: 40px;
 	overflow:hidden;
-	float: left;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #contenedor_registro_3 {
@@ -563,7 +588,8 @@ label {
 	position: relative;
 	top: 40px;
 	overflow:hidden;
-	float: left;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #container_reg3 {
@@ -1346,6 +1372,16 @@ table#tabla_7 td {
 	position: relative;
 	top: -352px;
 	right: -582px;
+}
+
+#forgot_pwd {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 9px;
+	color: #808080;
+	display: inline-block;
+	position: relative;
+	top: -5px;
+	left: 343px;
 }
 
 .mac.gecko #auxiliar {

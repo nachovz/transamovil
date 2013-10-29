@@ -81,7 +81,7 @@ $(function(){
 		//prevenir el comportamiento normal del enlace
 		eEvento.preventDefault();
 
-		var href = 'modal/registro/' + $('#campo_registro[name="mail"]').val() + '/' + $('#campo_registro[name="usuario"]').val();
+		var href = 'modal/registro/' + $('#campo_registroa[name="mail"]').val() + '/' + $('#campo_registro[name="usuario"]').val();
 
 		//obtenemos la pagina que queremos cargar en la ventana y el titulo
 		var strPagina=href, strTitulo=$(this).attr('rel');

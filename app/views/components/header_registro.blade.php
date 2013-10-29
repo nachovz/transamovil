@@ -191,7 +191,9 @@ function MM_swapImage() { //v3.0
 
 {{Form::label( 'email', 'EMAIL: ', array('id' => 'labelheaderemail')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su correo', 'title' => 'Introduzca su correo') )}}
 
-&nbsp;&nbsp;{{Form::label( 'password', 'Contraseña: ', array('id' => 'labelheaderemail')) . Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su clave', 'title' => 'Introduzca su clave') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}</div>
+&nbsp;&nbsp;{{Form::label( 'password', 'Contraseña: ', array('id' => 'labelheaderemail')) . Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su clave', 'title' => 'Introduzca su clave') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
+<div id="forgot_pwd"><a href="{{URL::route( 'index' )}}">Olvidé mi contraseña</a></div>
+</div>
 
 <div id="logo"><a href="{{URL::route( 'index' )}}"><img src="img/logo_transparente.png" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
 

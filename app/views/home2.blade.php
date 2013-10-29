@@ -15,20 +15,13 @@
 		<div class="ui iu ">
 			<a href="{{URL::route( 'digitelrecarga' )}}"><img src="img/recarga_digitel.png"></a>
 		</div>
-		<div class="ui iu">
-		</div>
-		<div class="ui iu">
-		</div>
-		<div class="ui">
-		</div>
-		<div class="ui iu">
-		</div>
-		<div class="ui iu">
-		</div>
-		<div class="ui iu">
-		</div>
-		<div class="ui">
-		</div>
+		<a href="{{URL::route( 'misservicios' )}}"><div class="ui iu"></div></a>
+		<a href="{{URL::route( 'misservicios' )}}"><div class="ui iu"></div></a>
+		<a href="{{URL::route( 'misservicios' )}}"><div class="ui"></div></a>
+		<a href="{{URL::route( 'misservicios' )}}"><div class="ui iu"></div></a>
+		<a href="{{URL::route( 'misservicios' )}}"><div class="ui iu"></div></a>
+		<a href="{{URL::route( 'misservicios' )}}"><div class="ui iu"></div></a>
+		<a href="{{URL::route( 'misservicios' )}}"><div class="ui"></div></a>
 	</div>
 	<span id="title3">CONFIGURACIÓN</span>
 	<div class="config">

@@ -186,7 +186,7 @@ function MM_swapImage() { //v3.0
 <div id="header2">
 <div id="regist"> <a href="{{URL::route( 'logout' )}}"><img src="img/cerrar_sesion.png" alt="registro" width="104" height="23" id="registro" border="0" style="display:block"/></a></div><!--regist-->
 
-<div class="user_session">Bienvenido(a) {{Auth::user()->nombre . ' ' . Auth::user()->apellido}}<br><span>Transa-PIN: 582396<span></div>
+<div class="user_session">Bienvenido(a) {{Auth::user()->nombre . ' ' . Auth::user()->apellido}}<br><span style="font-family: 'Open Sans', sans-serif;font-size: 12px; color: #333;">Transa-PIN:</span><span style="font-family: 'Open Sans', sans-serif;font-size: 12px; color: #333;font-weight:bold">582396</span></div>
 
 
 <div id="logo"><a href="{{URL::route( 'home' )}}"><img src="img/logo_transparente.png" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
