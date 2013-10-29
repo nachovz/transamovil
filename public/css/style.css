@@ -11,12 +11,16 @@ body {margin:0; padding:0;}
 #regist {width:8opx; height:22px; float:right; margin-left: 5px;}
 #registt {display: inline-block; float: right;margin-top: 5px; margin-bottom: -5px;}
 #boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;margin-left: 5px;}
-#boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px}
+#boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative}
 #boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
-#boton_auxiliar_cancelar_2 {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+#boton_auxiliar_cancelar_2 {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative}
 #boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
+
+	#boton_auxiliar_siguiente, #boton_auxiliar_cancelar_2 {
+	    top: -6px;
+	} 
 
 	#campo_registro3 {
     	width: 145px !important;
@@ -46,7 +50,7 @@ body {margin:0; padding:0;}
 
 	#aux_recarga {
     	top: 117px !important;
-    	right: 161px !important;
+    	right: 157px !important;
 	}
 
 	#boton_auxiliar_anterior {
@@ -67,7 +71,7 @@ body {margin:0; padding:0;}
 
 	#notif {
 		top: 185px !important;
-		right: 53px !important;
+		right: 49px !important;
 	}
 
 	#clave_pwd {
@@ -98,7 +102,7 @@ body {margin:0; padding:0;}
     }
 
 	#aux_recarga {
-		right: 164px !important;
+		right: 159px !important;
 		top: 117px !important;
 	}
 
@@ -108,6 +112,18 @@ body {margin:0; padding:0;}
 
 	#campo_registro8 {
 		margin-top: 3px !important;
+	}
+
+	.sig {
+		top: 0 !important;
+	}
+
+	#boton_auxiliar_siguiente {
+		top: -1px;
+	}
+
+	.ant, .canc {
+		top: -2px !important;
 	}
 }
 
@@ -158,7 +174,7 @@ body {margin:0; padding:0;}
 	}
 
 	#aux_recarga {
-		right: 160px !important;
+		right: 157px !important;
 		top: 115px !important;
 	}
 
@@ -1180,7 +1196,7 @@ table#tabla_7 td {
 	position: relative;
 	display: inline-block;
 	top: 25px;
-	left: 405px;
+	left: 410px;
 }
 
 .afiliacion_3 {
@@ -1352,7 +1368,7 @@ table#tabla_7 td {
 	display: inline-block;
 	position: absolute;
 	top: 185px;
-	right: 56px;
+	right: 49px;
 	line-height: 8px;
 }
 

@@ -31,7 +31,8 @@
 			</div>
 			
 			<div id="bot_siguiente">
-				{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'value' => '1'))}}&nbsp;&nbsp;{{Form::button('', array('id' => 'boton_auxiliar_cancelar_2'))}}
+				{{Form::button('', array('class' => 'sig', 'id' => 'boton_auxiliar_siguiente', 'value' => '1', 'style' => 'margin-right:12px;'))}}
+				{{Form::button('', array('id' => 'boton_auxiliar_cancelar_2'))}}
 			</div>
 
 		</div><!--contenedor_registro_1-->
@@ -71,9 +72,9 @@
 			</div>
 			
 			<div id="bot_siguiente_2">
-				{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2'))}}&nbsp;&nbsp;
-				{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'class' => 'fixx', 'value' => '2', 'style' => 'display:none;'))}}
-				<a href="modales/modal_registro.html" class="clsVentanaIFrame"><img src="img/siguiente.png"></a>&nbsp;
+				{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2', 'style' => 'margin-right:12px;'))}}
+				{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'class' => 'fixx', 'value' => '2', 'style' => 'display:none;margin-right:12px;'))}}
+				<a href="modales/modal_registro.html" class="clsVentanaIFrame" style='margin-right:12px'><img src="img/siguiente.png"></a>
 				{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 			</div>			
 		</div><!--contenedor_registro_2-->
@@ -110,9 +111,9 @@
 				</div>
 			</div>
 			<div id="bot_siguiente_2">
-				{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '3'))}}&nbsp;&nbsp;
-				{{Form::submit('', array('id' => 'boton_auxiliar_finalizar'))}}&nbsp;
-				{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
+				{{Form::button('', array('class' => 'ant', 'id' => 'boton_auxiliar_anterior', 'value' => '3', 'style' => 'margin-right:12px;'))}}
+				{{Form::submit('', array('id' => 'boton_auxiliar_finalizar', 'style' => 'margin-right:12px;'))}}
+				{{Form::button('', array('class' => 'canc', 'id' => 'boton_auxiliar_cancelar'))}}
 			</div>
 		</div><!--contenedor_registro_3-->		
 		{{Form::close()}}
