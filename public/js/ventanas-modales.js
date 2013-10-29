@@ -162,6 +162,12 @@ $(function(){
 		//prevenir el comportamiento normal del enlace
 		eEvento.preventDefault();
 
+		if( $('#campo_registro.campo_registro_pwd_check').val() != '12345' )
+		{
+			alert('Clave Inválida');
+			return false;
+		}
+
 		//obtenemos la pagina que queremos cargar en la ventana y el titulo
 		var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
 		

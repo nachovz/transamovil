@@ -121,7 +121,7 @@
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
 	<div id="clave_pwd">
-		{{Form::open(array('method' => 'post')) . Form::password( 'password_check', array('id' => 'campo_registro') )}}
+		{{Form::open(array('method' => 'post')) . Form::password( 'password_check', array('id' => 'campo_registro', 'class' => 'campo_registro_pwd_check') )}}
 	</div>
 	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/ventanas-modales.js"></script>
