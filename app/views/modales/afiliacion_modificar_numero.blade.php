@@ -3,6 +3,7 @@
 	<head>
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="{{asset('css/ventanas-modales.css')}}">
+		<script src="{{asset('js/css_browser_selector.js')}}" type="text/javascript"></script>
 		<style>
 			.modal_afiliacion_texto_wrapper input[type="submit"]{ 
 				width: 62px;
@@ -60,6 +61,45 @@
 					width: 147px;
 				}
 			}
+
+			.mac.chrome #roxas {
+				top: -50px;
+			}
+
+			.mac.chrome #roxas2 {
+				top: -47px;
+				left: 211px;
+			}
+
+			.mac.chrome #roxas2 input {
+				width: 153px;
+			}
+
+			.mac.gecko #roxas {
+    			top: -46px;
+			}
+
+			.mac.gecko #roxas2 {
+    			top: -44px;
+			}
+
+			.mac.gecko #roxas2 input {
+    			width: 154px;
+			}
+
+			.mac.safari #roxas {
+    			top: -48px;
+			}
+
+			.mac.safari #roxas2 {
+    			top: -46px;
+    			left: 211px;
+			}
+
+			.mac.safari #roxas2 input {
+    			width: 154px;
+			}
+
 		</style>
 	</head>
 	<body>
