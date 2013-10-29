@@ -234,7 +234,7 @@ padding-top:100px; padding-left:80px;}
 #foot {height:60px; width:945px; margin:auto; padding-top:10px; text-align: center; line-height:1.5;}
 #bottom {height:80px; width:100%; background-color: #CCC;position:relative; top:115px;}
 .user_session {background-image: url(../img/temporal/10.png);width:500px;height: 14px;float: right;margin-top: 2px;}
-.user_last_login {width:250px;height: 13px;float: right;position: relative; top: 79px; left: 107px;font-family: 'Open Sans',sans-serif; font-size: 12px; text-align: right;}
+.user_last_login {width:250px;height: 13px;float: right;position: relative; top: 100px; left: 107px;font-family: 'Open Sans',sans-serif; font-size: 12px; text-align: right;}
 
 /* Estilo de Labels */
 
