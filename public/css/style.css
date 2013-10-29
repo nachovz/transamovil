@@ -21,6 +21,10 @@ body {margin:0; padding:0;}
 
 	#boton_auxiliar_siguiente {
 	    top: -6px !important;
+	}
+
+	#boton_auxiliar_cerrar {
+        top: -8px !important;
 	} 
 
 	.canc2 {
@@ -37,7 +41,7 @@ body {margin:0; padding:0;}
 	}
 
 	#campo_registro3aa {
-    	width: 143px !important;
+    	width: 139px !important;
     	margin: 2px !important;
 	}
 
@@ -103,7 +107,7 @@ body {margin:0; padding:0;}
 	}
 
 	#campo_registro3aa {
-    	width: 145px !important;
+    	width: 141px !important;
     }
 
 	#aux_recarga {
@@ -140,7 +144,7 @@ body {margin:0; padding:0;}
     }
 
     #campo_registro3aa {
-      width:145px !important;
+      width:141px !important;
       margin: 2px !important;
     }
 
@@ -1459,7 +1463,7 @@ table#tabla_7 td {
 }
 
 .mac.gecko #campo_registro3aa {
-    width: 135px !important;
+    width: 131px !important;
 }
 
 .mac.gecko #campo_registro333 {
@@ -1526,7 +1530,7 @@ table#tabla_7 td {
 }
 
 .mac.chrome #campo_registro3aa {
-	width: 139px !important;
+	width: 135px !important;
 }
 
 .mac.chrome #aux_recarga {
@@ -1585,7 +1589,7 @@ table#tabla_7 td {
 }
 
 .mac.safari #campo_registro3aa {
-	width: 139px !important;
+	width: 135px !important;
 }
 
 .mac.safari #aux_recarga {
