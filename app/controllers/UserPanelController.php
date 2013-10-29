@@ -95,8 +95,11 @@ class UserPanelController extends BaseController {
 	}
 
 	public function digitelrecargaconfirmar()
-	{
-		Session::flash('numero_digitel', Input::get('numero_digitel'));
+	{		
+		if( Input::has('numero_digitel') )
+		{
+			Session::flash('numero_digitel', Input::get('numero_digitel'));	
+		}
 		Session::flash('numero_afiliado', Input::get('numero_afiliado'));
 		Session::flash('monto', Input::get('monto'));
 
