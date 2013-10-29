@@ -8,7 +8,7 @@
 			<div id="paso_1"></div>			
 			<div id="form_reg">
 				{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email') )}}
-				{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check') )}}
+				{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::text( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check') )}}
 				{{Form::label( 'password', 'CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password', array('id' => 'campo_registro', 'class' => 'registro_password') )}}
 				{{Form::label( 'password_check', 'CONFIRMAR CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password_check', array('id' => 'campo_registro', 'class' => 'registro_password_check') )}}
 				<p id="labels_registro_2">(Debe estar compuesta por números y letras)</p>
