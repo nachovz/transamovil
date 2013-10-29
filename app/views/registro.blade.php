@@ -7,10 +7,10 @@
 			<div id="img_reg"></div>
 			<div id="paso_1"></div>			
 			<div id="form_reg">
-				{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required') )}}
-				{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail_check', null, array('id' => 'campo_registro', 'required') )}}
-				{{Form::label( 'password', 'CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password', array('id' => 'campo_registro') )}}
-				{{Form::label( 'password_check', 'CONFIRMAR CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password_check', array('id' => 'campo_registro') )}}
+				{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email') )}}
+				{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check') )}}
+				{{Form::label( 'password', 'CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password', array('id' => 'campo_registro', 'class' => 'registro_password') )}}
+				{{Form::label( 'password_check', 'CONFIRMAR CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password_check', array('id' => 'campo_registro', 'class' => 'registro_password_check') )}}
 				<p id="labels_registro_2">(Debe estar compuesta por números y letras)</p>
 				{{Form::label( 'pregunta_seguridad', 'PREGUNTA DE SEGURIDAD: *', array('id' => 'labels_registro')) . Form::select('pregunta_seguridad', array('0' => 'Nombre de Mascota', '1' => 'Nombre de Abuelo Paterno', '2' => 'Nombre de Colegio donde Estudió'), null, array('id' => 'campo_registro2'))}}
 				{{Form::label( 'respuesta_seguridad', 'RESPUESTA DE SEGURIDAD: *', array('id' => 'labels_registro')) . Form::text( 'respuesta_seguridad', null, array('id' => 'campo_registro') )}}
@@ -26,7 +26,7 @@
 				</div>
 				<div id="auxiliar">
 				{{Form::label( 'celular', 'TELÉFONO CELULAR: *', array('id' => 'labels_registro')) . Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}} 
-				{{Form::label( 'maila', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'maila', null, array('id' => 'campo_registro') )}}
+				{{Form::label( 'maila', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'maila', null, array('id' => 'campo_registro', 'class' => 'registro_email_alterno') )}}
 				</div>
 			</div>
 			
@@ -41,10 +41,10 @@
 			<div id="img_reg"></div>
 			<div id="paso_2"></div>			
 			<div id="form_reg">
-				{{Form::label( 'ced_pas', 'CÉDULA/PASAPORTE: *', array('id' => 'labels_registro')) . Form::select('prefijo_ced_pas', array('V' => 'V-', 'E' => 'E-', 'J' => 'J-', 'P' => 'P-')) . Form::text( 'ced_pas', null, array('id' => 'campo_registro33') )}}
+				{{Form::label( 'ced_pas', 'CÉDULA/PASAPORTE: *', array('id' => 'labels_registro')) . Form::select('prefijo_ced_pas', array('V' => 'V-', 'E' => 'E-', 'J' => 'J-', 'P' => 'P-')) . Form::text( 'ced_pas', null, array('id' => 'campo_registro33', 'class' => 'registro_ced_pas') )}}
 				<div id="aux3">
-				{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'campo_registro') )}}
-				{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'campo_registro') )}}
+				{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'campo_registro', 'class' => 'registro_nombre') )}}
+				{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'campo_registro', 'class' => 'registro_apellido') )}}
 				{{Form::label( 'nacimiento', 'FECHA DE NACIMIENTO: *', array('id' => 'labels_registro')) . Form::text( 'nacimiento', null, array('placeholder'=>'DD/MM/AAAA','id' => 'campo_registro') )}}
 				{{Form::label( 'sexo', 'SEXO:', array('id' => 'labels_registro'))}}
 				<div id="radio2">

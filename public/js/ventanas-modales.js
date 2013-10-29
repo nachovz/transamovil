@@ -81,6 +81,31 @@ $(function(){
 		//prevenir el comportamiento normal del enlace
 		eEvento.preventDefault();
 
+		//Verificando que la cédula sea válida
+		var cedula = $('.registro_ced_pas');
+
+		if( cedula.val() == '' )
+		{
+			alert('Por favor ingresa tu cédula');
+			return false;
+		}
+
+		var nombre = $('.registro_nombre');
+
+		if( nombre.val() == '')
+		{
+			alert('Por favor ingresa tu nombre');
+			return false;			
+		}
+
+		var apellido = $('.registro_apellido');
+
+		if( apellido.val() == '')
+		{
+			alert('Por favor ingresa tu apellido');
+			return false;			
+		}
+
 		var href = 'modal/registro/' + $('#campo_registroa[name="mail"]').val() + '/' + $('#campo_registro[name="usuario"]').val();
 
 		//obtenemos la pagina que queremos cargar en la ventana y el titulo
