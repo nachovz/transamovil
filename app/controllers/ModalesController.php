@@ -30,15 +30,22 @@ class ModalesController extends BaseController
 
 	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago )
 	{		
-		//Hay que cablear el número en la URL porque el webservice es una cochinada y el request se queda guindado si no es un número de prueba
-		
-		//$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=0412' . str_replace('0412', '', $numero_afiliado) . '&paymentMode=EF&monto=' . $monto . '&password=transa';
-		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=04121000750&paymentMode=EF&monto=' . $monto . '&password=transa';
+		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=0412' . str_replace('0412', '', $numero_afiliado) . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
 
-		$fp = @fopen($url, 'r');
-		$meta = stream_get_meta_data( $fp );
-		$resp = json_decode( stream_get_contents( $fp ) );
-		
+		$stream_context	= stream_context_create( array('http' => array('timeout' => 2.0)) );
+		$fp							= @fopen($url, 'r', false, $stream_context);
+
+		if($fp)
+		{
+			$meta	= stream_get_meta_data( $fp );
+			$resp	= json_decode( stream_get_contents( $fp ) );			
+		}
+		else
+		{
+			$meta = array('wrapper_data' => array('HTTP/1.1 500 Internal Server Error'));
+			$resp	= new StdClass();
+			$resp->codigo = '21';
+		}		
 		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago )->with('resp', $resp)->with('meta', $meta );
 	}
 

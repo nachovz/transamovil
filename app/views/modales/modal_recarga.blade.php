@@ -120,7 +120,7 @@
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
 					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA. POR FAVOR INTENTE MAS TARDE.</span>
 				</div>
-			@elseif ($resp->{'codigo'} == '99')
+			@elseif ($resp->{'codigo'} == '99')				
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
 					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA. POR FAVOR INTENTE MAS TARDE.</span>
 				</div>
@@ -130,9 +130,15 @@
 				</div>
 			@endif
 		@else
-			<div class="modal_transaccion_exitosa_titulo_wrapper">
-				<span class="modal_transaccion_exitosa_titulo">EL SISTEMA ESTÁ CAIDO. POR FAVOR INTENTE MAS TARDE.</span>
-			</div>	
+			@if($resp->codigo == 21)
+				<div class="modal_transaccion_exitosa_titulo_wrapper">
+					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA. POR FAVOR INTENTE MAS TARDE.</span>
+				</div>
+			@else
+				<div class="modal_transaccion_exitosa_titulo_wrapper">
+					<span class="modal_transaccion_exitosa_titulo">EL SISTEMA ESTÁ CAIDO. POR FAVOR INTENTE MAS TARDE.</span>
+				</div>	
+			@endif
 		@endif
 	</body>
 </html>
