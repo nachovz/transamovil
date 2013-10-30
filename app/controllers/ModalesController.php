@@ -32,7 +32,7 @@ class ModalesController extends BaseController
 	{		
 		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=0412' . str_replace('0412', '', $numero_afiliado) . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
 
-		$stream_context	= stream_context_create( array('http' => array('timeout' => 2.0)) );
+		$stream_context	= stream_context_create( array('http' => array('timeout' => 10.0)) );
 		$fp							= @fopen($url, 'r', false, $stream_context);
 
 		if($fp)
@@ -42,7 +42,7 @@ class ModalesController extends BaseController
 		}
 		else
 		{
-			$meta = array('wrapper_data' => array('HTTP/1.1 500 Internal Server Error'));
+			$meta = array('wrapper_data' => array('HTTP/1.1 408 Request Timeout'));
 			$resp	= new StdClass();
 			$resp->codigo = '21';
 		}		
