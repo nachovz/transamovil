@@ -29,11 +29,17 @@ class ModalesController extends BaseController
 	}
 
 	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago )
-	{
-		$test = file_get_contents('http://digitel.transamovil.com/recargar.jsp?telefono=04121000750&paymentMode=EF&monto=50&password=transa');
-		$respuesta = json_decode( $test ); 
+	{		
+		//Hay que cablear el número en la URL porque el webservice es una cochinada y el request se queda guindado si no es un número de prueba
+		
+		//$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=0412' . str_replace('0412', '', $numero_afiliado) . '&paymentMode=EF&monto=' . $monto . '&password=transa';
+		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=04121000750&paymentMode=EF&monto=' . $monto . '&password=transa';
 
-		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago )->with('respuesta', $respuesta);
+		$fp = @fopen($url, 'r');
+		$meta = stream_get_meta_data( $fp );
+		$resp = json_decode( stream_get_contents( $fp ) );
+		
+		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago )->with('resp', $resp)->with('meta', $meta );
 	}
 
 	public function afiliacionDigitelModificacion( $afiliacion_id )

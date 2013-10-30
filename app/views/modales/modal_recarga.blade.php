@@ -1,9 +1,3 @@
-<?php 
-	$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=04121000750&paymentMode=EF&monto=50&password=transa';
-	$fp = @fopen($url, 'r');
-	$meta = stream_get_meta_data( $fp );
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -27,7 +21,7 @@
 	</head>
 	<body>
 		@if ($meta['wrapper_data']['0'] == 'HTTP/1.1 200 OK')
-			@if ($respuesta->{'codigo'} == '00')
+			@if ($resp->{'codigo'} == '00')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
 					<span class="modal_transaccion_exitosa_titulo">TRANSACCIÓN EXITOSA</span>
 				</div>
@@ -110,23 +104,23 @@
 				</div>
 				@endif
 
-			@elseif ($respuesta->{'codigo'} == '05')
+			@elseif ($resp->{'codigo'} == '05')
 				<div class="modal_transaccion_exitosa_titulo_wrapper noprint">
 					<span class="modal_transaccion_exitosa_titulo">RECARGA FALLIDA (NÚMERO DE TELÉFONO INVÁLIDO).</span>
 				</div>
-			@elseif ($respuesta->{'codigo'} == '07')
+			@elseif ($resp->{'codigo'} == '07')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
 					<span class="modal_transaccion_exitosa_titulo">HA SUPERADO EL MONTO MÁXIMO DE RECARGA DIARIA PARA ESTE NÚMERO DE TELÉFONO.<BR>PUEDE INTENTARLO CON OTRO NÚMERO.</span>
 				</div>
-			@elseif ($respuesta->{'codigo'} == '19')
+			@elseif ($resp->{'codigo'} == '19')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
 					<span class="modal_transaccion_exitosa_titulo">RECARGA FALLIDA (NÚMERO DE TELÉFONO INVÁLIDO).</span>
 				</div>
-			@elseif ($respuesta->{'codigo'} == '21')
+			@elseif ($resp->{'codigo'} == '21')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
 					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA. POR FAVOR INTENTE MAS TARDE.</span>
 				</div>
-			@elseif ($respuesta->{'codigo'} == '99')
+			@elseif ($resp->{'codigo'} == '99')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
 					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA. POR FAVOR INTENTE MAS TARDE.</span>
 				</div>
