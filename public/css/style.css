@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
-body {margin:0; padding:0;}
+body {margin:0; padding:0;background-color: #CCC;}
 
 #container {height:815px; width:100%; margin:auto; background-color: #008C99; position:relative; top:115px;background-image:url(../img/fondo.jpg); background-repeat:repeat-x;}
 #container2 {height:815px; width:945px; margin:auto;background-color: #EBEBEB;}
@@ -561,6 +561,11 @@ label {
 	margin-left:2px;
 	border: 0px;
 	float:left;
+	
+}
+
+#send, #clear {
+	width: 69px !important;
 }
 
 #clear  {
@@ -804,7 +809,11 @@ input {
 	width: 13px;
 }
 
-
+.modal_transaccion_botones_mod1 img:hover, .modal_transaccion_botones_mod2 img:hover, .modal_afiliacion_botones img:hover, 
+.modal_transaccion_botones img:hover, a.clsVentanaCerrar:hover, #boton_auxiliar_siguiente:hover, #boton_auxiliar_cancelar_2:hover, #boton_auxiliar_anterior:hover, .clsVentanaIFrame img:hover,
+#boton_auxiliar_cancelar:hover, #boton_auxiliar_finalizar:hover, #boton_auxiliar_cerrar:hover, #boton_continuar:hover, .buttons_5 img:hover, .buttons_1 img:hover, .buttons_3 img:hover, .buttons_6 img:hover  {
+	opacity: 0.8;
+}
 
 /* Panel de Usuario */
 

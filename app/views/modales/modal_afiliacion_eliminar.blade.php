@@ -18,8 +18,8 @@
 		<div class="modal_afiliacion_titulo_wrapper">
 			<span class="modal_afiliacion_titulo">AFILIACIÓN ELIMINADA</span>
 		</div>
-		<div class="modal_afiliacion_texto_wrapper">			
-			<span class="modal_afiliacion_texto_1">Se ha eliminado exitosamente la afiliación del número {{$afiliacion->numero}}</span>
+		<div class="modal_afiliacion_texto_wrapper" style="text-align:center">			
+			<span class="modal_afiliacion_texto_1">SE HA ELIMINADO EXITOSAMENTE LA AFILIACIÓN DEL NÚMERO {{$afiliacion->numero}}</span>
 		</div>
 	</body>
 </html>

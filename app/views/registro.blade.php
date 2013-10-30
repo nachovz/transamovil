@@ -63,9 +63,9 @@
 			</div>
 			<div id="form_reg2">
 				{{Form::label( 'pais', 'PAÍS: *', array('id' => 'labels_registro')) . Form::text( 'pais', 'VENEZUELA', $attributes = array('readonly', 'id' => 'campo_registro'))}}
-				{{Form::label( 'estado', 'ESTADO: *', array('id' => 'labels_registro')) . Form::select('estado', array('0' => 'MIRANDA'), null, array('id' => 'campo_registro2'))}}
+				{{Form::label( 'estado', 'ESTADO: *', array('id' => 'labels_registro')) . Form::select('estado', array('0' => 'MIRANDA', '1' => 'DISTRITO CAPITAL', '2' => 'ANZOATEGUI', '3' => 'ZULIA'), null, array('id' => 'campo_registro2'))}}
 				{{Form::label( 'municipio', 'MUNICIPIO: *', array('id' => 'labels_registro')) . Form::select('municipio', array('0' => 'BARUTA', '1' => 'CHACAO', '2' => 'LIBERTADOR', '3' => 'SUCRE'), null, array('id' => 'campo_registro2'))}}
-				{{Form::label( 'ciudad', 'CIUDAD: *', array('id' => 'labels_registro')) . Form::select('ciudad', array('0' => 'CARACAS'), null, array('id' => 'campo_registro2'))}}
+				{{Form::label( 'ciudad', 'CIUDAD: *', array('id' => 'labels_registro')) . Form::select('ciudad', array('0' => 'CARACAS', '1' => 'BARCELONA', '3' => 'MARACAIBO'), null, array('id' => 'campo_registro2'))}}
 				{{Form::label( 'direccion', 'DIRECCIÓN: *', array('id' => 'labels_registro')) . Form::text( 'direccion', null, array('id' => 'campo_registro') )}}
 				{{Form::label( 'tlf_habitacion', 'TELÉFONO HABITACIÓN: *', array('id' => 'labels_registro')) . Form::text( 'tlf_habitacion', null, array('id' => 'campo_registro') )}}
 				{{Form::label( 'tlf_oficina', 'TELÉFONO OFICINA: *', array('id' => 'labels_registro')) . Form::text( 'tlf_oficina', null, array('id' => 'campo_registro') )}}

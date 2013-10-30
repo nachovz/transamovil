@@ -47,6 +47,10 @@
 			#roxas2 {
 				display: inline-block;position: relative;top: -52px;left: 209px;
 			}
+
+			input.nubi:hover {
+				opacity: 0.8;
+			}
 			
 			@-moz-document url-prefix() {
 				#roxas {

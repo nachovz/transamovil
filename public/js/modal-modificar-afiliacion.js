@@ -1,7 +1,6 @@
 $(document).ready(function(){
 		$('.clsVentanaModificarAfiliacion').on('click', mostrar_modal_modificar_afiliacion);
 		$('.clsVentanaEliminarAfiliacion').on('click', mostrar_modal_eliminar_afiliacion);
-
 		$('.clsVentanaCerrar10').live('click',function(eEvento){
 			window.location.reload();
 		});
@@ -69,7 +68,7 @@ function mostrar_modal_eliminar_afiliacion(e)
 		$objVentanaContenido.append('<iframe src="'+strPagina+'">');
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		$objVentanaContenido.append('<div class="modal_transaccion_botones_mod2"><a href="" class="clsVentanaCerrar10"><img src="img/aceptar_ovalo.png"></div>');
+		$objVentanaContenido.append('<div class="modal_transaccion_botones_mod2"><a href="" class="clsVentanaCerrar10"><img src="img/aceptar.png"></div>');
 		
 		//agregamos la capa de contenido a la ventana
 		$objVentana.append($objVentanaContenido);
