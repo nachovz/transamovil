@@ -28,10 +28,12 @@ class ModalesController extends BaseController
 		return View::make('modales.modal_registro')->with( 'nombre', $nombre )->with('email', $email );
 	}
 
-	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago )
+	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago, $numero_digitel )
 	{		
-		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=0412' . str_replace('0412', '', $numero_afiliado) . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
+		//str_replace('0412', '',$numero_digitel.$numero_afiliado)
+		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=' . $numero_digitel.$numero_afiliado . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
 
+		echo $url;
 		$stream_context	= stream_context_create( array('http' => array('timeout' => 10.0)) );
 		$fp							= @fopen($url, 'r', false, $stream_context);
 

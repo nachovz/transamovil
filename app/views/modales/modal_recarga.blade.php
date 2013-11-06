@@ -41,7 +41,7 @@
 									<span class="modal_transaccion_exitosa_contenido">NÚMERO RECARGADO:</span>
 								</td>
 								<td style ="text-align:right">
-									<span class="modal_transaccion_exitosa_contenido2">{{$numero_afiliado}}
+									<span class="modal_transaccion_exitosa_contenido2">0412 - {{$numero_afiliado}}
 									</span>
 								</td>
 							</tr>
@@ -136,7 +136,7 @@
 				</div>
 			@else
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">EL SISTEMA ESTÁ CAIDO. POR FAVOR INTENTE MAS TARDE.</span>
+					<span class="modal_transaccion_exitosa_titulo">EL SISTEMA NO ESTÁ DISPONIBLE ACTUALMENTE, PEDIMOS DISCULPAS. POR FAVOR INTENTE MAS TARDE.</span>
 				</div>	
 			@endif
 		@endif
