@@ -104,6 +104,7 @@ class UserPanelController extends BaseController {
 		}
 		
 		Session::flash('monto', Input::get('monto'));
+		Session::flash('servicio', Input::get('servicio'));
 
 		$header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
 		$footer = View::make( 'components.footer_registro' );
