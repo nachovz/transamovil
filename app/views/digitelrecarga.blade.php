@@ -8,7 +8,7 @@
 $(document).ready(function(){
 
 	//Seleccione fix
-	if ($('.nuevocelular').val() != null) {
+	if ($('.nuevocelular').val() != null){
 		$(".numafiliado").attr("disabled", "disabled")
 	};
 
