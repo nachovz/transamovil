@@ -180,7 +180,7 @@ $(document).ready(function(){
 </div><!--container_reg-->
 <script>
     $(document).ready(function(){
-        $("#aidi").validationEngine('attach');
+        $("#aidi").validationEngine('attach', {scroll: false});
        });
 </script>
 
