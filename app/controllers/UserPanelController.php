@@ -24,13 +24,14 @@ class UserPanelController extends BaseController {
 			{
 				Session::flash( 'message', 'El nombre de usuario y la contraseña no coinciden, por favor intenta de nuevo.' );
 				//Redireccionar al home
-				return Redirect::to('/')->withErrors($validator)->withInput();
+				return Redirect::route('index', array('message' => "ERROR-IN"));//->withErrors($validator)->withInput();
 			}
 		}
 		else
 		{
 			//Redireccionar hacia el home, incluyendo mensajes de error de validador
-			return Redirect::to('/')->withErrors($validator)->withInput();
+			//return Redirect::route('index')->withErrors($validator)->withInput();
+			return Redirect::route('index', array('message' => "ERROR"));
 		}
 	}
 

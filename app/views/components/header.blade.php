@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>{{$title}}</title>
 
@@ -16,11 +15,6 @@
 <META NAME="Language" CONTENT="Spanish">
 <META NAME="copyright" CONTENT="Todos los derechos reservados 2013">
 
-<!-- VALIDATORS -->
-<script src="{{asset('js/jquery.validationEngine-es.js')}}"></script>
-<script src="{{asset('js/jquery.validationEngine.js')}}"></script>
-<link rel="stylesheet" href="{{asset('css/validationEngine.jquery.css')}}" type="text/css" />
-
 <!--FONT-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
 <!--FONT-->
@@ -28,6 +22,7 @@
 <!--FONT-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
 <!--FONT-->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="js/jquery.slides.min.js"></script>
 <script>
     $(function() {
@@ -213,7 +208,8 @@ $(document).ready(function() {
   {{Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
 </div>-->
 
-<div id="regist">{{Form::open(array('id' => 'log', 'route' => 'login', 'method' => 'post'))}}
+<div id="regist">{{Form::open(array('route' => 'login', 'method' => 'post'))}}
+<?php $message = Session::get('message'); ?>
 
 @if( isset( $message ) && ! empty( $message ) )
     <legend>{{$message}}</legend>
@@ -226,7 +222,7 @@ $(document).ready(function() {
       @endforeach
 @endif
 
-{{Form::label( 'email', 'EMAIL: ', array('id' => 'labelheaderemail')) . Form::email( 'email', Input::old('email'), array('class' => 'validate[required]', 'placeholder'=>'Correo Electronico', 'id' => 'fix') )}}
+{{Form::label( 'email', 'EMAIL: ', array('id' => 'labelheaderemail')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico', 'id' => 'fix','class' => 'validate[required]', 'required', 'x-moz-errormessage' => 'Introduzca su correo', 'title' => 'Introduzca su correo') )}}
 
 @if( $errors->has( 'password' ) )
       @foreach( $errors->get( 'password' ) as $error )
@@ -234,13 +230,7 @@ $(document).ready(function() {
       @endforeach
 @endif
 
-&nbsp;&nbsp;{{Form::label( 'password', 'Contraseña: ', array('id' => 'labelheaderemail')) . Form::password( 'password', array('class' => 'validate[required]', 'placeholder'=>'Password', 'id' => 'fix') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
-
-<script>
-    $(document).ready(function(){
-        $("#log").validationEngine('attach', {promptPosition : "bottomLeft", scroll: false});
-   });
-</script>
+&nbsp;&nbsp;{{Form::label( 'password', 'Contraseña: ', array('id' => 'labelheaderemail')) . Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su clave', 'title' => 'Introduzca su clave') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
 
 <div id="forgot_pwd"><a href="{{URL::route( 'index' )}}">Olvidé mi contraseña</a></div>
 <div id="forgot_mail"><a href="{{URL::route( 'index' )}}">Olvidé mi correo</a></div>
