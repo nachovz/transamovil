@@ -5,7 +5,7 @@
 <div id="container_home4">
 	<div id="mis_servicios_3"></div>
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
-	<div class="servicio_texto_1">VERIFICA LOS DATOS Y HAS CLICK EN EL BOTÓN CORRESPONDIENTE</div>
+	<div class="servicio_texto_1">VERIFICA LOS DATOS Y HAZ CLICK EN EL BOTÓN CORRESPONDIENTE</div>
 	<div class="logo_digitel" style="top:26px"></div>
 	<div class="afiliacion_3" style="top:114px">
 		<table id="tabla_5">

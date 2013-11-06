@@ -89,7 +89,7 @@
 					</div>
 				</div>
 				<div class="modal_transaccion_exitosa_texto1_wrapper">
-					<span class="transaccion_exitosa_texto_1">Para mayor información llame al 121 desde su Digitel o 0412 9121121</span>
+					<span class="transaccion_exitosa_texto_1">Para mayor información llame al 121 desde su Digitel ó 0412 9121121</span>
 				</div>
 				
 				<?php	$afiliacion = Auth::user()->afiliaciones()->where('numero', '=', $numero_digitel . $numero_afiliado)->get()->first();?>
