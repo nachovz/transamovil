@@ -41,7 +41,7 @@
 									<span class="modal_transaccion_exitosa_contenido">NÚMERO RECARGADO:</span>
 								</td>
 								<td style ="text-align:right">
-									<span class="modal_transaccion_exitosa_contenido2">$numero_digitel - {{$numero_afiliado}}
+									<span class="modal_transaccion_exitosa_contenido2"> $prefijo {{$numero_afiliado}}
 									</span>
 								</td>
 							</tr>
@@ -92,13 +92,13 @@
 					<span class="transaccion_exitosa_texto_1">Para mayor información llame al 121 desde su Digitel ó 0412 9121121</span>
 				</div>
 				
-				<?php	$afiliacion = Auth::user()->afiliaciones()->where('numero', '=', $numero_digitel . $numero_afiliado)->get()->first();?>
+				<?php	$afiliacion = Auth::user()->afiliaciones()->where('numero', '=', $prefijo . $numero_afiliado)->get()->first();?>
 				@if( $afiliacion == null )
 				<div style="width: 264px;height: 21px;margin: 0 auto;" id="jiji"><input type="checkbox" class="checkie"><span class="transaccion_exitosa_texto_1 check">Desea guardar en su lista de números afiliados:</span></div>
 				<div class="modal_transaccion_exitosa_check" style="display:none">
 					{{Form::open( array( 'url' => '/modal/afiliacionDigitelCrear', 'method' => 'post' ) )}}
 					<span class="transaccion_exitosa_texto_1">{{Form::label('alias', 'Alias: ') . Form::text('alias', null, array('maxlength' => 10))}}</span>
-					{{Form::hidden('numero', $numero_digitel . $numero_afiliado)}}
+					{{Form::hidden('numero', $prefijo . $numero_afiliado)}}
 					{{Form::submit('', array('style' => 'background-image:url("../../../../img/afiliar.png");width: 62px;height: 18px;border: 0;'))}}
 					{{Form::close()}}
 				</div>
