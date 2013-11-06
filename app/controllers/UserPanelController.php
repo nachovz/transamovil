@@ -99,8 +99,10 @@ class UserPanelController extends BaseController {
 		if( Input::has('numero_digitel') )
 		{
 			Session::flash('numero_digitel', Input::get('numero_digitel'));	
+		}else{
+			Session::flash('numero_afiliado', Input::get('numero_afiliado'));
 		}
-		Session::flash('numero_afiliado', Input::get('numero_afiliado'));
+		
 		Session::flash('monto', Input::get('monto'));
 
 		$header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
