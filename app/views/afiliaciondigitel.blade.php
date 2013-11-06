@@ -93,7 +93,7 @@ $(document).ready(function() {
 		{{Form::text( 'alias', Session::get('alias'), array('class' => 'validate[required]', 'id' => 'campo_registro7', 'maxlength' => 10) )}}
 	</div>
 	<div class="buttons_5">
-		{{Form::submit('', array('id' => 'boton_continuar', 'class' => 'img_space')) . Form::close()}}&nbsp;<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
+		{{Form::submit('', array('id' => 'boton_continuar', 'class' => 'img_space')) . Form::close()}}<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
 </div>
 </div><!--container_home-->

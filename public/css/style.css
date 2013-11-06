@@ -85,7 +85,7 @@ a:visited{
 
 	#notif {
 		top: 185px !important;
-		right: 49px !important;
+		right: 79px !important;
 	}
 
 	#clave_pwd {
@@ -184,7 +184,7 @@ a:visited{
 
 	#notif {
 		top: 183px !important;
-		right: 60px !important;
+		right: 80px !important;
 	}
 
 	#aux_recarga {
@@ -1410,7 +1410,7 @@ table#tabla_7 td {
 	display: inline-block;
 	position: absolute;
 	top: 185px;
-	right: 47px;
+	right: 79px;
 	line-height: 8px;
 }
 
@@ -1507,7 +1507,7 @@ table#tabla_7 td {
 
 .mac.gecko #notif {
     top: 186px !important;
-    right: 55px !important;
+    right: 65px !important;
 }
 
 .mac.gecko #campo_registro8 {
@@ -1621,7 +1621,7 @@ table#tabla_7 td {
 
 .mac.safari #notif {
 	top: 183px;
-	right: 47px;
+	right: 74px;
 }
 
 .mac.safari #campo_registro8 {
