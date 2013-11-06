@@ -19,7 +19,7 @@ body {margin:0; padding:0;background-color: #CCC;}
 
 a:visited{
 	text-decoration: none;
-	
+
 }
 
 @-moz-document url-prefix() {
@@ -220,7 +220,7 @@ a:visited{
 }*/ 
 
 #boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;border: 0;position: relative;top: -2px;}
-#boton_continuar {background-image:url(../img/continuar.png);width: 154px;height: 47px;border: 0;position: relative;top: -1px;}
+#boton_continuar {background-image:url(../img/continuar.png);width: 154px;height: 47px;border: 0;position: relative;top: -1px;margin-right:10px;}
 #farm {position: relative !important; left: -87px !important;}
 #logo {width:170px; height:75px; float:left; margin-top:10px;}
 #logo2 {width:170px; height:75px; float:left; margin-top:10px; margin-left: 22px;}
@@ -1405,12 +1405,12 @@ table#tabla_7 td {
 
 #notif{
 	font-family: 'Open Sans', sans-serif;
-	font-size: 10px;
+	font-size: 9px;
 	color: #808080;
 	display: inline-block;
 	position: absolute;
 	top: 185px;
-	right: 49px;
+	right: 47px;
 	line-height: 8px;
 }
 
@@ -1450,6 +1450,13 @@ table#tabla_7 td {
 	position: relative;
 	top: -10px;
 	left: 35px;
+}
+
+#error_message{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 9px;
+	color: #808080;
+	margin: -14px 0 0 107px;
 }
 
 .mac.gecko #boton_auxiliar_siguiente, #boton_auxiliar_cancelar_2 {
@@ -1548,13 +1555,14 @@ table#tabla_7 td {
 }
 
 .mac.chrome #aux_recarga {
-	right: 159px !important;
+	/*right: 159px !important;*/
+	right: 150px !important;
 	top: 120px !important;
 }
 
 .mac.chrome #notif {
 	top: 183px;
-	right: 45px;
+	right: 74px;
 }
 
 .mac.chrome #campo_registro8 {
