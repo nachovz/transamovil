@@ -41,7 +41,7 @@
 									<span class="modal_transaccion_exitosa_contenido">NÚMERO RECARGADO:</span>
 								</td>
 								<td style ="text-align:right">
-									<span class="modal_transaccion_exitosa_contenido2"> $prefijo {{$numero_afiliado}}
+									<span class="modal_transaccion_exitosa_contenido2"> {{$prefijo}} {{$numero_afiliado}}
 									</span>
 								</td>
 							</tr>
