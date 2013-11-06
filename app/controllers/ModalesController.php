@@ -48,7 +48,7 @@ class ModalesController extends BaseController
 			$resp	= new StdClass();
 			$resp->codigo = '21';
 		}		
-		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago )->with('resp', $resp)->with('meta', $meta );
+		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago )->with('resp', $resp)->with('meta', $meta )->with('numero_digitel', $numero_digitel);
 	}
 
 	public function afiliacionDigitelModificacion( $afiliacion_id )
