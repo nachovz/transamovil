@@ -5,7 +5,13 @@
 ?>
 
 <script>
-$(document).ready(function(){	
+$(document).ready(function(){
+
+	//Seleccione fix
+	if ($('.nuevocelular').val() != null) {
+		$(".numafiliado").attr("disabled", "disabled")
+	};
+
 	$('.selectmetodopago').on('change',function(){
 	     var selection = $(this).val();
 	    switch(selection){
