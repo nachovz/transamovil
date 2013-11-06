@@ -39,7 +39,7 @@ class ModalesController extends BaseController
 		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=' . $prefijo.$numero_afiliado . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
 
 		//echo $url;
-		$stream_context	= stream_context_create( array('http' => array('timeout' => 10.0)) );
+		$stream_context	= stream_context_create( array('http' => array('timeout' => 30.0)) );
 		$fp							= @fopen($url, 'r', false, $stream_context);
 
 		if($fp)

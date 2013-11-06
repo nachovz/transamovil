@@ -132,7 +132,7 @@
 		@else
 			@if($resp->codigo == 21)
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA. POR FAVOR INTENTE MAS TARDE.</span>
+					<span class="modal_transaccion_exitosa_titulo">HTTP Response 408 REQUEST TIMEOUT</span>
 				</div>
 			@else
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
