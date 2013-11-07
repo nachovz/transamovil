@@ -195,29 +195,14 @@ a:visited{
 	#clave_pwd {
 		top: 228px !important;
 	}
-} 
+}
 
-/*@media \0screen {
-	#labels_registro {
-		width: 235px !important;
-	}
+@media \0screen {
 
-	a img {
-    	border: 0;
-	}
-
-	#auxiliar {
-		margin-top: 45px !important;
-	}
-
-	#boton_auxiliar_anterior {
-		top: 0 !important;
-	}
-
-	#boton_auxiliar_cancelar {
-		top: 0 !important;
-	}
-}*/ 
+	#campo_registro3aa {
+      width:145px !important;
+    }
+}
 
 #boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;border: 0;position: relative;top: -2px;}
 #boton_continuar {background-image:url(../img/continuar.png);width: 154px;height: 47px;border: 0;position: relative;top: -1px;margin-right:10px;}
