@@ -209,10 +209,11 @@ $(function(){
 		var $objVentanaContenido=$('<div class="clsVentanaContenido3">');
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		$objVentanaContenido.append('<iframe src="'+strPagina+'">');
+		// $objVentanaContenido.append('<iframe src="'+strPagina+'">');
+		$objVentanaContenido.load(strPagina);
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		$objVentanaContenido.append('<div class="modal_transaccion_botones"><a href="" class="clsVentanaCerrar2"><img src="img/aceptar_ovalo.png"></a>&nbsp;&nbsp;<a href="javascript:window.print()"><img src="img/imprimir.png"></a>&nbsp;&nbsp;<a href="" class="Realizar_Recarga"><img src="img/realizar_otra_recarga.png"></a></div>');
+		//$objVentanaContenido.append('<div class="modal_transaccion_botones"><a href="" class="clsVentanaCerrar2"><img src="img/aceptar_ovalo.png"></a>&nbsp;&nbsp;<a href="javascript:window.print()"><img src="img/imprimir.png"></a>&nbsp;&nbsp;<a href="" class="Realizar_Recarga"><img src="img/realizar_otra_recarga.png"></a></div>');
 		
 		//agregamos la capa de contenido a la ventana
 		$objVentana.append($objVentanaContenido);
@@ -233,4 +234,20 @@ $(function(){
 			$objVentana.fadeIn();
 		})
 	});
+	
+
 });
+
+function hideModal(){
+		$('.clsVentana3').fadeOut(300,function(){
+					//eliminamos la ventana del DOM
+					$(this).remove();
+					//ocultamos el overlay suavemente
+					$('#divOverlay').fadeOut(500,function(){
+						//eliminamos el overlay del DOM
+						$(this).remove();
+						//$('#boton_auxiliar_siguiente[value="2"]').toggle();
+						//$('.clsVentanaIFrame').toggle();
+					});
+				});
+	}

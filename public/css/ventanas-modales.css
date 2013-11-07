@@ -724,3 +724,8 @@ display: none;
 	top: -35px;
 	left: 90px;
 }
+
+.modal_transaccion_botones_new {
+	margin-top: 225px;
+	margin-left: 82px;
+}

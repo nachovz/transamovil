@@ -15,7 +15,27 @@
 			    {
 			    	$('.modal_transaccion_exitosa_check').hide()
 			    }
-			})
+			});
+			$('.clsVentanaCerrar_new').on('click',function(eEvento){
+				//prevenimos el comportamiento normal del enlace
+				eEvento.preventDefault();
+				//buscamos la ventana padre (del boton "cerrar")
+				//var $objVentana=$($(this).parents().get(1));
+				
+				//cerramos la ventana suavemente
+				hideModal();
+				// $('.clsVentana3').fadeOut(300,function(){
+				// 	//eliminamos la ventana del DOM
+				// 	$(this).remove();
+				// 	//ocultamos el overlay suavemente
+				// 	$('#divOverlay').fadeOut(500,function(){
+				// 		//eliminamos el overlay del DOM
+				// 		$(this).remove();
+				// 		//$('#boton_auxiliar_siguiente[value="2"]').toggle();
+				// 		//$('.clsVentanaIFrame').toggle();
+				// 	});
+				// });
+			});
 		});
 		</script>
 	</head>
@@ -140,5 +160,19 @@
 				</div>	
 			@endif
 		@endif
+
+		<div class="modal_transaccion_botones_new">
+			<!-- <a href="{{URL::route( 'home' )}}" class="clsVentanaCerrar"> -->
+			<a href="{{URL::route( 'home' )}}">
+				<img src="img/aceptar_ovalo.png">
+			</a>&nbsp;&nbsp;
+			<a href="javascript:window.print()">
+				<img src="img/imprimir.png">
+			</a>&nbsp;&nbsp;
+			<!-- <a href="{{URL::route( 'digitelrecarga' )}}"  class="clsVentanaCerrar_new"> -->
+			<a href="{{URL::route( 'digitelrecarga' )}}" >
+				<img src="img/realizar_otra_recarga.png">
+			</a>
+		</div>
 	</body>
 </html>
