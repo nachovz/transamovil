@@ -361,8 +361,13 @@ padding-top:100px; padding-left:80px;}
 }
 
 #campo_registro {
-	width: 202px;
-	height: 14px;
+	width: 200px;
+	height: 12px;
+	padding-top: 4px;
+}
+
+#pwd_form{
+	margin-top: 1px;
 }
 
 #campo_registroa {
@@ -1244,8 +1249,7 @@ table#tabla_7 td {
 
 
 #clave_pwd {
-	display: inline-block;
-	position: absolute;
+	z-index: 10000;
 	top: 231px;
 	right: 164px;
 }

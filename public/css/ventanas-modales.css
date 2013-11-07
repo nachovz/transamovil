@@ -726,6 +726,16 @@ display: none;
 }
 
 .modal_transaccion_botones_new {
-	margin-top: 225px;
-	margin-left: 82px;
+	width: 320px;
+	margin: 225px auto;
 }
+
+.modal_transaccion_botones_new a{
+	text-decoration: none;
+	border: none;
+
+}
+
+a img {
+    	border: 0;
+	}

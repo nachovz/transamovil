@@ -119,7 +119,7 @@
 					{{Form::open( array( 'url' => '/modal/afiliacionDigitelCrear', 'method' => 'post' ) )}}
 					<span class="transaccion_exitosa_texto_1">{{Form::label('alias', 'Alias: ') . Form::text('alias', null, array('maxlength' => 10))}}</span>
 					{{Form::hidden('numero', $prefijo . $numero_afiliado)}}
-					{{Form::submit('', array('style' => 'background-image:url("../../../../img/afiliar.png");width: 62px;height: 18px;border: 0;'))}}
+					{{Form::submit('', array('style' => 'background-image:url("img/afiliar.png");width: 62px;height: 18px;border: 0;'))}}
 					{{Form::close()}}
 				</div>
 				@endif
@@ -162,17 +162,30 @@
 		@endif
 
 		<div class="modal_transaccion_botones_new">
-			<!-- <a href="{{URL::route( 'home' )}}" class="clsVentanaCerrar"> -->
+			<!--[if IE 8]>
 			<a href="{{URL::route( 'home' )}}">
-				<img src="img/aceptar_ovalo.png">
+				<img src="../../../../../img/aceptar_ovalo.png">
 			</a>&nbsp;&nbsp;
 			<a href="javascript:window.print()">
-				<img src="img/imprimir.png">
+				<img src="../../../../../img/imprimir.png">
 			</a>&nbsp;&nbsp;
-			<!-- <a href="{{URL::route( 'digitelrecarga' )}}"  class="clsVentanaCerrar_new"> -->
 			<a href="{{URL::route( 'digitelrecarga' )}}" >
-				<img src="img/realizar_otra_recarga.png">
+				<img src="../../../../../img/realizar_otra_recarga.png">
 			</a>
+			<![endif]-->
+			<!--[if !IE]>--> 
+				<a href="{{URL::route( 'home' )}}">
+					<img src="img/aceptar_ovalo.png">
+				</a>&nbsp;&nbsp;
+				<a href="javascript:window.print()">
+					<img src="img/imprimir.png">
+				</a>&nbsp;&nbsp;
+				<!-- <a href="{{URL::route( 'digitelrecarga' )}}"  class="clsVentanaCerrar_new"> -->
+				<a href="{{URL::route( 'digitelrecarga' )}}" >
+					<img src="img/realizar_otra_recarga.png">
+				</a>
+			<!--<![endif]-->
+			
 		</div>
 	</body>
 </html>

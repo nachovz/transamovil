@@ -187,6 +187,22 @@ $(function(){
 			$objVentana.fadeIn();
 		})
 	});
+	
+	$('.clsVentanaIFrame3-IE').on('click',function(eEvento){
+
+		//prevenir el comportamiento normal del enlace
+		eEvento.preventDefault();
+
+		if( $('#campo_registro.campo_registro_pwd_check').val() != '12345' )
+		{
+			alert('Clave Inválida');
+			return false;
+		}else{
+			var href = this.href;
+		    
+		    window.location = href;
+		}
+	});
 
 	$('.clsVentanaIFrame3').on('click',function(eEvento){
 

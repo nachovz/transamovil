@@ -53,6 +53,7 @@
 				<td>{{Input::get('codigo')}}</td>
 			</tr>
 		</table>
+		{{Form::open(array('method' => 'post', 'id' => 'pwd_form')) . Form::password( 'password_check', array('id' => 'campo_registro', 'class' => 'campo_registro_pwd_check') )}}
 	</div>
 	<div class="afiliacion_3" style="top:234px; display:none;">
 		<table id="tabla_5">
@@ -116,20 +117,17 @@
 	</div>
 	<div class="terms" style="display:none;"></div>	
 	<div class="buttons_6" style="top: 190px; width:494px">
-		<!-- [if IE 8]>
-		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}"><img src="img/confirmar.png" class="img_space"></a>
-		
+		<!--[if IE 8]>
+		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3-IE"><img src="img/confirmar.png" class="img_space"></a>
 		<![endif]-->
-		<!--[if !IE]> --> 
+		<!--[if !IE]>--> 
 		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a>
-		<!-- <![endif]-->
+		<!--<![endif]-->
 		<!-- <a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a> -->
 		<a href="{{URL::route( 'digitelrecarga' )}}"><img src="img/modificar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
-	<div id="clave_pwd">
-		{{Form::open(array('method' => 'post')) . Form::password( 'password_check', array('id' => 'campo_registro', 'class' => 'campo_registro_pwd_check') )}}
-	</div>
+	
 	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/ventanas-modales.js"></script>
 </div><!--container_home-->
