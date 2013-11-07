@@ -270,7 +270,8 @@ a:visited{
     }
 
     #clave_pwd {
-    	right: 133px !important;
+    	top: -48px !important;
+    	right: -73px !important;
     }
 }
 
