@@ -199,8 +199,78 @@ a:visited{
 
 @media \0screen {
 
+	a img {
+    	border: 0;
+	}
+
 	#campo_registro3aa {
-      width:140px !important;
+      width:145px !important;
+    }
+
+    #campo_registro333 {
+      width:146px !important;
+    }
+
+    #campo_registro5 {
+    	margin-top: 2px;
+    	margin-bottom: 2px;
+	}
+
+	table#tabla_2 {
+		width: 265px !important;
+	}
+
+	table#tabla_3 {
+		width: 267px !important;
+	}
+
+	table#tabla_5 {
+		width: 265px !important;
+	}
+
+	table#tabla_7 {
+		width: 265px !important;
+	}
+
+	#aux_recarga {
+		right: 132px !important;
+		top: 116px !important;
+	}
+
+	#notif {
+		right: 13px !important;
+	}
+
+	#campo_registro8 {
+      top: 24px !important;
+    }
+
+    .buttons_6 {
+    	width: 500px;
+    }
+
+    #faki8 {
+    	position:relative;
+    	top: -53px;
+    	right: -162px;
+    }
+
+    #fakinie8 {
+    	position:relative;
+    	top: -135px;
+    	right: -162px;
+    }
+
+    .afiliacion_2 {
+    	left: 438px !important;
+    }
+
+    .afiliacion_9 {
+    	right: 133px !important;
+    }
+
+    #clave_pwd {
+    	right: 133px !important;
     }
 }
 
