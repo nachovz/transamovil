@@ -80,7 +80,7 @@ a:visited{
 	}
 
 	#boton_continuar {
-		top: -16px !important;
+		top: -18px !important;
 	}
 
 	#notif {
@@ -1244,7 +1244,7 @@ table#tabla_7 td {
 .afiliacion_3 {
 	width: 235px;
 	position: absolute;
-	top: 111px;
+	top: 132px;
 	left: 300px;
 }
 
@@ -1292,7 +1292,7 @@ table#tabla_7 td {
 .afiliacion_9 {
 	display: inline-block;
 	position: absolute;
-	top: 111px;
+	top: 132px;
 	right: 164px;
 }
 

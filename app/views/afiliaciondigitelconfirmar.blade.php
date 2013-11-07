@@ -9,7 +9,7 @@
 	<?php $afiliacion = Auth::user()->afiliaciones()->where('numero', '=',Session::get('prefijo').Session::get('numero'))->get()->first();?>
 		@if( $afiliacion != null )
 			<div class="servicio_texto_1">EL NÚMERO YA HA SIDO AFILIADO, VERIFICAR E INTENTAR DE NUEVO.</div>
-			<div class="buttons_3">
+			<div class="buttons_3" style="margin:210px auto 0px;width: 322px;height: 52px">
 		@elseif
 
 
@@ -47,8 +47,6 @@
 	<div class="buttons_3">
 		<a href="{{URL::route( 'modal_afiliacion_confirmar', array( Input::get('numero'), Input::get('alias'), Input::get('prefijo') ) )}}" class="clsVentanaIFrame2"><img src="img/confirmar.png" class="img_space"></a>
 	@endif
-	
-		
 		<a href="{{URL::route( 'afiliaciondigitel' )}}"><img src="img/modificar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>

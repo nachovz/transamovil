@@ -184,7 +184,7 @@ $(document).ready(function(){
 	</div>
 	<!--<div class="terms"></div>-->
 	<div class="buttons_6" style="top: 211px;">
-		{{Form::submit('', array('id' => 'boton_continuar')) . Form::close()}}<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
+		{{Form::submit('', array('id' => 'boton_continuar')) . Form::close()}}&nbsp;&nbsp;&nbsp;<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
 </div><!--container_home_4-->
 </div><!--container3-->
