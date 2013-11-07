@@ -10,7 +10,7 @@
 		@if( $afiliacion != null )
 			<div class="servicio_texto_1">EL NÚMERO YA HA SIDO AFILIADO, VERIFICAR E INTENTAR DE NUEVO.</div>
 			<div class="buttons_3" style="margin:210px auto 0px;width: 322px;height: 52px">
-		@elseif
+		@else
 
 
 	<div class="servicio_texto_1">VERIFICA LOS DATOS Y HAS CLICK EN EL BOTÓN CORRESPONDIENTE</div>
