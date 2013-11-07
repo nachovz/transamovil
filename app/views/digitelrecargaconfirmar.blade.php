@@ -118,10 +118,11 @@
 	<div class="buttons_6" style="top: 190px; width:494px">
 		<!-- [if IE 8]>
 		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}"><img src="img/confirmar.png" class="img_space"></a>
+		
 		<![endif]-->
-		<!--[if !IE] --> 
+		<!--[if !IE]> --> 
 		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a>
-		<!-- [endif] -->
+		<!-- <![endif]-->
 		<!-- <a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a> -->
 		<a href="{{URL::route( 'digitelrecarga' )}}"><img src="img/modificar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
