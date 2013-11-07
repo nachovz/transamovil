@@ -116,10 +116,10 @@
 	</div>
 	<div class="terms" style="display:none;"></div>	
 	<div class="buttons_6" style="top: 190px; width:494px">
-		<!-- <[if IE 8]> -->
+		<!-- [if IE 8]>
 		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}"><img src="img/confirmar.png" class="img_space"></a>
-		<!--[endif]-->
-		<!--[if !IE]> -->
+		<![endif]-->
+		<!--[if !IE] --> 
 		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a>
 		<!-- [endif] -->
 		<!-- <a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a> -->
