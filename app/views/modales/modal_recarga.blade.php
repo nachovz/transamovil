@@ -78,7 +78,7 @@
 									<span class="modal_transaccion_exitosa_contenido">HORA DE LA RECARGA:</span>
 								</td>
 								<td style ="text-align:right">
-									<span class="modal_transaccion_exitosa_contenido2">{{date("g:i:s a")}}</span>
+									<span class="modal_transaccion_exitosa_contenido2">{{date("H:i:s")}}</span>
 								</td>
 							</tr>
 							<tr>

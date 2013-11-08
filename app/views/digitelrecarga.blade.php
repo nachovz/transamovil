@@ -80,6 +80,7 @@ $(document).ready(function(){
 	<div id="mis_servicios_3"></div>
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
 	<div class="servicio_texto_1">POR FAVOR INGRESA LOS DATOS</div>
+	
 	<div class="logo_digitel" style="top:26px"></div>
 	<div class="afiliacion_3" style="top:114px;">
 		<table id="tabla_5">
