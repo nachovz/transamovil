@@ -195,7 +195,7 @@ $(function(){
 
 		if( $('#campo_registro.campo_registro_pwd_check').val() != '12345' )
 		{
-			alert('Clave Inválida');
+			alert('Contraseña Inválida');
 			return false;
 		}else{
 			var href = this.href;
@@ -211,7 +211,7 @@ $(function(){
 
 		if( $('#campo_registro.campo_registro_pwd_check').val() != '12345' )
 		{
-			alert('Clave Inválida');
+			alert('Contraseña Inválida');
 			return false;
 		}
 

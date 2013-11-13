@@ -94,7 +94,7 @@ $(document).ready(function(){
 				<td>NÚMEROS AFILIADOS:</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(0,137,150);">MONTO BsF.</td>
+				<td style="background-color:rgb(0,137,150);">MONTO Bs.</td>
 			</tr>
 			</tr>
 				<td>MÉTODO DE PAGO:</td>
@@ -181,7 +181,7 @@ $(document).ready(function(){
 		V-22.035.112
 	</div>-->
 	<div id="notif">
-		"Introduzca el monto deseado desde Bs. 20 hasta<br>500 en múltiplos de 10, Ej : 20, 30, 40, …490, 500”
+		"Introduzca el monto deseado desde Bs. 20 hasta<br>Bs. 500 en múltiplos de 10, Ej : 20, 30, 40, …490, 500”
 	</div>
 	<!--<div class="terms"></div>-->
 	<div class="buttons_6" style="top: 211px;">

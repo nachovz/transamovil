@@ -190,6 +190,7 @@
 			options.showArrow = showArrow==true;
 
 			methods._showPrompt(this, promptText, type, false, options);
+
 			return this;
 		},
 		/**
@@ -2075,9 +2076,9 @@
 		addFailureCssClassToField: "",
 		
 		// Auto-hide prompt
-		autoHidePrompt: false,
+		autoHidePrompt: true,
 		// Delay before auto-hide
-		autoHideDelay: 10000,
+		autoHideDelay: 1000,
 		// Fade out duration while hiding the validations
 		fadeDuration: 0.3,
 	 // Use Prettify select library

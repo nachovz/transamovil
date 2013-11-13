@@ -53,7 +53,7 @@
 									<span class="modal_transaccion_exitosa_contenido">MONTO RECARGADO:</span>
 								</td>
 								<td style ="text-align:right">
-									<span class="modal_transaccion_exitosa_contenido2">{{$monto}} BsF.</span>
+									<span class="modal_transaccion_exitosa_contenido2">{{$monto}} Bs.</span>
 								</td>
 							</tr>
 							<tr>
