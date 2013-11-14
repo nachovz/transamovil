@@ -126,27 +126,27 @@
 
 			@elseif ($resp->{'codigo'} == '05')
 				<div class="modal_transaccion_exitosa_titulo_wrapper noprint">
-					<span class="modal_transaccion_exitosa_titulo">RECARGA FALLIDA (NÚMERO DE TELÉFONO INVÁLIDO).</span>
+					<span class="modal_transaccion_exitosa_titulo">RECARGA FALLIDA. NÚMERO DE TELÉFONO INVÁLIDO.</span>
 				</div>
 			@elseif ($resp->{'codigo'} == '07')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">HA SUPERADO EL MONTO MÁXIMO DE RECARGA DIARIA PARA ESTE NÚMERO DE TELÉFONO.<BR>PUEDE INTENTARLO CON OTRO NÚMERO.</span>
+					<span class="modal_transaccion_exitosa_titulo">UD. HA SUPERADO EL MONTO MÁXIMO DE RECARGA DIARIA PARA ESTE NÚMERO DE TELÉFONO.<BR>PUEDE INTENTARLO CON OTRO NÚMERO.</span>
 				</div>
 			@elseif ($resp->{'codigo'} == '19')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">RECARGA FALLIDA (NÚMERO DE TELÉFONO INVÁLIDO).</span>
+					<span class="modal_transaccion_exitosa_titulo">RECARGA FALLIDA. NÚMERO DE TELÉFONO INVÁLIDO.</span>
 				</div>
 			@elseif ($resp->{'codigo'} == '21')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA. POR FAVOR INTENTE MAS TARDE.</span>
+					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA, POR FAVOR INTENTE MÁS TARDE.</span>
 				</div>
 			@elseif ($resp->{'codigo'} == '99')				
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA. POR FAVOR INTENTE MAS TARDE.</span>
+					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA, POR FAVOR INTENTE MAS TARDE.</span>
 				</div>
 			@else
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">EL SISTEMA ESTÁ CAIDO. POR FAVOR INTENTE MAS TARDE.</span>
+					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA, POR FAVOR INTENTE MAS TARDE.</span>
 				</div>
 			@endif
 		@else
@@ -156,7 +156,7 @@
 				</div>
 			@else
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">EL SISTEMA NO ESTÁ DISPONIBLE ACTUALMENTE, PEDIMOS DISCULPAS. POR FAVOR INTENTE MAS TARDE.</span>
+					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA, POR FAVOR INTENTE MAS TARDE.</span>
 				</div>	
 			@endif
 		@endif
