@@ -16,7 +16,7 @@
 				<td style="background-color:rgb(0,137,150);">NÚMERO:</td>
 			</tr>
 			</tr>
-				<td>MONTO BsF.</td>
+				<td>MONTO Bs.</td>
 			</tr>
 			<tr>
 				<td style="background-color:rgb(0,137,150);">MÉTODO DE PAGO:</td>

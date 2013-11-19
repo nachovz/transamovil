@@ -224,7 +224,7 @@ $(function(){
 		//creamos la capa que va a mostrar el contenido
 		var $objVentanaContenido=$('<div class="clsVentanaContenido3">');
 
-		$objVentanaContenido.append("<div style='width:17px; margin: 150px auto;'> <img src='img/loading.gif' class='loading-gif' /> </div>");
+		$objVentanaContenido.append("<div style='width:100px; margin: 150px auto; text-align:center;'> <img src='img/loading.gif' class='loading-gif' /> <br/> <p style='font-family: Open Sans, sans-serif;font-size: 12px;color: #333;'>Favor espere un momento...</p> </div>");
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
 		// $objVentanaContenido.append('<iframe src="'+strPagina+'">');
