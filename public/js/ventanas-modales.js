@@ -223,6 +223,8 @@ $(function(){
 		
 		//creamos la capa que va a mostrar el contenido
 		var $objVentanaContenido=$('<div class="clsVentanaContenido3">');
+
+		$objVentanaContenido.append("<div style='width:17px; margin: 150px auto;'> <img src='img/loading.gif' class='loading-gif' /> </div>");
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
 		// $objVentanaContenido.append('<iframe src="'+strPagina+'">');

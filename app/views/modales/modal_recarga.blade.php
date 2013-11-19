@@ -40,6 +40,7 @@
 		</script>
 	</head>
 	<body>
+		
 		@if ($meta['wrapper_data']['0'] == 'HTTP/1.1 200 OK')
 			@if ($resp->{'codigo'} == '00')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
