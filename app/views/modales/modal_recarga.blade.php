@@ -44,7 +44,7 @@
 		@if ($meta['wrapper_data']['0'] == 'HTTP/1.1 200 OK')
 			@if ($resp->{'codigo'} == '00')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">TRANSACCIÓN EXITOSA</span>
+					<span class="modal_transaccion_exitosa_titulo">RECARGA EXITOSA</span>
 				</div>
 				<div class="modal_transaccion_exitosa_datos_wrapper">
 					<div class="modal_transaccion_exitosa_datos">
@@ -127,27 +127,35 @@
 
 			@elseif ($resp->{'codigo'} == '05')
 				<div class="modal_transaccion_exitosa_titulo_wrapper noprint">
-					<span class="modal_transaccion_exitosa_titulo">RECARGA FALLIDA. NÚMERO DE TELÉFONO INVÁLIDO.</span>
+					<span class="modal_transaccion_exitosa_titulo">EN ESTE MOMENTO NO PODEMOS PROCESAR SU SOLICITUD.<br/> POR FAVOR COMUNÍQUESE CON EL 121.</span>
 				</div>
 			@elseif ($resp->{'codigo'} == '07')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">UD. HA SUPERADO EL MONTO MÁXIMO DE RECARGA DIARIA PARA ESTE NÚMERO DE TELÉFONO.<BR>PUEDE INTENTARLO CON OTRO NÚMERO.</span>
+					<span class="modal_transaccion_exitosa_titulo">EN ESTE MOMENTO NO PODEMOS PROCESAR SU SOLICITUD. <br/> POR FAVOR COMUNÍQUESE CON EL 121.</span>
+				</div>
+			@elseif ($resp->{'codigo'} == '09')
+				<div class="modal_transaccion_exitosa_titulo_wrapper">
+					<span class="modal_transaccion_exitosa_titulo">EN ESTE MOMENTO NO PODEMOS PROCESAR SU SOLICITUD. <br/> POR FAVOR COMUNÍQUESE CON EL 121.</span>
+				</div>
+			@elseif ($resp->{'codigo'} == '13')
+				<div class="modal_transaccion_exitosa_titulo_wrapper">
+					<span class="modal_transaccion_exitosa_titulo">EN ESTE MOMENTO NO PODEMOS PROCESAR SU SOLICITUD. <br/> POR FAVOR COMUNÍQUESE CON EL 121.</span>
 				</div>
 			@elseif ($resp->{'codigo'} == '19')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">RECARGA FALLIDA. NÚMERO DE TELÉFONO INVÁLIDO.</span>
+					<span class="modal_transaccion_exitosa_titulo">EN ESTE MOMENTO NO PODEMOS PROCESAR SU SOLICITUD. <br/> SU GSM NO CUMPLE LAS CONDICIONES.</span>
 				</div>
 			@elseif ($resp->{'codigo'} == '21')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA, POR FAVOR INTENTE MÁS TARDE.</span>
+					<span class="modal_transaccion_exitosa_titulo">EN ESTE MOMENTO NO PODEMOS PROCESAR SU SOLICITUD. <br/> POR FAVOR INTENTE MÁS TARDE.</span>
 				</div>
 			@elseif ($resp->{'codigo'} == '99')				
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA, POR FAVOR INTENTE MAS TARDE.</span>
+					<span class="modal_transaccion_exitosa_titulo">EN ESTE MOMENTO NO PODEMOS PROCESAR SU SOLICITUD. <br/> POR FAVOR INTENTE MÁS TARDE.</span>
 				</div>
 			@else
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
-					<span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA, POR FAVOR INTENTE MAS TARDE.</span>
+					<span class="modal_transaccion_exitosa_titulo">EN ESTE MOMENTO NO PODEMOS PROCESAR SU SOLICITUD. <br/> POR FAVOR INTENTE MÁS TARDE.</span>
 				</div>
 			@endif
 		@else
