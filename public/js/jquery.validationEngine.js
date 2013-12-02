@@ -1853,7 +1853,7 @@
 			switch (positionType) {
 				default:
 				case "topRight":
-					promptleftPosition +=  fieldLeft + fieldWidth - 30;
+					promptleftPosition +=  fieldLeft + fieldWidth + 2;
 					promptTopPosition +=  fieldTop;
 					break;
 
@@ -1863,7 +1863,7 @@
 					break;
 
 				case "centerRight":
-					promptTopPosition = fieldTop+4;
+					promptTopPosition = fieldTop-1;
 					marginTopSize = 0;
 					promptleftPosition= fieldLeft + field.outerWidth(true)+5;
 					break;
@@ -2029,7 +2029,7 @@
 		// Opening box position, possible locations are: topLeft,
 		// topRight, bottomLeft, centerRight, bottomRight, inline
 		// inline gets inserted after the validated field or into an element specified in data-prompt-target
-		promptPosition: "topRight",
+		promptPosition: "inline",
 		bindMethod:"bind",
 		// internal, automatically set to true when it parse a _ajax rule
 		inlineAjax: false,
@@ -2078,9 +2078,9 @@
 		// Auto-hide prompt
 		autoHidePrompt: true,
 		// Delay before auto-hide
-		autoHideDelay: 1000,
+		autoHideDelay: 10000,
 		// Fade out duration while hiding the validations
-		fadeDuration: 0.3,
+		fadeDuration: 0.1,
 	 // Use Prettify select library
 	 prettySelect: false,
 	 // Add css class on prompt
@@ -2092,7 +2092,7 @@
 	 // Only show one message per error prompt
 	 showOneMessage: false
 	}};
-	$(function(){$.validationEngine.defaults.promptPosition = methods.isRTL()?'topLeft':"topRight"});
+	$(function(){$.validationEngine.defaults.promptPosition = methods.isRTL()?'topLeft':"centerRight"});
 })(jQuery);
 
 
