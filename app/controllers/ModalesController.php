@@ -30,11 +30,16 @@ class ModalesController extends BaseController
 
 	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago, $numero_digitel )
 	{		
+		
 		//str_replace('0412', '',$numero_digitel.$numero_afiliado)
-		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=' . $numero_digitel.$numero_afiliado . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
+		$prefijo = "";
+		if ($numero_digitel != "000") {
+			$prefijo = $numero_digitel;
+		}
+		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=' . $prefijo.$numero_afiliado . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
 
 		//echo $url;
-		$stream_context	= stream_context_create( array('http' => array('timeout' => 10.0)) );
+		$stream_context	= stream_context_create( array('http' => array('timeout' => 2400.0)) );
 		$fp							= @fopen($url, 'r', false, $stream_context);
 
 		if($fp)
@@ -48,7 +53,7 @@ class ModalesController extends BaseController
 			$resp	= new StdClass();
 			$resp->codigo = '21';
 		}		
-		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago )->with('resp', $resp)->with('meta', $meta );
+		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago )->with('resp', $resp)->with('meta', $meta )->with('prefijo', $prefijo);
 	}
 
 	public function afiliacionDigitelModificacion( $afiliacion_id )

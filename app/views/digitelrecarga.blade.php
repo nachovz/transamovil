@@ -12,6 +12,17 @@ $(document).ready(function(){
 		$(".numafiliado").attr("disabled", "disabled")
 	};
 
+	if ($('.numafiliado').val() != "-1") {
+		$('.nuevocelular').attr("disabled", "disabled")
+		$('.pref_dig').attr("disabled", "disabled")
+	};
+
+	if ($('.selectmetodopago').val() == "Código Promocional" ){
+		$(".culo1").hide()
+	 	$(".culo2").hide()
+	 	$(".monnto").val("")
+	};
+
 	$('.selectmetodopago').on('change',function(){
 	     var selection = $(this).val();
 	    switch(selection){
@@ -27,7 +38,7 @@ $(document).ready(function(){
 	    }
 	});
 
-	$('.nuevocelular').on('input',function(){
+	$('.nuevocelular').on('change',function(){
         if( !isNaN($(this).val()) ){
         $(".numafiliado").attr("disabled", "disabled")
         }
@@ -38,7 +49,7 @@ $(document).ready(function(){
     });
 
     $('.numafiliado').on('change',function(){
-        if( $(this).val()==="SELECCIONE"){
+        if( $(this).val()==="-1"){
         $('.nuevocelular').removeAttr("disabled")
         $('.pref_dig').removeAttr("disabled")
         }
@@ -48,19 +59,18 @@ $(document).ready(function(){
         }
     });
 
-    var elements = document.getElementsByTagName("INPUT");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].oninvalid = function(e) {
-            e.target.setCustomValidity("");
-            if (!e.target.validity.valid) {
-                e.target.setCustomValidity("Error");
-            }
-        };
-        elements[i].oninput = function(e) {
-            e.target.setCustomValidity("");
-        };
-    }
-
+    // var elements = document.getElementsByTagName("INPUT");
+    // for (var i = 0; i < elements.length; i++) {
+    //     elements[i].oninvalid = function(e) {
+    //         e.target.setCustomValidity("");
+    //         if (!e.target.validity.valid) {
+    //             e.target.setCustomValidity("Error");
+    //         }
+    //     };
+    //     elements[i].oninput = function(e) {
+    //         e.target.setCustomValidity("");
+    //     };
+    // }
 });
 </script>
 
@@ -70,6 +80,7 @@ $(document).ready(function(){
 	<div id="mis_servicios_3"></div>
 	<div id="volver_home"><a href="{{URL::route( 'home' )}}"><img src="img/volver_home.png"></a></div>
 	<div class="servicio_texto_1">POR FAVOR INGRESA LOS DATOS</div>
+	
 	<div class="logo_digitel" style="top:26px"></div>
 	<div class="afiliacion_3" style="top:114px;">
 		<table id="tabla_5">
@@ -83,7 +94,7 @@ $(document).ready(function(){
 				<td>NÚMEROS AFILIADOS:</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(0,137,150);">MONTO BsF.</td>
+				<td style="background-color:rgb(0,137,150);">MONTO Bs.</td>
 			</tr>
 			</tr>
 				<td>MÉTODO DE PAGO:</td>
@@ -97,12 +108,12 @@ $(document).ready(function(){
 	</table>
 	</div> 
 	<div id="aux_recarga">
-		{{Form::open(array('method' => 'post', 'route' => 'digitelrecargaconfirmar'))}}
+		{{Form::open(array('id' => 'aidi', 'method' => 'post', 'route' => 'digitelrecargaconfirmar'))}}
 		{{Form::select('servicio', array('DIGITEL PRE-PAGO' => 'DIGITEL PRE-PAGO'), null, array('id' => 'campo_registro2'))}}<br>
 		{{Form::select('numero_digitel', array('0412' => '0412', '0212' => '0212', '0234' => '0234', '0235' => '0235', '0237' => '0237', '0238' => '0238', '0239' => '0239', '0240' => '0240', '0241' => '0241', '0242' => '0242', '0243' => '0243', '0244' => '0244', '0245' => '0245', '0246' => '0246', '0247' => '0247', '0248' => '0248', '0249' => '0249', '0251' => '0251', '0252' => '0252', '0253' => '0253', '0254' => '0254', '0255' => '0255', '0256' => '0256', '0257' => '0257', '0258' => '0258', '0259' => '0259', '0261' => '0261', '0262' => '0262', '0263' => '0263', '0264' => '0264', '0265' => '0265', '0266' => '0266', '0267' => '0267', '0268' => '0268', '0269' => '0269', '0271' => '0271', '0272' => '0272', '0273' => '0273', '0274' => '0274', '0275' => '0275', '0276' => '0276', '0277' => '0277', '0278' => '0278', '0279' => '0279', '0281' => '0281', '0282' => '0282', '0283' => '0283', '0284' => '0284', '0285' => '0285', '0286' => '0286', '0287' => '0287', '0288' => '0288', '0289' => '0289', '0291' => '0291', '0292' => '0292', '0293' => '0293', '0294' => '0294', '0295' => '0295'), Session::get('numero_digitel'), array('class' => 'pref_dig', 'id' => 'campo_registro5'))}}
-		{{Form::text( 'numero_afiliado', Session::has('numero_digitel') ? Session::get('numero_afiliado') : null, array('pattern' => '.{7,7}', 'class' => 'nuevocelular', 'id' => 'campo_registro3aa', 'required', 'x-moz-errormessage' => 'Introduzca un número (Debe tener 7 dígitos)', 'title' => 'Introduzca un número (Debe tener 7 dígitos)') )}}<br>
+		{{Form::text( 'numero_afiliado', Session::has('numero_digitel') ? Session::get('numero_afiliado') : null, array('pattern' => '.{7,7}', 'class' => 'validate[required] nuevocelular', 'id' => 'campo_registro3aa') )}}<br>
 		<select id="campo_registro2" name="numero_afiliado" class="numafiliado">
-			<option>SELECCIONE</option>
+			<option value="-1">SELECCIONE</option>
 				@foreach ($numerillo as $numerillo)
 
 				<?php 
@@ -119,9 +130,11 @@ $(document).ready(function(){
 				<option value="{{$numerillo->numero}}" {{$selected}} >{{$numerillo->numero}} - {{$numerillo->alias}}</option>
 				@endforeach
 		</select><br>
-		{{Form::text( 'monto', null, array('class' => 'monnto', 'id' => 'campo_registro_a8', 'required', 'x-moz-errormessage' => 'Introduzca un monto', 'title' => 'Introduzca un monto') )}}<br>
-		{{Form::select('metodo_pago', array('Cuenta de Banco' => 'Cuenta de Banco', 'Tarjeta de Crédito' => 'Tarjeta de Crédito', 'Código Promocional' => 'Código Promocional'), null, array('id' => 'campo_registro2', 'class' => 'selectmetodopago'))}}<br>
-		{{Form::text( 'codigo', null, array('pattern' => '((1234[1-9]))', 'class' => 'culo2', 'id' => 'campo_registro8', 'required', 'x-moz-errormessage' => 'Introduzca un código correcto', 'title' => 'Introduzca un código correcto', 'style' => 'display:none;') )}}<br>
+		{{Form::text( 'monto', null, array('class' => 'validate[required],min[20],max[500] monnto', 'id' => 'campo_registro_a8'))}}<br>
+		{{Form::select('metodo_pago', array('Cuenta de Banco' => 'Cuenta de Banco', 'Tarjeta de Crédito' => 'Tarjeta de Crédito', 'Código Promocional' => 'Código Promocional'), null, array('id' => 'campo_registro2', 'class' => 'validate[required],equals2[paagoo] selectmetodopago'))}}<br>
+		{{Form::hidden('coodigoo', 12345, array('id' =>'coodigoo'))}}
+		{{Form::hidden('pago', 'Código Promocional', array('id' =>'paagoo'))}}
+		{{Form::text( 'codigo', null, array('class' => 'validate[required],equals[coodigoo] culo2', 'id' => 'campo_registro8', 'style' => 'display:none;') )}}<br>
 	</div>
 	<!--<div class="afiliacion_3" style="top:255px">
 		<table id="tabla_5">
@@ -168,14 +181,19 @@ $(document).ready(function(){
 		V-22.035.112
 	</div>-->
 	<div id="notif">
-		"Introduzca el monto deseado desde Bs. 20 hasta<br>500 en múltiplos de 10, Ej : 20, 30, 40, …490, 500”
+		"Introduzca el monto deseado desde Bs. 20 hasta<br>Bs. 500 en múltiplos de 10, Ej : 20, 30, 40, …490, 500”
 	</div>
 	<!--<div class="terms"></div>-->
 	<div class="buttons_6" style="top: 211px;">
-		{{Form::submit('', array('id' => 'boton_continuar')) . Form::close()}}&nbsp;&nbsp;&nbsp;<a href="{{URL::route( 'home2' )}}"><img src="img/cancelar_2.png"></a>
+		{{Form::submit('', array('id' => 'boton_continuar')) . Form::close()}}&nbsp;&nbsp;&nbsp;<a href="{{URL::route( 'home2' )}}" id="faki8"><img src="img/cancelar_2.png"></a>
 	</div>
 </div><!--container_home_4-->
 </div><!--container3-->
 </div><!--container_reg-->
+<script>
+    $(document).ready(function(){
+        $("#aidi").validationEngine('attach', {scroll: false});
+       });
+</script>
 
 {{$footer}}

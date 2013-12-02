@@ -208,12 +208,11 @@ $(document).ready(function() {
   {{Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
 </div>-->
 
-<div id="regist">{{Form::open(array('route' => 'login', 'method' => 'post'))}}
+<div id="regist">
+  {{Form::open(array('route' => 'login', 'method' => 'post'))}}
+<?php $message = Session::get('message'); ?>
 
-@if( isset( $message ) && ! empty( $message ) )
-    <legend>{{$message}}</legend>
-    <?php unset( $message );?>
-@endif
+
 
 @if( $errors->has( 'email' ) )
       @foreach( $errors->get( 'email' ) as $error )
@@ -221,7 +220,7 @@ $(document).ready(function() {
       @endforeach
 @endif
 
-{{Form::label( 'email', 'EMAIL: ', array('id' => 'labelheaderemail')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su correo', 'title' => 'Introduzca su correo') )}}
+{{Form::label( 'email', 'EMAIL: ', array('id' => 'labelheaderemail')) . Form::email( 'email', Input::old('email'), array('placeholder'=>'Correo Electronico', 'class' => 'validate[required]', 'id' => 'fix','class' => 'validate[required]', 'required', 'x-moz-errormessage' => 'Introduzca su correo', 'title' => 'Introduzca su correo') )}}
 
 @if( $errors->has( 'password' ) )
       @foreach( $errors->get( 'password' ) as $error )
@@ -229,10 +228,14 @@ $(document).ready(function() {
       @endforeach
 @endif
 
-&nbsp;&nbsp;{{Form::label( 'password', 'Contraseña: ', array('id' => 'labelheaderemail')) . Form::password( 'password', array('placeholder'=>'Password', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su clave', 'title' => 'Introduzca su clave') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
+&nbsp;&nbsp;{{Form::label( 'password', 'Contraseña: ', array('id' => 'labelheaderemail')) . Form::password( 'password', array('placeholder'=>'Password', 'class' => 'validate[required]', 'id' => 'fix', 'required', 'x-moz-errormessage' => 'Introduzca su clave', 'title' => 'Introduzca su clave') ) . Form::submit('', array('id' => 'boton_registrar')) . Form::close()}}
 
 <div id="forgot_pwd"><a href="{{URL::route( 'index' )}}">Olvidé mi contraseña</a></div>
 <div id="forgot_mail"><a href="{{URL::route( 'index' )}}">Olvidé mi correo</a></div>
+@if( isset( $message ) && ! empty( $message ) )
+    <div id="error_message">{{$message}}</div>
+    <?php unset( $message );?>
+@endif
 </div>
 
 <div id="logo"><a href="{{URL::route( 'index' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','img/logo.jpg',0)"><img src="img/logo.jpg" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
