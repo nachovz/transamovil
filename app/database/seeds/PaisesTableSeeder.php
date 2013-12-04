@@ -9,12 +9,11 @@ class PaisesTableSeeder extends Seeder {
 
 		$now = date( 'Y-m-d H:i:s' );
 
-		$paises = array(
-			array ( 'nombre' => 'VENEZUELA', 'created_at' => $now, 'updated_at' => $now ),
-		);
-
 		// Uncomment the below to run the seeder
-		DB::table('paises')->insert($paises);
+		$pais = new Pais();
+		$pais->id = 862;
+		$pais->nombre = 'Venezuela';
+		$pais->save();
 	}
 
 }
