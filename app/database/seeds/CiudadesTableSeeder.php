@@ -511,13 +511,10 @@ class CiudadesTableSeeder extends Seeder {
 		);
 
 		foreach ($ciudades as $row) {
-			//$estado = Estado::where('id', '=', $row['id_estado'])->get()->first();
-
 			$ciudad = new Ciudad();
 			$ciudad->id = $row['id_ciudad'];
 			$ciudad->estado_id = $row['id_estado'];
 			$ciudad->nombre = $row['ciudad'];
-			//$estado->ciudades()->save($ciudad);
 			$ciudad->save();
 		}
 	}
