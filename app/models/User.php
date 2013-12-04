@@ -49,9 +49,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	public function direcciones()
+	{
+		return $this->hasMany('Usuario_direccion', 'usuario_id');	
+	}
+
 	public function telefonos()
 	{
-		return $this->hasMany('Usuario_telefono');
+		return $this->hasMany('Usuario_telefono', 'usuario_id');	
 	}
 
 	public function medios_de_pago()
@@ -62,6 +67,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function archivos()
 	{
 		return $this->belongsToMany('Archivo')->withPivot('label');
+	}
+
+	public function computadoras()
+	{
+		return $this->hasMany('Computadora', 'usuario_id');
 	}
 
 	public function afiliaciones()

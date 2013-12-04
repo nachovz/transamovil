@@ -22,13 +22,14 @@ class CreateUsuariosTable extends Migration {
         $table->date('fecha_nacimiento');
         $table->string('transapin', 15);
         $table->enum('sexo', array('m', 'f'));
+        $table->string('emaila', 255)->nullable();
         $table->integer('profesion_id')->unsigned();
         $table->integer('campo_laboral_id')->unsigned();
         $table->enum('nivel_educativo', array('Primaria', 'Secundaria', 'TSU', 'Universitario'));
-        $table->decimal('ingreso_mensual', 8, 2);
+        $table->decimal('ingreso_mensual', 8, 2)->nullable()->default(0);
         $table->enum('estado_civil', array('Soltero', 'Casado', 'Viudo', 'Divorciado'));
         $table->integer('banco_default_id')->unsigned();
-        $table->enum('tipo_documento', array('Pasaporte', 'Cédula'));
+        $table->enum('tipo_documento', array('Pasaporte', 'Cédula', 'Extranjero', 'Juridico'));
         $table->string('nro_documento', 30);
         $table->string('pregunta_seguridad', 255);
         $table->string('respuesta_seguridad', 255);

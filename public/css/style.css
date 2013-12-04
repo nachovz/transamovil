@@ -1515,8 +1515,8 @@ table#tabla_7 td {
 #error_message{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 9px;
-	color: #808080;
-	margin: -14px 0 0 107px;
+	color: #FF0000;
+	margin: 0px;
 }
 
 .mac.gecko #boton_auxiliar_siguiente, #boton_auxiliar_cancelar_2 {
