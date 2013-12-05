@@ -73,92 +73,94 @@
 		</div><!--contenedor_registro_1-->
 
 		<div id="contenedor_registro_2" class="inactive">
-			<div id="img_reg"></div>
-			<div id="paso_2"></div>			
-			<div id="form_reg">
-				{{Form::label( 'ced_pas', 'CÉDULA/PASAPORTE: *', array('id' => 'labels_registro')) . Form::select('prefijo_ced_pas', array('V' => 'V-', 'E' => 'E-', 'J' => 'J-', 'P' => 'P-')) . Form::text( 'ced_pas', null, array('id' => 'campo_registro33', 'class' => 'registro_ced_pas') )}}
-				@if($errors->has('prefijo_ced_pas'))
-					<p class="error_message">{{ $errors->first('prefijo_ced_pas') }}</p>
-				@endif
+			<div class="innerContainer">
+				<div id="img_reg"></div>
+				<div id="paso_2"></div>			
+				<div id="form_reg">
+					{{Form::label( 'ced_pas', 'CÉDULA/PASAPORTE: *', array('id' => 'labels_registro')) . Form::select('prefijo_ced_pas', array('V' => 'V-', 'E' => 'E-', 'J' => 'J-', 'P' => 'P-')) . Form::text( 'ced_pas', null, array('id' => 'cedula_registro', 'class' => 'registro_ced_pas validate[required, custom[integer], minSize[7]]') )}}
+					@if($errors->has('prefijo_ced_pas'))
+						<p class="error_message">{{ $errors->first('prefijo_ced_pas') }}</p>
+					@endif
 
-				<div id="aux3">
-				{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'campo_registro', 'class' => 'registro_nombre') )}}
-				@if($errors->has('nombre'))
-					<p class="error_message">{{ $errors->first('nombre') }}</p>
-				@endif
+					<div id="aux3">
+					{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'nombre_registro', 'class' => 'registro_nombre validate[required, custom[onlyLetterSp]]') )}}
+					@if($errors->has('nombre'))
+						<p class="error_message">{{ $errors->first('nombre') }}</p>
+					@endif
 
-				{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'campo_registro', 'class' => 'registro_apellido') )}}
-				@if($errors->has('apellido'))
-					<p class="error_message">{{ $errors->first('apellido') }}</p>
-				@endif
+					{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'apellido_registro', 'class' => 'registro_apellido validate[required, custom[onlyLetterSp]]') )}}
+					@if($errors->has('apellido'))
+						<p class="error_message">{{ $errors->first('apellido') }}</p>
+					@endif
 
-				{{Form::label( 'nacimiento', 'FECHA DE NACIMIENTO: *', array('id' => 'labels_registro')) . Form::text( 'nacimiento', null, array('placeholder'=>'DD/MM/AAAA','id' => 'campo_registro') )}}
-				@if($errors->has('nacimiento'))
-					<p class="error_message">{{ $errors->first('nacimiento') }}</p>
-				@endif
+					{{Form::label( 'nacimiento', 'FECHA DE NACIMIENTO: *', array('id' => 'labels_registro')) . Form::text( 'nacimiento', null, array('placeholder'=>'DD/MM/AAAA','id' => 'fecha_registro', 'class' => 'validate[required, custom[date]]') )}}
+					@if($errors->has('nacimiento'))
+						<p class="error_message">{{ $errors->first('nacimiento') }}</p>
+					@endif
 
-				{{Form::label( 'sexo', 'SEXO:', array('id' => 'labels_registro'))}}
-				<div id="radio2">
-					{{Form::radio('sexo', 'masculino')}}<span class="radio_check4">Masculino</span>
+					{{Form::label( 'sexo', 'SEXO:', array('id' => 'labels_registro'))}}
+					<div id="radio2">
+						{{Form::radio('sexo', 'masculino')}}<span class="radio_check4">Masculino</span>
+					</div>
+					<div id="radio3">
+					{{Form::radio('sexo', 'femenino')}}<span class="radio_check4">Femenino</span>
+					</div>
+					@if($errors->has('sexo'))
+						<p class="error_message">{{ $errors->first('sexo') }}</p>
+					@endif
+
+					<br><br>
+					<div id="imgcaptcha"></div>
+					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, array('readonly', 'id' => 'campo_registro_captcha'))}}
+					</div>
+					<br><br><br><br><br>
+					<div id="check">{{Form::checkbox('name', 'value', true)}}<span class="radio_check3">Deseo recibir correo informativos de TransaMóvil</span><br>
+					{{Form::checkbox('registro-terminos-check', '1', null, array('id' => 'registro-terminos-check', 'class' => 'validate[required]'))}}<span class="radio_check3">Acepto los <u>Términos y Condiciones</u> de TransaMóvil</span></div>
 				</div>
-				<div id="radio3">
-				{{Form::radio('sexo', 'femenino')}}<span class="radio_check4">Femenino</span>
+				<div id="form_reg2">
+					{{Form::label( 'pais', 'PAÍS: *', array('id' => 'labels_registro')) . Form::text( 'pais', 'VENEZUELA', $attributes = array('readonly', 'id' => 'pais_registro', 'class' => 'validate[required]'))}}
+					@if($errors->has('pais'))
+						<p class="error_message">{{ $errors->first('pais') }}</p>
+					@endif
+
+					{{Form::label( 'estado', 'ESTADO: *', array('id' => 'labels_registro')) . Form::select('estado', $estados, null, array('id' => 'estado_registro', 'class' => 'validate[required]'))}}
+					@if($errors->has('estado'))
+						<p class="error_message">{{ $errors->first('estado') }}</p>
+					@endif
+
+					{{Form::label( 'municipio', 'MUNICIPIO: *', array('id' => 'labels_registro')) . Form::select('municipio', $municipios, null, array('id' => 'municipio_registro', 'class' => 'validate[required]'))}}
+					@if($errors->has('municipio'))
+						<p class="error_message">{{ $errors->first('municipio') }}</p>
+					@endif
+
+					{{Form::label( 'ciudad', 'CIUDAD: *', array('id' => 'labels_registro')) . Form::select('ciudad', $ciudades, null, array('id' => 'ciudad_registro', 'class' => 'validate[required]'))}}
+					@if($errors->has('ciudad'))
+						<p class="error_message">{{ $errors->first('ciudad') }}</p>
+					@endif
+
+					{{Form::label( 'direccion', 'DIRECCIÓN: *', array('id' => 'labels_registro')) . Form::text( 'direccion', null, array('id' => 'direccion_registro', 'class' => 'validate[required]') )}}
+					@if($errors->has('direccion'))
+						<p class="error_message">{{ $errors->first('direccion') }}</p>
+					@endif
+
+					{{Form::label( 'tlf_habitacion', 'TELÉFONO HABITACIÓN: *', array('id' => 'labels_registro')) . Form::text( 'tlf_habitacion', null, array('id' => 'telefono_hab_registro', 'class' => 'validate[required]') )}}
+					@if($errors->has('tlf_habitacion'))
+						<p class="error_message">{{ $errors->first('tlf_habitacion') }}</p>
+					@endif
+
+					{{Form::label( 'tlf_oficina', 'TELÉFONO OFICINA: *', array('id' => 'labels_registro')) . Form::text( 'tlf_oficina', null, array('id' => 'telefono_ofi_registro', 'class' => 'validate[required]') )}}
+					@if($errors->has('tlf_oficina'))
+						<p class="error_message">{{ $errors->first('tlf_oficina') }}</p>
+					@endif
+
 				</div>
-				@if($errors->has('sexo'))
-					<p class="error_message">{{ $errors->first('sexo') }}</p>
-				@endif
-
-				<br><br>
-				<div id="imgcaptcha"></div>
-				{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, array('readonly', 'id' => 'campo_registro_captcha'))}}
+				
+				<div id="bot_siguiente_2">
+					{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2', 'style' => 'margin-right:12px;'))}}
+					{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'class' => 'fixx', 'value' => '2', 'style' => 'display:none;margin-right:12px;'))}}
+					<a href="modales/modal_registro.html" class="clsVentanaIFrame" style='margin-right:12px'><img src="img/siguiente.png"></a>
+					{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 				</div>
-				<br><br><br><br><br>
-				<div id="check">{{Form::checkbox('name', 'value', true)}}<span class="radio_check3">Deseo recibir correo informativos de TransaMóvil</span><br>
-				{{Form::checkbox('registro-terminos-check', '1', null, array('id' => 'registro-terminos-check'))}}<span class="radio_check3">Acepto los <u>Términos y Condiciones</u> de TransaMóvil</span></div>
-			</div>
-			<div id="form_reg2">
-				{{Form::label( 'pais', 'PAÍS: *', array('id' => 'labels_registro')) . Form::text( 'pais', 'VENEZUELA', $attributes = array('readonly', 'id' => 'campo_registro'))}}
-				@if($errors->has('pais'))
-					<p class="error_message">{{ $errors->first('pais') }}</p>
-				@endif
-
-				{{Form::label( 'estado', 'ESTADO: *', array('id' => 'labels_registro')) . Form::select('estado', $estados, null, array('id' => 'campo_registro2'))}}
-				@if($errors->has('estado'))
-					<p class="error_message">{{ $errors->first('estado') }}</p>
-				@endif
-
-				{{Form::label( 'municipio', 'MUNICIPIO: *', array('id' => 'labels_registro')) . Form::select('municipio', $municipios, null, array('id' => 'campo_registro2'))}}
-				@if($errors->has('municipio'))
-					<p class="error_message">{{ $errors->first('municipio') }}</p>
-				@endif
-
-				{{Form::label( 'ciudad', 'CIUDAD: *', array('id' => 'labels_registro')) . Form::select('ciudad', $ciudades, null, array('id' => 'campo_registro2'))}}
-				@if($errors->has('ciudad'))
-					<p class="error_message">{{ $errors->first('ciudad') }}</p>
-				@endif
-
-				{{Form::label( 'direccion', 'DIRECCIÓN: *', array('id' => 'labels_registro')) . Form::text( 'direccion', null, array('id' => 'campo_registro') )}}
-				@if($errors->has('direccion'))
-					<p class="error_message">{{ $errors->first('direccion') }}</p>
-				@endif
-
-				{{Form::label( 'tlf_habitacion', 'TELÉFONO HABITACIÓN: *', array('id' => 'labels_registro')) . Form::text( 'tlf_habitacion', null, array('id' => 'campo_registro') )}}
-				@if($errors->has('tlf_habitacion'))
-					<p class="error_message">{{ $errors->first('tlf_habitacion') }}</p>
-				@endif
-
-				{{Form::label( 'tlf_oficina', 'TELÉFONO OFICINA: *', array('id' => 'labels_registro')) . Form::text( 'tlf_oficina', null, array('id' => 'campo_registro') )}}
-				@if($errors->has('tlf_oficina'))
-					<p class="error_message">{{ $errors->first('tlf_oficina') }}</p>
-				@endif
-
-			</div>
-			
-			<div id="bot_siguiente_2">
-				{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2', 'style' => 'margin-right:12px;'))}}
-				{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'class' => 'fixx', 'value' => '2', 'style' => 'display:none;margin-right:12px;'))}}
-				<a href="modales/modal_registro.html" class="clsVentanaIFrame" style='margin-right:12px'><img src="img/siguiente.png"></a>
-				{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 			</div>			
 		</div><!--contenedor_registro_2-->
 
