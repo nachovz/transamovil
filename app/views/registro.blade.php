@@ -4,71 +4,72 @@
 	<div id="container3">
 		{{Form::open(array('route' => 'registro_final', 'method' => 'post', 'id' => 'registro-form'))}}
 		<div id="contenedor_registro_1" class="active">
-			<div id="img_reg"></div>
-			<div id="paso_1"></div>			
-			<div id="form_reg">
+			<div class="innerContainer">
+				<div id="img_reg"></div>
+				<div id="paso_1"></div>			
+				<div id="form_reg">
 
-				{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email') )}}
-				@if($errors->has('mail'))
-					<p class="error_message">{{ $errors->first('mail') }}</p>
-				@endif
+					{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email validate[required, custom[email]]') )}}
+					@if($errors->has('mail'))
+						<p class="error_message">{{ $errors->first('mail') }}</p>
+					@endif
 
-				{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::text( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check') )}}
-				@if($errors->has('mail_check'))
-					<p class="error_message">{{ $errors->first('mail_check') }}</p>
-				@endif
+					{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::text( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check validate[required, custom[email], funcCall[sameEmail]]') )}}
+					@if($errors->has('mail_check'))
+						<p class="error_message">{{ $errors->first('mail_check') }}</p>
+					@endif
 
-				{{Form::label( 'password', 'CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password', array('id' => 'campo_registro', 'class' => 'registro_password') )}}
-				@if($errors->has('password'))
-					<p class="error_message">{{ $errors->first('password') }}</p>
-				@endif
+					{{Form::label( 'password', 'CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password', array('id' => 'password_registro', 'class' => 'registro_password validate[required, custom[mustLetterNumbers], minSize[7]]') )}}
+					@if($errors->has('password'))
+						<p class="error_message">{{ $errors->first('password') }}</p>
+					@endif
 
-				{{Form::label( 'password_confirmation', 'CONFIRMAR CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password_confirmation', array('id' => 'campo_registro', 'class' => 'registro_password_check') )}}
-				@if($errors->has('password_confirmation'))
-					<p class="error_message">{{ $errors->first('password_confirmation') }}</p>
-				@else
-					<p id="labels_registro_2">(Debe estar compuesta por números y letras)</p>
-				@endif
+					{{Form::label( 'password_confirmation', 'CONFIRMAR CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password_confirmation', array('id' => 'password_confirm', 'class' => 'registro_password_check validate[required, funcCall[samePassword]]') )}}
+					@if($errors->has('password_confirmation'))
+						<p class="error_message">{{ $errors->first('password_confirmation') }}</p>
+					@else
+						<p id="labels_registro_2">(Debe estar compuesta por números y letras)</p>
+					@endif
 
-				{{Form::label( 'pregunta_seguridad', 'PREGUNTA DE SEGURIDAD: *', array('id' => 'labels_registro')) . Form::select('pregunta_seguridad', array('0' => 'Nombre de Mascota', '1' => 'Nombre de Abuelo Paterno', '2' => 'Nombre de Colegio donde Estudió'), null, array('id' => 'campo_registro2'))}}
-				@if($errors->has('pregunta_seguridad'))
-					<p class="error_message">{{ $errors->first('pregunta_seguridad') }}</p>
-				@endif
+					{{Form::label( 'pregunta_seguridad', 'PREGUNTA DE SEGURIDAD: *', array('id' => 'labels_registro')) . Form::select('pregunta_seguridad', array('0' => 'Nombre de Mascota', '1' => 'Nombre de Abuelo Paterno', '2' => 'Nombre de Colegio donde Estudió'), null, array('id' => 'campo_registro2 '))}}
+					@if($errors->has('pregunta_seguridad'))
+						<p class="error_message">{{ $errors->first('pregunta_seguridad') }}</p>
+					@endif
 
-				{{Form::label( 'respuesta_seguridad', 'RESPUESTA DE SEGURIDAD: *', array('id' => 'labels_registro')) . Form::text( 'respuesta_seguridad', null, array('id' => 'campo_registro') )}}
-				@if($errors->has('respuesta_seguridad'))
-					<p class="error_message">{{ $errors->first('respuesta_seguridad') }}</p>
-				@endif
-
-			</div>
-			<div id="form_reg2">
-				{{Form::label( 'computadora_confianza', 'REGISTRAR COMPUTADORA DE CONFIANZA:', array('id' => 'labels_registro_3'))}}
-				<p id="labels_registro_4">(Computadora de Uso Frecuente)</p>
-				<div id="radio">
-				{{Form::radio('computadora_confianza', 'No es de confianza')}}<span class="radio_check">No es de confianza</span><br>
-				{{Form::radio('computadora_confianza', 'Casa')}}<span class="radio_check">Casa</span><br>
-				{{Form::radio('computadora_confianza', 'Oficina')}}<span class="radio_check">Oficina</span><br>
-				{{Form::radio('computadora_confianza', 'Otro')}}<span class="radio_check">Otro</span>
-				</div>
-				<div id="auxiliar">
-				{{Form::label( 'celular', 'TELÉFONO CELULAR: *', array('id' => 'labels_registro')) . Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426')) . Form::text( 'celular', null, array('id' => 'campo_registro3') )}} 
-				@if($errors->has('prefijo_celular'))
-					<p class="error_message">{{ $errors->first('prefijo_celular') }}</p>
-				@endif
-
-				{{Form::label( 'maila', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'maila', null, array('id' => 'campo_registro', 'class' => 'registro_email_alterno') )}}
-				@if($errors->has('maila'))
-					<p class="error_message">{{ $errors->first('maila') }}</p>
-				@endif
+					{{Form::label( 'respuesta_seguridad', 'RESPUESTA DE SEGURIDAD: *', array('id' => 'labels_registro')) . Form::text( 'respuesta_seguridad', null, array('id' => 'respuesta_registro', 'class' => 'validate[required]') )}}
+					@if($errors->has('respuesta_seguridad'))
+						<p class="error_message">{{ $errors->first('respuesta_seguridad') }}</p>
+					@endif
 
 				</div>
-			</div>
-			
-			<div id="bot_siguiente">
-				{{Form::button('', array('class' => 'sig', 'id' => 'boton_auxiliar_siguiente', 'value' => '1', 'style' => 'margin-right:12px;'))}}
-				{{Form::button('', array('class' => 'canc2', 'id' => 'boton_auxiliar_cancelar_2'))}}
-			</div>
+				<div id="form_reg2">
+					{{Form::label( 'computadora_confianza', 'REGISTRAR COMPUTADORA DE CONFIANZA:', array('id' => 'labels_registro_3'))}}
+					<p id="labels_registro_4">(Computadora de Uso Frecuente)</p>
+					<div id="radio">
+					{{Form::radio('computadora_confianza', 'No es de confianza')}}<span class="radio_check">No es de confianza</span><br>
+					{{Form::radio('computadora_confianza', 'Casa')}}<span class="radio_check">Casa</span><br>
+					{{Form::radio('computadora_confianza', 'Oficina')}}<span class="radio_check">Oficina</span><br>
+					{{Form::radio('computadora_confianza', 'Otro')}}<span class="radio_check">Otro</span>
+					</div>
+					<div id="auxiliar">
+					{{Form::label( 'celular', 'TELÉFONO CELULAR: *', array('id' => 'labels_registro')) . Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426')) . Form::text( 'celular', null, array('id' => 'telefono_registro', 'class' => 'validate[required, custom[integer], minSize[7]]') )}} 
+					@if($errors->has('prefijo_celular'))
+						<p class="error_message">{{ $errors->first('prefijo_celular') }}</p>
+					@endif
 
+					{{Form::label( 'maila', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'maila', null, array('id' => 'email_alterno', 'class' => 'registro_email_alterno validate[required, custom[email]]') )}}
+					@if($errors->has('maila'))
+						<p class="error_message">{{ $errors->first('maila') }}</p>
+					@endif
+
+					</div>
+				</div>
+				
+				<div id="bot_siguiente">
+					{{Form::button('', array('class' => 'sig', 'id' => 'boton_auxiliar_siguiente', 'value' => '1', 'style' => 'margin-right:12px;'))}}
+					{{Form::button('', array('class' => 'canc2', 'id' => 'boton_auxiliar_cancelar_2'))}}
+				</div>
+			</div>
 		</div><!--contenedor_registro_1-->
 
 		<div id="contenedor_registro_2" class="inactive">
@@ -260,7 +261,6 @@
 	</div><!--container3-->
 </div><!--container_reg-->
 
-<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="js/ventanas-modales.js"></script>
+<!-- <script type="text/javascript" src="js/ventanas-modales.js"></script> -->
 <script type="text/javascript" src="{{asset('js/registro-wizard.js')}}"></script>
 {{$footer}}

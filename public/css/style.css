@@ -184,7 +184,7 @@ a:visited{
 
 	#notif {
 		top: 183px !important;
-		right: 80px !important;
+		right: 65px !important;
 	}
 
 	#aux_recarga {
@@ -238,7 +238,7 @@ a:visited{
 	}
 
 	#notif {
-		right: 10px !important;
+		right: 1px !important;
 	}
 
 	#campo_registro8 {
@@ -664,16 +664,24 @@ label {
 	background-color: #333333;
 }
 
-#contenedor_registro_1 {
+.innerContainer{
 	background-color: #f1f1f1;
+	overflow: hidden;
+	border-radius: 10px;
+	min-height: 621px;
+}
+
+#contenedor_registro_1 {
+	
 	height: 621px;
-	width: 554px;
+	/*width: 554px;*/
 	border-radius: 5px;
 	position: relative;
 	top: 40px;
 	overflow:hidden;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 196px 0 195px;
 }
 
 #contenedor_registro_2 {
@@ -744,6 +752,7 @@ label {
 	margin-left: 10px;
 	float: left;
 	margin-top: -8px;
+	overflow: hidden;
 }
 
 #form_reg2 {
@@ -751,6 +760,7 @@ label {
 	margin-left: 45px;
 	height: 350px;
 	margin-top: -8px;
+	overflow: hidden;
 }
 
 input {
@@ -799,11 +809,15 @@ input {
 }
 
 #bot_siguiente {
-	clear: both;
+	/*clear: both;
 	position: absolute;
 	top: 573px;
 	left: 384px;
+	overflow: hidden;*/
+	float: right;
 	overflow: hidden;
+	width: 150px;
+	margin: 116px 14px 0 0;
 }
 
 #bot_siguiente_2 {
@@ -1690,4 +1704,9 @@ table#tabla_7 td {
 
 .mac.safari #clave_pwd {
 	right: 162px;
+}
+
+/*FORM Errors*/
+.formError{
+	z-index: 10000;
 }

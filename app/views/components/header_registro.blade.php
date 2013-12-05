@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script src="js/jquery.slides.min.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>{{$title}}</title>
 <script src="js/css_browser_selector.js" type="text/javascript"></script>
@@ -16,11 +16,92 @@
 <META NAME="Language" CONTENT="Spanish">
 <META NAME="copyright" CONTENT="Todos los derechos reservados 2013">
 
-<!-- VALIDATORS -->
-<script src="js/jquery.validationEngine-es.js"></script>
-<script src="js/jquery.validationEngine.js"></script>
 <link rel="stylesheet" href="{{asset('css/validationEngine.jquery.css')}}" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/ventanas-modales.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/registro-wizard.css')}}" />
+<style type="text/css">
+  #slides {
+      display: none
+    }
 
+    #slides .slidesjs-navigation {
+      margin-top:3px;
+    }
+
+    #slides .slidesjs-previous {
+      margin-right: 5px;
+      float: left;
+    }
+
+    #slides .slidesjs-next {
+      margin-right: 5px;
+      float: left;
+    }
+
+    .slidesjs-pagination {
+      margin: -30px 400px;
+    position:absolute;
+      list-style: none;
+    z-index:10000;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-image: url(img/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px
+    }
+
+    #slides a:link,
+    #slides a:visited {
+      color: #333
+    }
+
+    #slides a:hover,
+    #slides a:active {
+      color: #9e2020
+    }
+
+    .navbar {
+      overflow: hidden
+    }
+  </style>
+  <style type="text/css">
+a:link {
+  color: #333333;
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover {
+  text-decoration: none;
+  color: #008C99;
+}
+a:active {
+  text-decoration: none;
+  color: #333333;
+}
+</style>
 <!--FONT-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
 <!--FONT-->
@@ -28,7 +109,12 @@
 <!--FONT-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
 <!--FONT-->
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- VALIDATORS -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.slides.min.js"></script>
+<script src="js/jquery.validationEngine-es.js"></script>
+<script src="js/jquery.validationEngine.js"></script>
+
 <script>
     $(function() {
       $('#slides').slidesjs({
@@ -73,89 +159,7 @@
       });
     });
   </script>
-<style type="text/css">
-  #slides {
-      display: none
-    }
 
-    #slides .slidesjs-navigation {
-      margin-top:3px;
-    }
-
-    #slides .slidesjs-previous {
-      margin-right: 5px;
-      float: left;
-    }
-
-    #slides .slidesjs-next {
-      margin-right: 5px;
-      float: left;
-    }
-
-    .slidesjs-pagination {
-      margin: -30px 400px;
-	  position:absolute;
-      list-style: none;
-	  z-index:10000;
-    }
-
-    .slidesjs-pagination li {
-      float: left;
-      margin: 0 1px;
-    }
-
-    .slidesjs-pagination li a {
-      display: block;
-      width: 13px;
-      height: 0;
-      padding-top: 13px;
-      background-image: url(img/pagination.png);
-      background-position: 0 0;
-      float: left;
-      overflow: hidden;
-    }
-
-    .slidesjs-pagination li a.active,
-    .slidesjs-pagination li a:hover.active {
-      background-position: 0 -13px
-    }
-
-    .slidesjs-pagination li a:hover {
-      background-position: 0 -26px
-    }
-
-    #slides a:link,
-    #slides a:visited {
-      color: #333
-    }
-
-    #slides a:hover,
-    #slides a:active {
-      color: #9e2020
-    }
-
-    .navbar {
-      overflow: hidden
-    }
-  </style>
-  <style type="text/css">
-a:link {
-	color: #333333;
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-	color: #333333;
-}
-a:hover {
-	text-decoration: none;
-	color: #008C99;
-}
-a:active {
-	text-decoration: none;
-	color: #333333;
-}
-</style>
 <script type="text/javascript">
 function MM_swapImgRestore() { //v3.0
   var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
@@ -179,8 +183,7 @@ function MM_swapImage() { //v3.0
    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 }
 </script>
-<link rel="stylesheet" type="text/css" href="css/ventanas-modales.css">
-<link rel="stylesheet" type="text/css" href="{{asset('css/registro-wizard.css')}}" />
+
 </head>
 
 <body onload="MM_preloadImages('img/creatium_over.png')">
