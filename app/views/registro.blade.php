@@ -66,7 +66,7 @@
 				</div>
 				
 				<div id="bot_siguiente">
-					{{Form::button('', array('class' => 'sig', 'id' => 'boton_auxiliar_siguiente', 'value' => '1', 'style' => 'margin-right:12px;'))}}
+					{{Form::button('', array('class' => 'boton_auxiliar_siguiente sig', 'id' => '', 'value' => '1', 'style' => 'margin-right:12px;'))}}
 					{{Form::button('', array('class' => 'canc2', 'id' => 'boton_auxiliar_cancelar_2'))}}
 				</div>
 			</div>
@@ -82,7 +82,7 @@
 						<p class="error_message">{{ $errors->first('prefijo_ced_pas') }}</p>
 					@endif
 
-					<div id="aux3">
+					<!-- <div id="aux3"> -->
 					{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'nombre_registro', 'class' => 'registro_nombre validate[required, custom[onlyLetterSp]]') )}}
 					@if($errors->has('nombre'))
 						<p class="error_message">{{ $errors->first('nombre') }}</p>
@@ -109,10 +109,10 @@
 						<p class="error_message">{{ $errors->first('sexo') }}</p>
 					@endif
 
-					<br><br>
+					<!-- <br><br>
 					<div id="imgcaptcha"></div>
 					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, array('readonly', 'id' => 'campo_registro_captcha'))}}
-					</div>
+					 --><!-- </div> -->
 					<br><br><br><br><br>
 					<div id="check">{{Form::checkbox('name', 'value', true)}}<span class="radio_check3">Deseo recibir correo informativos de TransaMóvil</span><br>
 					{{Form::checkbox('registro-terminos-check', '1', null, array('id' => 'registro-terminos-check', 'class' => 'validate[required]'))}}<span class="radio_check3">Acepto los <u>Términos y Condiciones</u> de TransaMóvil</span></div>
@@ -157,8 +157,8 @@
 				
 				<div id="bot_siguiente_2">
 					{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2', 'style' => 'margin-right:12px;'))}}
-					{{Form::button('', array('id' => 'boton_auxiliar_siguiente', 'class' => 'fixx', 'value' => '2', 'style' => 'display:none;margin-right:12px;'))}}
-					<a href="modales/modal_registro.html" class="clsVentanaIFrame" style='margin-right:12px'><img src="img/siguiente.png"></a>
+					{{Form::button('', array('id' => '', 'class' => 'boton_auxiliar_siguiente fixx', 'value' => '2', 'style' => 'margin-right:12px;'))}}
+					<!-- <a href="modales/modal_registro.html" class="clsVentanaIFrame" style='margin-right:12px'><img src="img/siguiente.png"></a> -->
 					{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 				</div>
 			</div>			

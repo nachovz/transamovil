@@ -8,11 +8,25 @@ var answer = $('#respuesta_registro');
 var telefono = $('#telefono_registro');
 var alterno = $('#email_alterno');
 
+var cedula = $('#cedula_registro');
+var nombre = $('#nombre_registro');
+var apellido = $('#apellido_registro');
+var nacimiento = $('#fecha_registro');
+var terminos = $('#registro-terminos-check');
+var pais = $('#pais_registro');
+var estado = $('#estado_registro');
+var municipio = $('#municipio_registro');
+var ciudad = $('#ciudad_registro');
+var direccion = $('#direccion_registro');
+var habitacion = $('#telefono_hab_registro');
+var oficina = $('#telefono_ofi_registro');
+
+
 $(document).ready(function(){
 
 	$("#registro-form").validationEngine();
 
-	$('#boton_auxiliar_siguiente').on( 'click', wizard_next);
+	$('.boton_auxiliar_siguiente').on( 'click', wizard_next);
 	$('#boton_auxiliar_anterior').on( 'click', wizard_prev);
 	$('#boton_auxiliar_cancelar').on( 'click', wizard_cancel);
 	$('#boton_auxiliar_cancelar_2').on( 'click', wizard_cancel);
@@ -50,6 +64,8 @@ function wizard_next( e )
 			$('#contenedor_registro_1').removeClass('active').addClass('inactive');
 			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
 		};
+		$('#contenedor_registro_1').removeClass('active').addClass('inactive');
+			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
 
 		// if( ! email[0].checkValidity() || email.val() == '')
 		// {
@@ -80,38 +96,56 @@ function wizard_next( e )
 	else if( boton.val() == 2 )
 	{
 		//Verificando que la cédula sea válida
-		var cedula = $('.registro_ced_pas');
+		// var cedula = $('.registro_ced_pas');
 
-		if( cedula.val() == '' )
+		// if( cedula.val() == '' )
+		// {
+		// 	alert('Por favor ingresa tu cédula');
+		// 	return false;
+		// }
+
+		// var nombre = $('.registro_nombre');
+
+		// if( nombre.val() == '')
+		// {
+		// 	alert('Por favor ingresa tu nombre');
+		// 	return false;			
+		// }
+
+		// var apellido = $('.registro_apellido');
+
+		// if( apellido.val() == '')
+		// {
+		// 	alert('Por favor ingresa tu apellido');
+		// 	return false;			
+		// }
+
+		// if( ! $('#registro-terminos-check').prop('checked') )
+		// {
+		// 	alert('Debes aceptar los términos y condiciones');
+		// 	return false;
+		// }
+
+		if (!cedula.validationEngine('validate')
+			 && !nombre.validationEngine('validate')
+			 && !apellido.validationEngine('validate')
+			 && !nacimiento.validationEngine('validate')
+			 && !terminos.validationEngine('validate')
+			 && !pais.validationEngine('validate') 
+			 && !estado.validationEngine('validate') 
+			 && !municipio.validationEngine('validate')
+			 && !ciudad.validationEngine('validate') 
+			 && !direccion.validationEngine('validate')
+			 && !habitacion.validationEngine('validate')
+			 && !oficina.validationEngine('validate')) 
 		{
-			alert('Por favor ingresa tu cédula');
-			return false;
-		}
+			$('#contenedor_registro_2').removeClass('active').addClass('inactive');
+			$('#contenedor_registro_3').removeClass('inactive').addClass('active');
 
-		var nombre = $('.registro_nombre');
+			//LLAMADA AJAX PARA REALIZAR REGISTRO
+		};
 
-		if( nombre.val() == '')
-		{
-			alert('Por favor ingresa tu nombre');
-			return false;			
-		}
-
-		var apellido = $('.registro_apellido');
-
-		if( apellido.val() == '')
-		{
-			alert('Por favor ingresa tu apellido');
-			return false;			
-		}
-
-		if( ! $('#registro-terminos-check').prop('checked') )
-		{
-			alert('Debes aceptar los términos y condiciones');
-			return false;
-		}
-
-		$('#contenedor_registro_2').removeClass('active').addClass('inactive');
-		$('#contenedor_registro_3').removeClass('inactive').addClass('active');
+		
 	}
 }
 
