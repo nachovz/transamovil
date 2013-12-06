@@ -36,7 +36,7 @@ class ModalesController extends BaseController
 		if ($numero_digitel != "000") {
 			$prefijo = $numero_digitel;
 		}
-		$url = 'http://digitel.transamovil.com/recargar.jsp?telefono=' . $prefijo.$numero_afiliado . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
+		$url = 'http://digitel.transamovil.com:8000/recargar.jsp?telefono=' . $prefijo.$numero_afiliado . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
 
 		//echo $url;
 		$stream_context	= stream_context_create( array('http' => array('timeout' => 2400.0)) );
