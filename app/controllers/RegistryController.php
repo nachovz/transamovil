@@ -43,6 +43,7 @@ class RegistryController extends BaseController {
 			'apellido'                 => 'required',
 			'nacimiento'               => 'required|date',
 			'sexo'                     => 'required|in:masculino,femenino',
+			'validacion'               => 'required|captcha',
 			'registro-terminos-check'  => 'accepted',
 			'pais'                     => 'required',
 			'estado'                   => 'required|exists:estados,id',
@@ -148,24 +149,62 @@ class RegistryController extends BaseController {
 				// Si hay algun error en el guardado
 				Log::error($e);
 
-				return Redirect::route('registro')
-					->with( 'message', 'Se produjo un error por favor intenta de nuevo' )
-					->withInput();
+				if (Request::ajax())
+				{
+				     return Response::json(
+				     	array(
+							'success' => false,
+							'message' => 'Se produjo un error por favor intenta de nuevo'
+						),
+						400
+					);
+				}
+				else
+				{
+					return Redirect::route('registro')
+						->with( 'message', 'Se produjo un error por favor intenta de nuevo' )
+						->withInput();
+				}
 			}
 			
 			// Si logramos autenticar correctamente
 			Auth::login( $user );
 
 			// Redireccionar al perfil del usuario
-			return Redirect::route('home');
+			if (Request::ajax())
+			{
+			     return Response::json(
+			     	array(
+						'success' => true,
+						'message' => null
+					),
+					200
+			     );
+			}
+			else
+				return Redirect::route('home');
 		}
 		else
 		{
-			// Redirecciona hacia el home, incluyendo mensajes de error del validador
-			return Redirect::route('registro')
-				->with( 'error', 'Se produjo un error por favor intenta de nuevo' )
-				->withErrors( $validator )
-				->withInput();
+			if (Request::ajax())
+			{
+			     return Response::json(
+			     	array(
+						'success' => false,
+						'message' => 'Se produjo un error por favor intenta de nuevo',
+						'errors' => $validator->getMessageBag()->toArray()
+					),
+					400
+			     );
+			}
+			else
+			{
+				// Redirecciona hacia el home, incluyendo mensajes de error del validador
+				return Redirect::route('registro')
+					->with( 'error', 'Se produjo un error por favor intenta de nuevo' )
+					->withErrors( $validator )
+					->withInput();
+			}
 		}
 	}
 

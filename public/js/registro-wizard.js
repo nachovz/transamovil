@@ -139,10 +139,27 @@ function wizard_next( e )
 			 && !habitacion.validationEngine('validate')
 			 && !oficina.validationEngine('validate')) 
 		{
-			$('#contenedor_registro_2').removeClass('active').addClass('inactive');
-			$('#contenedor_registro_3').removeClass('inactive').addClass('active');
-
 			//LLAMADA AJAX PARA REALIZAR REGISTRO
+			$.ajax({
+			  type: 'POST',
+			  url: 'http://localhost/transamovil/registro_final',
+			  data: $( "#registro-form" ).serialize(),
+			  dataType: 'json',
+			  success: function( data ) {
+					$('#contenedor_registro_2').removeClass('active').addClass('inactive');
+					$('#contenedor_registro_3').removeClass('inactive').addClass('active');
+					alert('Llamar ventana modal');
+				},
+		      error: function(response) {
+		         var obj = jQuery.parseJSON( response.responseText );
+
+		         $.each(obj.errors, function(key, value) {
+		            $('input[name=' + key).validationEngine('showPrompt', value, 'error');
+		         })
+		      }
+			});
+
+
 		};
 
 		
