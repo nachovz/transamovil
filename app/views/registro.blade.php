@@ -267,4 +267,5 @@
 
 <!-- <script type="text/javascript" src="js/ventanas-modales.js"></script> -->
 <script type="text/javascript" src="{{asset('js/registro-wizard.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/ventanas-modales.js')}}"></script>
 {{$footer}}

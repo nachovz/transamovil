@@ -22,8 +22,7 @@ class RegistryController extends BaseController {
 			)
 		);
 	}
-
-	public function registro_final()
+	public function registro_usuario()
 	{
 		// Crear reglas de validacion del formulario
 		$rules = array(
@@ -176,7 +175,11 @@ class RegistryController extends BaseController {
 			     return Response::json(
 			     	array(
 						'success' => true,
-						'message' => null
+						'message' => null,
+						'result' => array(
+							'email' => $user->email,
+							'transapin' => $user->transapin
+						)
 					),
 					200
 			     );
@@ -206,6 +209,11 @@ class RegistryController extends BaseController {
 					->withInput();
 			}
 		}
+	}
+
+	public function registro_final()
+	{
+		return Redirect::route('home');
 	}
 
 }
