@@ -95,7 +95,7 @@
 									<span class="modal_transaccion_exitosa_contenido">N° CONFIRMACIÓN:</span>
 								</td>
 								<td style ="text-align:right">
-									<span class="modal_transaccion_exitosa_contenido2">{{@resp->{'codtrans'}}}</span>
+									<span class="modal_transaccion_exitosa_contenido2"><?php echo $resp->{'codtrans'}; ?></span>
 								</td>
 							</tr>
 							<!-- <tr>
