@@ -92,20 +92,20 @@
 							</tr>
 							<tr>
 								<td>
-									<span class="modal_transaccion_exitosa_contenido">N° CONFIRMACIÓN TRANSAMÓVIL:</span>
+									<span class="modal_transaccion_exitosa_contenido">N° CONFIRMACIÓN:</span>
 								</td>
 								<td style ="text-align:right">
-									<span class="modal_transaccion_exitosa_contenido2">4567686</span>
+									<span class="modal_transaccion_exitosa_contenido2">{{@resp->{'codtrans'}}}</span>
 								</td>
 							</tr>
-							<tr>
+							<!-- <tr>
 								<td>
 									<span class="modal_transaccion_exitosa_contenido">N° CONFIRMACIÓN DIGITEL:</span>
 								</td>
 								<td style ="text-align:right">
 									<span class="modal_transaccion_exitosa_contenido2">0566009</span>
 								</td>
-							</tr>
+							</tr> -->
 						</table>
 					</div>
 				</div>
