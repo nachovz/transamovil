@@ -42,6 +42,7 @@
 	<body>
 		
 		@if ($meta['wrapper_data']['0'] == 'HTTP/1.1 200 OK')
+			<!-- <?php echo $resp->{'codigo'}."HOLA"; ?> -->
 			@if ($resp->{'codigo'} == '00')
 				<div class="modal_transaccion_exitosa_titulo_wrapper">
 					<span class="modal_transaccion_exitosa_titulo">RECARGA EXITOSA</span>
