@@ -11,10 +11,10 @@ body {margin:0; padding:0;background-color: #CCC;}
 #regist {width:8opx; height:22px; float:right; margin-left: 5px;margin-top: 2px;}
 #registt {display: inline-block; float: right;margin-top: 5px; margin-bottom: -5px;}
 #boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;margin-left: 5px;}
-#boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative}
-#boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+.boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative}
+#boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;}
 #boton_auxiliar_cancelar_2 {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative}
-#boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
+#boton_auxiliar_anterior {background-image:url(../img/anterior.png);width: 62px;height: 18px;border: 0;position: relative;}
 #boton_auxiliar_cerrar {background-image:url(../img/cerrar.png);width: 62px;height: 18px;border: 0;position: relative;top: -1px;}
 
 a:visited{
@@ -664,28 +664,36 @@ label {
 	background-color: #333333;
 }
 
-#contenedor_registro_1 {
+.innerContainer{
 	background-color: #f1f1f1;
+	overflow: hidden;
+	border-radius: 10px;
+	min-height: 621px;
+}
+
+#contenedor_registro_1 {
+	
 	height: 621px;
-	width: 554px;
+	/*width: 554px;*/
 	border-radius: 5px;
 	position: relative;
 	top: 40px;
 	overflow:hidden;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 196px 0 195px;
 }
 
 #contenedor_registro_2 {
-	background-color: #f1f1f1;
 	height: 621px;
-	width: 554px;
+	/*width: 554px;*/
 	border-radius: 5px;
 	position: relative;
 	top: 40px;
 	overflow:hidden;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 196px 0 195px;
 }
 
 #contenedor_registro_3 {
@@ -744,6 +752,7 @@ label {
 	margin-left: 10px;
 	float: left;
 	margin-top: -8px;
+	overflow: hidden;
 }
 
 #form_reg2 {
@@ -751,6 +760,7 @@ label {
 	margin-left: 45px;
 	height: 350px;
 	margin-top: -8px;
+	overflow: hidden;
 }
 
 input {
@@ -799,18 +809,24 @@ input {
 }
 
 #bot_siguiente {
-	clear: both;
+	/*clear: both;
 	position: absolute;
 	top: 573px;
 	left: 384px;
+	overflow: hidden;*/
+	float: right;
 	overflow: hidden;
+	margin: 116px 14px 0 0;
 }
 
 #bot_siguiente_2 {
-	clear: both;
+	/*clear: both;
 	position: absolute;
 	top: 573px;
-	left: 312px;
+	left: 312px;*/
+	float: right;
+	overflow: hidden;
+	margin: 116px 14px 0 0;
 }
 
 #bot_siguiente_22 {
@@ -1517,6 +1533,9 @@ table#tabla_7 td {
 	font-size: 9px;
 	color: #808080;
 	margin: -14px 0 0 107px;
+
+	/*color: #FF0000;
+	margin: 0px;*/
 }
 
 .mac.gecko #boton_auxiliar_siguiente, #boton_auxiliar_cancelar_2 {
@@ -1583,11 +1602,11 @@ table#tabla_7 td {
 }
 
 .mac.chrome #boton_auxiliar_anterior {
-	top: -3px !important;
+	/*top: -3px !important;*/
 }
 
 .mac.chrome	#boton_auxiliar_cancelar {
-	top: -3px !important;
+	/*top: -3px !important;*/
 }
 
 .mac.chrome #boton_auxiliar_siguiente {
@@ -1690,4 +1709,9 @@ table#tabla_7 td {
 
 .mac.safari #clave_pwd {
 	right: 162px;
+}
+
+/*FORM Errors*/
+.formError{
+	z-index: 10000;
 }

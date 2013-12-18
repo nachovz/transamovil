@@ -1,13 +1,51 @@
+//Campos
+var email = $('#campo_registroa');
+var email_check = $('#campo_registro');
+//var email_alterno = $('.registro_email_alterno');
+var password = $('#password_registro');
+var password_confirm = $('#password_confirm');
+var answer = $('#respuesta_registro');
+var telefono = $('#telefono_registro');
+var alterno = $('#email_alterno');
+
+var cedula = $('#cedula_registro');
+var nombre = $('#nombre_registro');
+var apellido = $('#apellido_registro');
+var nacimiento = $('#fecha_registro');
+var terminos = $('#registro-terminos-check');
+var pais = $('#pais_registro');
+var estado = $('#estado_registro');
+var municipio = $('#municipio_registro');
+var ciudad = $('#ciudad_registro');
+var direccion = $('#direccion_registro');
+var habitacion = $('#telefono_hab_registro');
+var oficina = $('#telefono_ofi_registro');
+
+
 $(document).ready(function(){
 
-	$('#boton_auxiliar_siguiente').live( 'click', wizard_next);
-	$('#boton_auxiliar_anterior').live( 'click', wizard_prev);
-	$('#boton_auxiliar_cancelar').live( 'click', wizard_cancel);
-	$('#boton_auxiliar_cancelar_2').live( 'click', wizard_cancel);
-	$('#boton_auxiliar_cerrar').live( 'click', wizard_cancel);
-	$('#cierre-modal-confirmacion-registro').live( 'click', register_modal_close)
+	$("#registro-form").validationEngine();
+
+	$('.boton_auxiliar_siguiente').on( 'click', wizard_next);
+	$('#boton_auxiliar_anterior').on( 'click', wizard_prev);
+	$('#boton_auxiliar_cancelar').on( 'click', wizard_cancel);
+	$('#boton_auxiliar_cancelar_2').on( 'click', wizard_cancel);
+	$('#boton_auxiliar_cerrar').on( 'click', wizard_cancel);
+	$('#cierre-modal-confirmacion-registro').on( 'click', register_modal_close);
 
 });
+
+function sameEmail(field, rules, i, options){
+	if (email_check.val() != email.val()){
+		return options.allrules.validate2fieldsEmail.alertText;
+	}
+}
+
+function samePassword(field, rules, i, options){
+	if (password_confirm.val() != password.val()){
+		return options.allrules.validate2fieldsPassword.alertText;
+	}
+}
 
 function wizard_cancel( e )
 {
@@ -21,69 +59,93 @@ function wizard_next( e )
 	if( boton.val() == 1 )
 	{
 		//Validando que el campo email sea válido
-		var email = $('#campo_registroa');
 
-		if( ! email[0].checkValidity() || email.val() == '')
-		{
-			alert('Por favor ingresa un correo válido');
-			return false;
-		}
+		if (!email.validationEngine('validate') && !email_check.validationEngine('validate') && !password.validationEngine('validate') && !password_confirm.validationEngine('validate') && !answer.validationEngine('validate') && !telefono.validationEngine('validate') && !alterno.validationEngine('validate')) {
+			$('#contenedor_registro_1').removeClass('active').addClass('inactive');
+			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
+		};
+		$('#contenedor_registro_1').removeClass('active').addClass('inactive');
+			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
+
+		// if( ! email[0].checkValidity() || email.val() == '')
+		// {
+		// 	alert('Por favor ingresa un correo válido');
+		// 	return false;
+		// }
 
 		//Validando que la verificación de correo coincida con el correo
-		var email_check = $('.registro_email_check');
+		
 
-		if(email_check.val() != email.val())
-		{
-			alert('La confirmación de correo no coincide');
-			return false;	
-		}
+		// if(email_check.val() != email.val())
+		// {
+		// 	alert('La confirmación de correo no coincide');
+		// 	return false;	
+		// }
 
 		//Verificando que el correo alterno sea válido
-		var email_alterno = $('.registro_email_alterno');
-		if( ! email_alterno[0].checkValidity() || email_alterno.val() == '')
-		{
-			alert('Por favor ingresa un correo alterno válido');
-			return false;
-		}
+		
+		// if( ! email_alterno[0].checkValidity() || email_alterno.val() == '')
+		// {
+		// 	alert('Por favor ingresa un correo alterno válido');
+		// 	return false;
+		// }
 
-		$('#contenedor_registro_1').removeClass('active').addClass('inactive');
-		$('#contenedor_registro_2').removeClass('inactive').addClass('active');		
+		// $('#contenedor_registro_1').removeClass('active').addClass('inactive');
+		// $('#contenedor_registro_2').removeClass('inactive').addClass('active');		
 	}
 	else if( boton.val() == 2 )
 	{
 		//Verificando que la cédula sea válida
-		var cedula = $('.registro_ced_pas');
+		// var cedula = $('.registro_ced_pas');
 
-		if( cedula.val() == '' )
+		// if( cedula.val() == '' )
+		// {
+		// 	alert('Por favor ingresa tu cédula');
+		// 	return false;
+		// }
+
+		// var nombre = $('.registro_nombre');
+
+		// if( nombre.val() == '')
+		// {
+		// 	alert('Por favor ingresa tu nombre');
+		// 	return false;			
+		// }
+
+		// var apellido = $('.registro_apellido');
+
+		// if( apellido.val() == '')
+		// {
+		// 	alert('Por favor ingresa tu apellido');
+		// 	return false;			
+		// }
+
+		// if( ! $('#registro-terminos-check').prop('checked') )
+		// {
+		// 	alert('Debes aceptar los términos y condiciones');
+		// 	return false;
+		// }
+
+		if (!cedula.validationEngine('validate')
+			 && !nombre.validationEngine('validate')
+			 && !apellido.validationEngine('validate')
+			 && !nacimiento.validationEngine('validate')
+			 && !terminos.validationEngine('validate')
+			 && !pais.validationEngine('validate') 
+			 && !estado.validationEngine('validate') 
+			 && !municipio.validationEngine('validate')
+			 && !ciudad.validationEngine('validate') 
+			 && !direccion.validationEngine('validate')
+			 && !habitacion.validationEngine('validate')
+			 && !oficina.validationEngine('validate')) 
 		{
-			alert('Por favor ingresa tu cédula');
-			return false;
-		}
+			$('#contenedor_registro_2').removeClass('active').addClass('inactive');
+			$('#contenedor_registro_3').removeClass('inactive').addClass('active');
 
-		var nombre = $('.registro_nombre');
+			//LLAMADA AJAX PARA REALIZAR REGISTRO
+		};
 
-		if( nombre.val() == '')
-		{
-			alert('Por favor ingresa tu nombre');
-			return false;			
-		}
-
-		var apellido = $('.registro_apellido');
-
-		if( apellido.val() == '')
-		{
-			alert('Por favor ingresa tu apellido');
-			return false;			
-		}
-
-		if( ! $('#registro-terminos-check').prop('checked') )
-		{
-			alert('Debes aceptar los términos y condiciones');
-			return false;
-		}
-
-		$('#contenedor_registro_2').removeClass('active').addClass('inactive');
-		$('#contenedor_registro_3').removeClass('inactive').addClass('active');
+		
 	}
 }
 

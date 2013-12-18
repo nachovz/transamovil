@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>{{$title}}</title>
 <script src="js/css_browser_selector.js" type="text/javascript"></script>
@@ -16,20 +18,17 @@
 <META NAME="Language" CONTENT="Spanish">
 <META NAME="copyright" CONTENT="Todos los derechos reservados 2013">
 
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+<!--FONT-->
 <!-- VALIDATORS -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.slides.min.js"></script>
 <script src="{{asset('js/jquery.validationEngine-es.js')}}"></script>
 <script src="{{asset('js/jquery.validationEngine.js')}}"></script>
 <link rel="stylesheet" href="{{asset('css/validationEngine.jquery.css')}}" type="text/css" />
-
-<!--FONT-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
-<!--FONT-->
-<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<!--FONT-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
-<!--FONT-->
-<script src="js/jquery.slides.min.js"></script>
 <script>
     $(function() {
       $('#slides').slidesjs({

@@ -19,8 +19,8 @@
                 },
                 "minSize": {
                     "regex": "none",
-                    "alertText": "* Mínimo de ",
-                    "alertText2": " caracteres autorizados"
+                    "alertText": "* Al menos ",
+                    "alertText2": " caracteres"
                 },
 				"groupRequired": {
                     "regex": "none",
@@ -129,8 +129,15 @@
 					// speaks by itself
                     "alertTextLoad": "* Cargando, espere por favor"
                 },
-                "validate2fields": {
-                    "alertText": "* Por favor entrar HELLO"
+                "validate2fieldsEmail": {
+                    "alertText": "* Los email deben coincidir"
+                },
+                "validate2fieldsPassword": {
+                    "alertText": "* Las contraseñas deben coincidir"
+                },
+                "mustLetterNumbers": { 
+                    "regex": /^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/,
+                    "alertText": "* La contraseña debe contener n&uacute;meros y letras"
                 }
             };
             
