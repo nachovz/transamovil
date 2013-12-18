@@ -3,6 +3,18 @@
 	<head>
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="{{asset('css/ventanas-modales.css')}}">
+		<script src="{{asset('js/ventanas-modales.js')}}"></script>
+		<script src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
+		<script>
+		$(document).ready(function(){
+			$('#clsVentanaCerrar_new').on( 'click', cerrando);
+
+			function cerrando( e )
+			{
+				hideModal();
+			}
+		});
+		</script>
 	</head>
 	<body>
 		<div class="modal_titulo_1_wrapper">
@@ -16,7 +28,7 @@
 			<div class="modal_datos_1a">
 				<span class="modal_datos_1">
 					TU USUARIO ES: <span class="modal_datos_1_bold">{{$email}}</span><br>
-					Y TU <i>TransaPIN:</i> <span class="modal_datos_1_bold">582396</span>
+					Y TU <i>TransaPIN:</i> <span class="modal_datos_1_bold">{{$transapin}}</span>
 				</span>
 			</div>
 		</div>
@@ -31,6 +43,10 @@
 		<div class="modal_texto_4_wrapper">
 			<span class="modal_texto_2">PARA MAYOR SEGURIDAD EN TUS TRANSACCIONES TE INVITAMOS</span><br>
 			<span class="modal_texto_2">A COMPLETAR LOS DATOS SIGUIENTES</span>
-		</div>	
+		</div>
+
+		<div class="modal_titulo_2_wrapper">
+			<button id="clsVentanaCerrar_new" class="clsVentanaCerrar_new">Cerrar</button>
+		</div>
 	</body>
 </html>

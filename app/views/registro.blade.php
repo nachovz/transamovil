@@ -109,10 +109,12 @@
 						<p class="error_message">{{ $errors->first('sexo') }}</p>
 					@endif
 
-					<!-- <br><br>
-					<div id="imgcaptcha"></div>
-					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, array('readonly', 'id' => 'campo_registro_captcha'))}}
-					 --><!-- </div> -->
+					<br><br>
+					{{ HTML::image(Captcha::img(), 'Captcha image') }}
+					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, $attributes = array('id' => 'validacion', 'class' => 'validate[required]'))}}
+					@if($errors->has('validacion'))
+						<p class="error_message">{{ $errors->first('validacion') }}</p>
+					@endif
 					<br><br><br><br><br>
 					<div id="check">{{Form::checkbox('name', 'value', true)}}<span class="radio_check3">Deseo recibir correo informativos de TransaMóvil</span><br>
 					{{Form::checkbox('registro-terminos-check', '1', null, array('id' => 'registro-terminos-check', 'class' => 'validate[required]'))}}<span class="radio_check3">Acepto los <u>Términos y Condiciones</u> de TransaMóvil</span></div>
@@ -265,4 +267,5 @@
 
 <!-- <script type="text/javascript" src="js/ventanas-modales.js"></script> -->
 <script type="text/javascript" src="{{asset('js/registro-wizard.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/ventanas-modales.js')}}"></script>
 {{$footer}}

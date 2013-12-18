@@ -23,9 +23,11 @@ class ModalesController extends BaseController
 		return View::make('modales.modal_afiliacion')->with( 'numero', $numero )->with('alias', $alias)->with('prefijo', $prefijo);
 	}
 
-	public function registro( $email, $nombre )
+	public function registro( $email )
 	{
-		return View::make('modales.modal_registro')->with( 'nombre', $nombre )->with('email', $email );
+		$user = User::where('email', '=', $email)->get()->first();
+
+		return View::make('modales.modal_registro')->with( 'transapin', $user->transapin )->with('email', $user->email );
 	}
 
 	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago, $numero_digitel )

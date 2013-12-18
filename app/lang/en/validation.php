@@ -27,6 +27,7 @@ return array(
 		"string"  => "The :attribute must be between :min - :max characters.",
 		"array"   => "The :attribute must have between :min - :max items.",
 	),
+	"captcha"          => "The :attribute does not match.",
 	"confirmed"        => "The :attribute confirmation does not match.",
 	"date"             => "The :attribute is not a valid date.",
 	"date_format"      => "The :attribute does not match the format :format.",
