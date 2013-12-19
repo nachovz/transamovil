@@ -151,6 +151,21 @@ function notEqualEmail(field,rules,i,options){
     }
 }
 
+function emailUnique(field,rules,i,options){
+    return JSON.parse($.ajax({
+        type: 'GET',
+        url: email.data('urlValidation'),
+        data:{'email':email.val()},
+        dataType: 'json',
+        async:false,
+        success: function(data) {
+
+        },
+        error: function(response) {
+        }
+    }).responseText).message;
+}
+
 
 function wizard_cancel( e )
 {

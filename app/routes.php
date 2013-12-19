@@ -31,6 +31,7 @@ Route::get( '/transamovil' , array( 'uses' => 'FrontController@transamovil' , 'a
 Route::get( '/registro', array( 'uses' => 'RegistryController@registro' , 'as' => 'registro' ));
 Route::post( '/registro', array( 'uses' => 'RegistryController@registro_usuario' , 'as' => 'registro_usuario' ));
 Route::any( '/registro_final', array( 'uses' => 'RegistryController@registro_final', 'as' => 'registro_final' ) );
+Route::get('/registro/email', array('uses' => 'RegistryController@email', 'as' => 'email'));
 
 Route::get('/location/states',array('uses' => 'LocationController@states' , 'as' => 'states'));
 Route::get('/location/cities',array('uses' => 'LocationController@cities' , 'as' => 'cities'));

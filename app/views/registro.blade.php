@@ -9,12 +9,12 @@
 				<div id="paso_1"></div>			
 				<div id="form_reg">
 
-					{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email validate[required, custom[email]]') )}}
+					{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email validate[required, custom[email],funcCall[emailUnique]]','data-url-validation'=>URL::to('registro/email')) )}}
 					@if($errors->has('mail'))
 						<p class="error_message">{{ $errors->first('mail') }}</p>
 					@endif
 
-					{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::text( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check validate[required, custom[email], funcCall[sameEmail]]') )}}
+					{{Form::label( 'mail_check', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::text( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check validate[required, custom[email], funcCall[sameEmail]]') )}}
 					@if($errors->has('mail_check'))
 						<p class="error_message">{{ $errors->first('mail_check') }}</p>
 					@endif

@@ -207,6 +207,26 @@ class RegistryController extends BaseController {
 		}
 	}
 
+    public function email(){
+        $email = Input::get('email');
+
+        if(User::where('email',$email)->first()!=null){
+            $result = new stdClass;
+            $result->status = "error";
+            $result->status_code = "email_exist";
+
+            $result->message="Ese email ya ha sido tomado.";
+            return Response::json($result, 200);
+        }else{
+            $result = new stdClass;
+            $result->status = "success";
+            $result->status_code = "success_code";
+
+            $result->message="";
+            return Response::json($result, 200);
+        }
+    }
+
 	public function registro_final()
 	{
 		return Redirect::route('home');
