@@ -22,6 +22,7 @@ class RegistryController extends BaseController {
 			)
 		);
 	}
+
 	public function registro_usuario()
 	{
 		// Crear reglas de validacion del formulario
@@ -31,7 +32,6 @@ class RegistryController extends BaseController {
 			'password'                 => 'required|confirmed',
 			'pregunta_seguridad'       => 'required|integer',
 			'respuesta_seguridad'      => 'required',
-			'computadora_confianza'    => 'required',
 			'prefijo_celular'          => 'required|in:0412,0414,0424,0416,0426',
 			'celular'                  => 'required',
 			'maila'                    => 'required|email|different:mail',
