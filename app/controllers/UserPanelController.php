@@ -95,6 +95,33 @@ class UserPanelController extends BaseController {
 		return View::make( 'digitelrecarga' , array( 'header' => $header , 'footer' => $footer ));
 	}
 
+	public function validarPromocional()
+	{
+		// Crear reglas de validacion del formulario
+		$rules = array(
+			'campo_registro8' => 'required|exists:promocionales,codigo',
+		);
+
+		$validator = Validator::make( Input::all(), $rules );
+
+		if ( $validator->passes() )
+		{
+			$promocional = Promocional::where('codigo', '=', Input::get('campo_registro8'))
+				->where('utilizado', '=', false)
+				->get()
+				->first();
+
+			if ($promocional != null)
+				return Response::json(array("campo_registro8", true))->header('Content-Type', 'text/json');
+			else
+				return Response::json(array("campo_registro8", false, "* Codigo utilizado"))->header('Content-Type', 'text/json');
+		}
+		else
+		{
+			return Response::json(array("campo_registro8", false, "* Codigo inválido"))->header('Content-Type', 'text/json');
+		}
+	}
+
 	public function digitelrecargaconfirmar()
 	{		
 		if( Input::has('numero_digitel') )
