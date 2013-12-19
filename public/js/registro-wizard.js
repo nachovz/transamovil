@@ -33,6 +33,22 @@ $(document).ready(function(){
 	$('#boton_auxiliar_cerrar').on( 'click', wizard_cancel);
 	$('#cierre-modal-confirmacion-registro').on( 'click', register_modal_close);
 
+	$('#captcha_img').on({
+    'click': function(){
+
+		//LLAMADA AJAX PARA REALIZAR REGISTRO
+		$.ajax({
+			type: 'GET',
+			url: $('#captcha_img').data('urlPost'),
+			data: null,
+			dataType: 'text',
+			success: function (data) {
+				$('#captcha_img').attr('src',data);
+			}
+		});
+    }
+});
+
     var loadStates=function(){
         if($('#pais_registro').val()!=''){
             $.ajax({
@@ -268,7 +284,7 @@ function wizard_next( e )
 			  success: function( data ) {
 					//obtenemos la pagina que queremos cargar en la ventana y el titulo
 					//var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
-					var strPagina='http://localhost/transamovil/modal/registro/' + email.val();
+					var strPagina=$('#storeRegistry').data('urlModal')+'/'+ email.val();
 					
 					//creamos la nueva ventana para mostrar el contenido y la capa para el titulo
 					var $objVentana=$('<div class="clsVentana3">');

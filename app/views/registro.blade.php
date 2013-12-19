@@ -83,12 +83,12 @@
 					@endif
 
 					<!-- <div id="aux3"> -->
-					{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'nombre_registro', 'class' => 'registro_nombre validate[required, custom[onlyLetterSp]]') )}}
+					{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'nombre_registro', 'class' => 'registro_nombre validate[required, custom[alphanumeric]]') )}}
 					@if($errors->has('nombre'))
 						<p class="error_message">{{ $errors->first('nombre') }}</p>
 					@endif
 
-					{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'apellido_registro', 'class' => 'registro_apellido validate[required, custom[onlyLetterSp]]') )}}
+					{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'apellido_registro', 'class' => 'registro_apellido validate[required, custom[alphanumeric]]') )}}
 					@if($errors->has('apellido'))
 						<p class="error_message">{{ $errors->first('apellido') }}</p>
 					@endif
@@ -110,10 +110,12 @@
 					@endif
 
 					<br><br>
-					{{ HTML::image(Captcha::img(), 'Captcha image') }}
-					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, $attributes = array('id' => 'validacion', 'class' => 'validate[required]'))}}
+					{{ HTML::image(Captcha::img(), 'Captcha image', array('id' => 'captcha_img', 'data-url-post' => URL::route('captcha_reload'))) }}
+					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, $attributes = array('id' => 'validacion', 'class' => 'validate[required, ajax[validateCaptha]]'))}}
 					@if($errors->has('validacion'))
 						<p class="error_message">{{ $errors->first('validacion') }}</p>
+					@else
+						<p id="labels_registro_2">Haga click sobre la imagen para refrescar</p>
 					@endif
 					<br><br><br><br><br>
 					<div id="check">{{Form::checkbox('name', 'value', true)}}<span class="radio_check3">Deseo recibir correo informativos de TransaMóvil</span><br>
@@ -159,7 +161,7 @@
 				
 				<div id="bot_siguiente_2">
 					{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2', 'style' => 'margin-right:12px;'))}}
-                    {{Form::button('', array('id' => 'storeRegistry', 'class' => 'boton_auxiliar_siguiente fixx', 'value' => '2', 'style' => 'margin-right:12px;','data-url-post' => URL::to('registro')))}}
+					{{Form::button('', array('id' => 'storeRegistry', 'class' => 'boton_auxiliar_siguiente fixx', 'value' => '2', 'style' => 'margin-right:12px;','data-url-post' => URL::to('registro'),'data-url-modal'=> URL::to('modal/registro')))}}
 					<!-- <a href="modales/modal_registro.html" class="clsVentanaIFrame" style='margin-right:12px'><img src="img/siguiente.png"></a> -->
 					{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 				</div>
