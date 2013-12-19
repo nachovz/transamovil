@@ -47,6 +47,13 @@ function samePassword(field, rules, i, options){
 	}
 }
 
+function notEqualEmail(field,rules,i,options){
+    if(alterno.val()==email.val()){
+        return options.allrules.notEqualEmail.alertText;
+    }
+}
+
+
 function wizard_cancel( e )
 {
 	window.location.replace("home");
@@ -142,7 +149,7 @@ function wizard_next( e )
 			//LLAMADA AJAX PARA REALIZAR REGISTRO
 			$.ajax({
 			  type: 'POST',
-			  url: 'http://localhost/transamovil/registro',
+			  url: $('#storeRegistry').data('urlPost'),
 			  data: $( "#registro-form" ).serialize(),
 			  dataType: 'json',
 			  success: function( data ) {

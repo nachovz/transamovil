@@ -135,6 +135,9 @@
                 "validate2fieldsPassword": {
                     "alertText": "* Las contraseñas deben coincidir"
                 },
+                "notEqualEmail":{
+                    "alertText":"El email alternativo debe ser diferente al principal"
+                },
                 "mustLetterNumbers": { 
                     "regex": /^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/,
                     "alertText": "* La contraseña debe contener n&uacute;meros y letras"

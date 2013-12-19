@@ -57,7 +57,7 @@
 						<p class="error_message">{{ $errors->first('prefijo_celular') }}</p>
 					@endif
 
-					{{Form::label( 'maila', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'maila', null, array('id' => 'email_alterno', 'class' => 'registro_email_alterno validate[required, custom[email]]') )}}
+					{{Form::label( 'maila', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'maila', null, array('id' => 'email_alterno', 'class' => 'registro_email_alterno validate[required, custom[email],funcCall[notEqualEmail]]') )}}
 					@if($errors->has('maila'))
 						<p class="error_message">{{ $errors->first('maila') }}</p>
 					@endif
@@ -159,7 +159,7 @@
 				
 				<div id="bot_siguiente_2">
 					{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2', 'style' => 'margin-right:12px;'))}}
-					{{Form::button('', array('id' => '', 'class' => 'boton_auxiliar_siguiente fixx', 'value' => '2', 'style' => 'margin-right:12px;'))}}
+                    {{Form::button('', array('id' => 'storeRegistry', 'class' => 'boton_auxiliar_siguiente fixx', 'value' => '2', 'style' => 'margin-right:12px;','data-url-post' => URL::to('registro')))}}
 					<!-- <a href="modales/modal_registro.html" class="clsVentanaIFrame" style='margin-right:12px'><img src="img/siguiente.png"></a> -->
 					{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 				</div>
