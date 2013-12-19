@@ -9,12 +9,12 @@
 				<div id="paso_1"></div>			
 				<div id="form_reg">
 
-					{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email validate[required, custom[email]]') )}}
+					{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email validate[required, custom[email],funcCall[emailUnique]]','data-url-validation'=>URL::to('registro/email')) )}}
 					@if($errors->has('mail'))
 						<p class="error_message">{{ $errors->first('mail') }}</p>
 					@endif
 
-					{{Form::label( 'mail', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::text( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check validate[required, custom[email], funcCall[sameEmail]]') )}}
+					{{Form::label( 'mail_check', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::text( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check validate[required, custom[email], funcCall[sameEmail]]') )}}
 					@if($errors->has('mail_check'))
 						<p class="error_message">{{ $errors->first('mail_check') }}</p>
 					@endif
@@ -83,12 +83,12 @@
 					@endif
 
 					<!-- <div id="aux3"> -->
-					{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'nombre_registro', 'class' => 'registro_nombre validate[required, custom[onlyLetterSp]]') )}}
+					{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'nombre_registro', 'class' => 'registro_nombre validate[required, custom[alphanumeric]]') )}}
 					@if($errors->has('nombre'))
 						<p class="error_message">{{ $errors->first('nombre') }}</p>
 					@endif
 
-					{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'apellido_registro', 'class' => 'registro_apellido validate[required, custom[onlyLetterSp]]') )}}
+					{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'apellido_registro', 'class' => 'registro_apellido validate[required, custom[alphanumeric]]') )}}
 					@if($errors->has('apellido'))
 						<p class="error_message">{{ $errors->first('apellido') }}</p>
 					@endif
@@ -161,7 +161,7 @@
 				
 				<div id="bot_siguiente_2">
 					{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2', 'style' => 'margin-right:12px;'))}}
-                    {{Form::button('', array('id' => 'storeRegistry', 'class' => 'boton_auxiliar_siguiente fixx', 'value' => '2', 'style' => 'margin-right:12px;','data-url-post' => URL::to('registro'),'data-url-modal'=> URL::to('modal/registro')))}}
+					{{Form::button('', array('id' => 'storeRegistry', 'class' => 'boton_auxiliar_siguiente fixx', 'value' => '2', 'style' => 'margin-right:12px;','data-url-post' => URL::to('registro'),'data-url-modal'=> URL::to('modal/registro')))}}
 					<!-- <a href="modales/modal_registro.html" class="clsVentanaIFrame" style='margin-right:12px'><img src="img/siguiente.png"></a> -->
 					{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 				</div>

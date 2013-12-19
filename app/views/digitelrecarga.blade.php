@@ -133,7 +133,7 @@ $(document).ready(function(){
 		{{Form::text( 'monto', null, array('class' => 'validate[required],min[20],max[500] monnto', 'id' => 'campo_registro_a8'))}}<br>
 		{{Form::select('metodo_pago', array('Cuenta de Banco' => 'Cuenta de Banco', 'Tarjeta de Crédito' => 'Tarjeta de Crédito', 'Código Promocional' => 'Código Promocional'), null, array('id' => 'campo_registro2', 'class' => 'validate[required],equals2[paagoo] selectmetodopago'))}}<br>
 		{{Form::hidden('pago', 'Código Promocional', array('id' =>'paagoo'))}}
-		{{Form::text( 'codigo', null, array('class' => 'validate[required, ajax[validatePromocional]] culo2', 'id' => 'campo_registro8', 'style' => 'display:none;') )}}<br>
+		{{Form::text( 'codigo', null, array('class' => 'validate[required, ajax[validatePromocional]] culo2', 'id' => 'campo_registro8', 'style' => 'display:none;', 'data-url' => URL::route('validarPromocional')) )}}<br>
 	</div>
 	<!--<div class="afiliacion_3" style="top:255px">
 		<table id="tabla_5">

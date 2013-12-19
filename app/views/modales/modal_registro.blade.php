@@ -46,7 +46,7 @@
 		</div>
 
 		<div class="modal_titulo_2_wrapper">
-			<button id="clsVentanaCerrar_new" class="clsVentanaCerrar_new">Cerrar</button>
+			<button id="clsVentanaCerrar_new" class="clsVentanaCerrar_new btn-close"></button>
 		</div>
 	</body>
 </html>

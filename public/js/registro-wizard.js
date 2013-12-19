@@ -33,22 +33,22 @@ $(document).ready(function(){
 	$('#boton_auxiliar_cerrar').on( 'click', wizard_cancel);
 	$('#cierre-modal-confirmacion-registro').on( 'click', register_modal_close);
 
-    $('#captcha_img').on({
-        'click': function(){
+	$('#captcha_img').on({
+    'click': function(){
 
-            //LLAMADA AJAX PARA REALIZAR REGISTRO
-            $.ajax({
-                type: 'GET',
-                url: $('#captcha_img').data('urlPost'),
-                data: null,
-                dataType: 'text',
-                success: function (data) {
-                    $('#captcha_img').attr('src',data);
-                }
-            });
-        }
-    });
-    
+		//LLAMADA AJAX PARA REALIZAR REGISTRO
+		$.ajax({
+			type: 'GET',
+			url: $('#captcha_img').data('urlPost'),
+			data: null,
+			dataType: 'text',
+			success: function (data) {
+				$('#captcha_img').attr('src',data);
+			}
+		});
+    }
+});
+
     var loadStates=function(){
         if($('#pais_registro').val()!=''){
             $.ajax({
@@ -147,7 +147,6 @@ $(document).ready(function(){
 
     loadStates();
     resetLocation();
-
 });
 
 function sameEmail(field, rules, i, options){
@@ -165,6 +164,25 @@ function samePassword(field, rules, i, options){
 function notEqualEmail(field,rules,i,options){
     if(alterno.val()==email.val()){
         return options.allrules.notEqualEmail.alertText;
+    }
+}
+
+function emailUnique(field,rules,i,options){
+    var error = JSON.parse($.ajax({
+        type: 'GET',
+        url: email.data('urlValidation'),
+        data:{'email':email.val()},
+        dataType: 'json',
+        async:false,
+        success: function(data) {
+
+        },
+        error: function(response) {
+        }
+    }).responseText).message;
+
+    if (error!=''){
+        return error;
     }
 }
 

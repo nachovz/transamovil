@@ -46,12 +46,12 @@ function valPromocional(field, rules, i, options){
 		//LLAMADA AJAX PARA REALIZAR REGISTRO
 		$.ajax({
 			type: 'GET',
-			url: 'http://localhost/transamovil/digitelrecarga/promocional',
+			url: $('#campo_registro8').data('url'),
 			data: $( "#aidi" ).serialize(),
 			dataType: 'json',
 			success: function (data) {
 				if(data.success == false){
-					$('input[name=codigo').validationEngine('showPrompt', '* Codigo inválido', 'error');
+					$('input[name=codigo]').validationEngine('showPrompt', '* Codigo inválido', 'error');
 					return options.allrules.validate2fieldsPromocional.alertText;
 				}
 			}
