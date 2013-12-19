@@ -15,7 +15,6 @@ class CreateUsuarioTelefonosTable extends Migration {
       {
         $table->integer('usuario_id')->unsigned();
         $table->enum('tipo', array('Casa', 'Oficina', 'Celular'));
-        $table->string('prefijo', 20)->nullable();
         $table->string('numero', 20);
         $table->timestamps();
         $table->primary(array('usuario_id', 'tipo', 'numero'));

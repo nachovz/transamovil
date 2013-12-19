@@ -22,7 +22,6 @@ class CreateUsuariosTable extends Migration {
         $table->date('fecha_nacimiento');
         $table->string('transapin', 15);
         $table->enum('sexo', array('m', 'f'));
-        $table->string('emaila', 255)->nullable();
         $table->integer('profesion_id')->unsigned();
         $table->integer('campo_laboral_id')->unsigned();
         $table->enum('nivel_educativo', array('Primaria', 'Secundaria', 'TSU', 'Universitario'));

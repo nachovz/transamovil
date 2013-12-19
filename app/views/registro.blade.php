@@ -161,7 +161,7 @@
 				
 				<div id="bot_siguiente_2">
 					{{Form::button('', array('id' => 'boton_auxiliar_anterior', 'value' => '2', 'style' => 'margin-right:12px;'))}}
-                    {{Form::button('', array('id' => 'storeRegistry', 'class' => 'boton_auxiliar_siguiente fixx', 'value' => '2', 'style' => 'margin-right:12px;','data-url-post' => URL::to('registro')))}}
+                    {{Form::button('', array('id' => 'storeRegistry', 'class' => 'boton_auxiliar_siguiente fixx', 'value' => '2', 'style' => 'margin-right:12px;','data-url-post' => URL::to('registro'),'data-url-modal'=> URL::to('modal/registro')))}}
 					<!-- <a href="modales/modal_registro.html" class="clsVentanaIFrame" style='margin-right:12px'><img src="img/siguiente.png"></a> -->
 					{{Form::button('', array('id' => 'boton_auxiliar_cancelar'))}}
 				</div>

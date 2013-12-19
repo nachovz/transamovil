@@ -133,11 +133,16 @@ class RegistryController extends BaseController {
 				$user->telefonos()->save($habitacion);
 				$user->telefonos()->save($oficina);
 
-				$computadora = Computadora::where( 'usuario_id', '=', $user->id)->where( 'ip_address', '=', $confianza->ip_address)->get()->first();
 
-				if ( $computadora == null )
-					$user->computadoras()->save($confianza);
+                //TODO dejar este if mientras este inactiva la validación del computador
+                if(Input::get('computadora_confianza')!=null){
 
+                    $computadora = Computadora::where( 'usuario_id', '=', $user->id)->where( 'ip_address', '=', $confianza->ip_address)->get()->first();
+
+                    if ( $computadora == null )
+                        $user->computadoras()->save($confianza);
+
+                }
 			}
 			catch ( Exception $e )
 			{

@@ -270,7 +270,7 @@ function wizard_next( e )
 			  success: function( data ) {
 					//obtenemos la pagina que queremos cargar en la ventana y el titulo
 					//var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
-					var strPagina='http://localhost/transamovil/modal/registro/' + email.val();
+					var strPagina=$('#storeRegistry').data('urlModal')+'/'+ email.val();
 					
 					//creamos la nueva ventana para mostrar el contenido y la capa para el titulo
 					var $objVentana=$('<div class="clsVentana3">');
