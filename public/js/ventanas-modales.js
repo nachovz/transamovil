@@ -1,6 +1,6 @@
 $(function(){
 	//evento que se produce al hacer clic en el boton cerrar de la ventana
-	$('.Afiliar_Otro').live('click',function(eEvento){
+	$(document).on('click','.Afiliar_Otro',function(eEvento){
 		//prevenimos el comportamiento normal del enlace
 		eEvento.preventDefault();
 		//buscamos la ventana padre (del boton "cerrar")
@@ -19,7 +19,7 @@ $(function(){
 		});
 	});
 
-	$('.Realizar_Recarga').live('click',function(eEvento){
+	$(document).on('.click','.Realizar_Recarga',function(eEvento){
 		//prevenimos el comportamiento normal del enlace
 		eEvento.preventDefault();
 		//buscamos la ventana padre (del boton "cerrar")
@@ -38,7 +38,7 @@ $(function(){
 		});
 	});
 
-	$('.clsVentanaCerrar').live('click',function(eEvento){
+	$(document).on('click','.clsVentanaCerrar',function(eEvento){
 		//prevenimos el comportamiento normal del enlace
 		eEvento.preventDefault();
 		//buscamos la ventana padre (del boton "cerrar")
@@ -58,7 +58,7 @@ $(function(){
 		});
 	});
 
-	$('.clsVentanaCerrar2').live('click',function(eEvento){
+	$(document).on('click','.clsVentanaCerrar2',function(eEvento){
 		//prevenimos el comportamiento normal del enlace
 		eEvento.preventDefault();
 		//buscamos la ventana padre (del boton "cerrar")

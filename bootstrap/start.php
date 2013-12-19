@@ -28,7 +28,8 @@ $app->redirectIfTrailingSlash();
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('your-machine-name'),
+	'dev' => array('4geeks.transamovil.com','abnet'),
+    'pro' => array('www.transamovil.com')
 
 ));
 

@@ -63,9 +63,9 @@ function wizard_next( e )
 		if (!email.validationEngine('validate') && !email_check.validationEngine('validate') && !password.validationEngine('validate') && !password_confirm.validationEngine('validate') && !answer.validationEngine('validate') && !telefono.validationEngine('validate') && !alterno.validationEngine('validate')) {
 			$('#contenedor_registro_1').removeClass('active').addClass('inactive');
 			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
-		};
-		$('#contenedor_registro_1').removeClass('active').addClass('inactive');
-			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
+		}
+		//$('#contenedor_registro_1').removeClass('active').addClass('inactive');
+	    //$('#contenedor_registro_2').removeClass('inactive').addClass('active');
 
 		// if( ! email[0].checkValidity() || email.val() == '')
 		// {

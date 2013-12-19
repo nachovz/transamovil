@@ -2,4 +2,6 @@
 /vendor
 composer.phar
 composer.lock
+.idea
+/app/config/dev/*
 .DS_Store
