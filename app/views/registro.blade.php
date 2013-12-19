@@ -110,10 +110,12 @@
 					@endif
 
 					<br><br>
-					{{ HTML::image(Captcha::img(), 'Captcha image') }}
-					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, $attributes = array('id' => 'validacion', 'class' => 'validate[required]'))}}
+					{{ HTML::image(Captcha::img(), 'Captcha image', array('id' => 'captcha_img', 'data-url-post' => URL::route('captcha_reload'))) }}
+					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, $attributes = array('id' => 'validacion', 'class' => 'validate[required, ajax[validateCaptha]]'))}}
 					@if($errors->has('validacion'))
 						<p class="error_message">{{ $errors->first('validacion') }}</p>
+					@else
+						<p id="labels_registro_2">Haga click sobre la imagen para refrescar</p>
 					@endif
 					<br><br><br><br><br>
 					<div id="check">{{Form::checkbox('name', 'value', true)}}<span class="radio_check3">Deseo recibir correo informativos de TransaMóvil</span><br>

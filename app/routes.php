@@ -31,6 +31,7 @@ Route::get( '/transamovil' , array( 'uses' => 'FrontController@transamovil' , 'a
 Route::get( '/registro', array( 'uses' => 'RegistryController@registro' , 'as' => 'registro' ));
 Route::post( '/registro', array( 'uses' => 'RegistryController@registro_usuario' , 'as' => 'registro_usuario' ));
 Route::any( '/registro_final', array( 'uses' => 'RegistryController@registro_final', 'as' => 'registro_final' ) );
+Route::get('/registro/captcha/reload', array('as' => 'captcha_reload', function() { return Captcha::img(); } ));
 
 //Rutas del Panel de Usuario.
 
@@ -43,6 +44,7 @@ Route::get( '/misservicios2', array( 'uses' => 'UserPanelController@misservicios
 Route::get( '/afiliaciondigitel', array( 'uses' => 'UserPanelController@afiliaciondigitel' , 'as' => 'afiliaciondigitel', 'before' => 'auth' ));
 Route::post( '/afiliaciondigitelconfirmar', array( 'uses' => 'UserPanelController@afiliaciondigitelconfirmar' , 'as' => 'afiliaciondigitelconfirmar', 'before' => 'auth' ));
 Route::get( '/digitelrecarga', array( 'uses' => 'UserPanelController@digitelrecarga' , 'as' => 'digitelrecarga', 'before' => 'auth' ));
+Route::get( '/digitelrecarga/promocional', array( 'uses' => 'UserPanelController@validarPromocional' , 'as' => 'validarPromocional', 'before' => 'auth' ));
 Route::post( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@digitelrecargaconfirmar' , 'as' => 'digitelrecargaconfirmar', 'before' => 'auth' ));
 
 //Rutas modales

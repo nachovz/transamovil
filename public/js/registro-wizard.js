@@ -33,6 +33,22 @@ $(document).ready(function(){
 	$('#boton_auxiliar_cerrar').on( 'click', wizard_cancel);
 	$('#cierre-modal-confirmacion-registro').on( 'click', register_modal_close);
 
+	$('#captcha_img').on({
+    'click': function(){
+
+		//LLAMADA AJAX PARA REALIZAR REGISTRO
+		$.ajax({
+			type: 'GET',
+			url: $('#captcha_img').data('urlPost'),
+			data: null,
+			dataType: 'text',
+			success: function (data) {
+				$('#captcha_img').attr('src',data);
+			}
+		});
+    }
+});
+
 });
 
 function sameEmail(field, rules, i, options){
@@ -52,8 +68,8 @@ function notEqualEmail(field,rules,i,options){
         return options.allrules.notEqualEmail.alertText;
     }
 }
-
-
+ 
+ 
 function wizard_cancel( e )
 {
 	window.location.replace("home");
@@ -70,9 +86,9 @@ function wizard_next( e )
 		if (!email.validationEngine('validate') && !email_check.validationEngine('validate') && !password.validationEngine('validate') && !password_confirm.validationEngine('validate') && !answer.validationEngine('validate') && !telefono.validationEngine('validate') && !alterno.validationEngine('validate')) {
 			$('#contenedor_registro_1').removeClass('active').addClass('inactive');
 			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
-		}
-		//$('#contenedor_registro_1').removeClass('active').addClass('inactive');
-	    //$('#contenedor_registro_2').removeClass('inactive').addClass('active');
+		};
+		$('#contenedor_registro_1').removeClass('active').addClass('inactive');
+			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
 
 		// if( ! email[0].checkValidity() || email.val() == '')
 		// {
