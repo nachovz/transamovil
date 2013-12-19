@@ -32,6 +32,10 @@ Route::get( '/registro', array( 'uses' => 'RegistryController@registro' , 'as' =
 Route::post( '/registro', array( 'uses' => 'RegistryController@registro_usuario' , 'as' => 'registro_usuario' ));
 Route::any( '/registro_final', array( 'uses' => 'RegistryController@registro_final', 'as' => 'registro_final' ) );
 
+Route::get('/location/states',array('uses' => 'LocationController@states' , 'as' => 'states'));
+Route::get('/location/cities',array('uses' => 'LocationController@cities' , 'as' => 'cities'));
+Route::get('/location/townships',array('uses' => 'LocationController@townships' , 'as' => 'townships'));
+
 //Rutas del Panel de Usuario.
 
 Route::post( '/login', array( 'uses' => 'UserPanelController@login' , 'as' => 'login' ));

@@ -33,6 +33,104 @@ $(document).ready(function(){
 	$('#boton_auxiliar_cerrar').on( 'click', wizard_cancel);
 	$('#cierre-modal-confirmacion-registro').on( 'click', register_modal_close);
 
+    var loadStates=function(){
+        if($('#pais_registro').val()!=''){
+            $.ajax({
+                type: 'GET',
+                url: $('#estado_registro').data('url'),
+                data:{'country_id':$('#pais_registro').val()},
+                dataType: 'json',
+                success: function(data) {
+                    var $temp=$('<div/>');
+
+                    $temp.append(
+                        $('<option/>',{value:''}).html('Seleccione')
+                    );
+
+                    for(var i=0;i<data['states'].length;i++){
+                        $temp.append(
+                            $('<option/>',{value:data['states'][i].id}).html(data['states'][i].name)
+                        );
+                    }
+
+                    $('#estado_registro').html($temp.html());
+                },
+                error: function(response) {
+                }
+            });
+        }
+    };
+
+    var resetLocation=function(){
+        var $temp=$('<div/>');
+
+        $temp.append(
+            $('<option/>',{value:''}).html('Seleccione')
+        );
+        $('#ciudad_registro').html($temp.html());
+        $('#municipio_registro').html($temp.html());
+    };
+
+    $('#pais_registro').on('change',function(){
+        loadStates();
+    });
+
+    $('#estado_registro').on('change',function(){
+        if($(this).val()!=''){
+            $.ajax({
+                type: 'GET',
+                url: $('#ciudad_registro').data('url'),
+                data:{'state_id':$(this).val()},
+                dataType: 'json',
+                success: function(data) {
+                    var $temp=$('<div/>');
+
+                    $temp.append(
+                        $('<option/>',{value:''}).html('Seleccione')
+                    );
+
+                    for(var i=0;i<data['cities'].length;i++){
+                        $temp.append(
+                            $('<option/>',{value:data['cities'][i].id}).html(data['cities'][i].name)
+                        )
+                    }
+
+                    $('#ciudad_registro').html($temp.html());
+                },
+                error: function(response) {
+                }
+            });
+
+            $.ajax({
+                type: 'GET',
+                url: $('#municipio_registro').data('url'),
+                data:{'state_id':$(this).val()},
+                dataType: 'json',
+                success: function(data) {
+                    var $temp=$('<div/>');
+
+                    $temp.append(
+                        $('<option/>',{value:''}).html('Seleccione')
+                    );
+
+                    for(var i=0;i<data['townships'].length;i++){
+                        $temp.append(
+                            $('<option/>',{value:data['townships'][i].id}).html(data['townships'][i].name)
+                        )
+                    }
+
+                    $('#municipio_registro').html($temp.html());
+                },
+                error: function(response) {
+                }
+            });
+        }else{
+            resetLocation
+        }
+    });
+
+    loadStates();
+    resetLocation();
 });
 
 function sameEmail(field, rules, i, options){

@@ -4,11 +4,9 @@ class RegistryController extends BaseController {
 
 	public function registro()
 	{
-		$estados = Estado::all()->lists('nombre', 'id');
-		$municipios = Municipio::all()->lists('nombre', 'id');
-		$ciudades = Ciudad::all()->lists('nombre', 'id');
+		$paises = Pais::all()->lists('nombre','id');
 
-		$header = View::make( 'components.header_registro' , array( 'title' => "TransaMóvil" ));
+        $header = View::make( 'components.header_registro' , array( 'title' => "TransaMóvil" ));
 		$footer = View::make( 'components.footer_registro' );
 
 		return View::make(
@@ -16,9 +14,7 @@ class RegistryController extends BaseController {
 			array(
 				'header' => $header,
 				'footer' => $footer,
-				'estados' => $estados,
-				'municipios' => $municipios,
-				'ciudades' => $ciudades
+                'paises' => $paises
 			)
 		);
 	}

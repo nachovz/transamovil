@@ -120,22 +120,22 @@
 					{{Form::checkbox('registro-terminos-check', '1', null, array('id' => 'registro-terminos-check', 'class' => 'validate[required]'))}}<span class="radio_check3">Acepto los <u>Términos y Condiciones</u> de TransaMóvil</span></div>
 				</div>
 				<div id="form_reg2">
-					{{Form::label( 'pais', 'PAÍS: *', array('id' => 'labels_registro')) . Form::text( 'pais', 'VENEZUELA', $attributes = array('readonly', 'id' => 'pais_registro', 'class' => 'validate[required]'))}}
+					{{Form::label( 'pais', 'PAÍS: *', array('id' => 'labels_registro')) . Form::select('pais', $paises, null, array('id' => 'pais_registro', 'class' => 'validate[required] dropdown-small'))}}
 					@if($errors->has('pais'))
 						<p class="error_message">{{ $errors->first('pais') }}</p>
 					@endif
 
-					{{Form::label( 'estado', 'ESTADO: *', array('id' => 'labels_registro')) . Form::select('estado', $estados, null, array('id' => 'estado_registro', 'class' => 'validate[required]'))}}
+					{{Form::label( 'estado', 'ESTADO: *', array('id' => 'labels_registro')) . Form::select('estado', array(), null, array('id' => 'estado_registro', 'class' => 'validate[required] dropdown-small','data-url'=>URL::to('location/states')))}}
 					@if($errors->has('estado'))
 						<p class="error_message">{{ $errors->first('estado') }}</p>
 					@endif
 
-					{{Form::label( 'municipio', 'MUNICIPIO: *', array('id' => 'labels_registro')) . Form::select('municipio', $municipios, null, array('id' => 'municipio_registro', 'class' => 'validate[required]'))}}
+					{{Form::label( 'municipio', 'MUNICIPIO: *', array('id' => 'labels_registro')) . Form::select('municipio', array(), null, array('id' => 'municipio_registro', 'class' => 'validate[required] dropdown-small','data-url'=>URL::to('location/townships')))}}
 					@if($errors->has('municipio'))
 						<p class="error_message">{{ $errors->first('municipio') }}</p>
 					@endif
 
-					{{Form::label( 'ciudad', 'CIUDAD: *', array('id' => 'labels_registro')) . Form::select('ciudad', $ciudades, null, array('id' => 'ciudad_registro', 'class' => 'validate[required]'))}}
+					{{Form::label( 'ciudad', 'CIUDAD: *', array('id' => 'labels_registro')) . Form::select('ciudad', array(), null, array('id' => 'ciudad_registro', 'class' => 'validate[required] dropdown-small','data-url'=>URL::to('location/cities')))}}
 					@if($errors->has('ciudad'))
 						<p class="error_message">{{ $errors->first('ciudad') }}</p>
 					@endif
