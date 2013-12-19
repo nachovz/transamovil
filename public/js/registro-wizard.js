@@ -33,20 +33,21 @@ $(document).ready(function(){
 	$('#boton_auxiliar_cerrar').on( 'click', wizard_cancel);
 	$('#cierre-modal-confirmacion-registro').on( 'click', register_modal_close);
 
-	$('#captcha_img').on({
-    'click': function(){
+    $('#captcha_img').on({
+        'click': function(){
 
-		//LLAMADA AJAX PARA REALIZAR REGISTRO
-		$.ajax({
-			type: 'GET',
-			url: $('#captcha_img').data('urlPost'),
-			data: null,
-			dataType: 'text',
-			success: function (data) {
-				$('#captcha_img').attr('src',data);
-			}
-		});
-    };
+            //LLAMADA AJAX PARA REALIZAR REGISTRO
+            $.ajax({
+                type: 'GET',
+                url: $('#captcha_img').data('urlPost'),
+                data: null,
+                dataType: 'text',
+                success: function (data) {
+                    $('#captcha_img').attr('src',data);
+                }
+            });
+        }
+    });
     
     var loadStates=function(){
         if($('#pais_registro').val()!=''){
