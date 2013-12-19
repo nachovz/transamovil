@@ -46,8 +46,106 @@ $(document).ready(function(){
 				$('#captcha_img').attr('src',data);
 			}
 		});
-    }
-});
+    };
+    
+    var loadStates=function(){
+        if($('#pais_registro').val()!=''){
+            $.ajax({
+                type: 'GET',
+                url: $('#estado_registro').data('url'),
+                data:{'country_id':$('#pais_registro').val()},
+                dataType: 'json',
+                success: function(data) {
+                    var $temp=$('<div/>');
+
+                    $temp.append(
+                        $('<option/>',{value:''}).html('Seleccione')
+                    );
+
+                    for(var i=0;i<data['states'].length;i++){
+                        $temp.append(
+                            $('<option/>',{value:data['states'][i].id}).html(data['states'][i].name)
+                        );
+                    }
+
+                    $('#estado_registro').html($temp.html());
+                },
+                error: function(response) {
+                }
+            });
+        }
+    };
+
+    var resetLocation=function(){
+        var $temp=$('<div/>');
+
+        $temp.append(
+            $('<option/>',{value:''}).html('Seleccione')
+        );
+        $('#ciudad_registro').html($temp.html());
+        $('#municipio_registro').html($temp.html());
+    };
+
+    $('#pais_registro').on('change',function(){
+        loadStates();
+    });
+
+    $('#estado_registro').on('change',function(){
+        if($(this).val()!=''){
+            $.ajax({
+                type: 'GET',
+                url: $('#ciudad_registro').data('url'),
+                data:{'state_id':$(this).val()},
+                dataType: 'json',
+                success: function(data) {
+                    var $temp=$('<div/>');
+
+                    $temp.append(
+                        $('<option/>',{value:''}).html('Seleccione')
+                    );
+
+                    for(var i=0;i<data['cities'].length;i++){
+                        $temp.append(
+                            $('<option/>',{value:data['cities'][i].id}).html(data['cities'][i].name)
+                        )
+                    }
+
+                    $('#ciudad_registro').html($temp.html());
+                },
+                error: function(response) {
+                }
+            });
+
+            $.ajax({
+                type: 'GET',
+                url: $('#municipio_registro').data('url'),
+                data:{'state_id':$(this).val()},
+                dataType: 'json',
+                success: function(data) {
+                    var $temp=$('<div/>');
+
+                    $temp.append(
+                        $('<option/>',{value:''}).html('Seleccione')
+                    );
+
+                    for(var i=0;i<data['townships'].length;i++){
+                        $temp.append(
+                            $('<option/>',{value:data['townships'][i].id}).html(data['townships'][i].name)
+                        )
+                    }
+
+                    $('#municipio_registro').html($temp.html());
+                },
+                error: function(response) {
+                }
+            });
+        }else{
+            resetLocation
+        }
+    });
+
+    loadStates();
+    resetLocation();
 
 });
 
@@ -68,8 +166,8 @@ function notEqualEmail(field,rules,i,options){
         return options.allrules.notEqualEmail.alertText;
     }
 }
- 
- 
+
+
 function wizard_cancel( e )
 {
 	window.location.replace("home");
@@ -86,9 +184,9 @@ function wizard_next( e )
 		if (!email.validationEngine('validate') && !email_check.validationEngine('validate') && !password.validationEngine('validate') && !password_confirm.validationEngine('validate') && !answer.validationEngine('validate') && !telefono.validationEngine('validate') && !alterno.validationEngine('validate')) {
 			$('#contenedor_registro_1').removeClass('active').addClass('inactive');
 			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
-		};
-		$('#contenedor_registro_1').removeClass('active').addClass('inactive');
-			$('#contenedor_registro_2').removeClass('inactive').addClass('active');	
+		}
+		//$('#contenedor_registro_1').removeClass('active').addClass('inactive');
+	    //$('#contenedor_registro_2').removeClass('inactive').addClass('active');
 
 		// if( ! email[0].checkValidity() || email.val() == '')
 		// {
