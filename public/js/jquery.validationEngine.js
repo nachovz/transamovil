@@ -1381,6 +1381,13 @@
 
 			 var errorSelector = rules[i + 1];
 			 var rule = options.allrules[errorSelector];
+			 var fieldurl = '';
+			 if ( typeof rule.url == 'undefined') {
+			 		fieldurl = field.attr("data-url");
+			 }
+			 else {
+			 		fieldurl = rule.url;
+			 };
 			 var extraData = rule.extraData;
 			 var extraDataDynamic = rule.extraDataDynamic;
 			 var data = {
@@ -1422,7 +1429,7 @@
 			 if (!options.isError && !methods._checkAjaxFieldStatus(field.attr("id"), options)) {
 				 $.ajax({
 					 type: options.ajaxFormValidationMethod,
-					 url: rule.url,
+					 url: fieldurl,
 					 cache: false,
 					 dataType: "json",
 					 data: data,

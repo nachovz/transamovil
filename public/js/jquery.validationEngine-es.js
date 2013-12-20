@@ -147,7 +147,6 @@
                     "alertText": "* La contraseña debe contener n&uacute;meros y letras"
                 },
                 "validatePromocional": {
-                    "url": "http://localhost/transamovil/digitelrecarga/promocional",
                     // you may want to pass extra data on the ajax call
                     "extraDataDynamic": "#campo_registro8",
                     // if you provide an "alertTextOk", it will show as a green prompt when the field validates
