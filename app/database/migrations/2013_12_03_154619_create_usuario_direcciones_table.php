@@ -16,7 +16,7 @@ class CreateUsuarioDireccionesTable extends Migration {
       	$table->increments('id');
         $table->integer('usuario_id')->unsigned();
         $table->enum('tipo', array('Principal', 'Oficina', 'Habitacion'));
-        $table->string('pais');
+        $table->integer('pais')->unsigned()->nullable();
         $table->integer('estado')->unsigned()->nullable();
         $table->integer('municipio')->unsigned()->nullable();
         $table->integer('ciudad')->unsigned()->nullable();
