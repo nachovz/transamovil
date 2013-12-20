@@ -35,6 +35,33 @@ class UserPanelController extends BaseController {
 		}
 	}
 
+    public function validatePassword(){
+
+        $password = Input::get('pass');
+
+        if(null!=$password){
+            if (Hash::check($password, Auth::user()->password)){
+                $result = new stdClass();
+                $result->status = "success";
+                $result->status_code = "success";
+
+                return Response::json($result, 200);
+            }else{
+                $result = new stdClass();
+                $result->status = "error";
+                $result->status_code = "fail";
+
+                return Response::json($result, 200);
+            }
+        }else{
+            $result = new stdClass();
+            $result->status = "error";
+            $result->status_code = "validation";
+
+            return Response::json($result, 200);
+        }
+    }
+
 	public function logout()
 	{
 		Auth::logout();

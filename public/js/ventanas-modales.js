@@ -209,48 +209,61 @@ $(function(){
 		//prevenir el comportamiento normal del enlace
 		eEvento.preventDefault();
 
-		if( $('#campo_registro.campo_registro_pwd_check').val() != '12345' )
-		{
-			alert('Contraseña Inválida');
-			return false;
-		}
+        $.ajax({
+            type: 'GET',
+            url: $('.security').data('url'),
+            data: {pass:$('#campo_registro.campo_registro_pwd_check').val()},
+            dataType: 'json',
+            success: function (data) {
 
-		//obtenemos la pagina que queremos cargar en la ventana y el titulo
-		var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
-		
-		//creamos la nueva ventana para mostrar el contenido y la capa para el titulo
-		var $objVentana=$('<div class="clsVentana3">');
-		
-		//creamos la capa que va a mostrar el contenido
-		var $objVentanaContenido=$('<div class="clsVentanaContenido3">');
+                if( data['status_code'] == 'fail' )
+                {
+                    alert('Contraseña Inválida');
+                    return false;
+                }
 
-		$objVentanaContenido.append("<div style='width:100px; margin: 150px auto; text-align:center;'> <img src='img/loading.gif' class='loading-gif' /> <br/> <p style='font-family: Open Sans, sans-serif;font-size: 12px;color: #333;'>Favor espere un momento...</p> </div>");
-		
-		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		// $objVentanaContenido.append('<iframe src="'+strPagina+'">');
-		$objVentanaContenido.load(strPagina);
-		
-		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		//$objVentanaContenido.append('<div class="modal_transaccion_botones"><a href="" class="clsVentanaCerrar2"><img src="img/aceptar_ovalo.png"></a>&nbsp;&nbsp;<a href="javascript:window.print()"><img src="img/imprimir.png"></a>&nbsp;&nbsp;<a href="" class="Realizar_Recarga"><img src="img/realizar_otra_recarga.png"></a></div>');
-		
-		//agregamos la capa de contenido a la ventana
-		$objVentana.append($objVentanaContenido);
-		
-		//creamos el overlay con sus propiedades css y lo agregamos al body
-		var $objOverlay=$('<div id="divOverlay">').css({
-			opacity: .5,
-			display: 'none'
-		});
-						
-		$('body').append($objOverlay);
-		
-		//animamos el overlay y cuando su animacion termina seguimos con la ventana
-		$objOverlay.fadeIn(function(){
-			//agregamos la nueva ventana al body
-			$('body').append($objVentana);
-			//mostramos la ventana suavemente ;)
-			$objVentana.fadeIn();
-		})
+                //obtenemos la pagina que queremos cargar en la ventana y el titulo
+                var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
+
+                //creamos la nueva ventana para mostrar el contenido y la capa para el titulo
+                var $objVentana=$('<div class="clsVentana3">');
+
+                //creamos la capa que va a mostrar el contenido
+                var $objVentanaContenido=$('<div class="clsVentanaContenido3">');
+
+                $objVentanaContenido.append("<div style='width:100px; margin: 150px auto; text-align:center;'> <img src='img/loading.gif' class='loading-gif' /> <br/> <p style='font-family: Open Sans, sans-serif;font-size: 12px;color: #333;'>Favor espere un momento...</p> </div>");
+
+                //agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
+                // $objVentanaContenido.append('<iframe src="'+strPagina+'">');
+                $objVentanaContenido.load(strPagina);
+
+                //agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
+                //$objVentanaContenido.append('<div class="modal_transaccion_botones"><a href="" class="clsVentanaCerrar2"><img src="img/aceptar_ovalo.png"></a>&nbsp;&nbsp;<a href="javascript:window.print()"><img src="img/imprimir.png"></a>&nbsp;&nbsp;<a href="" class="Realizar_Recarga"><img src="img/realizar_otra_recarga.png"></a></div>');
+
+                //agregamos la capa de contenido a la ventana
+                $objVentana.append($objVentanaContenido);
+
+                //creamos el overlay con sus propiedades css y lo agregamos al body
+                var $objOverlay=$('<div id="divOverlay">').css({
+                    opacity: .5,
+                    display: 'none'
+                });
+
+                $('body').append($objOverlay);
+
+                //animamos el overlay y cuando su animacion termina seguimos con la ventana
+                $objOverlay.fadeIn(function(){
+                    //agregamos la nueva ventana al body
+                    $('body').append($objVentana);
+                    //mostramos la ventana suavemente ;)
+                    $objVentana.fadeIn();
+                });
+
+            },
+            error:function(response){
+
+            }
+        });
 	});
 	
 

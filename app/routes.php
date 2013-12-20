@@ -33,6 +33,8 @@ Route::post( '/registro', array( 'uses' => 'RegistryController@registro_usuario'
 Route::any( '/registro_final', array( 'uses' => 'RegistryController@registro_final', 'as' => 'registro_final' ) );
 Route::get('/registro/email', array('uses' => 'RegistryController@email', 'as' => 'email'));
 Route::get('/registro/captcha/reload', array('as' => 'captcha_reload', function() { return Captcha::img(); } ));
+Route::get('/security',array('uses'=>'UserPanelController@validatePassword', 'as' => 'security', 'before' => 'auth'));
+
 
 Route::get('/location/states',array('uses' => 'LocationController@states' , 'as' => 'states'));
 Route::get('/location/cities',array('uses' => 'LocationController@cities' , 'as' => 'cities'));
