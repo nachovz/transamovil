@@ -7,7 +7,7 @@
 <div id="contenido">
   <span class="title">RECARGA </span><span class="titleb">DIGITEL</span><br />
   <br />
-  <span class="text">Pronto podrás recargar tu teléfono celular </span><span class="textb">Digitel</span><span class="text"> desde </span><span class="textb">TransaMóvil</span><span class="text"> de forma rápida, cómoda y segura: <br /><br />
+  <span class="text">Pronto podrás recargar el saldo de las líneas </span><span class="textb">Prepago Digitel (Móvil, Fija o BAM)</span><span class="text"> desde </span><span class="textb">TransaMóvil</span><span class="text"> de forma rápida, cómoda y segura: <br /><br />
 </span><span class="textb">1.</span><span class="text"> Si no estas registrado, </span><span class="textb">Afíliate a TransaMóvil</span><span class="text"> ingresando tus datos. <br /><br />
 </span><span class="textb">2. Ingresa el número Digitel</span><span class="text"> prepago que deseas recargar y el monto. <br /><br />
 </span><span class="textb">3. Selecciona la forma de pago:</span><span class="text"> el Banco desde donde realizarás el pago o la tarjeta de crédito con la que deseas cancelar la recarga. <br /><br />
