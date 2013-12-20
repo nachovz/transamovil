@@ -47,7 +47,16 @@
 				<td>{{Input::get('monto')}}</td>
 			</tr>
 			<tr>
-				<td style="background-color:rgb(255,255,255);">{{Input::get('metodo_pago')}}</td>
+				<td style="background-color:rgb(255,255,255);">
+					@if (Input::get('metodo_pago') == '1') 
+						Cuenta de banco
+					@elseif (Input::get('metodo_pago') == '2')
+						Tarjeta de Cr&eacute;dito
+					@else
+						C&oacute;digo Promocional
+					@endif
+				</td>
+				<td style="background-color:rgb(255,255,255);">C&oacute;d</td>
 			</tr>
 			</tr>
 				<td>{{Input::get('codigo')}}</td>
@@ -122,7 +131,16 @@
 		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3-IE"><img src="img/confirmar.png" class="img_space"></a>
 		<![endif]-->
 		<!--[if !IE]>--> 
-		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a>
+		<a href="{{URL::route( 'modal_recarga_confirmar', 
+								array( 
+										Input::get('monto'), 
+										Input::get('numero_afiliado'), 
+										Input::get('metodo_pago'),
+										Input::get('codigo'), 
+										( Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' )
+								) 
+							)
+				}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a>
 		<!--<![endif]-->
 		<!-- <a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' ) )}}" class="clsVentanaIFrame3"><img src="img/confirmar.png" class="img_space"></a> -->
 		<a href="{{URL::route( 'digitelrecarga' )}}"><img src="img/modificar.png" class="img_space"></a>

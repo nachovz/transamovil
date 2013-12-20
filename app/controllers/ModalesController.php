@@ -30,9 +30,10 @@ class ModalesController extends BaseController
 		return View::make('modales.modal_registro')->with( 'transapin', $user->transapin )->with('email', $user->email );
 	}
 
-	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago, $numero_digitel )
+	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago, $codigo, $numero_digitel )
 	{		
-		
+		//var_dump();
+
 		//str_replace('0412', '',$numero_digitel.$numero_afiliado)
 		$prefijo = "";
 		if ($numero_digitel != "000") {
@@ -48,6 +49,8 @@ class ModalesController extends BaseController
 		{
 			$meta	= stream_get_meta_data( $fp );
 			$resp	= json_decode( stream_get_contents( $fp ) );			
+
+
 		}
 		else
 		{

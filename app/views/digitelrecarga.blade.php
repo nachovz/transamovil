@@ -17,7 +17,7 @@ $(document).ready(function(){
 		$('.pref_dig').attr("disabled", "disabled")
 	};
 
-	if ($('.selectmetodopago').val() == "Código Promocional" ){
+	if ($('.selectmetodopago').val() == "3" ){
 		$(".culo1").hide()
 	 	$(".culo2").hide()
 	 	$(".monnto").val("")
@@ -26,7 +26,7 @@ $(document).ready(function(){
 	$('.selectmetodopago').on('change',function(){
 	     var selection = $(this).val();
 	    switch(selection){
-	    	case "Código Promocional":
+	    	case "3":
 	    		$(".culo1").show()
 	    		$(".culo2").show()
 	    		$(".monnto").val("20")
@@ -131,8 +131,8 @@ $(document).ready(function(){
 				@endforeach
 		</select><br>
 		{{Form::text( 'monto', null, array('class' => 'validate[required],min[20],max[500] monnto', 'id' => 'campo_registro_a8'))}}<br>
-		{{Form::select('metodo_pago', array('Cuenta de Banco' => 'Cuenta de Banco', 'Tarjeta de Crédito' => 'Tarjeta de Crédito', 'Código Promocional' => 'Código Promocional'), null, array('id' => 'campo_registro2', 'class' => 'validate[required],equals2[paagoo] selectmetodopago'))}}<br>
-		{{Form::hidden('pago', 'Código Promocional', array('id' =>'paagoo'))}}
+		{{Form::select('metodo_pago', array( '1' => 'Cuenta de Banco', '2' => 'Tarjeta de Crédito', '3' => 'Código Promocional'), null, array('id' => 'campo_registro2', 'class' => 'validate[required],equals2[paagoo] selectmetodopago'))}}<br>
+		{{Form::hidden('pago', '3', array('id' =>'paagoo'))}}
 		{{Form::text( 'codigo', null, array('class' => 'validate[required, ajax[validatePromocional]] culo2', 'id' => 'campo_registro8', 'style' => 'display:none;', 'data-url' => URL::route('validarPromocional')) )}}<br>
 	</div>
 	<!--<div class="afiliacion_3" style="top:255px">

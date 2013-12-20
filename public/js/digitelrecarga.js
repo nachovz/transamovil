@@ -40,7 +40,8 @@ $(document).ready(function(){
 
 function valPromocional(field, rules, i, options){
 
-	if (field.val() != '')
+	//if (field.val() != '')
+	if ($("#aidi").validate())
 	{
 
 		//LLAMADA AJAX PARA REALIZAR REGISTRO
