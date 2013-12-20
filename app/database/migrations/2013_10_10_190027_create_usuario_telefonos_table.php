@@ -13,6 +13,7 @@ class CreateUsuarioTelefonosTable extends Migration {
 	{
       Schema::create('usuario_telefonos', function($table)
       {
+        $table->increments('id');
         $table->integer('usuario_id')->unsigned();
         $table->enum('tipo', array('Casa', 'Oficina', 'Celular'));
         $table->string('numero', 20);
