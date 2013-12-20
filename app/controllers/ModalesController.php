@@ -32,9 +32,8 @@ class ModalesController extends BaseController
 
 	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago, $codigo, $numero_digitel )
 	{		
-		//var_dump();
 
-		//str_replace('0412', '',$numero_digitel.$numero_afiliado)
+        //str_replace('0412', '',$numero_digitel.$numero_afiliado)
 		$prefijo = "";
 		if ($numero_digitel != "000") {
 			$prefijo = $numero_digitel;
@@ -45,12 +44,19 @@ class ModalesController extends BaseController
 		$stream_context	= stream_context_create( array('http' => array('timeout' => 2400.0)) );
 		$fp							= @fopen($url, 'r', false, $stream_context);
 
-		if($fp)
+        if($fp)
 		{
 			$meta	= stream_get_meta_data( $fp );
 			$resp	= json_decode( stream_get_contents( $fp ) );			
 
+            if($resp->codigo=='00'){
+                $promocional= Promocional::where('codigo',$codigo)->first();
+                if(null!=$promocional){
+                    $promocional->utilizado=1;
+                    $promocional->save();
+                }
 
+            }
 		}
 		else
 		{
