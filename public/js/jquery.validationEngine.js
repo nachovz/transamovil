@@ -763,6 +763,11 @@
 			if (!options.isError && options.onFieldSuccess)
 				options.onFieldSuccess(field);
 
+            if(options.isError){
+                $('[for='+field.attr('id')+']').addClass('error');
+            }else{
+                $('[for='+field.attr('id')+']').removeClass('error');
+            }
 			return options.isError;
 		},
 		/**

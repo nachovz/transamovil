@@ -8,9 +8,9 @@ body {margin:0; padding:0;background-color: #CCC;}
 #header {height:115px; width:100%; background-color: #EBEBEB; position:fixed; z-index: 10000000;}
 #header_reg {height:115px; width:100%; background-color: #FFF; position:fixed; z-index: 10000000;}
 #header2 {height:115px; width:945px; margin:auto; }
-#regist {width:8opx; height:22px; float:right; margin-left: 5px;margin-top: 2px;}
+#regist {height:22px; float:right; margin-left: 5px;margin-top: 2px;padding-top: 4px;}
 #registt {display: inline-block; float: right;margin-top: 5px; margin-bottom: -5px;}
-#boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;margin-left: 5px;}
+#boton_registrar {background-image:url(../img/buttons/ingresar_up.jpg);width: 80px;height: 22px;border: 0px;margin-left: 5px;vertical-align: bottom;}
 .boton_auxiliar_siguiente {background-image:url(../img/siguiente.png);width: 62px;height: 18px;border: 0;position: relative}
 #boton_auxiliar_cancelar {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative;}
 #boton_auxiliar_cancelar_2 {background-image:url(../img/cancelar.png);width: 62px;height: 18px;border: 0;position: relative}
@@ -284,13 +284,13 @@ a:visited{
     }
 }
 
-#boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;border: 0;position: relative;top: -2px;}
+#boton_auxiliar_finalizar {background-image:url(../img/finalizar.png);width: 62px;border: 0;position: relative;top: -1px;}
 #boton_continuar {background-image:url(../img/continuar.png);width: 154px;height: 47px;border: 0;position: relative;top: -1px;margin-right:10px;}
 #farm {position: relative !important; left: -87px !important;}
 #logo {width:170px; height:75px; float:left; margin-top:10px;}
 #logo2 {width:170px; height:75px; float:left; margin-top:10px; margin-left: 22px;}
-#menu {width:700px; height:55px; float:left; margin-top:20px; margin-left:74px;}
-#regist input#fix {position: relative; top: -4px;}
+#menu {width:700px; height:55px; float:left; margin-top: 32px; margin-left:74px;}
+#regist input#fix {position: relative; /* top: -5px; */height: 19px;border: 1px solid #ccc;}
 #body {height:500px; width:945px; margin:auto; float:left;}
 #foto {height:380px; width:945px; margin:auto; float:left;z-index:2;}
 #fotoregistro {height:280px; width:865px; margin:auto; float:left;z-index:3; background-image: url(../img/banner_registro.jpg); background-repeat: no-repeat;
@@ -320,7 +320,7 @@ padding-top:100px; padding-left:80px;}
 	padding-top: 3px;
 	width: 230px;
 	position: relative;
-	top: -4px;
+	/* top: -5px; */
 }
 
 #labels_registro{
@@ -371,8 +371,6 @@ padding-top:100px; padding-left:80px;}
 
 #campo_registro {
 	width: 200px;
-	height: 12px;
-	padding-top: 4px;
 }
 
 #pwd_form{
@@ -381,7 +379,6 @@ padding-top:100px; padding-left:80px;}
 
 #campo_registroa {
 	width: 202px;
-	height: 14px;
 }
 
 #campo_registrob {
@@ -420,7 +417,6 @@ padding-top:100px; padding-left:80px;}
 
 #campo_registro4 {
 	width: 176px;
-	height: 14px;
 }
 
 #campo_registro5 {
@@ -774,6 +770,8 @@ label {
 
 input {
 	width: 155px;
+	border: 1px solid #ccc;
+	height: 19px;
 }
 
 #radio {
@@ -1519,29 +1517,29 @@ table#tabla_7 td {
 
 #forgot_pwd {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 9px;
+	font-size: 10px;
 	color: #808080;
 	display: inline-block;
 	position: relative;
-	top: -10px;
+	top: -3px;
 	left: 343px;
 }
 
 #forgot_mail {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 9px;
+	font-size: 10px;
 	color: #808080;
 	display: inline-block;
 	position: relative;
-	top: -10px;
+	top: -3px;
 	left: 35px;
 }
 
 #error_message{
 	font-family: 'Open Sans', sans-serif;
-	font-size: 9px;
-	color: #808080;
-	margin: -14px 0 0 107px;
+	font-size: 10px;
+	color: #C24545;
+	margin: -6px 0 0 107px;
 
 	/*color: #FF0000;
 	margin: 0px;*/
@@ -1727,4 +1725,12 @@ table#tabla_7 td {
 
 .dropdown-small{
     width: 150px;
+}
+
+.required:after{
+	content:'*';
+}
+
+.error.required:after{
+	color:#f33;
 }

@@ -59,6 +59,7 @@
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-o-border-radius: 6px;
+	margin-top:-13px; /*Por los errores de diseño*/
 }
 
 .formError.inline .formErrorContent {

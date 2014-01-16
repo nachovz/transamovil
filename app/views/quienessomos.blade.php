@@ -8,7 +8,7 @@
 <div id="contenido">
   <span class="title">QUIÉNES </span><span class="titleb">SOMOS</span><br />
   <br />
-  <span class="text">Somos una empresa venezolana que creemos en la tecnología como base para llevar y ampliar los servicios de pago y manejo de efectivo a través del teléfono celular para la población que no tiene acceso a los servicios bancarios.
+  <span class="text">Somos una empresa venezolana que cree en la tecnología como base para llevar y ampliar los servicios de pago y manejo de efectivo a través del teléfono celular para la población que no tiene acceso a los servicios bancarios.
 <br /><br />
 Facilitamos la realización de transacciones financieras y pagos a través del teléfono celular y pagina web de forma fácil, cómoda y segura ampliando el acceso a servicios de m-commerce a toda la población.
 <br /><br />

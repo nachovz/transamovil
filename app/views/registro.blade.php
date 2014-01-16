@@ -9,34 +9,34 @@
 				<div id="paso_1"></div>			
 				<div id="form_reg">
 
-					{{Form::label( 'mail', 'CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email validate[required, custom[email],funcCall[emailUnique]]','data-url-validation'=>URL::to('registro/email')) )}}
+					{{Form::label( 'campo_registroa', 'CORREO ELECTRÓNICO: ', array('id' => 'labels_registro','class'=>'required')) . Form::email( 'mail', null, array('id' => 'campo_registroa', 'required', 'class' => 'registro_email validate[required, custom[email],funcCall[emailUnique]]','data-url-validation'=>URL::to('registro/email')) )}}
 					@if($errors->has('mail'))
 						<p class="error_message">{{ $errors->first('mail') }}</p>
 					@endif
 
-					{{Form::label( 'mail_check', 'CONFIRMAR CORREO ELECTRÓNICO: *', array('id' => 'labels_registro')) . Form::text( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check validate[required, custom[email], funcCall[sameEmail]]') )}}
+					{{Form::label( 'campo_registro', 'CONFIRMAR CORREO ELECTRÓNICO: ', array('id' => 'labels_registro','class'=>'required')) . Form::text( 'mail_check', null, array('id' => 'campo_registro', 'required', 'class' => 'registro_email_check validate[required, custom[email], funcCall[sameEmail]]') )}}
 					@if($errors->has('mail_check'))
 						<p class="error_message">{{ $errors->first('mail_check') }}</p>
 					@endif
 
-					{{Form::label( 'password', 'CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password', array('id' => 'password_registro', 'class' => 'registro_password validate[required, custom[mustLetterNumbers], minSize[7]]') )}}
+					{{Form::label( 'password_registro', 'CONTRASEÑA: ', array('id' => 'labels_registro','class'=>'required')) . Form::password( 'password', array('id' => 'password_registro', 'class' => 'registro_password validate[required, custom[mustLetterNumbers], minSize[7]]') )}}
 					@if($errors->has('password'))
 						<p class="error_message">{{ $errors->first('password') }}</p>
 					@endif
 
-					{{Form::label( 'password_confirmation', 'CONFIRMAR CONTRASEÑA: *', array('id' => 'labels_registro')) . Form::password( 'password_confirmation', array('id' => 'password_confirm', 'class' => 'registro_password_check validate[required, funcCall[samePassword]]') )}}
+					{{Form::label( 'password_confirm', 'CONFIRMAR CONTRASEÑA: ', array('id' => 'labels_registro','class'=>'required')) . Form::password( 'password_confirmation', array('id' => 'password_confirm', 'class' => 'registro_password_check validate[required, funcCall[samePassword]]') )}}
 					@if($errors->has('password_confirmation'))
 						<p class="error_message">{{ $errors->first('password_confirmation') }}</p>
 					@else
 						<p id="labels_registro_2">(Debe estar compuesta por números y letras)</p>
 					@endif
 
-					{{Form::label( 'pregunta_seguridad', 'PREGUNTA DE SEGURIDAD: *', array('id' => 'labels_registro')) . Form::select('pregunta_seguridad', array('0' => 'Nombre de Mascota', '1' => 'Nombre de Abuelo Paterno', '2' => 'Nombre de Colegio donde Estudió'), null, array('id' => 'campo_registro2 '))}}
+					{{Form::label( 'pregunta_registro', 'PREGUNTA DE SEGURIDAD: ', array('id' => 'labels_registro','class'=>'required')) . Form::select('pregunta_seguridad', array('0' => 'Nombre de Mascota', '1' => 'Nombre de Abuelo Paterno', '2' => 'Nombre de Colegio donde Estudió'), null, array('id' => 'pregunta_registro '))}}
 					@if($errors->has('pregunta_seguridad'))
 						<p class="error_message">{{ $errors->first('pregunta_seguridad') }}</p>
 					@endif
 
-					{{Form::label( 'respuesta_seguridad', 'RESPUESTA DE SEGURIDAD: *', array('id' => 'labels_registro')) . Form::text( 'respuesta_seguridad', null, array('id' => 'respuesta_registro', 'class' => 'validate[required]') )}}
+					{{Form::label( 'respuesta_registro', 'RESPUESTA DE SEGURIDAD: ', array('id' => 'labels_registro','class'=>'required')) . Form::text( 'respuesta_seguridad', null, array('id' => 'respuesta_registro', 'class' => 'validate[required]') )}}
 					@if($errors->has('respuesta_seguridad'))
 						<p class="error_message">{{ $errors->first('respuesta_seguridad') }}</p>
 					@endif
@@ -52,12 +52,12 @@
 					{{Form::radio('computadora_confianza', 'Otro')}}<span class="radio_check">Otro</span>
 					</div>
 					<div id="auxiliar">
-					{{Form::label( 'celular', 'TELÉFONO CELULAR: *', array('id' => 'labels_registro')) . Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426')) . Form::text( 'celular', null, array('id' => 'telefono_registro', 'class' => 'validate[required, custom[integer], minSize[7]]') )}} 
+					{{Form::label( 'telefono_registro', 'TELÉFONO CELULAR: ', array('id' => 'labels_registro','class'=>'required')) . Form::select('prefijo_celular', array('0412' => '0412', '0414' => '0414', '0424' => '0424', '0416' => '0416', '0426' => '0426')) . Form::text( 'celular', null, array('id' => 'telefono_registro', 'class' => 'validate[required, custom[integer], minSize[7]]') )}}
 					@if($errors->has('prefijo_celular'))
 						<p class="error_message">{{ $errors->first('prefijo_celular') }}</p>
 					@endif
 
-					{{Form::label( 'maila', 'CORREO ELECTRÓNICO ALTERNO: *', array('id' => 'labels_registro')) . Form::email( 'maila', null, array('id' => 'email_alterno', 'class' => 'registro_email_alterno validate[required, custom[email],funcCall[notEqualEmail]]') )}}
+					{{Form::label( 'email_alterno', 'CORREO ELECTRÓNICO ALTERNO: ', array('id' => 'labels_registro','class'=>'required')) . Form::email( 'maila', null, array('id' => 'email_alterno', 'class' => 'registro_email_alterno validate[required, custom[email],funcCall[notEqualEmail]]') )}}
 					@if($errors->has('maila'))
 						<p class="error_message">{{ $errors->first('maila') }}</p>
 					@endif
@@ -77,23 +77,23 @@
 				<div id="img_reg"></div>
 				<div id="paso_2"></div>			
 				<div id="form_reg">
-					{{Form::label( 'ced_pas', 'CÉDULA/PASAPORTE: *', array('id' => 'labels_registro')) . Form::select('prefijo_ced_pas', array('V' => 'V-', 'E' => 'E-', 'J' => 'J-', 'P' => 'P-')) . Form::text( 'ced_pas', null, array('id' => 'cedula_registro', 'class' => 'registro_ced_pas validate[required, custom[integer], minSize[7]]') )}}
+					{{Form::label( 'cedula_registro', 'CÉDULA/PASAPORTE: ', array('id' => 'labels_registro','class'=>'required')) . Form::select('prefijo_ced_pas', array('V' => 'V-', 'E' => 'E-', 'J' => 'J-', 'P' => 'P-')) . Form::text( 'ced_pas', null, array('id' => 'cedula_registro', 'class' => 'registro_ced_pas validate[required, custom[integer], minSize[7]]') )}}
 					@if($errors->has('prefijo_ced_pas'))
 						<p class="error_message">{{ $errors->first('prefijo_ced_pas') }}</p>
 					@endif
 
 					<!-- <div id="aux3"> -->
-					{{Form::label( 'nombre', 'NOMBRES: *', array('id' => 'labels_registro')) . Form::text( 'nombre', null, array('id' => 'nombre_registro', 'class' => 'registro_nombre validate[required, custom[alphanumeric]]') )}}
+					{{Form::label( 'nombre_registro', 'NOMBRES: ', array('id' => 'labels_registro','class'=>'required')) . Form::text( 'nombre', null, array('id' => 'nombre_registro', 'class' => 'registro_nombre validate[required, custom[alphanumeric]]') )}}
 					@if($errors->has('nombre'))
 						<p class="error_message">{{ $errors->first('nombre') }}</p>
 					@endif
 
-					{{Form::label( 'apellido', 'APELLIDOS: *', array('id' => 'labels_registro')) . Form::text( 'apellido', null, array('id' => 'apellido_registro', 'class' => 'registro_apellido validate[required, custom[alphanumeric]]') )}}
+					{{Form::label( 'apellido_registro', 'APELLIDOS: ', array('id' => 'labels_registro','class'=>'required')) . Form::text( 'apellido', null, array('id' => 'apellido_registro', 'class' => 'registro_apellido validate[required, custom[alphanumeric]]') )}}
 					@if($errors->has('apellido'))
 						<p class="error_message">{{ $errors->first('apellido') }}</p>
 					@endif
 
-					{{Form::label( 'nacimiento', 'FECHA DE NACIMIENTO: *', array('id' => 'labels_registro')) . Form::text( 'nacimiento', null, array('placeholder'=>'DD/MM/AAAA','id' => 'fecha_registro', 'class' => 'validate[required, custom[date]]') )}}
+					{{Form::label( 'fecha_registro', 'FECHA DE NACIMIENTO: ', array('id' => 'labels_registro','class'=>'required')) . Form::text( 'nacimiento', null, array('placeholder'=>'DD/MM/AAAA','id' => 'fecha_registro', 'class' => 'validate[required, custom[date]]','onKeyUp' => 'this.value=formateafecha(this.value);') )}}
 					@if($errors->has('nacimiento'))
 						<p class="error_message">{{ $errors->first('nacimiento') }}</p>
 					@endif
@@ -119,40 +119,40 @@
 					@endif
 					<br><br><br><br><br>
 					<div id="check">{{Form::checkbox('name', 'value', true)}}<span class="radio_check3">Deseo recibir correo informativos de TransaMóvil</span><br>
-					{{Form::checkbox('registro-terminos-check', '1', null, array('id' => 'registro-terminos-check', 'class' => 'validate[required]'))}}<span class="radio_check3">Acepto los <u>Términos y Condiciones</u> de TransaMóvil</span></div>
+					{{Form::checkbox('registro-terminos-check', '1', null, array('id' => 'registro-terminos-check', 'class' => 'validate[required]','data-errormessage-value-missing'=>'Para continuar debe aceptar los términos y condiciones'))}}<span class="radio_check3">Acepto los <u>Términos y Condiciones</u> de TransaMóvil</span></div>
 				</div>
 				<div id="form_reg2">
-					{{Form::label( 'pais', 'PAÍS: *', array('id' => 'labels_registro')) . Form::select('pais', $paises, null, array('id' => 'pais_registro', 'class' => 'validate[required] dropdown-small'))}}
+					{{Form::label( 'pais_registro', 'PAÍS: ', array('id' => 'labels_registro','class'=>'required')) . Form::select('pais', $paises, null, array('id' => 'pais_registro', 'class' => 'validate[required] dropdown-small'))}}
 					@if($errors->has('pais'))
 						<p class="error_message">{{ $errors->first('pais') }}</p>
 					@endif
 
-					{{Form::label( 'estado', 'ESTADO: *', array('id' => 'labels_registro')) . Form::select('estado', array(), null, array('id' => 'estado_registro', 'class' => 'validate[required] dropdown-small','data-url'=>URL::to('location/states')))}}
+					{{Form::label( 'estado_registro', 'ESTADO: ', array('id' => 'labels_registro','class'=>'required')) . Form::select('estado', array(), null, array('id' => 'estado_registro', 'class' => 'validate[required] dropdown-small','data-url'=>URL::to('location/states')))}}
 					@if($errors->has('estado'))
 						<p class="error_message">{{ $errors->first('estado') }}</p>
 					@endif
 
-					{{Form::label( 'municipio', 'MUNICIPIO: *', array('id' => 'labels_registro')) . Form::select('municipio', array(), null, array('id' => 'municipio_registro', 'class' => 'validate[required] dropdown-small','data-url'=>URL::to('location/townships')))}}
+                    {{Form::label( 'ciudad_registro', 'CIUDAD: ', array('id' => 'labels_registro','class'=>'required')) . Form::select('ciudad', array(), null, array('id' => 'ciudad_registro', 'class' => 'validate[required] dropdown-small','data-url'=>URL::to('location/cities')))}}
+                    @if($errors->has('ciudad'))
+                    <p class="error_message">{{ $errors->first('ciudad') }}</p>
+                    @endif
+
+					{{Form::label( 'municipio_registro', 'MUNICIPIO: ', array('id' => 'labels_registro','class'=>'required')) . Form::select('municipio', array(), null, array('id' => 'municipio_registro', 'class' => 'validate[required] dropdown-small','data-url'=>URL::to('location/townships')))}}
 					@if($errors->has('municipio'))
 						<p class="error_message">{{ $errors->first('municipio') }}</p>
 					@endif
 
-					{{Form::label( 'ciudad', 'CIUDAD: *', array('id' => 'labels_registro')) . Form::select('ciudad', array(), null, array('id' => 'ciudad_registro', 'class' => 'validate[required] dropdown-small','data-url'=>URL::to('location/cities')))}}
-					@if($errors->has('ciudad'))
-						<p class="error_message">{{ $errors->first('ciudad') }}</p>
-					@endif
-
-					{{Form::label( 'direccion', 'DIRECCIÓN: *', array('id' => 'labels_registro')) . Form::text( 'direccion', null, array('id' => 'direccion_registro', 'class' => 'validate[required]') )}}
+					{{Form::label( 'direccion_registro', 'DIRECCIÓN: ', array('id' => 'labels_registro','class'=>'required')) . Form::text( 'direccion', null, array('id' => 'direccion_registro', 'class' => 'validate[required]') )}}
 					@if($errors->has('direccion'))
 						<p class="error_message">{{ $errors->first('direccion') }}</p>
 					@endif
 
-					{{Form::label( 'tlf_habitacion', 'TELÉFONO HABITACIÓN: *', array('id' => 'labels_registro')) . Form::text( 'tlf_habitacion', null, array('id' => 'telefono_hab_registro', 'class' => 'validate[required]') )}}
+					{{Form::label( 'telefono_hab_registro', 'TELÉFONO HABITACIÓN: ', array('id' => 'labels_registro','class'=>'required')) . Form::text( 'tlf_habitacion', null, array('id' => 'telefono_hab_registro', 'class' => 'validate[required]') )}}
 					@if($errors->has('tlf_habitacion'))
 						<p class="error_message">{{ $errors->first('tlf_habitacion') }}</p>
 					@endif
 
-					{{Form::label( 'tlf_oficina', 'TELÉFONO OFICINA: *', array('id' => 'labels_registro')) . Form::text( 'tlf_oficina', null, array('id' => 'telefono_ofi_registro', 'class' => 'validate[required]') )}}
+					{{Form::label( 'telefono_ofi_registro', 'TELÉFONO OFICINA: ', array('id' => 'labels_registro','class'=>'required')) . Form::text( 'tlf_oficina', null, array('id' => 'telefono_ofi_registro', 'class' => 'validate[required]') )}}
 					@if($errors->has('tlf_oficina'))
 						<p class="error_message">{{ $errors->first('tlf_oficina') }}</p>
 					@endif
@@ -270,4 +270,59 @@
 <!-- <script type="text/javascript" src="js/ventanas-modales.js"></script> -->
 <script type="text/javascript" src="{{asset('js/registro-wizard.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/ventanas-modales.js')}}"></script>
+<script type="text/javascript">
+    function IsNumeric(valor)
+    {
+        var log=valor.length; var sw="S";
+        for (x=0; x<log; x++)
+        { v1=valor.substr(x,1);
+            v2 = parseInt(v1);
+    //Compruebo si es un valor numérico
+            if (isNaN(v2)) { sw= "N";}
+        }
+        if (sw=="S") {return true;} else {return false; }
+    }
+    var primerslap=false;
+    var segundoslap=false;
+    function formateafecha(fecha)
+    {
+        var long = fecha.length;
+        var dia;
+        var mes;
+        var ano;
+        if ((long>=2) && (primerslap==false)) { dia=fecha.substr(0,2);
+            if ((IsNumeric(dia)==true) && (dia<=31) && (dia!="00")) { fecha=fecha.substr(0,2)+"/"+fecha.substr(3,7); primerslap=true; }
+            else { fecha=""; primerslap=false;}
+        }
+        else
+        { dia=fecha.substr(0,1);
+            if (IsNumeric(dia)==false)
+            {fecha="";}
+            if ((long<=2) && (primerslap=true)) {fecha=fecha.substr(0,1); primerslap=false; }
+        }
+        if ((long>=5) && (segundoslap==false))
+        { mes=fecha.substr(3,2);
+            if ((IsNumeric(mes)==true) &&(mes<=12) && (mes!="00")) { fecha=fecha.substr(0,5)+"/"+fecha.substr(6,4); segundoslap=true; }
+            else { fecha=fecha.substr(0,3);; segundoslap=false;}
+        }
+        else { if ((long<=5) && (segundoslap=true)) { fecha=fecha.substr(0,4); segundoslap=false; } }
+        if (long>=7)
+        { ano=fecha.substr(6,4);
+            if (IsNumeric(ano)==false) { fecha=fecha.substr(0,6); }
+            else { if (long==10){ if ((ano==0) || (ano<1900) || (ano>2100)) { fecha=fecha.substr(0,6); } } }
+        }
+        if (long>=10)
+        {
+            fecha=fecha.substr(0,10);
+            dia=fecha.substr(0,2);
+            mes=fecha.substr(3,2);
+            ano=fecha.substr(6,4);
+        // Año no viciesto y es febrero y el dia es mayor a 28
+            if ( (ano%4 != 0) && (mes ==02) && (dia > 28) ) { fecha=fecha.substr(0,2)+"/"; }
+        }
+        return (fecha);
+    }
+</script>
+
+
 {{$footer}}

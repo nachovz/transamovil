@@ -7,7 +7,7 @@
 <div id="contenido"><span class="stitle">SOLUCIONES</span><span class="stitleb"> PARA TI</span><br />
   <span class="title">¿CÓMO </span><span class="titleb">FUNCIONA?</span><br />
   <br />
-  <span class="textb">1. <a href="{{URL::route( 'comofunciona' )}}">Afíliate a nuestro servicio</a></span><span class="text"> y recibirás tu número de identificación TransaPin.<br />
+  <span class="textb">1. <a href="{{URL::route( 'registro' )}}">Afíliate a nuestro servicio</a></span><span class="text"> y recibirás tu número de identificación TransaPin.<br />
 <br />
 </span><span class="textb">2. Descarga</span><span class="text"> la aplicación de TransaMóvil  a tu celular.<br />
 <br />

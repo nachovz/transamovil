@@ -36,7 +36,7 @@ class RegistryController extends BaseController {
 			'ced_pas'                  => 'required',
 			'nombre'                   => 'required',
 			'apellido'                 => 'required',
-			'nacimiento'               => 'required|date',
+			'nacimiento'               => 'required|date_format:d/m/Y',
 			'sexo'                     => 'required|in:masculino,femenino',
 			'validacion'               => 'required|captcha',
 			'registro-terminos-check'  => 'accepted',
