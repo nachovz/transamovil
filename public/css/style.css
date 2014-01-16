@@ -290,7 +290,7 @@ a:visited{
 #logo {width:170px; height:75px; float:left; margin-top:10px;}
 #logo2 {width:170px; height:75px; float:left; margin-top:10px; margin-left: 22px;}
 #menu {width:700px; height:55px; float:left; margin-top: 32px; margin-left:74px;}
-#regist input#fix {position: relative; /* top: -5px; */height: 19px;border: 1px solid #ccc;}
+#regist input#fix {position: relative; height: 19px;border: 1px solid #ccc;}
 #body {height:500px; width:945px; margin:auto; float:left;}
 #foto {height:380px; width:945px; margin:auto; float:left;z-index:2;}
 #fotoregistro {height:280px; width:865px; margin:auto; float:left;z-index:3; background-image: url(../img/banner_registro.jpg); background-repeat: no-repeat;
