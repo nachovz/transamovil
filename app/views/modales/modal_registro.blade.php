@@ -7,13 +7,19 @@
 		<script src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
 		<script>
 		$(document).ready(function(){
-			$('#clsVentanaCerrar_new').on( 'click', cerrando);
+			$('#cloase_modal').on( 'click', cerrando);
 
 			function cerrando( e )
 			{
                 if(navigator.userAgent.indexOf('MSIE')!=-1){
                     $('.clsVentana3').addClass('hide');
                     $('.hide-in-ie').removeClass('hide');
+
+                    /*don't touch is magic*/
+                    e.stopImmediatePropagation();
+                    e.stopPropagation();
+                    e.preventDefault();
+
                 }else{
 				    hideModal();
                 }
@@ -51,7 +57,7 @@
 		</div>
 
 		<div class="modal_titulo_2_wrapper" style="text-align:center;">
-			<button id="clsVentanaCerrar_new" class="clsVentanaCerrar_new btn-close"></button>
+			<button id="cloase_modal" class="btn-close"></button>
 		</div>
 	</body>
 </html>
