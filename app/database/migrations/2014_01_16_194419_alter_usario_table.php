@@ -13,9 +13,9 @@ class AlterUsarioTable extends Migration {
 	{
         Schema::table('usuarios', function($table)
         {
-            $table->string('image_id');
-            $table->string('image_card');
-            $table->string('image_avatar');
+            $table->string('image_id')->nullable();
+            $table->string('image_card')->nullable();
+            $table->string('image_avatar')->nullable();
         });
 	}
 
