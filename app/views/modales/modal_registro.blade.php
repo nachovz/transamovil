@@ -11,7 +11,12 @@
 
 			function cerrando( e )
 			{
-				hideModal();
+                if(navigator.userAgent.indexOf('MSIE')!=-1){
+                    $('.clsVentana3').addClass('hide');
+                    $('.hide-in-ie').removeClass('hide');
+                }else{
+				    hideModal();
+                }
 			}
 		});
 		</script>
@@ -45,7 +50,7 @@
 			<span class="modal_texto_2">A COMPLETAR LOS DATOS SIGUIENTES</span>
 		</div>
 
-		<div class="modal_titulo_2_wrapper">
+		<div class="modal_titulo_2_wrapper" style="text-align:center;">
 			<button id="clsVentanaCerrar_new" class="clsVentanaCerrar_new btn-close"></button>
 		</div>
 	</body>

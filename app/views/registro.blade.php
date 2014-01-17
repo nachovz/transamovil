@@ -111,7 +111,7 @@
 
 					<br><br>
 					{{ HTML::image(Captcha::img(), 'Captcha image', array('id' => 'captcha_img', 'data-url-post' => URL::route('captcha_reload'))) }}
-					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, $attributes = array('id' => 'validacion', 'class' => 'validate[required, ajax[validateCaptha]]'))}}
+					{{Form::label( 'validacion', 'CÓDIGO DE VALIDACIÓN: ', array('id' => 'labels_registro')) . Form::text( 'validacion', null, $attributes = array('id' => 'validacion', 'class' => 'validate[required]]'))}}
 					@if($errors->has('validacion'))
 						<p class="error_message">{{ $errors->first('validacion') }}</p>
 					@else
@@ -169,16 +169,19 @@
 		</div><!--contenedor_registro_2-->
 
 		<div id="contenedor_registro_3" class="inactive">
-			<div id="img_reg"></div>
-			<div id="paso_3"></div>			
-			<div id="form_reg">
-				{{Form::label( 'img_cedula', 'IMÁGEN CÉDULA:', array('id' => 'labels_registro'))}} <span id="labels_registro_2" style="position:absolute;top: 109px;left: 107px;">(Archivo max. 200k)</span> {{Form::text( 'img_cedula', null, array('id' => 'campo_registro4') )}}
-				@if($errors->has('img_cedula'))
+            <div id="img_reg"></div>
+			<div id="paso_3"></div>
+            <div class="hack_modal"></div>
+			<div id="form_reg" class="hide-in-ie">
+				<label for="img_cedula" id="labels_registro"> IMÁGEN CÉDULA: <span id="labels_registro_2">(Archivo .jpg)</span></label> <button type="button" class="btn_custom" id="uploadId" data-url="{{URL::to('registro/upload')}}">Cargar Imagen</button>
+				<input type="file" class="hide" id="targetUploadId"/>
+                @if($errors->has('img_cedula'))
 					<p class="error_message">{{ $errors->first('img_cedula') }}</p>
 				@endif
 
-				{{Form::label( 'img_carnet', 'FOTO CARNET:', array('id' => 'labels_registro'))}}<span id="labels_registro_2" style="position:absolute;top: 147px;left: 92px;">(Archivo max. 200k)</span>{{Form::text( 'img_carnet', null, array('id' => 'campo_registro4') )}}
-				@if($errors->has('img_carnet'))
+                <label for="img_carnet" id="labels_registro"> FOTO CARNET: <span id="labels_registro_2">(Archivo .jpg)</span></label> <button type="button" class="btn_custom" id="uploadCard" data-url="{{URL::to('registro/upload')}}">Cargar Imagen</button>
+                <input type="file" class="hide" id="targetUploadCard"/>
+                @if($errors->has('img_carnet'))
 					<p class="error_message">{{ $errors->first('img_carnet') }}</p>
 				@endif
 
@@ -232,9 +235,15 @@
 				@endif
 
 			</div>
-			<div id="form_reg2">
-				<img src="img/avatar_provisional.png">
-				<div id="aux4">
+			<div id="form_reg2" class="hide-in-ie">
+                {{Form::label( 'avatar', 'AVATAR:', array('id' => 'labels_registro'))}}
+                <div class="avatar-container" style="width: 130px">
+				    <img src="img/avatar.png" width="100" id="avatar">
+                    <img src="img/upload_avatar.png" style="float:right" id="uploadAvatar">
+                    <input type="file" class="hide" id="targetUploadAvatar"/>
+                </div>
+                <div id="labels_registro_2" style="margin-top:10px;">(Archivo .jpg)</div>
+                <div id="aux4">
 				{{Form::label( 'banco_principal', 'CUÁL ES TU BANCO PRINCIPAL:', array('id' => 'labels_registro')) . Form::select('banco_principal', Banco::lists('nombre','id'), null, array('id' => 'campo_registro2'))}}
 				@if($errors->has('banco_principal'))
 					<p class="error_message">{{ $errors->first('banco_principal') }}</p>
@@ -257,7 +266,7 @@
 
 				</div>
 			</div>
-			<div id="bot_siguiente_22">
+			<div id="bot_siguiente_22" class="hide-in-ie">
 				<!--{{Form::button('', array('class' => 'ant', 'id' => 'boton_auxiliar_anterior', 'value' => '3', 'style' => 'margin-right:12px;'))}}-->
 				{{Form::submit('', array('id' => 'boton_auxiliar_finalizar', 'style' => 'margin-right:12px;'))}}
 				{{Form::button('', array('class' => 'canc', 'id' => 'boton_auxiliar_cerrar', ))}}

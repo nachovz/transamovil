@@ -24,6 +24,7 @@ body {margin:0; padding:0;background-color: #CCC;}
 	height: 18px;
 	border: 0;
 	top: -1px;
+	margin-left: 20px;
 }
 
 a:visited{
@@ -311,6 +312,12 @@ padding-top:100px; padding-left:80px;}
 .user_session {font-family: 'Open Sans', sans-serif;font-size: 12px; color: #333; background-image: url(../img/temporal/10.png);width:500px;height: 14px;float: right;margin-top: 2px;}
 .user_last_login {width:250px;height: 13px;float: right;position: relative; top: 79px; left: 107px;font-family: 'Open Sans',sans-serif; font-size: 12px; text-align: right;}
 
+
+
+#regist.changed{
+    margin-top:3px;
+}
+
 /* Estilo de Labels */
 
 #labelheaderemail {
@@ -334,8 +341,6 @@ padding-top:100px; padding-left:80px;}
 	font-family: 'Open Sans',sans-serif;
 	color: #808080;
 	font-size: 11px;
-	position: relative;
-	top: -9px;
 }
 
 #labels_registro_3 {
@@ -500,12 +505,12 @@ padding-top:100px; padding-left:80px;}
 
 #aux4 {
 	position: relative;
-	top: 43px;
+	top: 10px;
 }
 
 #aux5 {
 	position: relative;
-	top: 25px;
+	top: 0px;
 }
 
 
@@ -620,7 +625,7 @@ label {
 	color:#333;
 	display:block;
 	padding-top:3px;
-	width: 230px;
+	width: 232px;
 }
 
 #send {
@@ -768,10 +773,22 @@ label {
 	overflow: hidden;
 }
 
-input {
+input[type=text],input[type=password],input[type=email] {
 	width: 155px;
 	border: 1px solid #ccc;
 	height: 19px;
+}
+
+.btn_custom{
+    background: #008996;
+    border-radius: 2px;
+    border: 2px solid #008996;
+    font-size: 12px;
+    color: #fff;
+}
+
+.hide{
+    display:none !important;
 }
 
 #radio {

@@ -63,10 +63,12 @@ $(document).ready(function(){
                         $('<option/>',{value:''}).html('Seleccione')
                     );
 
-                    for(var i=0;i<data['states'].length;i++){
-                        $temp.append(
-                            $('<option/>',{value:data['states'][i].id}).html(data['states'][i].name)
-                        );
+                    if('states' in data){
+                        for(var i=0;i<data['states'].length;i++){
+                            $temp.append(
+                                $('<option/>',{value:data['states'][i].id}).html(data['states'][i].name)
+                            );
+                        }
                     }
 
                     $('#estado_registro').html($temp.html());
@@ -105,10 +107,12 @@ $(document).ready(function(){
                         $('<option/>',{value:''}).html('Seleccione')
                     );
 
-                    for(var i=0;i<data['cities'].length;i++){
-                        $temp.append(
-                            $('<option/>',{value:data['cities'][i].id}).html(data['cities'][i].name)
-                        )
+                    if('cities' in data){
+                        for(var i=0;i<data['cities'].length;i++){
+                            $temp.append(
+                                $('<option/>',{value:data['cities'][i].id}).html(data['cities'][i].name)
+                            )
+                        }
                     }
 
                     $('#ciudad_registro').html($temp.html());
@@ -129,12 +133,13 @@ $(document).ready(function(){
                         $('<option/>',{value:''}).html('Seleccione')
                     );
 
-                    for(var i=0;i<data['townships'].length;i++){
-                        $temp.append(
-                            $('<option/>',{value:data['townships'][i].id}).html(data['townships'][i].name)
-                        )
+                    if('townships' in data){
+                        for(var i=0;i<data['townships'].length;i++){
+                            $temp.append(
+                                $('<option/>',{value:data['townships'][i].id}).html(data['townships'][i].name)
+                            )
+                        }
                     }
-
                     $('#municipio_registro').html($temp.html());
                 },
                 error: function(response) {
@@ -265,6 +270,9 @@ function wizard_next( e )
 		// 	alert('Debes aceptar los términos y condiciones');
 		// 	return false;
 		// }
+        if(navigator.userAgent.indexOf('MSIE')!=-1){
+            $('.hide-in-ie').addClass('hide');
+        }
 
 		if (!cedula.validationEngine('validate')
 			 && !nombre.validationEngine('validate')
@@ -281,67 +289,160 @@ function wizard_next( e )
 		{
 			//LLAMADA AJAX PARA REALIZAR REGISTRO
 			$.ajax({
-			  type: 'POST',
-			  url: $('#storeRegistry').data('urlPost'),
-			  data: $( "#registro-form" ).serialize(),
-			  dataType: 'json',
-			  success: function( data ) {
-					//obtenemos la pagina que queremos cargar en la ventana y el titulo
-					//var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
-					var strPagina=$('#storeRegistry').data('urlModal')+'/'+ email.val();
-					
-					//creamos la nueva ventana para mostrar el contenido y la capa para el titulo
-					var $objVentana=$('<div class="clsVentana3">');
-					
-					//creamos la capa que va a mostrar el contenido
-					var $objVentanaContenido=$('<div class="clsVentanaContenido3">');
+                type: 'POST',
+                url: $('#storeRegistry').data('urlPost'),
+                data: $( "#registro-form" ).serialize(),
+                dataType: 'json',
+                success: function( data ) {
+                    //obtenemos la pagina que queremos cargar en la ventana y el titulo
+                    //var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
+                    var strPagina=$('#storeRegistry').data('urlModal')+'/'+ email.val();
 
-					$objVentanaContenido.append("<div style='width:100px; margin: 150px auto; text-align:center;'> <img src='img/loading.gif' class='loading-gif' /> <br/> <p style='font-family: Open Sans, sans-serif;font-size: 12px;color: #333;'>Favor espere un momento...</p> </div>");
-					
-					//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-					// $objVentanaContenido.append('<iframe src="'+strPagina+'">');
-					$objVentanaContenido.load(strPagina);
-					
-					//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-					//$objVentanaContenido.append('<div class="modal_transaccion_botones"><a href="" class="clsVentanaCerrar2"><img src="img/aceptar_ovalo.png"></a>&nbsp;&nbsp;<a href="javascript:window.print()"><img src="img/imprimir.png"></a>&nbsp;&nbsp;<a href="" class="Realizar_Recarga"><img src="img/realizar_otra_recarga.png"></a></div>');
-					
-					//agregamos la capa de contenido a la ventana
-					$objVentana.append($objVentanaContenido);
-					
-					//creamos el overlay con sus propiedades css y lo agregamos al body
-					var $objOverlay=$('<div id="divOverlay">').css({
-						opacity: .5,
-						display: 'none'
-					});
-									
-					$('body').append($objOverlay);
-					
-					//animamos el overlay y cuando su animacion termina seguimos con la ventana
-					$objOverlay.fadeIn(function(){
-						//agregamos la nueva ventana al body
-						$('body').append($objVentana);
-						//mostramos la ventana suavemente ;)
-						$objVentana.fadeIn();
-					});
+                    //creamos la nueva ventana para mostrar el contenido y la capa para el titulo
+                    var $objVentana=$('<div class="clsVentana3">');
 
-					$('#contenedor_registro_2').removeClass('active').addClass('inactive');
-					$('#contenedor_registro_3').removeClass('inactive').addClass('active');
-				},
-		      error: function(response) {
-		         var obj = jQuery.parseJSON( response.responseText );
+                    //creamos la capa que va a mostrar el contenido
+                    var $objVentanaContenido=$('<div class="clsVentanaContenido3">');
 
-		         $.each(obj.errors, function(key, value) {
-		            $('input[name=' + key).validationEngine('showPrompt', value, 'error');
-		         })
-		      }
+                    $objVentanaContenido.append("<div style='width:100px; margin: 150px auto; text-align:center;'> <img src='img/loading.gif' class='loading-gif' /> <br/> <p style='font-family: Open Sans, sans-serif;font-size: 12px;color: #333;'>Favor espere un momento...</p> </div>");
+
+                    //agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
+                    // $objVentanaContenido.append('<iframe src="'+strPagina+'">');
+                    $objVentanaContenido.load(strPagina);
+
+                    //agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
+                    //$objVentanaContenido.append('<div class="modal_transaccion_botones"><a href="" class="clsVentanaCerrar2"><img src="img/aceptar_ovalo.png"></a>&nbsp;&nbsp;<a href="javascript:window.print()"><img src="img/imprimir.png"></a>&nbsp;&nbsp;<a href="" class="Realizar_Recarga"><img src="img/realizar_otra_recarga.png"></a></div>');
+
+                    //agregamos la capa de contenido a la ventana
+                    $objVentana.append($objVentanaContenido);
+
+                    if(navigator.userAgent.indexOf('MSIE')!=-1){
+                        $('.hack_modal').append($objVentana);
+
+                    }else{
+                        //creamos el overlay con sus propiedades css y lo agregamos al body
+                        var $objOverlay=$('<div id="divOverlay">').css({
+                            opacity: .5,
+                            display: 'none'
+                        });
+
+                        $('body').append($objOverlay);
+
+                        //animamos el overlay y cuando su animacion termina seguimos con la ventana
+                        $objOverlay.fadeIn(function(){
+                            //agregamos la nueva ventana al body
+                            $('body').append($objVentana);
+                            //mostramos la ventana suavemente ;)
+                            $objVentana.fadeIn();
+                        });
+                    }
+
+                    $('#contenedor_registro_2').removeClass('active').addClass('inactive');
+                    $('#contenedor_registro_3').removeClass('inactive').addClass('active');
+                },
+                error: function(response) {
+                 var obj = jQuery.parseJSON( response.responseText );
+
+                 $.each(obj.errors, function(key, value) {
+                    $('input[name=' + key).validationEngine('showPrompt', value, 'error');
+                 })
+                  }
 			});
 
 
-		};
-
-		
+		}
 	}
 }
+
+function uploadImage(file,type,callback){
+    if(
+        {
+            /*'image/png': true,*/
+            'image/jpeg': true/*,
+            'image/gif': true*/
+        }[file.type] === true && window.FormData){
+
+        var form = new FormData();
+        form.append('image',file);
+        form.append('type',type);
+
+        if(type!='avatar'){
+            $('#upload'+type.charAt(0).toUpperCase() + type.slice(1)).html('Cargando Imagen');
+        }
+
+        $.ajax(
+            {
+                type: 'POST',
+                url: $('#uploadId').data('url'),
+                data : form,
+                cache : false,
+                contentType : false,
+                processData : false,
+                success:function(callback){
+
+                    return {
+                        final:function(response){
+                            if(type!='avatar'){
+                                $('#upload'+response.type.charAt(0).toUpperCase() + response.type.slice(1)).html('Imagen Cargada');
+                            }
+                            if(callback){
+                                callback(response.image);
+                            }
+                        }
+                    }
+
+                }(callback).final,
+                error:function(response){
+                    //console.log(response);
+                }
+            }
+        ).fail(function(type){
+
+                return {
+                    final:function(/*jqXHR,textStatus,errorThrow*/){
+                        if(type!='avatar'){
+                            $('#upload'+type.charAt(0).toUpperCase() + type.slice(1)).html('Imagen Invalida <span class="required error"></span>');
+                        }
+                    }
+                }
+
+            }(type).final
+        );
+
+    }else{
+        if(type!='avatar'){
+            $('#upload'+type.charAt(0).toUpperCase() + type.slice(1)).html('Imagen Invalida <span class="required error"></span>');
+        }
+    }
+}
+
+$('#uploadId').on('click',function(){
+   $('#targetUploadId').click();
+});
+
+$('#targetUploadId').on('change',function(event){
+    uploadImage(event.target.files[0],'id');
+});
+
+$('#uploadCard').on('click',function(){
+    $('#targetUploadCard').click();
+});
+
+$('#targetUploadCard').on('change',function(event){
+    uploadImage(event.target.files[0],'card');
+});
+
+$('#uploadAvatar').on('click',function(){
+    $('#targetUploadAvatar').click();
+});
+
+$('#targetUploadAvatar').on('change',function(event){
+
+    uploadImage(event.target.files[0],'avatar',function(url){
+        $('#avatar').attr('src', url);
+    });
+
+});
 
 function wizard_prev( e )
 {

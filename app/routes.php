@@ -34,6 +34,7 @@ Route::any( '/registro_final', array( 'uses' => 'RegistryController@registro_fin
 Route::get('/registro/email', array('uses' => 'RegistryController@email', 'as' => 'email'));
 Route::get('/registro/captcha/reload', array('as' => 'captcha_reload', function() { return Captcha::img(); } ));
 Route::get('/security',array('uses'=>'UserPanelController@validatePassword', 'as' => 'security', 'before' => 'auth'));
+Route::post('/registro/upload',array('uses'=>'RegistryController@uploadImage','as'=>'upload','before'=>'auth'));
 
 
 Route::get('/location/states',array('uses' => 'LocationController@states' , 'as' => 'states'));

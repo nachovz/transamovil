@@ -237,4 +237,38 @@ class RegistryController extends BaseController {
 		return Redirect::route('home');
 	}
 
+    public function uploadImage(){
+
+        $user = Auth::user();
+
+        $type = Input::get('type');
+
+        if(!Input::hasFile('image') || is_null($type)){
+            $result = new stdClass;
+            $result->status = "error";
+            $result->status_code = "validation";
+
+            $result->message="Imagen no cargada";
+
+            return Response::json($result,400);
+        }
+
+        $fileName=strtolower('image_'.$type.'_'.$user->id.'.'.Input::file('image')->getClientOriginalExtension());
+
+        Input::file('image')->move(public_path('img/user'),$fileName);
+
+
+        $user->{'image_'.$type}=URL::to('img/user').'/'.$fileName;
+
+        $user->save();
+
+
+        $result = new stdClass;
+        $result->status = "success";
+        $result->image=URL::to('img/user').'/'.$fileName;
+        $result->type=$type;
+
+        return Response::json($result);
+    }
+
 }

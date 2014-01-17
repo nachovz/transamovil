@@ -198,7 +198,7 @@ $(document).ready(function() {
 
 <div id="header">
 <div id="header2">
-<div id="regist"> <a href="{{URL::route( 'registro' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('registro','','img/buttons/registro_over.jpg',1)"><img src="img/buttons/registro_up.jpg" alt="registro" width="80" height="22" border="0" style="display:block"/></a></div><!--regist-->
+<div id="regist" class="changed"> <a href="{{URL::route( 'registro' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('registro','','img/buttons/registro_over.jpg',1)"><img src="img/buttons/registro_up.jpg" alt="registro" width="80" height="22" border="0" style="display:block"/></a></div><!--regist-->
 
 
 <!--<div id="registt">
