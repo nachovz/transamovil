@@ -91,7 +91,7 @@ class RegistryController extends BaseController {
 			$user->nro_documento				= Input::get('ced_pas');
 			$user->nombre 						= Input::get('nombre');
 			$user->apellido 					= Input::get('apellido');
-			$user->fecha_nacimiento				= Input::get('nacimiento');
+			$user->fecha_nacimiento				= DateTime::createFromFormat('d/m/Y', Input::get('nacimiento'))->format('Y-m-d');
 
 			if ( Input::get('sexo') == 'masculino')
 				$user->sexo                     = 'm';
