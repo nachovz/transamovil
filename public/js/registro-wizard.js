@@ -388,6 +388,7 @@ function uploadImage(file,type,callback){
                             if(callback){
                                 callback(response.image);
                             }
+							$('#targetUpload'+response.type.charAt(0).toUpperCase() + response.type.slice(1)).val('');
                         }
                     }
 
@@ -403,6 +404,7 @@ function uploadImage(file,type,callback){
                         if(type!='avatar'){
                             $('#upload'+type.charAt(0).toUpperCase() + type.slice(1)).html('Imagen Invalida <span class="required error"></span>');
                         }
+						$('#targetUpload'+type.charAt(0).toUpperCase() + type.slice(1)).val('');
                     }
                 }
 
@@ -421,7 +423,7 @@ $('#uploadId').on('click',function(){
 });
 
 $('#targetUploadId').on('change',function(event){
-    uploadImage(event.target.files[0],'id');
+    uploadImage(event.target.files[0],'id');	
 });
 
 $('#uploadCard').on('click',function(){
