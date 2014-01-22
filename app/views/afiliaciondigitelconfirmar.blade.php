@@ -45,7 +45,13 @@
 		{{Form::open(array('method' => 'post')) . Form::password( 'password_check', array('id' => 'campo_registro') )}}
 	</div>-->
 	<div class="buttons_3">
-		<a href="{{URL::route( 'modal_afiliacion_confirmar', array( Input::get('numero'), Input::get('alias'), Input::get('prefijo') ) )}}" class="clsVentanaIFrame2"><img src="img/confirmar.png" class="img_space"></a>
+        <!--[if IE 8]>
+            <a href="{{URL::route( 'modal_afiliacion_confirmar', array( Input::get('numero'), Input::get('alias'), Input::get('prefijo') ) )}}" class="clsVentanaIFrame2-IE"><img src="img/confirmar.png" class="img_space"></a>
+        <![endif]-->
+
+        <!--[if !IE 8]><!-->
+            <a href="{{URL::route( 'modal_afiliacion_confirmar', array( Input::get('numero'), Input::get('alias'), Input::get('prefijo') ) )}}" class="clsVentanaIFrame2"><img src="img/confirmar.png" class="img_space"></a>
+        <!--<![endif]-->
 	@endif
 		<a href="{{URL::route( 'afiliaciondigitel' )}}"><img src="img/modificar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>

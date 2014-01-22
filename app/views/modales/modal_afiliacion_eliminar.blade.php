@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<div class="modal_afiliacion_titulo_wrapper">
-			<span class="modal_afiliacion_titulo">AFILIACIÓN ELIMINADA</span>
+			<span class="modal_afiliacion_titulo url"  data-redirect="{{URL::to('afiliaciondigitel')}}">AFILIACIÓN ELIMINADA</span>
 		</div>
 		<div class="modal_afiliacion_texto_wrapper" style="text-align:center">			
 			<span class="modal_afiliacion_texto_1">SE HA ELIMINADO EXITOSAMENTE LA AFILIACIÓN DEL NÚMERO {{$afiliacion->numero}}</span>

@@ -11,5 +11,8 @@
 		<div class="modal_afiliacion_texto_wrapper">
 			<span class="modal_afiliacion_texto_1">LA AFILIACIÓN DEL NÚMERO DIGITEL {{$prefijo}}-{{$numero}} FUE EXITOSA.</span>
 		</div>
-	</body>
+        <!--[if IE 8]>
+        <div style="text-align:center; margin-top:30px;"><a href="{{ URL::to('home2') }}" class="btn-close">{{ HTML::image('img/aceptar.png') }}</a></div>
+        <![endif]-->
+   </body>
 </html>

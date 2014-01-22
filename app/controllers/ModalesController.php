@@ -4,7 +4,7 @@ class ModalesController extends BaseController
 {
 	protected $servicio_id = 1;
 
-	public function afiliaciondigitelconfirmar( $numero, $alias, $prefijo )
+    public function afiliaciondigitelconfirmar( $numero, $alias, $prefijo )
 	{
 		$user 			= Auth::user();
 		$afiliacion 	= Afiliacion::where( 'usuario_id', '=', $user->id )->where( 'servicio_id', '=', 1 )->where( 'numero', '=', $prefijo . $numero )->get()->first();
@@ -89,6 +89,24 @@ class ModalesController extends BaseController
 		return View::make('modales.afiliacion_modificar_numero_confirmar');
 	}
 
+    public function afiliacionDigitelModificarIe()
+    {
+        $afiliacion 					= Afiliacion::find(Input::get('afiliacion_id'));
+        $afiliacion->numero		= Input::get('prefijo') . Input::get('numero');
+        $afiliacion->alias		= Input::get('alias');
+
+        try
+        {
+            $afiliacion->save();
+        }
+        catch( Exception $e )
+        {
+
+        }
+        return Redirect::to('afiliaciondigitel');
+    }
+
+
 	public function afiliacionDigitelCrear()
 	{		
 		$user 			= Auth::user();
@@ -113,4 +131,11 @@ class ModalesController extends BaseController
 		$afiliacion->delete();
 		return $output;
 	}
+
+    public function afiliacionDigitelEliminarIe($afiliacion_id)
+    {
+        $afiliacion = Afiliacion::find($afiliacion_id);
+        $afiliacion->delete();
+        return Redirect::to('afiliaciondigitel');
+    }
 }

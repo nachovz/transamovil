@@ -149,6 +149,15 @@ $(function(){
 		})
 	});
 
+    $('.clsVentanaIFrame2-IE').on('click',function(eEvento){
+        eEvento.preventDefault();
+
+        //obtenemos la pagina que queremos cargar en la ventana y el titulo
+        var strPagina=$(this).attr('href'), strTitulo=$(this).attr('rel');
+
+        window.location.href = strPagina;
+    });
+
 	$('.clsVentanaIFrame2').on('click',function(eEvento){
 		//prevenir el comportamiento normal del enlace
 		eEvento.preventDefault();

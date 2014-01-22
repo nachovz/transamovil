@@ -11,7 +11,7 @@
   <br />
   <div id="form">
   <!--aki empieza el code de formulario-->
-	<form action="enviar.php" method="post" name="formulario" class="validable" onSubmit="return valida(this);">
+	<form action="" method="post" name="formulario" class="validable" onsubmit="return false">
 	
     <label for="name">NOMBRE* </label>
 	<input name="name" id="name" style="border: none"/>
@@ -25,7 +25,7 @@
     <label for="message">CONSULTA*</label>
     <textarea name="message" id="message" style="border: none"></textarea>
    <br/>
-    <input name="send" type="submit" id="send"  value="ENVIAR"/>
+    <input name="send" type="submit" id="send"  value="ENVIAR" disabled/>
     <input name="clear" type="reset" id="clear"  value="BORRAR"/>
     </form>
 

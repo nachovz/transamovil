@@ -1,10 +1,29 @@
 $(document).ready(function(){
-		$('.clsVentanaModificarAfiliacion').on('click', mostrar_modal_modificar_afiliacion);
-		$('.clsVentanaEliminarAfiliacion').on('click', mostrar_modal_eliminar_afiliacion);
-		$('.clsVentanaCerrar10').live('click',function(eEvento){
-			window.location.reload();
-		});
+    $('.clsVentanaModificarAfiliacion').on('click', mostrar_modal_modificar_afiliacion);
+    $('.clsVentanaEliminarAfiliacion').on('click', mostrar_modal_eliminar_afiliacion);
+    $(document).on('click','.clsVentanaCerrar10',function(eEvento){
 
+        eEvento.preventDefault();
+        eEvento.stopImmediatePropagation();
+        eEvento.stopPropagation();
+
+        if(ifra){
+            window.location=$(ifra.document.querySelector('.url')).data('redirect');
+        }
+
+
+    });
+
+    $('#deleteNumber').on('click',function(){
+        $('#hackIeDelete').attr('href',$('#hackIeDelete').attr('href')+'/'+$('input[name="afiliacion_id"]:checked').val());
+
+    });
+
+    $('.clsVentanaModificarAfiliacionIe').on('click',function(e){
+        e.preventDefault();
+
+        window.location.href= "modal/afiliacionDigitelModificacion/" + $('input[name="afiliacion_id"]:checked').val()
+    });
 
 });
 
@@ -24,11 +43,11 @@ function mostrar_modal_modificar_afiliacion(e)
 		var $objVentanaContenido=$('<div class="clsVentanaContenido3">');
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		$objVentanaContenido.append('<iframe src="'+strPagina+'">');
+		$objVentanaContenido.append('<iframe id="ifra" src="'+strPagina+'">');
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		$objVentanaContenido.append('<div class="modal_transaccion_botones_mod1"><a href="" class="clsVentanaCerrar10"><img src="img/cerrar.png"></div>');
-		
+		$objVentanaContenido.append('<div class="modal_transaccion_botones_mod1"><a nohref class="clsVentanaCerrar10"><img src="img/cerrar.png"></div>');
+
 		//agregamos la capa de contenido a la ventana
 		$objVentana.append($objVentanaContenido);
 		
@@ -57,7 +76,7 @@ function mostrar_modal_eliminar_afiliacion(e)
 		//obtenemos la pagina que queremos cargar en la ventana y el titulo
 		var strPagina = "modal/afiliacionDigitelEliminar/" + $('input[name="afiliacion_id"]:checked').val()
 		var strTitulo = "Titulo";
-		
+
 		//creamos la nueva ventana para mostrar el contenido y la capa para el titulo
 		var $objVentana=$('<div class="clsVentana3">');
 		
@@ -65,7 +84,7 @@ function mostrar_modal_eliminar_afiliacion(e)
 		var $objVentanaContenido=$('<div class="clsVentanaContenido3">');
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		$objVentanaContenido.append('<iframe src="'+strPagina+'">');
+		$objVentanaContenido.append('<iframe id="ifra" src="'+strPagina+'">');
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
 		$objVentanaContenido.append('<div class="modal_transaccion_botones_mod2"><a href="" class="clsVentanaCerrar10"><img src="img/aceptar.png"></div>');

@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<div class="modal_afiliacion_titulo_wrapper">
-			<span class="modal_afiliacion_titulo">MODIFICACIÓN EXITOSA</span>
+			<span class="modal_afiliacion_titulo url" data-redirect="{{URL::to('afiliaciondigitel')}}">MODIFICACIÓN EXITOSA</span>
 		</div>
 	</body>
 </html>

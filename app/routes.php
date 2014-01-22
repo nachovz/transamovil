@@ -63,3 +63,5 @@ Route::get( '/modal/afiliacionDigitelModificacion/{afiliacion_id}', array( 'uses
 Route::post( '/modal/afiliacionDigitelModificar', array( 'uses' => 'ModalesController@afiliacionDgitelModificar'));
 Route::post( '/modal/afiliacionDigitelCrear', array('uses' => 'ModalesController@afiliacionDigitelCrear') );
 Route::get( '/modal/afiliacionDigitelEliminar/{afiliacion_id}', array('uses' => 'ModalesController@afiliacionDigitelEliminar') );
+Route::get( '/modal/afiliacionDigitelEliminarIe/{afiliacion_id}', array('uses' => 'ModalesController@afiliacionDigitelEliminarIe') );
+Route::post( '/modal/afiliacionDigitelModificarIe', array('uses' => 'ModalesController@afiliacionDigitelModificarIe') );
