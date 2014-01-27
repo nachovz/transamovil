@@ -153,6 +153,13 @@
                     "alertTextOk": "* Código válido",
                     "alertText": "* Código inválido",
                     "alertTextLoad": "* Validando, espere un momento"
+                },
+               "validateSecurity":{
+                   "extraDataDynamic":"#campo_registro",
+                   "alertTextOk":"* Clave válida",
+                   "alertText":"* Clave inválida",
+                   "alertTextLoad":"* Validando, espere un momento"
+
                 }
             };
             

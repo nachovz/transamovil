@@ -196,21 +196,28 @@ $(function(){
 			$objVentana.fadeIn();
 		})
 	});
-	
+	/*
 	$('.clsVentanaIFrame3-IE').on('click',function(eEvento){
 
 		//prevenir el comportamiento normal del enlace
 		eEvento.preventDefault();
 
-		if( $('#campo_registro.campo_registro_pwd_check').val() != '12345' )
-		{
-			alert('Contraseña Inválida');
-			return false;
-		}else{
-			var href = this.href;
-		    
-		    window.location = href;
-		}
+        $.ajax({
+            type: 'GET',
+            url: $('.security').data('url'),
+            data: {pass:$('#campo_registro.campo_registro_pwd_check').val()},
+            dataType: 'json',
+            success: function (data) {
+                if( data['status_code'] == 'fail' )
+                {
+                    alert('Contraseña Inválida');
+                    return false;
+                }
+                window.location = this.href;
+            }
+
+        });
+
 	});
 
 	$('.clsVentanaIFrame3').on('click',function(eEvento){
@@ -274,7 +281,7 @@ $(function(){
             }
         });
 	});
-	
+	*/
 
 });
 

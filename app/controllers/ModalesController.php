@@ -30,15 +30,39 @@ class ModalesController extends BaseController
 		return View::make('modales.modal_registro')->with( 'transapin', $user->transapin )->with('email', $user->email );
 	}
 
-	public function recargadigitelconfirmar( $monto, $numero_afiliado, $metodo_pago, $codigo, $numero_digitel )
-	{		
+	public function recargadigitelconfirmar(){
+
+        $validator=Validator::make(
+            Input::all(),
+            array(
+                'monto'=>'required',
+                'numero_afiliado'=>'required',
+                'metodo_pago'=>'required',
+                'codigo'=>'required',
+                'numero_digitel'=>'required',
+                'password_check'=>'required'
+            )
+        );
+
+        $credentials=array(
+            'username'=>Auth::user()->email,
+            'password'=>Input::get('password_check')
+        );
+
+        if ($validator->fails() || !Auth::validate($credentials)){
+
+            return Redirect::back()
+                ->with(Input::all())
+                ->withErrors($validator->errors());
+        }
+
 
         //str_replace('0412', '',$numero_digitel.$numero_afiliado)
 		$prefijo = "";
-		if ($numero_digitel != "000") {
-			$prefijo = $numero_digitel;
+		if (Input::get('numero_digitel') != "000") {
+			$prefijo = Input::get('numero_digitel');
 		}
-		$url = 'http://digitel.transamovil.com:8000/recargar.jsp?telefono=' . $prefijo.$numero_afiliado . '&paymentMode=EF&monto=' . $monto . '&password=' . Auth::user()->nombre;
+		$url = 'http://digitel.transamovil.com:8000/recargar.jsp?telefono=' . $prefijo.Input::get('numero_afiliado') . '&paymentMode=EF&monto=' . Input::get('monto') . '&password=' . Auth::user()->nombre;
 
 		//echo $url;
 		$stream_context	= stream_context_create( array('http' => array('timeout' => 2400.0)) );
@@ -50,7 +74,7 @@ class ModalesController extends BaseController
 			$resp	= json_decode( stream_get_contents( $fp ) );			
 
             if($resp->codigo=='00'){
-                $promocional= Promocional::where('codigo',$codigo)->first();
+                $promocional= Promocional::where('codigo',Input::get('codigo'))->first();
                 if(null!=$promocional){
                     $promocional->utilizado=1;
                     $promocional->save();
@@ -63,8 +87,12 @@ class ModalesController extends BaseController
 			$meta = array('wrapper_data' => array('HTTP/1.1 408 Request Timeout'));
 			$resp	= new StdClass();
 			$resp->codigo = '21';
-		}		
-		return View::make('modales.modal_recarga')->with('monto', $monto )->with('numero_afiliado', $numero_afiliado )->with('metodo_pago', $metodo_pago )->with('resp', $resp)->with('meta', $meta )->with('prefijo', $prefijo);
+		}
+
+        $header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
+        $footer = View::make( 'components.footer_registro' );
+
+		return View::make('modales.modal_recarga',array( 'header' => $header , 'footer' => $footer ))->with('monto', Input::get('monto') )->with('numero_afiliado', Input::get('numero_afiliado') )->with('metodo_pago', Input::get('metodo_pago') )->with('resp', $resp)->with('meta', $meta )->with('prefijo', $prefijo);
 	}
 
 	public function afiliacionDigitelModificacion( $afiliacion_id )

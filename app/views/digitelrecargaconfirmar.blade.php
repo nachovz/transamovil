@@ -29,6 +29,7 @@
 			</tr>
 		</table>		
 	</div>
+    {{ Form::open(array('url'=>'recargadigitelconfirmar','method' => 'post', 'id' => 'aidi'))  }}
 	<div class="afiliacion_9" style="top: 114px;">
 		<table id="tabla_6">
 			<tr>
@@ -61,7 +62,7 @@
 				<td>{{Input::get('codigo')}}</td>
 			</tr>
 		</table>
-		{{Form::open(array('method' => 'post', 'id' => 'pwd_form')) . Form::password( 'password_check', array('id' => 'campo_registro', 'class' => 'campo_registro_pwd_check') )}}
+		{{ Form::password( 'password_check', array('id' => 'campo_registro', 'class' => 'validate[required, ajax[validateSecurity]] campo_registro_pwd_check','data-url' => URL::route('validarSecurity')) )}}
 	</div>
 	<div class="afiliacion_3" style="top:234px; display:none;">
 		<table id="tabla_5">
@@ -125,29 +126,28 @@
 	</div>
 	<div class="terms" style="display:none;"></div>	
 	<div class="buttons_6" style="top: 190px; width:494px">
-		
-		<!--[if IE 8]>
-		<a href="{{URL::route( 'modal_recarga_confirmar', array( Input::get('monto'), Input::get('numero_afiliado'), Input::get('metodo_pago'), Input::get('codigo'), (Input::get('numero_digitel') ? Input::get('numero_digitel') : '000') ) )}}" class="clsVentanaIFrame3-IE security"  data-url="{{ URL::to('security')}}"><img src="img/confirmar.png" class="img_space"></a>
-		<![endif]-->
-        <!--[if !IE 8]><!-->
-		<a href="{{URL::route( 'modal_recarga_confirmar', 
-								array( 
-										Input::get('monto'),
-										Input::get('numero_afiliado'),
-										Input::get('metodo_pago'),
-										Input::get('codigo'),
-										( Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' )
-								) 
-							)
-				}}" class="clsVentanaIFrame3 security" data-url="{{ URL::to('security')}}"><img src="img/confirmar.png" class="img_space"></a>
-        <!--<![endif]-->
+        {{ Form::hidden('servicio',Input::get('servicio')) }}
+		{{ Form::hidden('monto',Input::get('monto')) }}
+        {{ Form::hidden('numero_afiliado',Input::get('numero_afiliado')) }}
+        {{ Form::hidden('metodo_pago',Input::get('metodo_pago')) }}
+        {{ Form::hidden('codigo',Input::get('codigo')) }}
+        {{ Form::hidden('numero_digitel',( Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' )) }}
+
+        <button type="submit" style="background: none; border:none; padding:0;">
+            <img src="img/confirmar.png" class="img_space">
+        </button>
 
 		<a href="{{URL::route( 'digitelrecarga' )}}"><img src="img/modificar.png" class="img_space"></a>
 		<a href="{{URL::route( 'home' )}}"><img src="img/cancelar_2.png"></a>
 	</div>
-	
+	{{ Form::close() }}
 	<script type="text/javascript" src="js/ext/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="js/ventanas-modales.js"></script>
+    <script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="js/jquery.validationEngine-es.js"></script>
+
+    <script type="text/javascript" src="js/digitelrecarga.js"></script>
+    <script type="text/javascript" src="js/ventanas-modales.js"></script>
+
 </div><!--container_home-->
 </div><!--container3-->
 </div><!--container_reg-->

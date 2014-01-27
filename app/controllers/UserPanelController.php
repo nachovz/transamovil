@@ -149,7 +149,36 @@ class UserPanelController extends BaseController {
 		}
 	}
 
-	public function digitelrecargaconfirmar()
+    public function validarSecurity()
+    {
+        $validator=Validator::make(
+            array(
+                'campo_registro'=>Input::get('campo_registro')
+            ),
+            array(
+                'campo_registro'=>'required'
+            )
+        );
+
+        if ($validator->fails()){
+            return Response::json(array("campo_registro", false, "* Clave Invalida"))->header('Content-Type', 'text/json');
+        }
+
+        $credentials=array(
+            'username'=>Auth::user()->email,
+            'password'=>Input::get('campo_registro')
+        );
+
+        if (!Auth::validate($credentials)){
+            return Response::json(array("campo_registro", false, "* Clave Invalida"))->header('Content-Type', 'text/json');
+        }
+
+        return Response::json(array("campo_registro", true))->header('Content-Type', 'text/json');
+
+    }
+
+
+    public function digitelrecargaconfirmar()
 	{		
 		if( Input::has('numero_digitel') )
 		{
@@ -163,6 +192,6 @@ class UserPanelController extends BaseController {
 
 		$header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
 		$footer = View::make( 'components.footer_registro' );
-		return View::make( 'digitelrecargaconfirmar' , array( 'header' => $header , 'footer' => $footer ));
+		return View::make( 'digitelrecargaconfirmar' , array( 'header' => $header , 'footer' => $footer ))->with(Input::all());
 	}
 }

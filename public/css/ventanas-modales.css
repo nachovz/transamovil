@@ -654,11 +654,16 @@ display: none;
 		}
 }
 
+.modal_transaccion_botones_new.fix_recarga{
+	margin: 100px auto;	
+}
+
 .modal_transaccion_exitosa_titulo_wrapper {
 	width: 250px;
 	height: 20px;
 	margin: 0 auto;
 	text-align: center;
+	margin-top:60px;
 }
 
 .modal_transaccion_exitosa_titulo {

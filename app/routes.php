@@ -53,12 +53,15 @@ Route::get( '/afiliaciondigitel', array( 'uses' => 'UserPanelController@afiliaci
 Route::post( '/afiliaciondigitelconfirmar', array( 'uses' => 'UserPanelController@afiliaciondigitelconfirmar' , 'as' => 'afiliaciondigitelconfirmar', 'before' => 'auth' ));
 Route::get( '/digitelrecarga', array( 'uses' => 'UserPanelController@digitelrecarga' , 'as' => 'digitelrecarga', 'before' => 'auth' ));
 Route::get( '/digitelrecarga/promocional', array( 'uses' => 'UserPanelController@validarPromocional' , 'as' => 'validarPromocional', 'before' => 'auth' ));
-Route::post( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@digitelrecargaconfirmar' , 'as' => 'digitelrecargaconfirmar', 'before' => 'auth' ));
+Route::get( '/digitelrecarga/security', array( 'uses' => 'UserPanelController@validarSecurity' , 'as' => 'validarSecurity', 'before' => 'auth' ));
+Route::get( '/digitelrecargaconfirmar', array( 'uses' => 'UserPanelController@digitelrecargaconfirmar' , 'as' => 'digitelrecargaconfirmar', 'before' => 'auth' ));
 
 //Rutas modales
 Route::get( '/modal/afiliaciondigitelconfirmar/{numero}/{alias}/{prefijo}', array( 'uses' => 'ModalesController@afiliaciondigitelconfirmar', 'as' => 'modal_afiliacion_confirmar', 'before' => 'auth' ) );
 Route::get( '/modal/registro/{email}', array( 'uses' => 'ModalesController@registro', 'as' => 'modal_registro' ) );
-Route::get( '/modal/recargadigitelconfirmar/{monto}/{numero_afiliado}/{metodo_pago}/{codigo}/{numero_digitel}', array( 'uses' => 'ModalesController@recargadigitelconfirmar', 'as' => 'modal_recarga_confirmar', 'before' => 'auth' ) );
+
+Route::post( '/recargadigitelconfirmar', array( 'uses' => 'ModalesController@recargadigitelconfirmar', 'as' => 'modal_recarga_confirmar', 'before' => 'auth' ) );
+
 Route::get( '/modal/afiliacionDigitelModificacion/{afiliacion_id}', array( 'uses' => 'ModalesController@afiliacionDigitelModificacion'));
 Route::post( '/modal/afiliacionDigitelModificar', array( 'uses' => 'ModalesController@afiliacionDgitelModificar'));
 Route::post( '/modal/afiliacionDigitelCrear', array('uses' => 'ModalesController@afiliacionDigitelCrear') );

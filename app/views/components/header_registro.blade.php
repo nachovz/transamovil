@@ -115,46 +115,48 @@ a:active {
 
 <script>
     $(function() {
-      $('#slides').slidesjs({
-        width: 945,
-        height: 380,
-        navigation: false,
-		play: {
-          active: false,
-          auto: true,
-          interval: 6000,
-          swap: true
-        }
-		,
-		  callback: {
-          loaded: function(number) {
-            // Use your browser console to view log
-         //   console.log('SlidesJS: Loaded with slide #' + number);
-			$('#sub' + number).addClass("activo");
-            // Show start slide in log
-          //  $('#slidesjs-log .slidesjs-slide-number').text(number);
-          },
-          start: function(number) {
-            // Use your browser console to view log
-            console.log('SlidesJS: Start Animation on slide #' + number);
-			 $('#sub1').removeClass("activo");
-			  $('#sub2').removeClass("activo");
-			   $('#sub3').removeClass("activo");
-			   $('#sub4').removeClass("activo");
-			   $('#sub5').removeClass("activo");
-			    $('#sub6').removeClass("activo");
-          },
-          complete: function(number) {
-            // Use your browser console to view log
-            //console.log('SlidesJS: Animation Complete. Current slide is #' + number);
+        if($('#slides').length!=0){
+          $('#slides').slidesjs({
+            width: 945,
+            height: 380,
+            navigation: false,
+            play: {
+              active: false,
+              auto: true,
+              interval: 6000,
+              swap: true
+            }
+            ,
+              callback: {
+              loaded: function(number) {
+                // Use your browser console to view log
+             //   console.log('SlidesJS: Loaded with slide #' + number);
+                $('#sub' + number).addClass("activo");
+                // Show start slide in log
+              //  $('#slidesjs-log .slidesjs-slide-number').text(number);
+              },
+              start: function(number) {
+                // Use your browser console to view log
+                console.log('SlidesJS: Start Animation on slide #' + number);
+                 $('#sub1').removeClass("activo");
+                  $('#sub2').removeClass("activo");
+                   $('#sub3').removeClass("activo");
+                   $('#sub4').removeClass("activo");
+                   $('#sub5').removeClass("activo");
+                    $('#sub6').removeClass("activo");
+              },
+              complete: function(number) {
+                // Use your browser console to view log
+                //console.log('SlidesJS: Animation Complete. Current slide is #' + number);
 
-            // Change slide number on animation complete
-            
-			$('#sub' + number).addClass("activo");
-			
-          }
+                // Change slide number on animation complete
+
+                $('#sub' + number).addClass("activo");
+
+              }
+            }
+          });
         }
-      });
     });
   </script>
 
