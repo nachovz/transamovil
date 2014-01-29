@@ -133,7 +133,7 @@
         {{ Form::hidden('codigo',Input::get('codigo')) }}
         {{ Form::hidden('numero_digitel',( Input::get('numero_digitel') ? Input::get('numero_digitel') : '000' )) }}
 
-        <button type="submit" style="background: none; border:none; padding:0;">
+        <button type="submit" style="background: none; border:none; padding:0;" class="on_click_disable">
             <img src="img/confirmar.png" class="img_space">
         </button>
 

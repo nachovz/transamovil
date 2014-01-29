@@ -1,5 +1,14 @@
 $(function(){
 	//evento que se produce al hacer clic en el boton cerrar de la ventana
+
+    $(document).on('submit','#aidi',function(){
+        var $submitButton=$('.on_click_disable');
+        if($submitButton.length>0){
+            $submitButton.attr('disabled',true);
+        }
+        return true;
+    });
+
 	$(document).on('click','.Afiliar_Otro',function(eEvento){
 		//prevenimos el comportamiento normal del enlace
 		eEvento.preventDefault();
