@@ -2,8 +2,8 @@
 <div id="container_reg">
 <div id="container3">
 <div id="container_home4">
+    <!-- CODIGO = {{ $resp->{'codigo'}  }} -->
 @if ($meta['wrapper_data']['0'] == 'HTTP/1.1 200 OK')
-    <!-- <?php echo $resp->{'codigo'}."HOLA"; ?> -->
     @if ($resp->{'codigo'} == '00')
         <div class="modal_transaccion_exitosa_titulo_wrapper">
             <span class="modal_transaccion_exitosa_titulo">RECARGA EXITOSA</span>
@@ -122,6 +122,7 @@
     @endif
 @else
     @if($resp->codigo == 21)
+
         <div class="modal_transaccion_exitosa_titulo_wrapper">
             <span class="modal_transaccion_exitosa_titulo">TRANSACCION FALLIDA. NO PUDO REALIZARSE LA RECARGA, POR FAVOR INTENTE MAS TARDE.</span>
         </div>
