@@ -81,6 +81,7 @@ class ModalesController extends BaseController
                 }
 
             }
+            @fclose($fp);
 		}
 		else
 		{
