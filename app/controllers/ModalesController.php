@@ -66,12 +66,16 @@ class ModalesController extends BaseController
 
 		//echo $url;
 		$stream_context	= stream_context_create( array('http' => array('timeout' => 2400.0)) );
-		$fp							= @fopen($url, 'r', false, $stream_context);
+		$fp							= @file_get_contents($url, false, $stream_context);
 
-        if($fp)
-		{
-			$meta	= stream_get_meta_data( $fp );
-			$resp	= json_decode( stream_get_contents( $fp ) );			
+        if($fp===false){
+
+            $meta = array('wrapper_data' => array('HTTP/1.1 408 Request Timeout'));
+            $resp	= new StdClass();
+            $resp->codigo = '21';
+		}else{
+            $meta	= stream_get_meta_data( $fp );
+            $resp	= json_decode( stream_get_contents( $fp ) );
 
             if($resp->codigo=='00'){
                 $promocional= Promocional::where('codigo',Input::get('codigo'))->first();
@@ -82,12 +86,6 @@ class ModalesController extends BaseController
 
             }
             @fclose($fp);
-		}
-		else
-		{
-			$meta = array('wrapper_data' => array('HTTP/1.1 408 Request Timeout'));
-			$resp	= new StdClass();
-			$resp->codigo = '21';
 		}
 
         $header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
