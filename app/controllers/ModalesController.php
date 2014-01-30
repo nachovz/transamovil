@@ -85,7 +85,6 @@ class ModalesController extends BaseController
                 }
 
             }
-            @fclose($fp);
 		}
 
         $header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
