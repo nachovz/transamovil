@@ -1,14 +1,23 @@
 $(function(){
 	//evento que se produce al hacer clic en el boton cerrar de la ventana
 
-    $(document).on('click','.on_click_disable',function(e){
+    $(":submit[form]").on("click", function ( e ) {
+
+        var $disableClick=$('.on_click_disable');
+        if($disableClick.length>0){
+            $disableClick.attr('disabled',true);
+        }
+
+        $( "#" + $(this).attr("form") ).submit();
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
 
-        if($(this).length>0){
-            $(this).attr('disabled',true);
-        }
+    });
+
+    $(document).on('click','',function(e){
+        e.preventDefault();
+
         $("#aidi").submit();
     });
 

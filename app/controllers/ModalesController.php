@@ -66,7 +66,7 @@ class ModalesController extends BaseController
 
 		//echo $url;
 		$stream_context	= stream_context_create( array('http' => array('timeout' => 2400.0)) );
-		$fp							= @file_get_contents($url, false, $stream_context);
+		$fp							= @fopen($url, false, $stream_context);
 
         if($fp===false){
 
@@ -85,6 +85,7 @@ class ModalesController extends BaseController
                 }
 
             }
+            @fclose($fp);
 		}
 
         $header = View::make( 'components.header_panel' , array( 'title' => "TransaMóvil" ));
