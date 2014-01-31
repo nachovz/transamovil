@@ -1,19 +1,15 @@
 $(function(){
 	//evento que se produce al hacer clic en el boton cerrar de la ventana
 
-    $(document).on('submit','#aidi',function(e){
+    $(document).on('click','.on_click_disable',function(e){
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
 
-        var $submitButton=$('.on_click_disable');
-        if($submitButton.length>0){
-            $submitButton.attr('disabled',true);
+        if($(this).length>0){
+            $(this).attr('disabled',true);
         }
-        if(navigator.userAgent.indexOf('MSIE')!=-1){
-            $('#aidi').submit();
-        }
-        return true;
+        $("#aidi").submit();
     });
 
 	$(document).on('click','.Afiliar_Otro',function(eEvento){
