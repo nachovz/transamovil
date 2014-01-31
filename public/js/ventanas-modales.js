@@ -1,7 +1,11 @@
 $(function(){
 	//evento que se produce al hacer clic en el boton cerrar de la ventana
 
-    $(document).on('submit','#aidi',function(){
+    $(document).on('submit','#aidi',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
         var $submitButton=$('.on_click_disable');
         if($submitButton.length>0){
             $submitButton.attr('disabled',true);
