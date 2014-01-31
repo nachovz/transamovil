@@ -4,7 +4,7 @@ $(function(){
     $(document).on('submit','#aidi',function(e){
         e.preventDefault();
         e.stopPropagation();
-        e.stopImmediatePropagation();
+        //e.stopImmediatePropagation();
 
         var $submitButton=$('.on_click_disable');
         if($submitButton.length>0){
