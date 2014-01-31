@@ -14,13 +14,7 @@ $(function(){
         e.stopImmediatePropagation();
 
     });
-
-    $(document).on('click','',function(e){
-        e.preventDefault();
-
-        $("#aidi").submit();
-    });
-
+	
 	$(document).on('click','.Afiliar_Otro',function(eEvento){
 		//prevenimos el comportamiento normal del enlace
 		eEvento.preventDefault();

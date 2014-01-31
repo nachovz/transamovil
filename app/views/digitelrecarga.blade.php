@@ -192,4 +192,5 @@ $(document).ready(function(){
 
 
 <script type="text/javascript" src="{{asset('js/digitelrecarga.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/ventanas-modales.js')}}"></script>
 {{$footer}}
