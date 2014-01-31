@@ -3,12 +3,15 @@ $(function(){
 
     $(document).on('submit','#aidi',function(e){
         e.preventDefault();
-        //e.stopPropagation();
-        //e.stopImmediatePropagation();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
 
         var $submitButton=$('.on_click_disable');
         if($submitButton.length>0){
             $submitButton.attr('disabled',true);
+        }
+        if(navigator.userAgent.indexOf('MSIE')!=-1){
+            $('#aidi').submit();
         }
         return true;
     });
