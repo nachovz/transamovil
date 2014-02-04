@@ -28,7 +28,7 @@ $app->redirectIfTrailingSlash();
 
 $env = $app->detectEnvironment(array(
 
-	'dev' => array('4geeks.transamovil.com','abnet'),
+	'dev' => array('4geeks.transamovil.co','abnet'),
     'pro' => array('www.transamovil.com')
 
 ));

@@ -66,7 +66,7 @@ class ModalesController extends BaseController
 
 		//echo $url;
 		$stream_context	= stream_context_create( array('http' => array('timeout' => 2400.0)) );
-		$fp							= @fopen($url, false, $stream_context);
+		$fp							= @fopen($url, 'r', false, $stream_context);
 
         if($fp===false){
 

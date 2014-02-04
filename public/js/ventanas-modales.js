@@ -1,14 +1,11 @@
 $(function(){
 	//evento que se produce al hacer clic en el boton cerrar de la ventana
 
-    $(":submit[form]").on("click", function ( e ) {
+     $(document).on("click",".on_click_disable", function ( e ) {
 
-        var $disableClick=$('.on_click_disable');
-        if($disableClick.length>0){
-            $disableClick.attr('disabled',true);
-        }
+        $(this).attr('disabled',true);
 
-        $( "#" + $(this).attr("form") ).submit();
+        $('form').submit();
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
