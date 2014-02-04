@@ -4,7 +4,7 @@ $(function(){
      $(document).on("click",".on_click_disable", function ( e ) {
 
         $(this).attr('disabled',true);
-
+        
         $('form').submit();
         e.preventDefault();
         e.stopPropagation();

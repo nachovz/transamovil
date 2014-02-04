@@ -29,7 +29,7 @@
 			</tr>
 		</table>		
 	</div>
-    {{ Form::open(array('url'=>'recargadigitelconfirmar','method' => 'post', 'id' => 'aidi'))  }}
+    {{ Form::open(array('url'=>'recargadigitelconfirmar','method' => 'post', 'id' => 'invalid_form'))  }}
 	<div class="afiliacion_9" style="top: 114px;">
 		<table id="tabla_6">
 			<tr>
