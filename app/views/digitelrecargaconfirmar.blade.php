@@ -125,7 +125,7 @@
 		{{Form::checkbox('name', 'value')}}<span class="radio_check">Afiliar</span>
 	</div>
 	<div class="terms" style="display:none;"></div>	
-	<div class="buttons_6" style="top: 190px; width:494px">
+	<div class="buttons_6" style="top: 190px; width:55%">
         {{ Form::hidden('servicio',Input::get('servicio')) }}
 		{{ Form::hidden('monto',Input::get('monto')) }}
         {{ Form::hidden('numero_afiliado',Input::get('numero_afiliado')) }}

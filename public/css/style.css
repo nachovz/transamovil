@@ -42,10 +42,6 @@ a:visited{
         top: -8px !important;
 	} 
 
-	.canc2 {
-		top: -6px !important;
-	}
-
 	#campo_registro3 {
     	width: 145px !important;
     	margin: 2px !important;
@@ -570,7 +566,7 @@ padding-top:100px; padding-left:80px;}
 .text {font-family: 'Open Sans', sans-serif; font-weight: 400;font-size: 13px; color:#333;}
 .textb {font-family: 'Open Sans', sans-serif; font-weight: 600;font-size: 13px; color:#333;}
 
-.ftxt {font-family: 'Open Sans', sans-serif; font-weight: 400;font-size:10px; color:#333;}
+.ftxt {font-family: 'Open Sans', sans-serif; font-weight: 400;font-size: 10px; color:#333;}
 
 
 /*aki empieza el CSS del formulario*/
@@ -1534,7 +1530,7 @@ table#tabla_7 td {
 
 #forgot_pwd {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 10px;
+	font-size: 12px;
 	color: #808080;
 	display: inline-block;
 	position: relative;
@@ -1544,7 +1540,7 @@ table#tabla_7 td {
 
 #forgot_mail {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 10px;
+	font-size: 12px;
 	color: #808080;
 	display: inline-block;
 	position: relative;
@@ -1750,4 +1746,8 @@ table#tabla_7 td {
 
 .error.required:after{
 	color:#f33;
+}
+
+.text-12{
+	font-size:12px;
 }

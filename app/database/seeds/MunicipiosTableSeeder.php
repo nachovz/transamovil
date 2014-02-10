@@ -342,10 +342,11 @@ class MunicipiosTableSeeder extends Seeder {
 			array('id_municipio' => '459','id_estado' => '23','municipio' => 'Simón Bolívar'),
 			array('id_municipio' => '460','id_estado' => '23','municipio' => 'Sucre'),
 			array('id_municipio' => '461','id_estado' => '23','municipio' => 'Valmore Rodríguez'),
-			array('id_municipio' => '462','id_estado' => '24','municipio' => 'Libertador')
+			array('id_municipio' => '462','id_estado' => '24','municipio' => 'Libertador'),
+            array('id_municipio' => '463','id_estado' => '25','municipio' => 'Dependencias Federales')
 		);
-		
-		foreach ($municipios as $row) {
+
+        foreach ($municipios as $row) {
 			$municipio = new Municipio();
 			$municipio->id = $row['id_municipio'];
 			$municipio->estado_id = $row['id_estado'];

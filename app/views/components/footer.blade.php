@@ -14,8 +14,8 @@
     <td width="3%"><a href="https://twitter.com/transamovil" target="_blank" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('tw','','img/tw2.jpg',0)"><img src="img/tw.jpg" width="25" height="23" id="tw" border="0" style="display:block"/></a></td>
   </tr>
 </table>
-© 2013 TransaMóvil. Todos los derechos reservados. RIF J-40107002-7.<br />
-<span style="font-size: 9px">Diseño y programación web</span>:&nbsp;<a href="http://creatium.com.ve" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('creatium','','img/creatium_over.png',1)"><img src="img/creatium.png" alt="CREATIUM" width="46" height="7" id="creatium" /></a></span></div><!--foot-->
+<span class="text-12">© 2013 TransaMóvil. Todos los derechos reservados. RIF J-40107002-7.</span><br />
+<span class="text-12">Diseño y programación web</span>:&nbsp;<a href="http://creatium.com.ve" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('creatium','','img/creatium_over.png',1)"><img src="img/creatium.png" alt="CREATIUM" width="46" height="7" id="creatium" /></a></span></div><!--foot-->
 </div><!--bottom-->
 </body>
 </html>
