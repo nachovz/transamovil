@@ -31,7 +31,7 @@ $(function(){
 		});
 	});
 
-	$(document).on('.click','.Realizar_Recarga',function(eEvento){
+	$(document).on('click','.Realizar_Recarga',function(eEvento){
 		//prevenimos el comportamiento normal del enlace
 		eEvento.preventDefault();
 		//buscamos la ventana padre (del boton "cerrar")
@@ -187,7 +187,7 @@ $(function(){
 		$objVentanaContenido.append('<iframe src="'+strPagina+'">');
 		
 		//agregamos un iframe y en el source colocamos la pagina que queremos cargar ;)
-		$objVentanaContenido.append('<div class="modal_afiliacion_botones"><a href="" class="Afiliar_Otro"><img src="img/afiliar_otro.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="clsVentanaCerrar2"><img src="img/aceptar.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="Realizar_Recarga"><img src="img/realizar_recarga.png"></a></div>');
+		$objVentanaContenido.append('<div class="modal_afiliacion_botones"><a nohref class="Afiliar_Otro"><img src="img/afiliar_otro.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a nohref class="clsVentanaCerrar2"><img src="img/aceptar.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a nohref class="Realizar_Recarga"><img src="img/realizar_recarga.png"></a></div>');
 		
 		//agregamos la capa de contenido a la ventana
 		$objVentana.append($objVentanaContenido);
