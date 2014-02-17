@@ -4,9 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>{{$title}}</title>
 
-<link rel="icon" href="img/favicon.ico">
-<link rel="shortcut icon" href="img/favicon.ico">
-<link rel="apple-touch-icon" href="img/favicon.ico">
+<link rel="icon" href="{{ asset('img/favicon.ico') }}">
+<link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+<link rel="apple-touch-icon" href="{{ asset('img/favicon.ico') }}">
 
 <META NAME="Description" CONTENT="Sistema que permite recibir pagos, recargar tu celular, pagar servicios, comprar y hacer transferencias a otras personas, todo a través de tu teléfono celular."><!--200 cws-->
 <META NAME="Keywords" CONTENT="Pago, celular, ewallet, caracas, concreteras en caracas"><!--900 cws-->
@@ -15,16 +15,12 @@
 <META NAME="Language" CONTENT="Spanish">
 <META NAME="copyright" CONTENT="Todos los derechos reservados 2013">
 
-<!--FONT-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
-<!--FONT-->
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<!--FONT-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
-<!--FONT-->
-<script src="js/jquery-1.9.1.min.js"></script>
-<script src="js/jquery.slides.min.js"></script>
-<script>
+{{ HTML::style('//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}
+{{ HTML::style('css/style.css') }}
+{{ HTML::script('js/jquery-1.9.1.min.js') }}
+{{ HTML::script('js/jquery.slides.min.js') }}
+
+    <script>
     $(function() {
       if($('#slides').length!=0){
           $('#slides').slidesjs({
@@ -191,16 +187,15 @@ $(document).ready(function() {
     }
 })
 </script>
-<link rel="stylesheet" type="text/css" href="css/ventanas-modales.css">
-<link rel="stylesheet" type="text/css" href="{{asset('css/registro-wizard.css')}}" />
+{{ HTML::style('css/ventanas-modales.css') }}
+{{ HTML::style('css/registro-wizard.css') }}
 </head>
 
-<body onload="MM_preloadImages('img/creatium_over.png')">
-<body onload="MM_preloadImages('img/buttons/registro_over.jpg','img/buttons/ingresar_over.jpg','img/buttons/over_01.jpg','img/buttons/over_02.jpg','img/buttons/submenu_over_01.jpg','img/buttons/submenu_over_02.jpg','img/buttons/over_03.jpg','img/buttons/submenu_over_03.jpg','img/buttons/submenu_over_04.jpg','img/buttons/submenu_over_05.jpg','img/buttons/over_04.jpg','img/aliado.jpg')">
+<body onload='MM_preloadImages("{{ asset('img/creatium_over.png') }}","{{ asset('img/buttons/registro_over.jpg')}}","{{ asset('img/buttons/ingresar_over.jpg') }}","{{ asset('img/buttons/over_01.jpg') }}","{{ asset('img/buttons/over_02.jpg') }}","{{ asset('img/buttons/submenu_over_01.jpg') }}","{{ asset('img/buttons/submenu_over_02.jpg') }}","{{ asset('img/buttons/over_03.jpg') }}","{{ asset('img/buttons/submenu_over_03.jpg') }}","{{ asset('img/buttons/submenu_over_04.jpg') }}","{{ asset('img/buttons/submenu_over_05.jpg') }}","{{ asset('img/buttons/over_04.jpg') }}","{{ asset('img/aliado.jpg') }}")'>
 
 <div id="header">
 <div id="header2">
-<div id="regist" class="changed"> <a href="{{URL::route( 'registro' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('registro','','img/buttons/registro_over.jpg',1)"><img src="img/buttons/registro_up.jpg" alt="registro" width="80" height="22" border="0" style="display:block"/></a></div><!--regist-->
+<div id="regist" class="changed"> <a href="{{URL::route( 'registro' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('registro','','{{ asset('img/buttons/registro_over.jpg') }}',1)"><img src="{{ asset('img/buttons/registro_up.jpg') }}" alt="registro" width="80" height="22" border="0" style="display:block"/></a></div><!--regist-->
 
 
 <!--<div id="registt">
@@ -240,27 +235,27 @@ $(document).ready(function() {
 @endif
 </div>
 
-<div id="logo"><a href="{{URL::route( 'index' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','img/logo.jpg',0)"><img src="img/logo.jpg" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
+<div id="logo"><a href="{{URL::route( 'index' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TransaMovil','','{{ asset('img/logo.jpg') }}',0)"><img src="{{ asset('img/logo.jpg') }}" alt="TransaMóvil" width="170" height="91" id="TransaMovil" border="0" style="display:block"/></a></div><!--logo-->
 
 <div id="menu"><!-- The strange spacing herein prevents an IE6 whitespace bug. -->
       <ul id="barra">
-       <li><a href="{{URL::route( 'transamovil' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('que es TM','','img/buttons/over_01.jpg',1)"><img src="img/buttons/up_01.jpg" width="175" height="55" id="que es TM" border="0" style="display:block"/></a></li><!--  TM -->
+       <li><a href="{{URL::route( 'transamovil' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('que es TM','','{{ asset('img/buttons/over_01.jpg') }}',1)"><img src="{{ asset('img/buttons/up_01.jpg') }}" width="175" height="55" id="que es TM" border="0" style="display:block"/></a></li><!--  TM -->
        
-        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('PARATI','','img/buttons/over_02.jpg',1)"><img src="img/buttons/up_02.jpg" width="175" height="55" id="PARATI" border="0" style="display:block"/></a>
+        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('PARATI','','{{ asset('img/buttons/over_02.jpg') }}',1)"><img src="{{ asset('img/buttons/up_02.jpg') }}" width="175" height="55" id="PARATI" border="0" style="display:block"/></a>
        <ul>
-               <li><a href="{{URL::route( 'comofunciona' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('funciona','','img/buttons/submenu_over_01.jpg','PARATI','','img/buttons/over_02.jpg',1)"><img src="img/buttons/submenu_up_01.jpg" width="175" height="25" id="funciona" border="0" style="display:block"/></a></li>
-               <li><a href="{{URL::route( 'parativentajas' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ptventajas','','img/buttons/submenu_over_02.jpg','PARATI','','img/buttons/over_02.jpg',1)"><img src="img/buttons/submenu_up_02.jpg" width="175" height="25" id="ptventajas" border="0" style="display:block"/></a></li>
+               <li><a href="{{URL::route( 'comofunciona' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('funciona','','{{ asset('img/buttons/submenu_over_01.jpg') }}','PARATI','','{{ asset('img/buttons/over_02.jpg') }}',1)"><img src="{{ asset('img/buttons/submenu_up_01.jpg') }}" width="175" height="25" id="funciona" border="0" style="display:block"/></a></li>
+               <li><a href="{{URL::route( 'parativentajas' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ptventajas','','{{ asset('img/buttons/submenu_over_02.jpg') }}','PARATI','','{{ asset('img/buttons/over_02.jpg') }}',1)"><img src="{{ asset('img/buttons/submenu_up_02.jpg') }}" width="175" height="25" id="ptventajas" border="0" style="display:block"/></a></li>
          </ul>  </li> <!-- PARA TI -->
 
       
-        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('empresa','','img/buttons/over_03.jpg',1)"><img src="img/buttons/up_03.jpg" width="175" height="55" id="empresa" border="0" style="display:block"/></a>
+        <li><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('empresa','','{{ asset('img/buttons/over_03.jpg') }}',1)"><img src="{{ asset('img/buttons/up_03.jpg') }}" width="175" height="55" id="empresa" border="0" style="display:block"/></a>
        <ul>
-               <li><a href="{{URL::route( 'nuestrassoluciones' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('soluciones','','img/buttons/submenu_over_03.jpg','empresa','','img/buttons/over_03.jpg',1)"><img src="img/buttons/submenu_up_03.jpg" width="175" height="25" id="soluciones" border="0" style="display:block"/></a></li>
-               <li><a href="{{URL::route( 'empresaventajas' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('pteventajas','','img/buttons/submenu_over_04.jpg','empresa','','img/buttons/over_03.jpg',1)"><img src="img/buttons/submenu_up_04.jpg" width="175" height="25" id="pteventajas" border="0" style="display:block"/></a></li>
-               <li><a href="{{URL::route( 'solucionesadaptables' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('solucionesa','','img/buttons/submenu_over_05.jpg','empresa','','img/buttons/over_03.jpg',1)"><img src="img/buttons/submenu_up_05.jpg" width="175" height="25" id="solucionesa" border="0" style="display:block"/></a></li>
+               <li><a href="{{URL::route( 'nuestrassoluciones' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('soluciones','','{{ asset('img/buttons/submenu_over_03.jpg') }}','empresa','','{{ asset('img/buttons/over_03.jpg') }}',1)"><img src="{{ asset('img/buttons/submenu_up_03.jpg') }}" width="175" height="25" id="soluciones" border="0" style="display:block"/></a></li>
+               <li><a href="{{URL::route( 'empresaventajas' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('pteventajas','','{{ asset('img/buttons/submenu_over_04.jpg') }}','empresa','','{{ asset('img/buttons/over_03.jpg') }}',1)"><img src="{{ asset('img/buttons/submenu_up_04.jpg') }}" width="175" height="25" id="pteventajas" border="0" style="display:block"/></a></li>
+               <li><a href="{{URL::route( 'solucionesadaptables' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('solucionesa','','{{ asset('img/buttons/submenu_over_05.jpg') }}','empresa','','{{ asset('img/buttons/over_03.jpg') }}',1)"><img src="{{ asset('img/buttons/submenu_up_05.jpg') }}" width="175" height="25" id="solucionesa" border="0" style="display:block"/></a></li>
         </ul>  </li><!-- PARA TU EMPRESA -->
          
-        <li><a href="{{URL::route( 'hagamosnegocio' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('negocio','','img/buttons/over_04.jpg',1)"><img src="img/buttons/up_04.jpg" width="175" height="55" id="negocio" border="0" style="display:block"/></a></li><!-- hagamosbegocio -->
+        <li><a href="{{URL::route( 'hagamosnegocio' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('negocio','','{{ asset('img/buttons/over_04.jpg') }}',1)"><img src="{{ asset('img/buttons/up_04.jpg') }}" width="175" height="55" id="negocio" border="0" style="display:block"/></a></li><!-- hagamosbegocio -->
       </ul></div><!--menu-->
 </div><!--header2-->
 </div><!--header-->

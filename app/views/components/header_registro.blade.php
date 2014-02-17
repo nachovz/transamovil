@@ -101,12 +101,9 @@ a:active {
 }
 </style>
 <!--FONT-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
 <!--FONT-->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<!--FONT-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
-<!--FONT-->
 <!-- VALIDATORS -->
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/jquery.slides.min.js"></script>

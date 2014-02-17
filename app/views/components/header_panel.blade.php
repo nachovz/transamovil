@@ -18,14 +18,11 @@
 <META NAME="Language" CONTENT="Spanish">
 <META NAME="copyright" CONTENT="Todos los derechos reservados 2013">
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
-<!--FONT-->
-<!-- VALIDATORS -->
-<script src="js/jquery-1.9.1.min.js"></script>
-<script src="js/jquery.slides.min.js"></script>
+{{ HTML::style('//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}
+{{ HTML::style('css/print.css',array('media'=>'print')) }}
+{{ HTML::style('css/style.css') }}
+{{ HTML::script('js/jquery-1.9.1.min.js') }}
+{{ HTML::script('js/jquery.slides.min.js') }}
 <script src="{{asset('js/jquery.validationEngine-es.js')}}"></script>
 <script src="{{asset('js/jquery.validationEngine.js')}}"></script>
 <link rel="stylesheet" href="{{asset('css/validationEngine.jquery.css')}}" type="text/css" />

@@ -6,22 +6,22 @@
 <div class="contenido">
     <div id="slides">
     <div class="slide">
-    <a href="{{URL::route( 'transamovil' )}}"><img src="img/banner_home1.jpg" width="945" height="380" border="0" style="display:block"/></a>
+    <a href="{{URL::route( 'transamovil' )}}"><img src="{{ asset('img/banner_home1.jpg') }}" width="945" height="380" border="0" style="display:block"/></a>
      </div>
      <div class="slide">
-       <a href="{{URL::route( 'comofunciona' )}}"><img src="img/banner_home2.jpg" width="945" height="380" border="0" style="display:block"/></a>
+       <a href="{{URL::route( 'comofunciona' )}}"><img src="{{ asset('img/banner_home2.jpg') }}" width="945" height="380" border="0" style="display:block"/></a>
        </div>
-        <a href="{{URL::route( 'parativentajas' )}}"><img src="img/banner_home3.jpg" width="945" height="380" border="0" style="display:block"/></a>
+        <a href="{{URL::route( 'parativentajas' )}}"><img src="{{ asset('img/banner_home3.jpg') }}" width="945" height="380" border="0" style="display:block"/></a>
         <div class="slide">
           <a href="{{URL::route( 'nuestrassoluciones' )}}">
-          <img src="img/banner_home4.jpg" width="945" height="380" border="0" style="display:block"/></a>
+          <img src="{{ asset('img/banner_home4.jpg') }}" width="945" height="380" border="0" style="display:block"/></a>
           </div>
           <div class="slide">
-            <a href="{{URL::route( 'empresaventajas' )}}"><img src="img/banner_home5.jpg" width="945" height="380" border="0" style="display:block"/></a>
+            <a href="{{URL::route( 'empresaventajas' )}}"><img src="{{ asset('img/banner_home5.jpg') }}" width="945" height="380" border="0" style="display:block"/></a>
            </div>
            
            <div class="slide">   
-             <a href="{{URL::route( 'solucionesadaptables' )}}"> <img src="img/banner_home6.jpg" width="945" height="380" border="0" style="display:block"/></a>
+             <a href="{{URL::route( 'solucionesadaptables' )}}"> <img src="{{ asset('img/banner_home6.jpg') }}" width="945" height="380" border="0" style="display:block"/></a>
               </div>
     </div>
   </div>
@@ -65,8 +65,8 @@ medida</div></a>
 
 </div><!--contenido-->
 
-<div id="thumbs"><a href="{{URL::route( 'hagamosnegocio' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('aliados','','img/aliado.jpg',1)"><img src="img/aliado.jpg" width="450" height="256" id="aliados" border="0" style="display:block"/></a></div><!--thumbs-->
-<div id="thumbs"><a href="{{URL::route( 'recarga' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('digitel','','img/recarga.jpg',0)"><img src="img/recarga.jpg" width="450" height="256" id="digitel" border="0" style="display:block"/></a></div><!--thumbs-->
+<div id="thumbs"><a href="{{URL::route( 'hagamosnegocio' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('aliados','','{{ asset('img/aliado.jpg') }}',1)"><img src="{{ asset('img/aliado.jpg') }}" width="450" height="256" id="aliados" border="0" style="display:block"/></a></div><!--thumbs-->
+<div id="thumbs"><a href="{{URL::route( 'recarga' )}}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('digitel','','{{ asset('img/recarga.jpg') }}',0)"><img src="{{ asset('img/recarga.jpg') }}" width="450" height="256" id="digitel" border="0" style="display:block"/></a></div><!--thumbs-->
 
 </div><!--container2-->
 </div><!--container-->
